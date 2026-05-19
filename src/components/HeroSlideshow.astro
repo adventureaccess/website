@@ -24,7 +24,7 @@ const { slides, duration = 6500, showDots = true } = Astro.props;
       src={slide.src}
       alt={slide.alt}
       class:list={[
-        'slideshow-img absolute inset-0 w-full h-full object-cover kenburns-slow',
+        'slideshow-img absolute inset-0 w-full h-full object-cover',
         i === 0 && 'is-active',
       ]}
       data-index={i}

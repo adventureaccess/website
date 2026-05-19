@@ -40,16 +40,21 @@
 .fade-up-delay-2 { animation: fadeUp 1.2s ease-out 0.8s both; }
 .fade-up-delay-3 { animation: fadeUp 1.2s ease-out 1.1s both; }
 
-/* ---- Hero photo slideshow ---- */
+/* ---- Hero photo slideshow ----
+   The outgoing slide must keep its transform during the cross-fade, otherwise
+   it visibly "snaps" back to scale(1) — the stutter we saw. Using two-way
+   transitions (slow zoom in on active, gentle release back on deactivate)
+   instead of a keyframe animation so the transform never resets abruptly. */
 .slideshow-img {
   opacity: 0;
-  transition: opacity 1.6s ease-in-out;
+  transform: scale(1.0);
+  transition: opacity 1.6s ease-in-out, transform 1.6s ease-out;
+  will-change: opacity, transform;
 }
 .slideshow-img.is-active {
   opacity: 1;
-}
-.slideshow-img.is-active.kenburns-slow {
-  animation: kenburns 18s ease-in-out forwards;
+  transform: scale(1.08);
+  transition: opacity 1.6s ease-in-out, transform 10s linear;
 }
 .slideshow-dot {
   display: block;
@@ -186,8 +191,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .kenburns,
-  .slideshow-img.is-active.kenburns-slow {
+  .kenburns {
     animation: none !important;
   }
   .fade-up, .fade-up-delay-1, .fade-up-delay-2, .fade-up-delay-3,
@@ -197,8 +201,10 @@
     opacity: 1 !important;
     transform: none !important;
   }
-  .slideshow-img {
-    transition: none !important;
+  .slideshow-img,
+  .slideshow-img.is-active {
+    transition: opacity 0.3s ease-in-out !important;
+    transform: none !important;
   }
 }
 
