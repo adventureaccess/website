@@ -1,0 +1,84 @@
+{
+  "items": [
+    {
+      "quote": "Having Trevor and his team help our group navigate and find the best home stays, hikes, historic sites, and monasteries to visit makes it an unforgettable experience.",
+      "name": "Jason",
+      "location": "United States",
+      "destination": "Ladakh & Zanskar, India",
+      "rating": 5,
+      "source": "trustpilot",
+      "featured": true,
+      "heroQuote": false
+    },
+    {
+      "quote": "I have been on two separate trips with Adventure Access to Ladakh — once for mountain biking and once for hiking. Both have been life changing experiences. Trevor led us into some of the greatest home experiences with Ladakhi people, including getting to attend a local wedding.",
+      "name": "Brad",
+      "location": "United States",
+      "destination": "Ladakh, India",
+      "rating": 5,
+      "source": "trustpilot",
+      "featured": true,
+      "heroQuote": false
+    },
+    {
+      "quote": "I had never travelled with a guide before, but in terms of seeing difficult-to-access places, this experience was unbeatable and allowed me to pay full attention to my surroundings.",
+      "name": "J. Neumann",
+      "location": "United States",
+      "destination": "Ladakh, India",
+      "rating": 5,
+      "source": "trustpilot",
+      "featured": true,
+      "heroQuote": false
+    },
+    {
+      "quote": "Trevor is a fantastic guide because he loves the place and the people. It was obvious that he cares about the local economy and ecology of each place we visited, from Ladakh to Zangla.",
+      "name": "Doug Payne",
+      "location": "United States",
+      "destination": "Ladakh & Zangla, India",
+      "rating": 5,
+      "source": "trustpilot",
+      "featured": false,
+      "heroQuote": false
+    },
+    {
+      "quote": "Unlike many trips I take, this was one that challenged and grew me as an adventurer and as an individual. Good thing Trevor was there all along the way to lead and guide us.",
+      "name": "Benjamin C.",
+      "location": "United States",
+      "destination": "Ladakh & Zanskar, India",
+      "rating": 5,
+      "source": "trustpilot",
+      "featured": false,
+      "heroQuote": false
+    },
+    {
+      "quote": "Trevor and his team of expert tour guides made our trip exciting, educational, and culturally eye-opening. What an unforgettable trip.",
+      "name": "Stefan Vincent",
+      "location": "India",
+      "destination": "Ladakh, India",
+      "rating": 5,
+      "source": "trustpilot",
+      "featured": false,
+      "heroQuote": false
+    },
+    {
+      "quote": "The trip was a well-rounded balance of thrilling activities and things that pushed my limits, along with ample ways to rest, relax, and unwind. I was taken aback by Mr. Trevor's attention to detail, which made the entire trip meaningful and memorable.",
+      "name": "Susanna John",
+      "location": "India",
+      "destination": "Ladakh, India",
+      "rating": 5,
+      "source": "trustpilot",
+      "featured": false,
+      "heroQuote": false
+    },
+    {
+      "quote": "Your programs have a unique design and foster a personal worldview that is clearly impactful, life changing. Thanks for your special adventure approach which connects people, so needed in our time.",
+      "name": "Oscar",
+      "location": "Asheville, North Carolina",
+      "destination": "Himalayas",
+      "rating": 5,
+      "source": "direct",
+      "featured": false,
+      "heroQuote": true
+    }
+  ]
+}

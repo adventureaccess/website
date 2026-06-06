@@ -1,0 +1,73 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Uncomment the line below to enable editorial workflow
+# (changes go to a draft branch and require review before publishing)
+# publish_mode: editorial_workflow
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: testimonials
+    label: Testimonials
+    files:
+      - name: testimonials
+        label: All Testimonials
+        file: src/data/testimonials.json
+        fields:
+          - name: items
+            label: Testimonials
+            label_singular: Testimonial
+            widget: list
+            summary: "{{fields.name}} — {{fields.destination}}"
+            fields:
+              - name: quote
+                label: Quote
+                widget: text
+                hint: "The full review text. Use a shorter excerpt for better display — 1–3 sentences ideal."
+
+              - name: name
+                label: Reviewer Name
+                widget: string
+
+              - name: location
+                label: Reviewer Location
+                widget: string
+                hint: "e.g. United States, Asheville, North Carolina"
+
+              - name: destination
+                label: Destination
+                widget: string
+                hint: "e.g. Ladakh & Zanskar, India"
+
+              - name: rating
+                label: Star Rating
+                widget: number
+                default: 5
+                min: 1
+                max: 5
+                value_type: int
+
+              - name: source
+                label: Review Source
+                widget: select
+                options:
+                  - { label: Trustpilot, value: trustpilot }
+                  - { label: Direct / Email, value: direct }
+                  - { label: Google, value: google }
+                  - { label: TripAdvisor, value: tripadvisor }
+                default: trustpilot
+
+              - name: featured
+                label: Show in card grid on homepage
+                widget: boolean
+                default: false
+                hint: "Turn on to display this testimonial in the 3-card section. Aim for 3 featured at a time."
+
+              - name: heroQuote
+                label: Use as full-bleed hero quote
+                widget: boolean
+                default: false
+                hint: "Only one testimonial should have this on at a time. This is the large cinematic quote on the homepage."

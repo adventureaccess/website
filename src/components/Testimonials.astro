@@ -1,0 +1,57 @@
+---
+import testimonials from '../data/testimonials.json';
+
+const featured = testimonials.items.filter(t => t.featured);
+---
+
+<section class="bg-paper py-24 md:py-36">
+  <div class="max-w-8xl mx-auto px-6 md:px-14">
+
+    <div class="flex flex-wrap justify-between items-end gap-6 mb-16 reveal">
+      <div>
+        <div class="eyebrow mb-4">— Traveler Stories</div>
+        <h2 class="display text-5xl md:text-6xl">Told in their <em class="not-italic font-light text-saffron font-display italic">words</em>.</h2>
+      </div>
+      <a
+        href="https://www.trustpilot.com/review/adventure-access.com"
+        target="_blank"
+        rel="noopener"
+        class="btn-ghost text-sm"
+      >
+        Read all reviews on Trustpilot →
+      </a>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {featured.map((t, i) => (
+        <blockquote
+          class="reveal bg-cream border border-ink/10 p-8 flex flex-col"
+          data-delay={i * 100}
+        >
+          <!-- Stars -->
+          <div class="flex gap-1 mb-6" aria-label={`${t.rating} out of 5 stars`}>
+            {Array.from({ length: t.rating }).map(() => (
+              <svg class="w-4 h-4 fill-saffron" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+
+          <!-- Quote -->
+          <p class="font-display font-light italic text-xl leading-snug text-ink flex-1 mb-8">
+            "{t.quote}"
+          </p>
+
+          <!-- Attribution -->
+          <footer class="border-t border-ink/10 pt-6 mt-auto">
+            <cite class="not-italic">
+              <span class="block font-semibold text-ink text-sm">{t.name}</span>
+              <span class="block text-ink/60 text-xs mt-0.5">{t.destination}</span>
+            </cite>
+          </footer>
+        </blockquote>
+      ))}
+    </div>
+
+  </div>
+</section>
