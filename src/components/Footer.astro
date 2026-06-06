@@ -1,5 +1,13 @@
 ---
 const year = new Date().getFullYear();
+
+// Rating pulled from Netlify environment variables.
+// To update: Netlify dashboard → Site → Environment variables → change value → redeploy.
+const trustScore = parseFloat(import.meta.env.TRUSTPILOT_SCORE ?? '4.6');
+const reviewCount = parseInt(import.meta.env.TRUSTPILOT_REVIEWS ?? '19', 10);
+
+const fullStars = Math.floor(trustScore);
+const hasHalf = trustScore - fullStars >= 0.25;
 ---
 <footer id="contact" class="bg-ink text-cream">
   <div class="max-w-8xl mx-auto px-6 md:px-14 py-24 md:py-32">
@@ -66,20 +74,44 @@ const year = new Date().getFullYear();
       </form>
     </div>
 
-    <!-- Trustpilot trust badge -->
-    <div class="border-t border-cream/15 pt-10 mb-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-      <span class="eyebrow !text-cream/50">— Verified reviews</span>
-      <div
-        class="trustpilot-widget"
-        data-locale="en-US"
-        data-template-id="5419b6a8b0d04a076446a9ad"
-        data-businessunit-id="642447cd2e0c1ea51782db6e"
-        data-style-height="24px"
-        data-style-width="260px"
-        data-theme="dark"
+    <!-- Trustpilot trust badge — score fetched at build time -->
+    <div class="border-t border-cream/15 pt-10 mb-10">
+      <a
+        href="https://www.trustpilot.com/review/adventure-access.com"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-4 group"
+        aria-label={`${trustScore} out of 5 on Trustpilot — ${reviewCount} reviews`}
       >
-        <a href="https://www.trustpilot.com/review/adventure-access.com" target="_blank" rel="noopener" class="text-saffron hover:underline text-sm">Read our reviews on Trustpilot →</a>
-      </div>
+        <!-- Stars -->
+        <span class="flex items-center gap-0.5" aria-hidden="true">
+          {Array.from({ length: 5 }).map((_, i) => {
+            const filled = i < fullStars;
+            const half = !filled && i === fullStars && hasHalf;
+            return (
+              <span class={`w-5 h-5 flex items-center justify-center ${filled ? 'bg-[#00b67a]' : half ? 'bg-gradient-to-r from-[#00b67a] to-[#00b67a]/20' : 'bg-cream/20'}`}>
+                <svg viewBox="0 0 24 24" class="w-3 h-3 fill-white" aria-hidden="true">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </span>
+            );
+          })}
+        </span>
+
+        <!-- Score + label -->
+        <span class="flex items-baseline gap-2">
+          <span class="font-display text-xl font-semibold text-cream group-hover:text-saffron transition-colors">{trustScore}</span>
+          <span class="text-cream/50 text-sm">/ 5 · {reviewCount} reviews</span>
+        </span>
+
+        <!-- Trustpilot wordmark -->
+        <span class="flex items-center gap-1.5 border-l border-cream/20 pl-4">
+          <svg class="w-4 h-4 fill-[#00b67a]" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <span class="text-cream/60 text-sm">Trustpilot</span>
+        </span>
+      </a>
     </div>
 
     <div class="border-t border-cream/15 pt-10 grid md:grid-cols-3 gap-8 text-sm text-cream/70">
