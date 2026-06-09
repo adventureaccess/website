@@ -99,6 +99,20 @@ const allSchemas = [orgSchema, ...extraSchemas];
 
     <!-- Netlify Identity (required for Decap CMS login redirect) -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      // Open the Identity widget automatically when an invite, recovery,
+      // or email-confirmation token is present in the URL hash.
+      // Without this the widget loads silently and the user just sees the homepage.
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', function(user) {
+          if (!user) {
+            window.netlifyIdentity.on('login', function() {
+              document.location.href = '/admin/';
+            });
+          }
+        });
+      }
+    </script>
 
     <!-- Trustpilot TrustBox -->
     <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
