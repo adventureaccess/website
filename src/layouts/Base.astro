@@ -105,6 +105,17 @@ const allSchemas = [orgSchema, ...extraSchemas];
       // Without this the widget loads silently and the user just sees the homepage.
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on('init', function(user) {
+          // Auto-open the modal AFTER the widget has fully initialized,
+          // so the API is ready to handle invite/recovery/confirmation flows.
+          var hash = window.location.hash;
+          if (
+            hash.indexOf('invite_token=') !== -1 ||
+            hash.indexOf('recovery_token=') !== -1 ||
+            hash.indexOf('confirmation_token=') !== -1
+          ) {
+            window.netlifyIdentity.open();
+          }
+
           if (!user) {
             window.netlifyIdentity.on('login', function() {
               document.location.href = '/admin/';
@@ -132,17 +143,5 @@ const allSchemas = [orgSchema, ...extraSchemas];
     </main>
     <Footer />
     <RevealObserver />
-    <script>
-      // Redirect to /admin after Netlify Identity login
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on('init', (user) => {
-          if (!user) {
-            window.netlifyIdentity.on('login', () => {
-              document.location.href = '/admin/';
-            });
-          }
-        });
-      }
-    </script>
   </body>
 </html>
