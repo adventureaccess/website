@@ -4,13 +4,15 @@ date: 2019-11-15
 excerpt: "Imagine this…The International New Year has come and gone and you are all settling back into your office and school routines, even if just for a little…"
 featured_image: "/images/2017/11/A-Traditional-Chinese-New-Year-in-Songpan-Old-Town.jpg"
 destination: yunnan
+gallery:
+  - "/images/2019/11/IMG_6410.jpg"
+  - "/images/2019/11/AA-3823.jpg"
+  - "/images/2019/11/IMG_6235.jpg"
 ---
 
 <span style="font-weight: 400;">Imagine this…The International New Year has come and gone and you are all settling back into your office and school routines, even if just for a little while. BUT, Chinese and Tibetan New Year are on the horizon. China’s industries will soon come to a halt and the largest annual human migration will commence in just a few weeks time. </span>
 
 &nbsp;
-
-<img class="aligncenter" src="/images/2019/11/IMG_6410.jpg" alt="" width="1010" height="562" />
 
 &nbsp;
 
@@ -20,17 +22,12 @@ destination: yunnan
 
 &nbsp;
 
-<img class="aligncenter" src="/images/2019/11/AA-3823.jpg" alt="" width="1010" height="562" />
-
 &nbsp;
 
 <span style="font-weight: 400;">This coming year, we are once again opening our doors to you too. Come join our staff and local friends in </span><a href="https://adventure-access.com/destination/songpan/"><b>Songpan</b></a><span style="font-weight: 400;"> for an adventure-filled experience. Fireworks, dragons, and dancing will be in abundance. Hiking and a visit to a National Park are on the schedule. Staying in a Tibetan village in the host home of a local as they celebrate the festivities of what is known as Losar, the Tibetan name for the New Year, is an unforgettable experience. The soul is refreshed by blue skies and snow on the forest floor. The scent of pine trees fills the crisp air this time of year.</span>
 
 &nbsp;
 
-<img class="aligncenter" src="/images/2019/11/IMG_6235.jpg" alt="" width="1010" height="562" />
-
 &nbsp;
 
 <span style="font-weight: 400;">New Year in </span><a href="https://adventure-access.com/destination/songpan/"><b>Songpan</b></a><span style="font-weight: 400;"> has it all. Culture is rich. The outdoors beckons. Gather old friends to come along and join in to make new friends! </span><a href="https://adventure-access.com/#contact"><b>Contact us</b></a><span style="font-weight: 400;"> now to reserve your place with us this year!</span>
-<p style="text-align: center;">[su_custom_gallery source="media: 3282, 3283, 3284, 1288,1287,1286" limit="30" link="lightbox" width="480" height="480"]</p>

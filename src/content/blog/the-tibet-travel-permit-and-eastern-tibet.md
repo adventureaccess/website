@@ -3,17 +3,18 @@ title: "The Tibet Travel Permit and Eastern Tibet"
 date: 2020-01-21
 excerpt: "The Tibetan Plateau, known as the “Roof of the World” stretches from Northern India to the middle of China. Also included are countries like Nepal and…"
 featured_image: "/images/2020/01/Eastern-Himalaya-Hiking_featured-image.jpg"
+gallery:
+  - "/images/2020/01/Eastern-Himalaya-Hiking.jpg"
+  - "/images/2020/01/Monastery-Festival.jpg"
+  - "/images/2020/01/Yaks-over-blue-water.jpg"
+  - "/images/2020/01/Lost-in-thought-in-the-Himalayas.jpg"
 ---
-
-<img class="alignnone" src="/images/2020/01/Eastern-Himalaya-Hiking.jpg" alt="" width="1000" height="557" />
 
 &nbsp;
 
 <span style="font-weight: 400;">The Tibetan Plateau, known as the “Roof of the World” stretches from Northern India to the middle of China. Also included are countries like Nepal and Bhutan. With so many choices, where is the best place to visit? In short, there is no one size fits all approach for adventure travel on the Tibetan Plateau. Many adventure seekers head to Nepal or India, thinking that China is not the place for adventure travel. With two decades of leading adventure travel experiences in China’s Tibetan regions, we want to change that perception because we know that the indigenous Tibetan regions on the heart of the plateau are incredible places for adventure.</span>
 
 &nbsp;
-
-<img class="alignnone" src="/images/2020/01/Monastery-Festival.jpg" alt="" width="1000" height="557" />
 
 &nbsp;
 
@@ -45,12 +46,8 @@ featured_image: "/images/2020/01/Eastern-Himalaya-Hiking_featured-image.jpg"
 
 &nbsp;
 
-<img class="alignnone" src="/images/2020/01/Yaks-over-blue-water.jpg" alt="" width="1000" height="557" />
-
 &nbsp;
 
 <span style="font-weight: 400;">We hope this short question and answer format has helped clear up some of the key issues you face as you choose a Tibetan destination. If you have other questions, please do not hesitate to use the live chat feature on our site or fill out a <a href="https://adventure-access.com/#contact"><span style="text-decoration: underline;">contact us form</span></a>. We are here to help!</span>
 
 &nbsp;
-
-<img class="alignnone" src="/images/2020/01/Lost-in-thought-in-the-Himalayas.jpg" alt="" width="1000" height="557" />

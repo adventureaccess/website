@@ -4,6 +4,15 @@ date: 2017-11-21
 excerpt: "Jiuzhaigou is one of China's most visited national parks. Jiuzhaigou National Park was protected by the government in 1982 and became a National Park in…"
 featured_image: "/images/2017/11/Adventure-Access-108.jpg"
 destination: yunnan
+gallery:
+  - "/images/2017/11/Adventure-Access-102.jpg"
+  - "/images/2017/11/Adventure-Access-103.jpg"
+  - "/images/2017/11/Adventure-Access-104.jpg"
+  - "/images/2017/11/Adventure-Access-109.jpg"
+  - "/images/2017/11/Adventure-Access-111.jpg"
+  - "/images/2017/11/CDIS-103.jpg"
+  - "/images/2017/11/Adventure-Access-5.jpg"
+  - "/images/2017/11/Adventure-Access-101.jpg"
 ---
 
 &nbsp;
@@ -22,19 +31,3 @@ Jiuzhaigou is one of China's most visited national parks. Jiuzhaigou National Pa
  	<li>Air travel is the fastest way to get to Jiuzhaigou but can also be the most expensive.</li>
 </ul>
 &nbsp;
-
-<img class="alignnone" src="/images/2017/11/Adventure-Access-102.jpg" alt="" width="1024" height="576" />
-
-<img class="alignnone" src="/images/2017/11/Adventure-Access-103.jpg" alt="" width="1024" height="576" />
-
-<img class="alignnone" src="/images/2017/11/Adventure-Access-104.jpg" alt="" width="1024" height="576" />
-
-<img class="alignnone" src="/images/2017/11/Adventure-Access-109.jpg" alt="" width="1024" height="576" />
-
-<img class="alignnone" src="/images/2017/11/Adventure-Access-111.jpg" alt="" width="1024" height="576" />
-
-<img class="alignnone" src="/images/2017/11/CDIS-103.jpg" alt="" width="1024" height="576" />
-
-<img class="alignnone" src="/images/2017/11/Adventure-Access-5.jpg" alt="" width="1024" height="576" />
-
-<img class="alignnone" src="/images/2017/11/Adventure-Access-101.jpg" alt="" width="1024" height="576" />

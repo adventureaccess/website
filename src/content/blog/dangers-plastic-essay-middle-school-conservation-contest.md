@@ -3,13 +3,13 @@ title: "The Dangers of Plastic, An Essay from our Middle School Conservation Con
 date: 2018-05-28
 excerpt: "Adventure Access and Grayl, the makers of the Grayl Ultralight Purifier, have partnered together to reduce single use plastic bottles in West China. One…"
 featured_image: "/images/2018/05/Photo-2.jpeg"
+gallery:
+  - "/images/2018/05/Photo-1.jpeg"
+  - "/images/2018/05/Photo-2.jpeg"
+  - "/images/2018/05/Photo-3.jpg"
 ---
 
-<img class="aligncenter" src="/images/2018/05/Photo-1.jpeg" alt="" width="768" height="1024" />
-
 Adventure Access and Grayl, the makers of the Grayl Ultralight Purifier, have partnered together to reduce single use plastic bottles in West China. One of the ways that we have encouraged the use of reusable bottles is through conservation awareness during our recent Outdoor Education Program with Chengdu International School’s 7th Grade class.
-
-<img class="aligncenter" src="/images/2018/05/Photo-2.jpeg" alt="" width="1156" height="768" />
 
 During a visit to Zhaga Waterfall we spoke about water, plastics, and the need to be proactive in our conservation efforts. Students submitted essays or artwork as part of a competition to win a Grayl Ultralight Purifier. Andrew C. was our winner! Andrew is from Korea and lives in China. Here is his submission below:
 
@@ -22,8 +22,6 @@ During a visit to Zhaga Waterfall we spoke about water, plastics, and the need t
 <em>As plastic is trashed into the ocean, it makes a large group of plastics. These plastics wander around the ocean, following the ocean current. As a result, they become a big island that is made by plastics, and it becomes larger and larger. The problem is ocean animals can think that trash and plastic are foods for them. It kills a lot of animals and these days some animal species can become extinct.</em>
 
 <em>In conclusion, plastic affects animals and the environment in a harmful way. It pollutes soil and it kills animals. We can stop this by using less plastic goods. Bring your own cup [bottle] rather than using plastic. This can help the Earth from danger.</em>
-
-<img class="aligncenter" src="/images/2018/05/Photo-3.jpg" alt="" width="1157" height="768" />
 
 We are thankful for all the students at CDIS who participated in our Outdoor Ed program. It was a joy to grow and learn together. On the final day, the students gave back to one of the local Tibetan communities by participating in a clean up to remove plastic and trash near the local stream.
 

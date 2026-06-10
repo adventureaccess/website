@@ -3,6 +3,8 @@ title: "Packing for a Trek in Eastern Tibet"
 date: 2019-07-26
 excerpt: "Whether you are in the early phases of planning a trip to the Eastern edge of the Tibetan Plateau or you have already booked a trip and are headed this…"
 featured_image: "/images/2019/07/1.jpg"
+gallery:
+  - "/images/2019/07/2.jpg"
 ---
 
 Whether you are in the early phases of planning a trip to the Eastern edge of the <a href="https://en.wikipedia.org/wiki/Tibetan_Plateau">Tibetan Plateau</a> or you have already booked a trip and are headed this way soon, it is helpful to know how to pack.
@@ -10,8 +12,6 @@ Whether you are in the early phases of planning a trip to the Eastern edge of th
 We want to start with a few Q&amp;A’s that are helpful for anyone coming to the region and finish off with a few additional answers for those of you who are coming on an <a href="https://adventure-access.com/experiences/"><span style="color: #ff6600;">Adventure Access experience</span></a>.
 
 &nbsp;
-
-<img class="alignnone" src="/images/2019/07/2.jpg" alt="Trekking Tibet" width="1010" height="562" />
 
 &nbsp;
 

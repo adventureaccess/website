@@ -4,6 +4,12 @@ date: 2025-11-20
 excerpt: "The air thins as you crest Kyupa La. At 4,400 meters, every breath is earned. Below, the trail unravels across scree and ridgeline, plunging toward a…"
 featured_image: "/images/2025/11/MTB-Exploration-Photo-3-scaled.jpeg"
 destination: ladakh
+gallery:
+  - "/images/2025/11/MTB-Exploration-Photo-3-scaled.jpeg"
+  - "/images/2025/11/PXL_20250707_105830934-1920x900.jpeg"
+  - "/images/2024/03/ladakh05.jpg"
+  - "/images/2024/05/IMG_4944-1-1920x900.jpg"
+  - "/images/2024/05/IMG_5619-1920x900.jpg"
 ---
 
 <p class="lead">The air thins as you crest Kyupa La. At 4,400 meters, every breath is earned. Below, the trail unravels like a ribbon across scree and ridgeline, plunging toward a valley where homes cling to the cliffs and prayer flags crack in the wind. You grip the bars, push off, and let gravity carry you forward.</p>
@@ -11,7 +17,7 @@ destination: ladakh
 <p>This is mountain biking on a frontier still being written — the Zanskar Valley.</p>
 
 <figure class="reveal">
-  <img src="/images/2025/11/MTB-Exploration-Photo-3-scaled.jpeg" alt="Mountain biker descending a high-altitude trail above Zanskar" />
+  
   <figcaption>Dropping in above Zanskar.</figcaption>
 </figure>
 
@@ -20,7 +26,7 @@ destination: ladakh
 <p>In Zanskar, riding feels like real exploration. The trails are a patchwork of ancient caravan routes, yak trails, and freeride lines still being scouted. Some begin on windswept passes above 5,000m and drop through scree into villages that still live by barley harvests and yak caravans. Others — like the descent from Kyupa La — start with a dramatic rock-and-scree pitch before mellowing into singletrack through grassy yak country.</p>
 
 <figure class="reveal">
-  <img src="/images/2025/11/PXL_20250707_105830934-1920x900.jpeg" alt="Bikers and prayer flags above the Zanskar Valley" />
+  
 </figure>
 
 <h2>What makes it different</h2>
@@ -35,7 +41,7 @@ destination: ladakh
 </ul>
 
 <figure class="reveal">
-  <img src="/images/2024/03/ladakh05.jpg" alt="Stone village in the high Indian Himalaya" />
+  
   <figcaption>One of the villages along the route.</figcaption>
 </figure>
 
@@ -44,7 +50,7 @@ destination: ladakh
 <p>Ask anyone who's ridden here and you'll hear stories that go beyond the trail. Scouting days where a guide pushes back up a mountain after a promising line dead-ends — only to drop something perfect the next morning. Clearing rocks alongside villagers. Sipping butter tea on a homestay rooftop. Being heckled (kindly) by a kid who insists the line is impossible right before asking for a turn on the bike.</p>
 
 <figure class="reveal">
-  <img src="/images/2024/05/IMG_4944-1-1920x900.jpg" alt="Riders in the Ladakhi high country" />
+  
 </figure>
 
 <h2>Practical notes</h2>
@@ -52,7 +58,7 @@ destination: ladakh
 <p>The window for Zanskar riding runs from <strong>late April through early October</strong>, when the passes clear and the ground is firm. Plan a few days at altitude up front, pack for every kind of weather (you'll start in fog and snow and finish under the sun), and travel with local guides who know when a line is rideable and when it's smarter to shoulder the bike.</p>
 
 <figure class="reveal">
-  <img src="/images/2024/05/IMG_5619-1920x900.jpg" alt="Wide Himalayan vista, Ladakh" />
+  
 </figure>
 
 <h2>A call to ride</h2>

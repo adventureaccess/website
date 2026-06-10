@@ -3,9 +3,13 @@ title: "Can We Afford Not to Use Grayl?"
 date: 2019-12-11
 excerpt: "All of us at Adventure Access take the safety and health of our team, our clients, and our environment very seriously! This means providing pure water all…"
 featured_image: "/images/2019/12/Feature-image.jpg"
+gallery:
+  - "/images/2019/12/Grant_Colorado_Kyle-Murphy_@briskventure_013.jpg"
+  - "/images/2019/12/GEOPRESS-Graphic-1.jpg"
+  - "/images/2019/12/GEOPRESS-Graphic-2.jpg"
+  - "/images/2019/12/Side-by-Side-Comparison-Photo.jpg"
+  - "/images/2019/12/GEOPRESS_PR_GRID-2.jpg"
 ---
-
-<img class="aligncenter" src="/images/2019/12/Grant_Colorado_Kyle-Murphy_@briskventure_013.jpg" alt="" width="1000" height="556" />
 
 &nbsp;
 
@@ -19,15 +23,13 @@ So, why is Grayl GEOPRESS so great?
 
 &nbsp;
 
-<img class="aligncenter" src="/images/2019/12/GEOPRESS-Graphic-1.jpg" alt="" width="1000" height="1006" /> <img class="aligncenter" src="/images/2019/12/GEOPRESS-Graphic-2.jpg" alt="" width="1000" height="1006" />
+ 
 
 &nbsp;
 
 <b>But don’t just take our word for it. Let’s do a comparison...</b>
 
 &nbsp;
-
-<img class="aligncenter" src="/images/2019/12/Side-by-Side-Comparison-Photo.jpg" alt="" width="1920" height="715" />
 
 &nbsp;
 
@@ -62,8 +64,6 @@ So, why is Grayl GEOPRESS so great?
 <span style="font-weight: 400;">The GEOPRESS keeps you healthy, saves you money, and contributes to the protection of our </span><span style="font-weight: 400;">planet. We can’t afford not to use Grayl.</span>
 
 &nbsp;
-
-<img class="aligncenter" src="/images/2019/12/GEOPRESS_PR_GRID-2.jpg" alt="" width="1000" height="323" />
 
 &nbsp;
 

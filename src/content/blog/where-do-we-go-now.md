@@ -3,13 +3,14 @@ title: "Where do we go now?"
 date: 2020-05-15
 excerpt: "It’s a big world out there. Where do you even begin as you consider stepping out of your door? Start by determining your key motivations. Not everyone…"
 featured_image: "/images/2020/05/Hero-image.jpg"
+gallery:
+  - "/images/2020/05/Image-1.jpg"
+  - "/images/2020/05/Image-2.jpg"
 ---
 
 It’s a big world out there. Where do you even begin as you consider stepping out of your door? Start by determining your key motivations. Not everyone travels for the same reason and different kinds of travel achieve different goals for the traveler. Adventure travel is the combination of nature + activity + culture. Many adventure travelers are interested in transformation through such experiences.
 
 &nbsp;
-
-<img class="aligncenter" src="/images/2020/05/Image-1.jpg" alt="" width="1000" height="557" />
 
 &nbsp;
 
@@ -22,8 +23,6 @@ Travel on the other hand is an immersive experience where we learn about a new d
 So, how about you? Choosing to invest in experience vs accumulating more possessions may be something you are looking for. Perhaps you want to put away the screens and spend time with your family. It may be the mountains calling you. It may be the discovery of new food or the desire to make new friends that speaks to you. No matter what it is, do the hard work to determine why you want to travel.
 
 &nbsp;
-
-<img class="aligncenter" src="/images/2020/05/Image-2.jpg" alt="" width="1000" height="557" />
 
 &nbsp;
 

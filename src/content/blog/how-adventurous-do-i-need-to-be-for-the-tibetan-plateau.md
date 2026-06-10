@@ -3,13 +3,14 @@ title: "How Adventurous Do I Need to be for The Tibetan Plateau?"
 date: 2020-02-13
 excerpt: "The Tibetan Plateau, though known as the Roof of the World, can be enjoyed by people of all ages, abilities, and skill levels. You don’t have to join an…"
 featured_image: "/images/2020/02/Adventure-Access-7.jpg"
+gallery:
+  - "/images/2020/02/TIBETAN-PLATEAU-it-is-not-as-brown-and-dry-as-you-think.jpg"
+  - "/images/2020/02/Screen-Shot-2020-01-20-at-3.03.46-PM.png"
 ---
 
 The Tibetan Plateau, though known as the Roof of the World, can be enjoyed by people of all ages, abilities, and skill levels. You don’t have to join an expedition to the summit of Everest to experience the plateau. Opportunities are as varied as the environment on the Plateau. There is a full range of activities available and a carefully chosen adventure operator can provide the right experience.
 
 The average altitude of the Tibetan Plateau is over 14,800ft (4,500m) and it is hemmed in by peaks like K2, Everest, Minya Konka, and Xuebaoding. It is no surprise that many find this part of the world intimidating at first glance. But the plateau is not just towering peaks with formidable environmental surroundings. Not everywhere requires extreme abilities and mountaineering skills.
-
-<img class="aligncenter" src="/images/2020/02/TIBETAN-PLATEAU-it-is-not-as-brown-and-dry-as-you-think.jpg" alt="" width="2400" height="1991" />
 
 &nbsp;
 
@@ -52,8 +53,6 @@ We rate all of our experiences along the following criteria (the lowest rating i
 <strong>Challenge</strong> - This relates to the stamina or endurance to complete an activity. Many hikes do not require skills, but some may require an ability to hike for 8 hours in a day at high altitudes. Because of the altitude of the Tibetan Plateau, it is very important to consider the challenge of an activity.
 
 <strong>Let’s look at two examples:</strong>
-
-<img class="aligncenter" src="/images/2020/02/Screen-Shot-2020-01-20-at-3.03.46-PM.png" alt="" width="1794" height="548" />
 
 &nbsp;
 

@@ -4,9 +4,9 @@ date: 2015-09-28
 excerpt: "Facilis sint aut deserunt et quas dicta doloremque qui reprehenderit officiis sunt quisquam et quisquam fugit id molestiae ducimus eos dolorem dolorem…"
 featured_image: "/images/2017/11/Where-to-Eat-in-Songpan.jpg"
 destination: yunnan
+gallery:
+  - "/images/2017/11/Songpan-Hotpot-2-945x385.jpg"
 ---
-
-<img class="alignnone" src="/images/2017/11/Songpan-Hotpot-2-945x385.jpg" alt="" width="945" height="385" />
 
 We know that traveling to unknown places can be difficult and sometimes intimidating for visitors. Knowing where to eat can make all the difference. Our hope is to help you navigate your stay in Songpan by providing these dining suggestions. As managers of Adventure Access, we’ve lived (seasonally) and worked in Songpan over the past few years so we’ve tried everything.
 <h2></h2>
@@ -109,5 +109,3 @@ Directions: Go out the East Gate of the old city and cross the river. You should
 &nbsp;
 <h4><b>Amdo Coffee House Inn</b></h4>
 The food menu at this coffee house is not extensive- they serve only mediocre noodles and dumplings as well as ready-made tiramisu and desserts. HOWEVER, their coffee is the best in town. The boss is an official barista and has experience working at internationally recognized coffee shops. Try their Americano for the lowest priced coffee in town, or their creamy cappuccino. This is our go-to for a pick-me up at the end of a long day. Enjoy the unique atmosphere of this modern Tibetan-styled cafe’ while drinking your cup of joe.  This is the most authentic coffee shop in town.
-
-[su_custom_gallery source="media: 1089,1090,1091,1092,1093,1094,1095,1096,1097,1098,1099,1100,1101,1102,1103,1104,1105" link="lightbox" width="150" height="150"]

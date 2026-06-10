@@ -3,6 +3,10 @@ title: "Packing Tips for Mountain Biking in Eastern Tibet"
 date: 2019-07-29
 excerpt: "If you're planning on mountain biking in China or Eastern Tibet , we want to help you be prepared. We’ll start with a few Q&A’s that are helpful for…"
 featured_image: "/images/2019/07/Hero_Packing-Tips-for-Mountain-Biking-in-Eastern-Tibet-.jpg"
+gallery:
+  - "/images/2019/07/Packing-Tips-for-Mountain-Biking-in-Eastern-Tibet-3.jpg"
+  - "/images/2019/07/Packing-Tips-for-Mountain-Biking-in-Eastern-Tibet-2.jpg"
+  - "/images/2019/07/Packing-Tips-for-Mountain-Biking-in-Eastern-Tibet-1.jpg"
 ---
 
 If you're planning on mountain biking in China or <a href="https://www.lonelyplanet.com/china/tibet/travel-tips-and-articles/7-reasons-to-visit-eastern-tibet/40625c8c-8a11-5710-a052-1479d27762f8">Eastern Tibet</a>, we want to help you be prepared.
@@ -10,8 +14,6 @@ If you're planning on mountain biking in China or <a href="https://www.lonelypla
 We’ll start with a few Q&amp;A’s that are helpful for anyone coming to the region and finish off with a few additional answers for those of you who are coming on an Adventure Access <a href="https://adventure-access.com/tour/songpan-mountain-biking-ridge-route/">Mountain Biking experience</a>.
 
 &nbsp;
-
-<img class="alignnone" src="/images/2019/07/Packing-Tips-for-Mountain-Biking-in-Eastern-Tibet-3.jpg" alt="Mountain Biking in China and Eastern Tibet" width="1010" height="562" />
 
 &nbsp;
 
@@ -56,8 +58,6 @@ Cotton does not wick moisture away from the body so you stay damp and cold. Wool
 <strong>A:</strong> Please bring your own daypack! We recommend a 20-30 liter pack for carrying water and snacks and having a place to stash an extra layer or your rain jacket. Rain covers for your pack are strongly recommended!!!
 
 &nbsp;
-
-<img class="alignnone" src="/images/2019/07/Packing-Tips-for-Mountain-Biking-in-Eastern-Tibet-2.jpg" alt="Packing for Mountain Biking in Eastern Tibet" width="1010" height="562" />
 
 &nbsp;
 
@@ -126,5 +126,3 @@ If you’re curious about some of the equipment we use and some of our staff fav
 It may also be helpful to view our <a href="/images/2017/11/Seasonal-Temperature-Chart.pdf" target="_blank" rel="noopener"><span style="color: #ff6600;">seasonal temperature chart</span></a> for locations throughout the Amdo region of Eastern Tibet.
 
 &nbsp;
-
-<img class="alignnone" src="/images/2019/07/Packing-Tips-for-Mountain-Biking-in-Eastern-Tibet-1.jpg" alt="" width="1010" height="562" />

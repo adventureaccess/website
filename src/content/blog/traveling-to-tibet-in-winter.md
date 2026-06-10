@@ -3,9 +3,15 @@ title: "Traveling to Tibet in Winter"
 date: 2020-01-04
 excerpt: "When planning a trip to the roof of the world, many people start by asking, “When is the best time of year to travel?” To best answer this question, we…"
 featured_image: "/images/2020/01/Featured-images.jpg"
+gallery:
+  - "/images/2020/01/Labrang-Monlam-Photo.jpg"
+  - "/images/2020/01/Winter-Pass-Prayer-Flags.jpg"
+  - "/images/2020/01/Xuebaoding-with-Flag.jpg"
+  - "/images/2020/01/Jiuzhai-Winter-Photo.jpg"
+  - "/images/2020/01/Cham-Dance-Photo.jpg"
+  - "/images/2020/01/Tea-Time.jpg"
+  - "/images/2020/01/Packing-Photo1.jpg"
 ---
-
-<img class="aligncenter" src="/images/2020/01/Labrang-Monlam-Photo.jpg" alt="" width="1000" height="557" />
 
 &nbsp;
 
@@ -15,15 +21,11 @@ featured_image: "/images/2020/01/Featured-images.jpg"
 <h3 style="text-align: center;"><b> But…What about winter? </b></h3>
 &nbsp;
 
-<img class="aligncenter" src="/images/2020/01/Winter-Pass-Prayer-Flags.jpg" alt="" width="1000" height="557" />
-
 &nbsp;
 
 Traveling on the Tibetan Plateau in winter is not as formidable as you may think. In fact, there are certain advantages to traveling in the region during the colder months of the year. Here are a few of those reasons:
 
 &nbsp;
-
-<img class="aligncenter" src="/images/2020/01/Xuebaoding-with-Flag.jpg" alt="" width="1000" height="557" />
 
 &nbsp;
 
@@ -33,8 +35,6 @@ Traveling on the Tibetan Plateau in winter is not as formidable as you may think
 
 &nbsp;
 
-<img class="aligncenter" src="/images/2020/01/Jiuzhai-Winter-Photo.jpg" alt="" width="1000" height="557" />
-
 &nbsp;
 
 <b>National Parks Without Crowds</b>
@@ -43,15 +43,11 @@ Traveling on the Tibetan Plateau in winter is not as formidable as you may think
 
 &nbsp;
 
-<img class="aligncenter" src="/images/2020/01/Cham-Dance-Photo.jpg" alt="" width="1000" height="557" />
-
 &nbsp;
 
 <b>Festivities and Warm Hospitality </b>
 
 <span style="font-weight: 400;">Many Tibetan celebrations take place in the colder Winter and Spring months. A couple of the most notable celebrations are Losar (New Year) and the Monlam Prayer Festival.</span>
-
-<img class="aligncenter" src="/images/2020/01/Tea-Time.jpg" alt="" width="1000" height="557" />
 
 &nbsp;
 
@@ -72,8 +68,6 @@ Traveling on the Tibetan Plateau in winter is not as formidable as you may think
 <span style="font-weight: 400;">Cotton is great to keep you cool while sitting beside the Nile in Egypt, but it is not what you need on the Tibetan Plateau. You want materials that will wick moisture away from your body in order to keep you dry and also to trap body heat to keep you warm. Wools and synthetics are best for this.</span>
 
 &nbsp;
-
-<img class="aligncenter" src="/images/2020/01/Packing-Photo1.jpg" alt="" width="1000" height="557" />
 
 &nbsp;
 

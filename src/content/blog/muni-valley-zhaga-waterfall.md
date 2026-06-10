@@ -4,6 +4,12 @@ date: 2017-11-21
 excerpt: "Muni Valley 牟尼沟 China’s National Parks or scenic areas are often known for their large crowds. Even when the scenery may be worth battling the lines, it…"
 featured_image: "/images/2017/11/Family-Wilderness-Weekends-11.jpg"
 destination: yunnan
+gallery:
+  - "/images/2017/11/Family-Wilderness-Weekends-11-1.jpg"
+  - "/images/2017/11/Family-Wilderness-Weekends-24.jpg"
+  - "/images/2017/11/Family-Wilderness-Weekends-32-1024x576.jpg"
+  - "/images/2017/11/Family-Wilderness-Weekends-38.jpg"
+  - "/images/2017/11/P4070109.jpg"
 ---
 
 <strong>Muni Valley 牟尼沟</strong>
@@ -19,13 +25,3 @@ Further down the main valley is Zhaga Waterfall, near Sanliancun Village. This i
 Inside the paid area to Zhaga Waterfall is a Tibetan Monastery which belongs to the Yellow Hat Sect of Tibetan Buddhism. The scenic grounds of this monastery can be taken in with a short 20-30 minute visit.
 
 Contact us online or visit our Songpan Branch during the Summer season to arrange a trip to visit Muni Valley.
-
-<img class="alignnone" src="/images/2017/11/Family-Wilderness-Weekends-11-1.jpg" alt="" width="1024" height="576" />
-
-<img class="alignnone" src="/images/2017/11/Family-Wilderness-Weekends-24.jpg" alt="" width="1024" height="576" />
-
-<img class="alignnone" src="/images/2017/11/Family-Wilderness-Weekends-32-1024x576.jpg" alt="" width="1024" height="576" />
-
-<img class="alignnone" src="/images/2017/11/Family-Wilderness-Weekends-38.jpg" alt="" width="1024" height="576" />
-
-<img class="alignnone" src="/images/2017/11/P4070109.jpg" alt="" width="1024" height="576" />

@@ -3,6 +3,10 @@ title: "Adventure Access Climate Action Partnership with Tomorrow’s Air"
 date: 2024-12-12
 excerpt: "Inspired by nature and in recognition of travel’s opportunity to help when it comes to our climate, Adventure Access is joining Tomorrow’s Air ,…"
 featured_image: "/images/2024/12/tomorrows-blog-header-1600px.jpg"
+gallery:
+  - "/images/2024/12/adventure-access-client-action.jpg"
+  - "/images/2024/12/soil01.jpg"
+  - "/images/2024/12/minerals-soil.jpg"
 ---
 
 Inspired by nature and in recognition of travel’s opportunity to help when it comes to our climate, Adventure Access is joining <a href="https://www.tomorrowsair.com/" target="_blank" rel="noopener">Tomorrow’s Air</a>, supporting climate action education and accelerating the development of carbon removal with permanent storage.
@@ -17,19 +21,15 @@ Traveler and travel company  contributions support climate conscious travel edu
 <h3><em>About Direct Air Capture </em></h3>
 With direct air capture, carbon collectors capture carbon dioxide from ambient air. Air is drawn into the collector with a fan, and adheres to a filter within the collector. Once the filter is saturated, the collector is closed, and the temperature is increased, releasing pure carbon dioxide. The carbon dioxide is dissolved in water, just as a soda machine makes sparkling water.
 
-<img class="alignnone" src="/images/2024/12/adventure-access-client-action.jpg" alt="" width="624" height="375" />
-
 <em>Graphic courtesy Climeworks</em>
 
 This water mixed with carbon dioxide is then injected deep underground into basaltic rock in Iceland. The basaltic rocks release metals that mix with the carbon dioxide in the water and turn this carbon dioxide into stone. The process safely and permanently removes the carbon dioxide from the atmosphere since rocks cannot leak out of the ground. The entire process is powered by geothermal energy.
 <h3><em>About Pacific Biochar</em></h3>
 Pacific Biochar captures and stores carbon dioxide by stabilizing natural processes of decay in organic matter and keeping it safely in the ground. The biochar created is used in soil applications. Biochar can help enhance the overall health of soil by helping hold plant nutrients in topsoil. It also supports increases in crop yield, and can also help conserve water used for crops by improving the water retention of the soil.
 
-<img class="alignnone" src="/images/2024/12/soil01.jpg" alt="" width="624" height="416" />
 <h3><em>About Eion Enhanced Weathering </em></h3>
 Eion’s novel process speeds up the natural process of chemical weathering that causes the breakdown of rocks and minerals, storing carbon dioxide along the way. Eion applies crushed silicate rock - olivine - to soil. Through existing moisture and acidity in the soil, the crushed rock dissolves, resulting in carbon dioxide being pulled from the atmosphere into the solution. The bicarbonate ions that are formed as part of the process over time make their way to the ocean. Once they reach the ocean, they improve ocean alkalinity and remain at the bottom of the ocean for 500,000 years.
 
-<img class="alignnone" src="/images/2024/12/minerals-soil.jpg" alt="" width="624" height="483" />
 <h3><strong>Adventure Access Travelers Are A Valuable Part of the Solution</strong></h3>
 As a global community, travel holds immense potential to support our society’s transition to sustainability. Millions of travelers along with countless travel companies around the world form a potentially powerful collective to embrace climate-conscious travel and support innovative carbon removal solutions that will be needed alongside our forests, oceans, and soils to absorb and store carbon dioxide.
 

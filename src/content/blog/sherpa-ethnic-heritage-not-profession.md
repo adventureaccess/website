@@ -4,14 +4,16 @@ date: 2021-04-13
 excerpt: "The Sherpa are one of many ethnic Tibetan groups found throughout the Himalayas. Many Sherpas live in Nepal but they can also be found in China and India.…"
 featured_image: "/images/2021/04/trekkers-adventure-access.jpg"
 destination: nepal
+gallery:
+  - "/images/2021/04/girl-lamb-adventure-access-300x200.jpg"
+  - "/images/2021/04/grassland-adventure-access-300x200.jpg"
+  - "/images/2021/04/himalayan-mountains-sherpa-300x225.jpg"
 ---
 
 <span style="font-weight: 400;">The Sherpa are one of many ethnic Tibetan groups found throughout the Himalayas. Many Sherpas live in Nepal but they can also be found in China and India. </span>
 <blockquote><span style="font-weight: 400;">The Tibetan meaning of Sherpa can be derived from the two words that make up their name. </span><i><span style="font-weight: 400;">Shar </span></i><span style="font-weight: 400;">ཤར </span><span style="font-weight: 400;">which means  “east” and </span><i><span style="font-weight: 400;">ba </span></i><span style="font-weight: 400;">པ </span><span style="font-weight: 400;">which means “people.”  </span></blockquote>
 <h2>Who Are The Sherpa?</h2>
 <span style="font-weight: 400;">Some Sherpa have made their livings as guides in the Himalayas, making the term synonymous for many who use the term to refer to these talented mountaineering guides.  But not all Sherpa are mountaineering guides. So who are the Sherpa people? To understand  this, let’s talk about language and geography. </span>
-
-<img class="aligncenter" src="/images/2021/04/girl-lamb-adventure-access-300x200.jpg" alt="sherpa girl lamb" width="300" height="200" />
 
 <span style="font-weight: 400;">The Sherpa have their own language, also known as </span><i><span style="font-weight: 400;">Sherpa</span></i><span style="font-weight: 400;">. In fact, this is the case for most of the distinct Tibetan groups throughout the Tibetan Plateau and greater Himalaya region. The three largest groups are:</span>
 <ul>
@@ -23,11 +25,8 @@ destination: nepal
 <h2>Geography and The Sherpa</h2>
 <span style="font-weight: 400;">The geography of the region is among the biggest contributing factors to language differences among Tibetan groups. The mountains are tall and the valleys are deep. Even with modern technology, it is difficult to traverse the roof of the world. This means communities often live in isolation which allowed for languages to become more localized and distinct and remain that way today.  </span>
 
-<img class="aligncenter" src="/images/2021/04/grassland-adventure-access-300x200.jpg" alt="grasslands mountains" width="300" height="200" />
 <h2>Languages Across the Region</h2>
 <span style="font-weight: 400;">The most broadly spoken languages across the Tibetan Plateau are among nomads. The nomad dialect among the Amdo is one of the most broadly spoken of all the Tibetan languages. It is similar for the Kham nomads. In fact, Kham nomads and Amdo nomads can communicate with one another on basic topics. This is not true for many Tibetans. Their languages are mutually unintelligible to one another.  </span>
-
-<img class="aligncenter" src="/images/2021/04/himalayan-mountains-sherpa-300x225.jpg" alt="himalyan mountains" width="300" height="225" />
 
 <span style="font-weight: 400;">As one moves beyond the grassland regions that cover large stretches of the Tibetan Plateau  and enter into the rugged mountain regions that line the eastern, southern, and western borders of the plateau, the Tibetan languages become more distinct. Ethnic groups identified by their language are more numerous in border areas between China, Nepal, India, and Bhutan. The Sherpa people, for example, number approximately 150,000 worldwide.</span>
 <h2>It's Not About What You Do</h2>

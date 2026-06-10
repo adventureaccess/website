@@ -4,13 +4,17 @@ date: 2020-09-16
 excerpt: "Lijiang, a city at the foot of the Jade Dragon Snow Mountain, is famous for its nature, culture and history. It is also the location of our newest,…"
 featured_image: "/images/2020/09/IMG_4363.jpg"
 destination: yunnan
+gallery:
+  - "/images/2020/09/Copy-of-IMG_4374.jpg"
+  - "/images/2020/09/Copy-of-IMG_4366.jpg"
+  - "/images/2020/09/Copy-of-IMG_4369.jpg"
+  - "/images/2020/09/Copy-of-IMG_4373.jpg"
+  - "/images/2020/09/Copy-of-IMG_4381.jpg"
 ---
 
 <span style="font-weight: 400;">Lijiang, a city at the foot of the Jade Dragon Snow Mountain, is famous for its nature, culture and history. It is also the location of our newest, carefully crafted series of tours. We’ve partnered with a local Tibetan and his Dutch wife, Pincu and Henriette, to provide the same quality tours we’ve spent years developing in Sichuan and Gansu. We are thrilled to add Yunnan to our lineup.</span>
 
 &nbsp;
-
-<img class="alignnone" src="/images/2020/09/Copy-of-IMG_4374.jpg" alt="" width="1000" height="557" />
 
 &nbsp;
 
@@ -22,25 +26,17 @@ destination: yunnan
 
 &nbsp;
 
-<img class="alignnone" src="/images/2020/09/Copy-of-IMG_4366.jpg" alt="" width="1000" height="557" />
-
 <span style="font-weight: 400;">Lijiang Valley - Baisha &amp; Shuhe Old Towns + Yuhu Village</span>
 
 &nbsp;
-
-<img class="alignnone" src="/images/2020/09/Copy-of-IMG_4369.jpg" alt="" width="1000" height="557" />
 
 <span style="font-weight: 400;">Tiger Leaping Gorge</span>
 
 &nbsp;
 
-<img class="alignnone" src="/images/2020/09/Copy-of-IMG_4373.jpg" alt="" width="1000" height="557" />
-
 <span style="font-weight: 400;">Jade Dragon Snow Mountain</span>
 
 &nbsp;
-
-<img class="alignnone" src="/images/2020/09/Copy-of-IMG_4381.jpg" alt="" width="1000" height="557" />
 
 <span style="font-weight: 400;">Lashi Lake &amp; the Tea Horse Caravan Trail</span>
 

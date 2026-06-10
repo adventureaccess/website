@@ -3,9 +3,14 @@ title: "Packing for a Winter Trip to the Himalayas or the Tibetan Plateau"
 date: 2020-01-06
 excerpt: "For starters, it is a good idea to check out our post about traveling to Tibet in Winter . This will give you a basic idea of what to expect and how to…"
 featured_image: "/images/2020/01/Feature.jpg"
+gallery:
+  - "/images/2020/01/Packing-Photo.jpg"
+  - "/images/2020/01/Yeti-Photo-Shoot-2.jpg"
+  - "/images/2020/01/Yeti-in-Thermals-Photo.jpg"
+  - "/images/2020/01/Yeti-in-Pants-and-Fleece-Photo.jpg"
+  - "/images/2020/01/Yeti-in-Hat-Photo.jpg"
+  - "/images/2020/01/Fully-Equipped-Yeti-Photo.jpg"
 ---
-
-<img class="aligncenter" src="/images/2020/01/Packing-Photo.jpg" alt="" width="1000" height="557" />
 
 &nbsp;
 
@@ -13,15 +18,11 @@ For starters, it is a good idea to check out our post about traveling to <span s
 
 When the time comes to buy the right clothing or pack what you already own, we’ve reached out to one of our mountain experts to help us show you what we are talking about.
 
-<img class="aligncenter" src="/images/2020/01/Yeti-Photo-Shoot-2.jpg" alt="" width="1609" height="2145" />
-
 &nbsp;
 
 We are going to start with some good base layers. Remember the ABC rule...Anything But Cotton! This base layer is your first line of defense against the cold.
 
 &nbsp;
-
-<img class="aligncenter" src="/images/2020/01/Yeti-in-Thermals-Photo.jpg" alt="" width="2519" height="3359" />
 
 &nbsp;
 
@@ -29,23 +30,17 @@ Now that we’ve got a good foundation, we are going to move on to some good hik
 
 &nbsp;
 
-<img class="aligncenter" src="/images/2020/01/Yeti-in-Pants-and-Fleece-Photo.jpg" alt="" width="2748" height="3664" />
-
 &nbsp;
 
 Now, lets make sure we keep your hands and head warm. Appropriate gloves and a hat are essential. And don’t forget some good sun glasses to block extra UV at high altitude or if the conditions are snowy.
 
 &nbsp;
 
-<img class="aligncenter" src="/images/2020/01/Yeti-in-Hat-Photo.jpg" alt="" width="2322" height="3096" />
-
 &nbsp;
 
 Finally, you need a good outer shell to protect you from the elements.
 
 &nbsp;
-
-<img class="aligncenter" src="/images/2020/01/Fully-Equipped-Yeti-Photo.jpg" alt="" width="3024" height="4032" />
 
 Here is a complete list of our recommendations for winter travel to the region:
 
