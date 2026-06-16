@@ -4,3 +4,35 @@
 
 [build.environment]
   NODE_VERSION = "18"
+
+# Redirects for old WordPress URLs
+[[redirects]]
+  from = "/unesco-world-heritage-sites/"
+  to = "/blog/unesco-world-heritage-sites/"
+  status = 301
+
+[[redirects]]
+  from = "/destination/songpan/"
+  to = "/destinations/"
+  status = 301
+
+[[redirects]]
+  from = "/destination/xiahe-and-labrang-monastery/"
+  to = "/destinations/"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2024/04/Boudhanath-Hero-Image-1920.jpg"
+  to = "/blog/boudhanath-stupa-kathmandu/"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2024/04/Boudhanath-2-resized.jpg"
+  to = "/blog/boudhanath-stupa-kathmandu/"
+  status = 301
+
+# Favicon fallback
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/favicon.png"
+  status = 301
