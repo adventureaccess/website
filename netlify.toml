@@ -31,6 +31,16 @@
   to = "/blog/boudhanath-stupa-kathmandu/"
   status = 301
 
+[[redirects]]
+  from = "/destination/jiuzhaigou/"
+  to = "/destinations/"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2020/05/Hero-image.jpg"
+  to = "/"
+  status = 301
+
 # Favicon fallback
 [[redirects]]
   from = "/favicon.ico"

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOCKUP — Ladakh &amp; Zanskar, Alternative Direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --coal:#101418;--coal-2:#161b20;--bone:#ece5d8;
+  --bone-60:rgba(236,229,216,.62);--bone-35:rgba(236,229,216,.35);
+  --line:rgba(236,229,216,.14);--orange:#ff5a1f;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--coal);color:var(--bone);font-family:'Archivo',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.serif{font-family:'Instrument Serif',serif;font-weight:400}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.wrap{max-width:1440px;margin:0 auto;padding:0 6vw}
+.mock-banner{position:fixed;bottom:0;left:0;right:0;z-index:99;background:var(--orange);color:#16100c;font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:.45rem}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 6vw;background:linear-gradient(to bottom,rgba(16,20,24,.85),transparent)}
+.wordmark{font-weight:800;letter-spacing:.22em;font-size:.82rem;text-transform:uppercase}
+.wordmark span{color:var(--orange)}
+.nav-links{display:flex;gap:2.2rem;align-items:center}
+.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-60);transition:color .2s}
+.nav-links a:hover{color:var(--bone)}
+.btn{display:inline-block;background:var(--orange);color:#16100c;font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:.85rem 1.6rem;border-radius:2px;transition:transform .2s,background .2s}
+.btn:hover{background:#ff6e3a;transform:translateY(-1px)}
+.btn-ghost{display:inline-block;border:1px solid var(--bone-35);color:var(--bone);font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:.85rem 1.6rem;border-radius:2px;transition:border-color .2s}
+.btn-ghost:hover{border-color:var(--bone)}
+@media(max-width:820px){.nav-links a:not(.btn){display:none}}
+
+/* hero */
+.hero{position:relative;min-height:92vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(16,20,24,.95) 0%,rgba(16,20,24,.3) 50%,rgba(16,20,24,.3) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 6vw}
+.crumb{color:var(--bone-60);margin-bottom:1.4rem}
+.crumb b{color:var(--orange);font-weight:500}
+.hero h1{font-weight:800;text-transform:uppercase;font-size:clamp(3rem,8.5vw,7.5rem);line-height:.92;letter-spacing:-.02em}
+.hero .sub{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(1.4rem,2.6vw,2.4rem);color:var(--orange);margin-top:.8rem}
+.data-strip{position:relative;z-index:2;margin-top:3rem;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--bone-60)}
+.data-strip div{padding:1.1rem 6vw 1.3rem;border-right:1px solid var(--line)}
+.data-strip div:last-child{border-right:none}
+.data-strip b{display:block;color:var(--bone);font-weight:500;margin-top:.2rem}
+@media(max-width:820px){.data-strip{grid-template-columns:repeat(2,1fr)}.data-strip div:nth-child(2){border-right:none}}
+
+/* sub-nav */
+.subnav{position:sticky;top:0;z-index:40;background:rgba(16,20,24,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;gap:2.4rem;padding:1rem 6vw;overflow-x:auto}
+.subnav a{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-60);white-space:nowrap}
+.subnav a:hover{color:var(--orange)}
+
+/* lede */
+.lede{padding:8rem 0}
+.lede p{font-family:'Instrument Serif',serif;font-size:clamp(1.7rem,3vw,2.8rem);line-height:1.3;max-width:56rem}
+.lede p em{color:var(--orange)}
+
+/* dossier */
+.dossier{border-top:1px solid var(--line)}
+.block{display:grid;grid-template-columns:1fr 1fr;min-height:78vh;border-bottom:1px solid var(--line)}
+.block .img{position:relative;overflow:hidden}
+.block .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.block .txt{padding:6rem 5vw;display:flex;flex-direction:column;justify-content:center}
+.block .n{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--orange);margin-bottom:1.4rem}
+.block h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(1.9rem,3vw,2.9rem);line-height:1.15;margin-bottom:1.4rem}
+.block p{color:var(--bone-60);max-width:32rem;margin-bottom:1rem}
+.block:nth-child(even) .img{order:2}
+@media(max-width:900px){.block{grid-template-columns:1fr}.block .img{aspect-ratio:4/3;position:relative;order:0!important}}
+
+/* season */
+.season{padding:7rem 0;border-bottom:1px solid var(--line)}
+.season h2{font-weight:800;text-transform:uppercase;font-size:clamp(2rem,4vw,3.6rem);letter-spacing:-.01em;margin-bottom:.8rem}
+.season .hint{color:var(--bone-60);max-width:34rem;margin-bottom:3rem}
+.months{display:grid;grid-template-columns:repeat(12,1fr);gap:6px;align-items:end;height:160px}
+.months div{position:relative;background:var(--coal-2);border:1px solid var(--line);height:35%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:.5rem}
+.months div span{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.1em;color:var(--bone-35)}
+.months div.hot{background:var(--orange);border-color:var(--orange);height:100%}
+.months div.hot span{color:#16100c;font-weight:500}
+.months div.mid{background:rgba(255,90,31,.35);border-color:rgba(255,90,31,.4);height:65%}
+.season .legend{margin-top:1.4rem;font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--bone-60)}
+.season .legend i{display:inline-block;width:.7rem;height:.7rem;background:var(--orange);margin-right:.5rem;vertical-align:middle;font-style:normal}
+
+/* gallery */
+.gallery{padding:7rem 0 5rem;border-bottom:1px solid var(--line)}
+.gallery h2{font-weight:800;text-transform:uppercase;font-size:clamp(2rem,4vw,3.6rem);letter-spacing:-.01em;margin-bottom:3rem}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.grid a{overflow:hidden;position:relative;aspect-ratio:4/3;display:block}
+.grid a img{width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.grid a:hover img{transform:scale(1.05)}
+.grid a:nth-child(1){grid-column:span 2;aspect-ratio:16/9}
+@media(max-width:820px){.grid{grid-template-columns:1fr 1fr}.grid a:nth-child(1){grid-column:span 2}}
+
+/* cta */
+.cta{padding:9rem 6vw;text-align:left;position:relative;overflow:hidden}
+.cta img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cta .scrim{position:absolute;inset:0;background:linear-gradient(to right,rgba(16,20,24,.92),rgba(16,20,24,.55))}
+.cta .inner{position:relative;z-index:2;max-width:1440px;margin:0 auto}
+.cta h2{font-weight:800;text-transform:uppercase;font-size:clamp(2.4rem,6vw,5.5rem);letter-spacing:-.02em;line-height:.95;margin-bottom:2rem}
+.cta h2 .it{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;text-transform:none;color:var(--orange)}
+
+footer{padding:4rem 6vw 6rem}
+footer .big{font-weight:800;text-transform:uppercase;letter-spacing:-.02em;font-size:clamp(2.4rem,8vw,7rem);line-height:1;color:rgba(236,229,216,.12)}
+footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem;margin-top:3rem;font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--bone-60)}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<div class="mock-banner">Design mockup — not the live site · alternative direction by Claude</div>
+
+<nav>
+  <a href="alt-design-home.html" class="wordmark">Adventure<span>—</span>Access</a>
+  <div class="nav-links">
+    <a href="alt-design-home.html#dest">Destinations</a>
+    <a href="alt-design-home.html#journal">Field Notes</a>
+    <a href="alt-design-home.html#people">Who We Are</a>
+    <a href="#plan" class="btn">Plan a Journey</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <img class="bg" src="images/2024/05/Ladakh-hero-image.jpg" alt="Prayer flags above a Ladakh valley">
+  <div class="scrim"></div>
+  <div class="hero-content">
+    <p class="crumb mono"><a href="alt-design-home.html">Destinations</a> / <b>01 — India</b></p>
+    <h1>Ladakh &amp;<br>Zanskar</h1>
+    <p class="sub serif">The Hidden Himalayas</p>
+  </div>
+  <div class="data-strip">
+    <div>Position<b>34.15°N / 77.57°E</b></div>
+    <div>Elevation<b>3,500 – 5,300 m</b></div>
+    <div>Season<b>Mid-May – Mid-Oct</b></div>
+    <div>Get there<b>Fly Delhi → Leh, year-round</b></div>
+  </div>
+</header>
+
+<!-- STICKY SUBNAV -->
+<div class="subnav">
+  <a href="#overview">Overview</a>
+  <a href="#terrain">01 — Terrain &amp; culture</a>
+  <a href="#custom">02 — Your way</a>
+  <a href="#people">03 — The people</a>
+  <a href="#season">When to go</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#plan" style="color:var(--orange)">Plan this trip →</a>
+</div>
+
+<!-- LEDE -->
+<section class="lede wrap rv" id="overview">
+  <p class="serif">High in the Indian Himalaya, beyond India's green plains, lies the hidden region of Ladakh — a living crossroads of Himalayan culture, <em>rugged and remote to a degree few travelers ever experience.</em></p>
+</section>
+
+<!-- DOSSIER -->
+<section class="dossier">
+  <div class="block" id="terrain">
+    <div class="img rv"><img src="images/2024/03/ladakh01.jpg" alt="Ladakh landscape"></div>
+    <div class="txt rv">
+      <span class="n">01 — Terrain &amp; culture</span>
+      <h2 class="serif">Adventure and culture, perfectly blended.</h2>
+      <p>Years of relationships across Ladakh and Zanskar let us design journeys that balance discovery with respect — hidden-valley treks, freeride MTB descents from high passes, warm and authentic homestays.</p>
+      <p>Our routes follow trails once used by traders and villagers. Every itinerary blends active exploration with relational depth: family visits, traditional meals, village festivals.</p>
+    </div>
+  </div>
+  <div class="block" id="custom">
+    <div class="img rv"><img src="images/2025/11/MTB-Exploration-Photo-3-scaled.jpeg" alt="Mountain biking in Zanskar"></div>
+    <div class="txt rv">
+      <span class="n">02 — Your journey, your way</span>
+      <h2 class="serif">No two travelers are alike. No two itineraries either.</h2>
+      <p>Combine a high-altitude trek with gentle monastery days, or link an overland Jeep route with mountain biking in Zanskar. Tell us what speaks to you — challenge, immersion, or solitude — and we shape the journey around your group.</p>
+    </div>
+  </div>
+  <div class="block" id="people">
+    <div class="img rv"><img src="images/2024/03/ladakh05.jpg" alt="Local life in Ladakh"></div>
+    <div class="txt rv">
+      <span class="n">03 — Meaningful relationships</span>
+      <h2 class="serif">Leave changed, not just photographed.</h2>
+      <p>Our guides and partners are locals and regional experts who make sure every journey benefits the communities you visit and the fragile ecosystems you explore. You'll leave Ladakh not just with memories — changed for the better.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEASON -->
+<section class="season wrap" id="season">
+  <div class="rv">
+    <h2>When to go</h2>
+    <p class="hint">Passes open and trails clear from mid-May through mid-October. Summer brings clear skies, warm days, and access to Zanskar's remote valleys.</p>
+  </div>
+  <div class="months rv">
+    <div><span>J</span></div>
+    <div><span>F</span></div>
+    <div><span>M</span></div>
+    <div><span>A</span></div>
+    <div class="mid"><span>M</span></div>
+    <div class="hot"><span>J</span></div>
+    <div class="hot"><span>J</span></div>
+    <div class="hot"><span>A</span></div>
+    <div class="hot"><span>S</span></div>
+    <div class="mid"><span>O</span></div>
+    <div><span>N</span></div>
+    <div><span>D</span></div>
+  </div>
+  <p class="legend rv"><i></i>Prime window &nbsp;&nbsp;·&nbsp;&nbsp; Flights Delhi → Leh operate year-round</p>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery wrap" id="gallery">
+  <h2 class="rv">From the field</h2>
+  <div class="grid rv">
+    <a href="#"><img src="images/2024/03/ladakh07.jpg" alt="Ladakh" loading="lazy"></a>
+    <a href="#"><img src="images/2024/03/ladakh03.jpg" alt="Ladakh" loading="lazy"></a>
+    <a href="#"><img src="images/2024/03/ladakh04.jpg" alt="Ladakh" loading="lazy"></a>
+    <a href="#"><img src="images/2024/03/ladakh06.jpg" alt="Ladakh" loading="lazy"></a>
+    <a href="#"><img src="images/2024/05/IMG_2802-1920x900.jpg" alt="Ladakh" loading="lazy"></a>
+    <a href="#"><img src="images/2024/05/IMG_4944-1-1920x900.jpg" alt="Ladakh" loading="lazy"></a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="plan">
+  <img class="bg" src="images/2021/04/trekkers-adventure-access.jpg" alt="" aria-hidden="true">
+  <div class="scrim"></div>
+  <div class="inner rv">
+    <p class="mono" style="color:var(--orange);margin-bottom:1.6rem">— Plan this trip</p>
+    <h2>Ladakh is waiting.<br><span class="it">Five questions and you're in.</span></h2>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="#" class="btn">Plan a journey →</a>
+      <a href="alt-design-home.html#dest" class="btn-ghost">Other destinations</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="big">Adventure Access</div>
+  <div class="row">
+    <span>Himalaya · Tibetan Plateau</span>
+    <span>info@adventure-access.com</span>
+    <span>© 2026 — Mockup, alternative direction</span>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
