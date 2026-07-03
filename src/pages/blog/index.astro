@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('blog');
@@ -56,6 +57,13 @@ const heroFallback = '/images/2024/05/IMG_5619-1920x900.jpg';
           </a>
         ))}
       </div>
+    </div>
+  </section>
+
+  {/* Monthly Dispatch signup */}
+  <section class="py-16 md:py-24 border-t border-ink/15 bg-paper">
+    <div class="max-w-2xl mx-auto px-6 md:px-14">
+      <NewsletterSignup />
     </div>
   </section>
 </Base>

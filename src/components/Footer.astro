@@ -1,4 +1,6 @@
 ---
+import NewsletterSignup from './NewsletterSignup.astro';
+
 const year = new Date().getFullYear();
 
 // Rating pulled from Netlify environment variables.
@@ -34,6 +36,11 @@ const hasHalf = trustScore - fullStars >= 0.25;
         </p>
         <a href="/plan" class="btn !bg-saffron hover:!bg-saffron-dark w-fit">Start Planning →</a>
       </div>
+    </div>
+
+    <!-- Monthly Dispatch newsletter signup (HubSpot Forms API) -->
+    <div class="border-t border-cream/15 pt-10 mb-10 max-w-xl">
+      <NewsletterSignup dark />
     </div>
 
     <!-- Trustpilot trust badge — score fetched at build time -->

@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -121,6 +122,13 @@ const destCta = entry.data.destination ? destinationMeta[entry.data.destination]
       </div>
     </section>
   )}
+
+  {/* Monthly Dispatch signup */}
+  <section class="border-t border-ink/10 py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-6 md:px-14">
+      <NewsletterSignup />
+    </div>
+  </section>
 
   {/* Destination CTA — only rendered when post has a destination field */}
   {destCta && (

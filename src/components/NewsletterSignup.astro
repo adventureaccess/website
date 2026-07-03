@@ -1,0 +1,138 @@
+---
+/**
+ * Monthly Dispatch email signup.
+ * Submits directly to HubSpot's Forms API (form "Website — Monthly Dispatch
+ * Signup", account 244183775) — no HubSpot embed, keeps site styling.
+ * Spam protection: honeypot field + HubSpot double opt-in (enable in
+ * HubSpot Settings → Marketing → Email → Subscriptions).
+ *
+ * Props:
+ *  - dark: render on dark (ink) backgrounds, e.g. the footer.
+ */
+interface Props {
+  dark?: boolean;
+}
+const { dark = false } = Astro.props;
+
+// Unique id per instance — the footer and an in-page block can coexist.
+const uid = `dispatch-email-${Math.random().toString(36).slice(2, 8)}`;
+
+const inputClasses = dark
+  ? 'w-full bg-transparent border-b border-cream/30 py-2 text-cream placeholder:text-cream/40 focus:outline-none focus:border-saffron transition-colors'
+  : 'w-full bg-transparent border-b border-ink/30 py-2 text-ink placeholder:text-ink/40 focus:outline-none focus:border-saffron-dark transition-colors';
+---
+<div class="js-dispatch-signup" data-dark={dark ? 'true' : 'false'}>
+  <div class={`eyebrow mb-3 ${dark ? '!text-saffron' : ''}`}>— The Monthly Dispatch</div>
+  <p class={`font-display text-2xl md:text-3xl leading-snug mb-3 ${dark ? 'text-cream' : 'text-ink'}`}>
+    Field notes from the plateau, once a month.
+  </p>
+  <p class={`text-sm leading-relaxed mb-6 ${dark ? 'text-cream/70' : 'text-ink-soft'}`}>
+    Trail reports, permit and access updates, and one story from the field. No noise — unsubscribe anytime.
+  </p>
+
+  <form class="js-dispatch-form flex flex-col sm:flex-row gap-4 sm:items-end" novalidate>
+    <!-- Honeypot: humans never see this; bots fill it and get ignored. -->
+    <div class="absolute -left-[9999px]" aria-hidden="true">
+      <label>Leave this field empty: <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+    </div>
+
+    <div class="flex-1">
+      <label class={`block eyebrow mb-2 ${dark ? '!text-cream/60' : '!text-ink/60'}`} for={uid}>Email</label>
+      <input
+        id={uid}
+        name="email"
+        type="email"
+        required
+        placeholder="you@example.com"
+        class={inputClasses}
+      />
+    </div>
+    <button type="submit" class={`btn w-fit ${dark ? '!bg-saffron hover:!bg-saffron-dark' : ''}`}>
+      Subscribe →
+    </button>
+  </form>
+
+  <p class="js-dispatch-msg hidden text-sm mt-4" role="status"></p>
+  <p class={`text-xs mt-4 ${dark ? 'text-cream/40' : 'text-ink/40'}`}>
+    We use your email only for the dispatch. See our
+    <a href="/privacy-cookie-policy/" class="underline hover:text-saffron-dark">privacy policy</a>.
+  </p>
+</div>
+
+<script>
+  const HS_PORTAL = '244183775';
+  const HS_FORM = '2d38d9d3-73f1-44ff-af61-01d120ad3bfb';
+  const ENDPOINTS = [
+    `https://api-na2.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${HS_FORM}`,
+    `https://api.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${HS_FORM}`,
+  ];
+
+  function hutk(): string | undefined {
+    const m = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/);
+    return m ? m[1] : undefined;
+  }
+
+  async function post(url: string, payload: string): Promise<Response> {
+    return fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: payload,
+    });
+  }
+
+  document.querySelectorAll<HTMLElement>('.js-dispatch-signup').forEach((root) => {
+    const form = root.querySelector<HTMLFormElement>('.js-dispatch-form');
+    const msg = root.querySelector<HTMLElement>('.js-dispatch-msg');
+    if (!form || !msg) return;
+    const dark = root.dataset.dark === 'true';
+
+    function show(text: string, ok: boolean) {
+      msg!.textContent = text;
+      msg!.classList.remove('hidden');
+      msg!.className = `js-dispatch-msg text-sm mt-4 ${ok ? 'text-saffron' + (dark ? '' : '-dark') : dark ? 'text-cream' : 'text-ink'}`;
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Honeypot: silently pretend success for bots.
+      const trap = form.querySelector<HTMLInputElement>('input[name="website"]');
+      const emailEl = form.querySelector<HTMLInputElement>('input[name="email"]');
+      if (!emailEl || !emailEl.value.trim() || !emailEl.checkValidity()) {
+        show('That email doesn’t look right — mind checking it?', false);
+        return;
+      }
+      if (trap && trap.value) {
+        show('Almost there — check your inbox to confirm.', true);
+        return;
+      }
+
+      const token = hutk();
+      const payload = JSON.stringify({
+        fields: [{ objectTypeId: '0-1', name: 'email', value: emailEl.value.trim() }],
+        context: {
+          ...(token ? { hutk: token } : {}),
+          pageUri: window.location.href,
+          pageName: document.title,
+        },
+      });
+
+      const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+      if (btn) btn.disabled = true;
+      try {
+        let res = await post(ENDPOINTS[0], payload).catch(() => null);
+        if (!res || !res.ok) res = await post(ENDPOINTS[1], payload);
+        if (res.ok) {
+          form.classList.add('hidden');
+          show('Almost there — check your inbox to confirm your subscription.', true);
+        } else {
+          show('Something went wrong on our end — please try again in a minute.', false);
+        }
+      } catch {
+        show('Something went wrong on our end — please try again in a minute.', false);
+      } finally {
+        if (btn) btn.disabled = false;
+      }
+    });
+  });
+</script>

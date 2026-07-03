@@ -317,12 +317,88 @@ import Base from '../layouts/Base.astro';
       if (validateStep(current)) show(Math.min(total - 1, current + 1));
     });
 
+    // --- HubSpot dual-submit -------------------------------------------------
+    // The form still submits to Netlify exactly as before (notifications,
+    // /thank-you/ redirect). This ALSO posts the submission to HubSpot's
+    // Forms API so a contact is created with full page/source attribution.
+    // Form: "Website — Journey Planner (API)" in HubSpot account 244183775.
+    const HS_PORTAL = '244183775';
+    const HS_FORM = '5a9818f2-1d4b-43a8-95de-7ce22d637198';
+    const HS_ENDPOINTS = [
+      `https://api-na2.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${HS_FORM}`,
+      `https://api.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${HS_FORM}`,
+    ];
+
+    function hubspotCookie() {
+      const m = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/);
+      return m ? m[1] : undefined;
+    }
+
+    function submitToHubSpot() {
+      const fullName = val('name');
+      const spaceIdx = fullName.indexOf(' ');
+      const firstname = spaceIdx > 0 ? fullName.slice(0, spaceIdx) : fullName;
+      const lastname = spaceIdx > 0 ? fullName.slice(spaceIdx + 1) : '';
+
+      const details = [
+        ['Group', [val('group-type'), val('group-size') && val('group-size') + ' people'].filter(Boolean).join(' · ')],
+        ['When', [val('travel-window'), val('trip-length'), val('date-flexibility')].filter(Boolean).join(' · ')],
+        ['Activities', val('activities')],
+        ['Regions', val('regions')],
+        ['Constraints', [val('constraints'), val('constraints-notes')].filter(Boolean).join(' · ')],
+        ['Comfort', val('comfort-level')],
+        ['Message', val('message')],
+      ]
+        .filter((r) => r[1])
+        .map((r) => `${r[0]}: ${r[1]}`)
+        .join('\n');
+
+      const fields = [
+        { objectTypeId: '0-1', name: 'email', value: val('email') },
+        { objectTypeId: '0-1', name: 'firstname', value: firstname },
+        { objectTypeId: '0-1', name: 'message', value: details },
+      ];
+      if (lastname) fields.push({ objectTypeId: '0-1', name: 'lastname', value: lastname });
+
+      const hutk = hubspotCookie();
+      const payload = JSON.stringify({
+        fields,
+        context: {
+          ...(hutk ? { hutk } : {}),
+          pageUri: window.location.href,
+          pageName: document.title,
+        },
+      });
+
+      // keepalive lets the request finish even as Netlify navigates away.
+      fetch(HS_ENDPOINTS[0], {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: payload,
+        keepalive: true,
+      }).catch(() => {
+        fetch(HS_ENDPOINTS[1], {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: payload,
+          keepalive: true,
+        }).catch(() => {});
+      });
+    }
+    // -------------------------------------------------------------------------
+
     form.addEventListener('submit', (e) => {
       const name = form.querySelector('#name');
       const email = form.querySelector('#email');
       if (!name.value.trim() || !email.value.trim() || !email.checkValidity()) {
         e.preventDefault();
         fail('We need a name and a working email to reply.');
+        return;
+      }
+      try {
+        submitToHubSpot();
+      } catch (_) {
+        /* never block the Netlify submission */
       }
     });
 
