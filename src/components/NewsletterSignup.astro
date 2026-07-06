@@ -130,6 +130,10 @@ const inputClasses = dark
           try {
             (window as any).gtag?.('event', 'dispatch_signup', { method: 'website' });
           } catch {}
+          // Reddit pixel conversion event.
+          try {
+            (window as any).rdt?.('track', 'SignUp');
+          } catch {}
         } else {
           show('Something went wrong on our end — please try again in a minute.', false);
         }

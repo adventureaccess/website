@@ -21,4 +21,9 @@ import Base from '../layouts/Base.astro';
       <a href="/" class="btn !bg-saffron hover:!bg-saffron-dark inline-block">Back to home</a>
     </div>
   </article>
+
+  {/* Conversion event: a journey-planner inquiry just completed. */}
+  <script is:inline>
+    try { window.rdt && rdt('track', 'Lead'); } catch (e) {}
+  </script>
 </Base>

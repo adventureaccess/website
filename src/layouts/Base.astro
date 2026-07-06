@@ -162,6 +162,14 @@ const allSchemas = [orgSchema, ...extraSchemas];
       gtag('js', new Date());
       gtag('config', 'G-447VPW2H83');
     </script>
+
+    <!-- Reddit pixel (a2_i0elr0ey0buk) — PageVisit sitewide for retargeting.
+         Lead fires on /thank-you/, SignUp on newsletter subscription. -->
+    <script is:inline>
+      !function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js";t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);
+      rdt('init','a2_i0elr0ey0buk');
+      rdt('track','PageVisit');
+    </script>
   </head>
   <body class="min-h-screen flex flex-col overflow-x-hidden">
     <Nav transparent={hideNavBg} />
