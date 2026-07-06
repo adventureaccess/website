@@ -41,6 +41,183 @@
   to = "/"
   status = 301
 
+# Blog post redirects — old WordPress root-level paths → new /blog/ prefix
+[[redirects]]
+  from = "/sherpa-ethnic-heritage-not-profession/"
+  to = "/blog/sherpa-ethnic-heritage-not-profession/"
+  status = 301
+
+[[redirects]]
+  from = "/a-hike-up-mt-xiao-xue-bao-ding/"
+  to = "/blog/a-hike-up-mt-xiao-xue-bao-ding/"
+  status = 301
+
+[[redirects]]
+  from = "/a-traditional-chinese-new-year-in-songpan-old-town/"
+  to = "/blog/a-traditional-chinese-new-year-in-songpan-old-town/"
+  status = 301
+
+[[redirects]]
+  from = "/adventure-access-climate-action-partnership-with-tomorrows-air/"
+  to = "/blog/adventure-access-climate-action-partnership-with-tomorrows-air/"
+  status = 301
+
+[[redirects]]
+  from = "/boudhanath-stupa-kathmandu/"
+  to = "/blog/boudhanath-stupa-kathmandu/"
+  status = 301
+
+[[redirects]]
+  from = "/can-we-afford-not-to-use-grayl/"
+  to = "/blog/can-we-afford-not-to-use-grayl/"
+  status = 301
+
+[[redirects]]
+  from = "/celebrate-chinese-tibetan-new-year-songpan-sichuan/"
+  to = "/blog/celebrate-chinese-tibetan-new-year-songpan-sichuan/"
+  status = 301
+
+[[redirects]]
+  from = "/dangers-plastic-essay-middle-school-conservation-contest/"
+  to = "/blog/dangers-plastic-essay-middle-school-conservation-contest/"
+  status = 301
+
+[[redirects]]
+  from = "/day-hike-shangniba-monastery/"
+  to = "/blog/day-hike-shangniba-monastery/"
+  status = 301
+
+[[redirects]]
+  from = "/hidden-mountain-bike-routes-in-ladakh/"
+  to = "/blog/hidden-mountain-bike-routes-in-ladakh/"
+  status = 301
+
+[[redirects]]
+  from = "/how-adventurous-do-i-need-to-be-for-the-tibetan-plateau/"
+  to = "/blog/how-adventurous-do-i-need-to-be-for-the-tibetan-plateau/"
+  status = 301
+
+[[redirects]]
+  from = "/huanglong-national-park/"
+  to = "/blog/huanglong-national-park/"
+  status = 301
+
+[[redirects]]
+  from = "/introducing-lijiang-yunnan-a-new-carefully-crafted-tour-to-an-ancient-destination/"
+  to = "/blog/introducing-lijiang-yunnan-a-new-carefully-crafted-tour-to-an-ancient-destination/"
+  status = 301
+
+[[redirects]]
+  from = "/jiuzhaigou-national-park/"
+  to = "/blog/jiuzhaigou-national-park/"
+  status = 301
+
+[[redirects]]
+  from = "/mountain-gods-tibet/"
+  to = "/blog/mountain-gods-tibet/"
+  status = 301
+
+[[redirects]]
+  from = "/muni-valley-zhaga-waterfall/"
+  to = "/blog/muni-valley-zhaga-waterfall/"
+  status = 301
+
+[[redirects]]
+  from = "/packing-for-a-winter-trip-to-eastern-tibet/"
+  to = "/blog/packing-for-a-winter-trip-to-eastern-tibet/"
+  status = 301
+
+[[redirects]]
+  from = "/packing-tips-mountain-biking-eastern-tibet/"
+  to = "/blog/packing-tips-mountain-biking-eastern-tibet/"
+  status = 301
+
+[[redirects]]
+  from = "/packing-trek-eastern-tibet/"
+  to = "/blog/packing-trek-eastern-tibet/"
+  status = 301
+
+[[redirects]]
+  from = "/supporting-crest-sustainable-travel-worldwide/"
+  to = "/blog/supporting-crest-sustainable-travel-worldwide/"
+  status = 301
+
+[[redirects]]
+  from = "/the-shambala-story/"
+  to = "/blog/the-shambala-story/"
+  status = 301
+
+[[redirects]]
+  from = "/the-tibet-travel-permit-and-eastern-tibet/"
+  to = "/blog/the-tibet-travel-permit-and-eastern-tibet/"
+  status = 301
+
+[[redirects]]
+  from = "/tibet-sensory-feast/"
+  to = "/blog/tibet-sensory-feast/"
+  status = 301
+
+[[redirects]]
+  from = "/tibetan-new-year/"
+  to = "/blog/tibetan-new-year/"
+  status = 301
+
+[[redirects]]
+  from = "/traveling-beyond-tibet-immersive-highlights-in-china/"
+  to = "/blog/traveling-beyond-tibet-immersive-highlights-in-china/"
+  status = 301
+
+[[redirects]]
+  from = "/traveling-the-world-of-travertine/"
+  to = "/blog/traveling-the-world-of-travertine/"
+  status = 301
+
+[[redirects]]
+  from = "/traveling-to-tibet-in-winter/"
+  to = "/blog/traveling-to-tibet-in-winter/"
+  status = 301
+
+[[redirects]]
+  from = "/trekking-jiuzhaigou-experiencing-jiuzhaigou-outside-park/"
+  to = "/blog/trekking-jiuzhaigou-experiencing-jiuzhaigou-outside-park/"
+  status = 301
+
+[[redirects]]
+  from = "/true-bhutanese-immersion-through-a-hot-stone-bath/"
+  to = "/blog/true-bhutanese-immersion-through-a-hot-stone-bath/"
+  status = 301
+
+[[redirects]]
+  from = "/whats-the-key-to-real-adventure/"
+  to = "/blog/whats-the-key-to-real-adventure/"
+  status = 301
+
+[[redirects]]
+  from = "/where-do-we-go-now/"
+  to = "/blog/where-do-we-go-now/"
+  status = 301
+
+[[redirects]]
+  from = "/where-to-eat-in-songpan/"
+  to = "/blog/where-to-eat-in-songpan/"
+  status = 301
+
+[[redirects]]
+  from = "/xian/"
+  to = "/blog/xian/"
+  status = 301
+
+# Old WordPress image redirects
+[[redirects]]
+  from = "/wp-content/uploads/2020/05/Image-1.jpg"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2017/11/Xuebaoding-Trekking-Songpan.jpg"
+  to = "/blog/a-hike-up-mt-xiao-xue-bao-ding/"
+  status = 301
+
 # Favicon fallback
 [[redirects]]
   from = "/favicon.ico"
