@@ -147,6 +147,21 @@ const allSchemas = [orgSchema, ...extraSchemas];
       defer
       src="https://js-na2.hs-scripts.com/244183775.js"
     ></script>
+
+    <!-- Google Analytics 4 (G-447VPW2H83).
+         NOTE: only GA4 is configured here on purpose. The Google Ads tag
+         (AW-17730828816) is already auto-injected by HubSpot's tracking
+         script (Google Ads is connected in HubSpot > Marketing > Ads);
+         loading it again here would double-count. If that HubSpot ads
+         connection is ever removed, switch this config to the combined
+         tag GT-TXXK9H23 to restore Ads tracking. -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-447VPW2H83"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-447VPW2H83');
+    </script>
   </head>
   <body class="min-h-screen flex flex-col overflow-x-hidden">
     <Nav transparent={hideNavBg} />

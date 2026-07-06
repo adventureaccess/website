@@ -125,6 +125,11 @@ const inputClasses = dark
         if (res.ok) {
           form.classList.add('hidden');
           show('Almost there — check your inbox to confirm your subscription.', true);
+          // Google tag event — used for GA4 reporting and importable as a
+          // Google Ads conversion ("dispatch_signup").
+          try {
+            (window as any).gtag?.('event', 'dispatch_signup', { method: 'website' });
+          } catch {}
         } else {
           show('Something went wrong on our end — please try again in a minute.', false);
         }
