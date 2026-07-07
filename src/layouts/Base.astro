@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import RevealObserver from '../components/RevealObserver.astro';
+import ConsentBanner from '../components/ConsentBanner.astro';
 
 export interface Props {
   title?: string;
@@ -138,37 +139,78 @@ const allSchemas = [orgSchema, ...extraSchemas];
       rel="stylesheet"
     />
 
-    <!-- HubSpot tracking (account 244183775, NA2). Also delivers the cookie
-         consent banner once enabled in HubSpot Settings > Privacy & Consent. -->
-    <script
-      type="text/javascript"
-      id="hs-script-loader"
-      async
-      defer
-      src="https://js-na2.hs-scripts.com/244183775.js"
-    ></script>
-
-    <!-- Google Analytics 4 (G-447VPW2H83).
-         NOTE: only GA4 is configured here on purpose. The Google Ads tag
-         (AW-17730828816) is already auto-injected by HubSpot's tracking
-         script (Google Ads is connected in HubSpot > Marketing > Ads);
-         loading it again here would double-count. If that HubSpot ads
-         connection is ever removed, switch this config to the combined
-         tag GT-TXXK9H23 to restore Ads tracking. -->
+    <!-- ================= Consent-managed tracking =================
+         Site-native consent (see ConsentBanner.astro). Behavior:
+         - Google tag (GA4 G-447VPW2H83) loads immediately but with
+           Consent Mode v2 defaults DENIED — cookieless until accepted.
+         - HubSpot (244183775, also injects Google Ads AW-17730828816)
+           and the Reddit pixel (a2_i0elr0ey0buk) load ONLY after accept.
+         - Choice stored in localStorage ("aa-consent"); Global Privacy
+           Control signals are honored as an automatic decline.
+         - The Google Ads tag is intentionally NOT configured here:
+           HubSpot injects it (Ads connected in HubSpot > Marketing > Ads).
+    -->
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-447VPW2H83"></script>
     <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-447VPW2H83');
-    </script>
+      (function () {
+        var KEY = 'aa-consent';
+        var stored = null;
+        try { stored = localStorage.getItem(KEY); } catch (e) {}
 
-    <!-- Reddit pixel (a2_i0elr0ey0buk) — PageVisit sitewide for retargeting.
-         Lead fires on /thank-you/, SignUp on newsletter subscription. -->
-    <script is:inline>
-      !function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js";t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);
-      rdt('init','a2_i0elr0ey0buk');
-      rdt('track','PageVisit');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        gtag('consent', 'default', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: 'denied',
+        });
+        gtag('js', new Date());
+        gtag('config', 'G-447VPW2H83');
+
+        function enableTracking() {
+          gtag('consent', 'update', {
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+            analytics_storage: 'granted',
+          });
+          if (!document.getElementById('hs-script-loader')) {
+            var hs = document.createElement('script');
+            hs.id = 'hs-script-loader';
+            hs.async = true;
+            hs.defer = true;
+            hs.src = 'https://js-na2.hs-scripts.com/244183775.js';
+            document.head.appendChild(hs);
+          }
+          if (!window.rdt) {
+            !function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js";t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);
+            window.rdt('init', 'a2_i0elr0ey0buk');
+            window.rdt('track', 'PageVisit');
+          }
+        }
+
+        function store(v) {
+          try { localStorage.setItem(KEY, v); } catch (e) {}
+          window.aaConsent.status = v;
+        }
+
+        window.aaConsent = {
+          status: stored,
+          accept: function () { store('granted'); enableTracking(); document.dispatchEvent(new CustomEvent('aa-consent-change')); },
+          decline: function () { store('denied'); document.dispatchEvent(new CustomEvent('aa-consent-change')); },
+          show: function () { document.dispatchEvent(new CustomEvent('aa-consent-show')); },
+        };
+
+        if (stored === 'granted') {
+          enableTracking();
+        } else if (!stored && navigator.globalPrivacyControl === true) {
+          // Browser broadcasts a do-not-track/sell signal: honor it silently.
+          store('denied');
+        }
+      })();
     </script>
   </head>
   <body class="min-h-screen flex flex-col overflow-x-hidden">
@@ -177,6 +219,7 @@ const allSchemas = [orgSchema, ...extraSchemas];
       <slot />
     </main>
     <Footer />
+    <ConsentBanner />
     <RevealObserver />
   </body>
 </html>

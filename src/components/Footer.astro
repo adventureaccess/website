@@ -114,12 +114,12 @@ const hasHalf = trustScore - fullStars >= 0.25;
       <div class="flex gap-6">
         <a href="/privacy-cookie-policy" class="hover:text-saffron">Privacy & Cookies</a>
         <a href="/payment-terms-cancellation-policy" class="hover:text-saffron">Payment Terms</a>
-        <!-- Reopens the HubSpot consent banner so visitors can change their choice -->
+        <!-- Reopens the site's consent banner so visitors can change their choice -->
         <button
           type="button"
-          id="hs_show_banner_button"
+          id="aa-cookie-settings"
           class="hover:text-saffron cursor-pointer"
-          onclick="(function(){var _hsp=window._hsp=window._hsp||[];_hsp.push(['showBanner']);})()"
+          onclick="window.aaConsent && window.aaConsent.show()"
         >
           Cookie Settings
         </button>

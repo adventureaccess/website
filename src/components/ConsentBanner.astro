@@ -1,0 +1,59 @@
+---
+/**
+ * Site-native cookie consent banner.
+ * Works with the consent bootstrap in Base.astro (window.aaConsent):
+ * shows when no choice is stored, and re-opens via the footer
+ * "Cookie Settings" button (aa-consent-show event).
+ * Accept -> loads HubSpot + Reddit, upgrades Google Consent Mode.
+ * Decline -> analytics stay cookieless, ad pixels never load.
+ */
+---
+<div
+  id="aa-consent-banner"
+  class="hidden fixed bottom-0 inset-x-0 z-[90] bg-ink text-cream border-t border-cream/20 shadow-2xl"
+  role="dialog"
+  aria-label="Cookie consent"
+  aria-live="polite"
+>
+  <div class="max-w-8xl mx-auto px-6 md:px-14 py-5 md:py-6 flex flex-col md:flex-row md:items-center gap-4 md:gap-10">
+    <p class="text-sm leading-relaxed text-cream/80 flex-1">
+      We use cookies to understand how travelers find us and to make our trips easier
+      to discover. Decline and we'll only keep what the site needs to work. See our
+      <a href="/privacy-cookie-policy/" class="underline text-cream hover:text-saffron transition-colors">privacy &amp; cookie policy</a>.
+    </p>
+    <div class="flex items-center gap-3 shrink-0">
+      <button type="button" id="aa-consent-decline"
+        class="px-5 py-2.5 text-sm border border-cream/30 text-cream/80 hover:border-cream hover:text-cream transition-colors">
+        Essential only
+      </button>
+      <button type="button" id="aa-consent-accept"
+        class="px-5 py-2.5 text-sm font-semibold bg-saffron hover:bg-saffron-dark text-cream transition-colors">
+        Accept
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var banner = document.getElementById('aa-consent-banner');
+    if (!banner) return;
+
+    function show() { banner.classList.remove('hidden'); }
+    function hide() { banner.classList.add('hidden'); }
+
+    document.getElementById('aa-consent-accept').addEventListener('click', function () {
+      window.aaConsent && window.aaConsent.accept();
+      hide();
+    });
+    document.getElementById('aa-consent-decline').addEventListener('click', function () {
+      window.aaConsent && window.aaConsent.decline();
+      hide();
+    });
+
+    document.addEventListener('aa-consent-show', show);
+
+    // First visit (or cleared storage): no stored choice -> ask.
+    if (window.aaConsent && !window.aaConsent.status) show();
+  })();
+</script>
