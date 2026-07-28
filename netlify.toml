@@ -5,6 +5,10 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Serverless functions (GA4 page-views proxy for the marketing dashboard)
+[functions]
+  directory = "netlify/functions"
+
 # Redirects for old WordPress URLs
 [[redirects]]
   from = "/unesco-world-heritage-sites/"
