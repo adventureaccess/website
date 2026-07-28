@@ -1,0 +1,489 @@
+---
+/**
+ * CampaignLanding — shared layout for the paid-social landing pages
+ * (/nepal-lp01/, /india-lp01/).
+ *
+ * These pages are rebuilds of the original WordPress campaign LPs, which were
+ * lost in the Astro migration. Copy is recovered from the original design
+ * mockups; structure follows the same 9-block direct-response flow:
+ *
+ *   hero → social proof → agitation → promise → CTA → self-qualifier
+ *        → CTA → FAQ → interest form
+ *
+ * They are intentionally `noindex` (paid traffic only) and excluded from
+ * src/pages/sitemap.xml.ts.
+ */
+import { respSrcset, SIZES_FULL } from '../utils/resp';
+
+export interface Quote {
+  quote: string;
+  name: string;
+  location?: string;
+  destination?: string;
+  source?: string;
+}
+
+export interface Props {
+  /** Campaign slug — drives form name, hidden field, and thank-you path. */
+  campaign: string;
+  /** HubSpot form GUID. Leave '' until the form exists; Netlify still captures. */
+  hsFormId?: string;
+  /** Place name used in the self-qualifier headings ("Nepal is right for you if…"). */
+  place: string;
+  eyebrow: string;
+  /** Hero headline. Split so the second half can carry the italic saffron accent. */
+  h1Lead: string;
+  h1Accent: string;
+  sub: string;
+  heroImage: string;
+  heroAlt: string;
+  /** Section 3 */
+  agitationHeading: string;
+  agitationBody: string[];
+  /** Section 4 */
+  promiseHeading: string;
+  promiseBody: string[];
+  ctaMid: string;
+  /** Section 6 */
+  notRightItems: string[];
+  rightItems: string[];
+  /** Quotes to show — pass pre-filtered by destination. */
+  quotes: Quote[];
+  /** Show each quote's destination label. Off for Nepal (no Nepal-specific reviews yet). */
+  showQuoteDestination?: boolean;
+  /** Where "explore the destination" points. */
+  destinationHref: string;
+  destinationLabel: string;
+}
+
+const {
+  campaign,
+  hsFormId = '',
+  place,
+  eyebrow,
+  h1Lead,
+  h1Accent,
+  sub,
+  heroImage,
+  heroAlt,
+  agitationHeading,
+  agitationBody,
+  promiseHeading,
+  promiseBody,
+  ctaMid,
+  notRightItems,
+  rightItems,
+  quotes,
+  showQuoteDestination = true,
+  destinationHref,
+  destinationLabel,
+} = Astro.props;
+
+const formName = `${campaign}-interest`;
+const thankYouPath = `/${campaign}/thank-you/`;
+const srcset = respSrcset(heroImage);
+
+// Split the quote list across the two social-proof rails.
+const quotesTop = quotes.slice(0, 2);
+const quotesMid = quotes.slice(2, 4);
+const quotesLate = quotes.slice(4, 6);
+
+const faqs = [
+  {
+    q: 'So who is the team putting these tours on?',
+    a: 'The Adventure Access team is a multi-cultural group with diverse backgrounds from Bhutan, China, India, Nepal and the United States. We are able to provide unparalleled experiences that blend the needs of our clients with a local understanding of what it takes to experience the best a place has to offer. Our network of Adventure Access staff, local entrepreneurs, guides, and hospitality specialists serves as a solid network with consistent reliability. The individuals within this network are your cultural bridge, cultivating and guiding meaningful interactions on all our tours.',
+  },
+  {
+    q: 'Can I customize the trip?',
+    a: 'Of course! Our packages are merely starting points and can be customized by the length of the trip, the itinerary or any number of factors.',
+  },
+  {
+    q: "Can't I just organize my own trip and save money?",
+    a: 'You could, but the limited infrastructure in the region can be maddening if you do not have connections and resources. Additionally, many places in the region require a licensed guide. But most importantly, we invite our guests into our community that exists in each location. Our guides serve as a culture bridge for you and ensure professional attention to every detail.',
+  },
+  {
+    q: 'Who would be leading the trip?',
+    a: "Adventure Access leaders and locals, who are often the same people, will be taking care of you each step along the way. We don't farm you out to operate a high volume of tours. You will be with us, all along the way.",
+  },
+  {
+    q: 'What happens if I change my mind?',
+    a: 'Crafting transformative experiences for our clients takes care and hard work. We have limited availability throughout the year, so Adventure Access requires a non-refundable deposit at the time of booking. If a cancellation must be made for any reason, please do so in writing. Cancellations made 45 days prior to the arrival date on the itinerary will not be subject to any additional cancellation fees, except those according to the policies of any third party such as but not limited to hotels, airlines, and other contractors of Adventure Access or unless stated otherwise in a formal contract with Adventure Access.',
+  },
+];
+---
+
+<!-- ─────────────────────────── 1. HERO ─────────────────────────── -->
+<section class="relative min-h-[86vh] md:min-h-[92vh] overflow-hidden bg-ink flex">
+  <img
+    src={heroImage}
+    srcset={srcset}
+    sizes={SIZES_FULL}
+    alt={heroAlt}
+    class="absolute inset-0 w-full h-full object-cover"
+    fetchpriority="high"
+  />
+  <div class="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/30 to-ink/95"></div>
+  <div class="relative z-10 w-full max-w-8xl mx-auto px-6 md:px-14 flex flex-col justify-end pb-16 md:pb-24 pt-40 text-cream">
+    <div class="max-w-4xl">
+      <div class="eyebrow-cream mb-5 text-shadow-hero">— {eyebrow}</div>
+      <h1 class="display text-5xl md:text-7xl mb-8 text-shadow-hero">
+        {h1Lead}{' '}
+        <em class="not-italic font-light text-saffron font-display italic">{h1Accent}</em>
+      </h1>
+      <p class="text-lg md:text-2xl leading-relaxed text-cream/90 max-w-2xl mb-10 text-shadow-hero">
+        {sub}
+      </p>
+      <a href="#interest" class="btn !bg-saffron hover:!bg-saffron-dark">See Trips →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────── 2. SOCIAL PROOF (first rail) ─────────────────── -->
+{quotesTop.length > 0 && (
+  <section class="bg-paper py-20 md:py-28">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="grid md:grid-cols-2 gap-8">
+        {quotesTop.map((t, i) => (
+          <blockquote class="reveal bg-cream border border-ink/10 p-8 flex flex-col" data-delay={i * 100}>
+            <p class="text-lg leading-relaxed text-ink mb-6">“{t.quote}”</p>
+            <footer class="mt-auto text-sm text-ink-soft">
+              <span class="font-medium text-ink">{t.name}</span>
+              {showQuoteDestination && t.destination && <span> · {t.destination}</span>}
+            </footer>
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- ─────────────────────── 3. AGITATION ─────────────────────── -->
+<section class="bg-cream py-24 md:py-36">
+  <div class="max-w-3xl mx-auto px-6 md:px-14">
+    <h2 class="display text-4xl md:text-5xl mb-8 reveal">{agitationHeading}</h2>
+    {agitationBody.map((p) => (
+      <p class="text-lg md:text-xl leading-relaxed text-ink-soft mb-6 reveal">{p}</p>
+    ))}
+  </div>
+</section>
+
+<!-- ─────────────────── 4. PROMISE + MID CTA ─────────────────── -->
+<section class="bg-ink text-cream py-24 md:py-36">
+  <div class="max-w-3xl mx-auto px-6 md:px-14">
+    <h2 class="display text-4xl md:text-5xl mb-8 reveal">{promiseHeading}</h2>
+    {promiseBody.map((p) => (
+      <p class="text-lg md:text-xl leading-relaxed text-cream/80 mb-6 reveal">{p}</p>
+    ))}
+    <div class="mt-12 reveal">
+      <a href="#interest" class="btn !bg-saffron hover:!bg-saffron-dark">{ctaMid}</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────── 5. SOCIAL PROOF (second rail) ─────────────────── -->
+{quotesMid.length > 0 && (
+  <section class="bg-paper py-20 md:py-28">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="grid md:grid-cols-2 gap-8">
+        {quotesMid.map((t, i) => (
+          <blockquote class="reveal bg-cream border border-ink/10 p-8 flex flex-col" data-delay={i * 100}>
+            <p class="text-lg leading-relaxed text-ink mb-6">“{t.quote}”</p>
+            <footer class="mt-auto text-sm text-ink-soft">
+              <span class="font-medium text-ink">{t.name}</span>
+              {showQuoteDestination && t.destination && <span> · {t.destination}</span>}
+            </footer>
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- ─────────────── 6. SELF-QUALIFIER + CTA ─────────────── -->
+<section class="bg-cream py-24 md:py-36">
+  <div class="max-w-8xl mx-auto px-6 md:px-14">
+    <div class="eyebrow mb-4 reveal">— Honest expectations</div>
+    <h2 class="display text-4xl md:text-6xl mb-16 reveal">This trip is not for everyone.</h2>
+
+    <div class="grid md:grid-cols-2 gap-12 md:gap-20">
+      <div class="reveal">
+        <h3 class="font-display text-2xl md:text-3xl mb-6 text-ink-soft">
+          {place} is <em class="not-italic italic">not</em> right for you if…
+        </h3>
+        <ul class="space-y-4">
+          {notRightItems.map((item) => (
+            <li class="flex gap-4 text-lg leading-relaxed text-ink-soft">
+              <span class="text-ink/25 select-none" aria-hidden="true">—</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="reveal" data-delay="100">
+        <h3 class="font-display text-2xl md:text-3xl mb-6 text-ink">
+          {place} <em class="not-italic italic text-saffron">is</em> right for you if…
+        </h3>
+        <ul class="space-y-4">
+          {rightItems.map((item) => (
+            <li class="flex gap-4 text-lg leading-relaxed text-ink">
+              <span class="text-saffron select-none" aria-hidden="true">→</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <p class="text-base leading-relaxed text-ink-soft max-w-2xl mt-16 mb-12 reveal">
+      There's nothing wrong with the first list — there's just a difference between a
+      vacation and adventure travel.
+    </p>
+
+    <div class="reveal">
+      <a href="#interest" class="btn !bg-saffron hover:!bg-saffron-dark">Let's Full Send This</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────── 7. SOCIAL PROOF (third rail) ─────────────────── -->
+{quotesLate.length > 0 && (
+  <section class="bg-paper py-20 md:py-28">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="grid md:grid-cols-2 gap-8">
+        {quotesLate.map((t, i) => (
+          <blockquote class="reveal bg-cream border border-ink/10 p-8 flex flex-col" data-delay={i * 100}>
+            <p class="text-lg leading-relaxed text-ink mb-6">“{t.quote}”</p>
+            <footer class="mt-auto text-sm text-ink-soft">
+              <span class="font-medium text-ink">{t.name}</span>
+              {showQuoteDestination && t.destination && <span> · {t.destination}</span>}
+            </footer>
+          </blockquote>
+        ))}
+      </div>
+      <div class="mt-12 reveal">
+        <a
+          href="https://www.trustpilot.com/review/adventure-access.com"
+          target="_blank"
+          rel="noopener"
+          class="btn-ghost text-sm"
+        >
+          Read all reviews on Trustpilot →
+        </a>
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- ─────────────────────────── 8. FAQ ─────────────────────────── -->
+<section class="bg-cream py-24 md:py-36">
+  <div class="max-w-3xl mx-auto px-6 md:px-14">
+    <div class="eyebrow mb-4 reveal">— Before you ask</div>
+    <h2 class="display text-4xl md:text-5xl mb-12 reveal">Frequently asked questions.</h2>
+
+    <div class="border-t border-ink/15">
+      {faqs.map((f) => (
+        <details class="group border-b border-ink/15">
+          <summary
+            class="flex items-start justify-between gap-6 cursor-pointer py-6 list-none
+                   font-display text-xl md:text-2xl text-ink hover:text-saffron-dark transition-colors"
+          >
+            <span>{f.q}</span>
+            <span
+              class="shrink-0 text-saffron text-2xl leading-none mt-1 transition-transform duration-300 group-open:rotate-45"
+              aria-hidden="true">+</span>
+          </summary>
+          <p class="text-base md:text-lg leading-relaxed text-ink-soft pb-8 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── 9. INTEREST FORM ─────────────── -->
+<section id="interest" class="bg-ink text-cream py-24 md:py-36 scroll-mt-24">
+  <div class="max-w-3xl mx-auto px-6 md:px-14">
+    <div class="eyebrow-cream mb-4">— No card, no commitment</div>
+    <h2 class="display text-4xl md:text-6xl mb-8">Ready for a trip that will change you?</h2>
+
+    <p class="text-lg leading-relaxed text-cream/80 mb-6">
+      Sound like you? Express interest below. There's no money or credit card required at
+      this point — this simply tells us you want to explore the trip. We'll reach out with
+      more about it, what you'd get from it, and answers to any questions you have.
+    </p>
+    <p class="text-lg leading-relaxed text-cream/80 mb-12">
+      If you're looking for resort robes and bottomless mimosas, this ain't it. But if
+      you're craving something that wakes you up — physically, mentally, spiritually —
+      this is it.
+    </p>
+
+    <form
+      id="interest-form"
+      name={formName}
+      method="POST"
+      action={thankYouPath}
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      novalidate
+    >
+      <input type="hidden" name="form-name" value={formName} />
+      <input type="hidden" name="campaign" value={campaign} />
+      <p class="hidden">
+        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <label class="block eyebrow !text-cream/60 mb-2" for="name">Your name</label>
+          <input
+            id="name" name="name" required type="text" autocomplete="name"
+            class="w-full bg-transparent border-b border-cream/30 py-2 text-cream focus:outline-none focus:border-saffron transition-colors"
+          />
+        </div>
+        <div>
+          <label class="block eyebrow !text-cream/60 mb-2" for="email">Email</label>
+          <input
+            id="email" name="email" required type="email" autocomplete="email"
+            class="w-full bg-transparent border-b border-cream/30 py-2 text-cream focus:outline-none focus:border-saffron transition-colors"
+          />
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label class="block eyebrow !text-cream/60 mb-2" for="message">
+          Anything you want us to know
+          <span class="text-cream/40 normal-case tracking-normal">(optional)</span>
+        </label>
+        <textarea
+          id="message" name="message" rows="3"
+          class="w-full bg-transparent border-b border-cream/30 py-2 text-cream placeholder:text-cream/40 focus:outline-none focus:border-saffron transition-colors resize-none"
+          placeholder="When you're thinking of going, who's coming, what you want out of it."
+        ></textarea>
+      </div>
+
+      <p id="form-error" class="hidden text-saffron text-sm mt-6" role="alert"></p>
+
+      <div class="mt-12 pt-8 border-t border-cream/15">
+        <button type="submit" class="btn !bg-saffron hover:!bg-saffron-dark">
+          Express Interest →
+        </button>
+      </div>
+    </form>
+
+    <p class="text-cream/50 text-sm mt-10">
+      Prefer to just write? Email us anytime at
+      <a href="mailto:info@adventure-access.com" class="text-saffron border-b border-saffron/40 hover:border-saffron">info@adventure-access.com</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ─────────────── CLOSING / DESTINATION LINK ─────────────── -->
+<section class="bg-paper py-20 md:py-28">
+  <div class="max-w-8xl mx-auto px-6 md:px-14 text-center">
+    <div class="eyebrow mb-6">— Explore the destination</div>
+    <p class="text-lg md:text-xl leading-relaxed text-ink-soft max-w-2xl mx-auto mb-10">
+      Let the Himalayas change you.
+    </p>
+    <a href={destinationHref} class="btn-ghost mb-16 inline-block">Explore {destinationLabel} →</a>
+    <p class="display text-3xl md:text-5xl text-ink mt-8">Real adventure changes you.</p>
+  </div>
+</section>
+
+<script define:vars={{ hsFormId, campaign }}>
+  (() => {
+    const form = document.getElementById('interest-form');
+    if (!form) return;
+
+    const errorEl = document.getElementById('form-error');
+    const fail = (msg) => {
+      if (!errorEl) return;
+      errorEl.textContent = msg;
+      errorEl.classList.remove('hidden');
+    };
+
+    const val = (name) => {
+      const el = form.querySelector(`[name="${name}"]`);
+      return el && el.value ? el.value.trim() : '';
+    };
+
+    // --- HubSpot dual-submit ------------------------------------------------
+    // Mirrors the pattern in src/pages/plan.astro: the form still posts to
+    // Netlify (notifications + thank-you redirect); this ALSO creates a HubSpot
+    // contact with page/source attribution and the campaign name.
+    //
+    // TODO: paste the HubSpot form GUID into the page's `hsFormId` prop.
+    // Until then this block no-ops and Netlify Forms captures on its own.
+    const HS_PORTAL = '244183775';
+
+    function hubspotCookie() {
+      const m = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/);
+      return m ? m[1] : undefined;
+    }
+
+    function submitToHubSpot() {
+      if (!hsFormId) return;
+
+      const fullName = val('name');
+      const spaceIdx = fullName.indexOf(' ');
+      const firstname = spaceIdx > 0 ? fullName.slice(0, spaceIdx) : fullName;
+      const lastname = spaceIdx > 0 ? fullName.slice(spaceIdx + 1) : '';
+
+      const message = [`Campaign: ${campaign}`, val('message') && `Message: ${val('message')}`]
+        .filter(Boolean)
+        .join('\n');
+
+      const fields = [
+        { objectTypeId: '0-1', name: 'email', value: val('email') },
+        { objectTypeId: '0-1', name: 'firstname', value: firstname },
+        { objectTypeId: '0-1', name: 'message', value: message },
+      ];
+      if (lastname) fields.push({ objectTypeId: '0-1', name: 'lastname', value: lastname });
+
+      const hutk = hubspotCookie();
+      const payload = JSON.stringify({
+        fields,
+        context: {
+          ...(hutk ? { hutk } : {}),
+          pageUri: window.location.href,
+          pageName: document.title,
+        },
+      });
+
+      const endpoints = [
+        `https://api-na2.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${hsFormId}`,
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${hsFormId}`,
+      ];
+
+      // keepalive lets the request finish even as Netlify navigates away.
+      fetch(endpoints[0], {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: payload,
+        keepalive: true,
+      }).catch(() => {
+        fetch(endpoints[1], {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: payload,
+          keepalive: true,
+        }).catch(() => {});
+      });
+    }
+    // -----------------------------------------------------------------------
+
+    form.addEventListener('submit', (e) => {
+      const name = form.querySelector('#name');
+      const email = form.querySelector('#email');
+      if (!name.value.trim() || !email.value.trim() || !email.checkValidity()) {
+        e.preventDefault();
+        fail('We need a name and a working email to reply.');
+        return;
+      }
+      try {
+        submitToHubSpot();
+      } catch (_) {
+        /* never block the Netlify submit */
+      }
+    });
+  })();
+</script>

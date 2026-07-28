@@ -1,0 +1,41 @@
+---
+/**
+ * /india-lp01/thank-you/ — conversion page for the India (Ladakh) campaign form.
+ *
+ * Deliberately campaign-specific rather than reusing /thank-you/: the historical
+ * GA4 funnel data is keyed to this path, which keeps Nepal and India campaign
+ * conversions separable in reporting.
+ */
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="Interest received — Adventure Access"
+  description="Thanks for expressing interest in a Ladakh journey. One of our travel specialists will be in touch within 24–48 hours."
+  noindex={true}
+>
+  <article class="pt-40 md:pt-48 pb-32 md:pb-40">
+    <div class="max-w-2xl mx-auto px-6 md:px-14 text-center">
+      <div class="eyebrow mb-6">— Interest received</div>
+      <h1 class="display text-5xl md:text-6xl mb-8">You're on the list.</h1>
+      <p class="text-lg md:text-xl leading-relaxed text-ink-soft mb-12">
+        No money, no card, no commitment — just a note from you that the high desert of
+        Ladakh is calling. One of our travel specialists will reply within 24–48 hours,
+        sooner when we're not in the mountains ourselves, with more about the trip and
+        what it asks of you.
+      </p>
+      <p class="text-ink-soft mb-10">
+        If it's urgent, write directly to
+        <a class="text-saffron border-b border-saffron/40 hover:border-saffron transition-colors" href="mailto:info@adventure-access.com">info@adventure-access.com</a>.
+      </p>
+      <div class="flex flex-wrap gap-6 justify-center items-center">
+        <a href="/destinations/ladakh/" class="btn !bg-saffron hover:!bg-saffron-dark inline-block">Read about Ladakh</a>
+        <a href="/blog/" class="btn-ghost">Field notes from the plateau →</a>
+      </div>
+    </div>
+  </article>
+
+  {/* Conversion event: an india-lp01 interest form just completed. */}
+  <script is:inline>
+    try { window.rdt && rdt('track', 'Lead'); } catch (e) {}
+  </script>
+</Base>

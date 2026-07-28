@@ -15,6 +15,9 @@ const staticUrls = [
   { loc: '/privacy-cookie-policy/',            priority: '0.3', changefreq: 'yearly'  },
   { loc: '/payment-terms-cancellation-policy/', priority: '0.3', changefreq: 'yearly' },
   // /thank-you/ intentionally excluded — noindex conversion page
+  // /404/ intentionally excluded — error page
+  // /nepal-lp01/ and /india-lp01/ (+ their /thank-you/ pages) intentionally
+  //   excluded — noindex paid-campaign landing pages, reached via ads only.
 ];
 
 export const GET: APIRoute = async () => {

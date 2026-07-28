@@ -1,0 +1,70 @@
+---
+/**
+ * /nepal-lp01/ — paid-social landing page for the Nepal campaign.
+ *
+ * Rebuild of the original WordPress LP (lost in the migration). Copy recovered
+ * from the original design mockup. noindex: paid traffic only, and it would
+ * otherwise compete with /destinations/nepal/.
+ *
+ * NOTE ON QUOTES: testimonials.json currently has no Nepal-specific reviews —
+ * every entry is Ladakh/India except one generic "Himalayas" one. The original
+ * page showed Ladakh testimonials on the Nepal page, which likely hurt it
+ * (Nepal converted at 0.4% vs India's 1.0%). So here we show only quotes whose
+ * text names no specific place, and hide the destination label. Swap in real
+ * Nepal reviews as soon as there are some.
+ */
+import Base from '../../layouts/Base.astro';
+import CampaignLanding from '../../components/CampaignLanding.astro';
+import testimonials from '../../data/testimonials.json';
+
+// Quotes that don't name a specific destination in their text — safe on a Nepal page.
+const PLACE_NEUTRAL = ['Jason', 'J. Neumann', 'Stefan Vincent', 'Susanna John', 'Oscar'];
+const quotes = testimonials.items.filter((t) => PLACE_NEUTRAL.includes(t.name));
+---
+
+<Base
+  title="Nepal — Small-Group Trekking Adventures | Adventure Access"
+  description="Guided high-altitude trekking in the shadow of the Himalayas. Small groups, local guides, cultural deep dives. Express interest — no card required."
+  ogImage="/images/2024/05/Nepal-Page-Hero-image-scaled-1.jpeg"
+  hideNavBg={true}
+  noindex={true}
+>
+  <CampaignLanding
+    campaign="nepal-lp01"
+    hsFormId=""
+    place="Nepal"
+    eyebrow="Nepal · Small-group adventures"
+    h1Lead="Book the trip your friends will"
+    h1Accent="never stop hearing about."
+    sub="Tired of beach chairs and buffets? Here's your antidote. This is for people who measure vacations in vertical feet, not poolside cocktails. If life is in neutral and your Strava needs a story worth telling, you're in the right place."
+    heroImage="/images/2024/05/Nepal-Page-Hero-image-scaled-1.jpeg"
+    heroAlt="Himalayan peaks above the cloud line in Nepal"
+    agitationHeading="Ever feel like your life's getting a little…stuck?"
+    agitationBody={[
+      'Work, eat, sleep, scroll. Repeat. Maybe you crushed it back in college. Maybe your backpack still has trail dust from Peru. But when was the last time you did something that made your friends jealous and proved to yourself you’ve still got it?',
+    ]}
+    promiseHeading="This is that trip. The one that makes people say, “Wait, you did what?!”"
+    promiseBody={[
+      'We’re talking guided trekking in the shadow of the Himalayas. High-altitude trekking to Manaslu. Cultural deep dives. Cardio that earns you Strava kudos and stories you’ll still be telling when you’re 80.',
+      'You won’t just come back with photos. You’ll come back glowing. Stronger. Humbled. Awed. And yeah — maybe a little smug.',
+      'This is the kind of trip that ends up in eulogies. The kind that turns into a profile pic. The kind that makes your group chat say, “We have to do something like that.”',
+    ]}
+    ctaMid="I Want The Bragging Rights"
+    notRightItems={[
+      'You need a down comforter to sleep.',
+      'You take vacations to have more time to nap.',
+      'Never leaving the room is peak vacation (room service, anyone?).',
+    ]}
+    rightItems={[
+      'Strava is your social media.',
+      'Challenges are a signal of a good time.',
+      'You like to push your limits.',
+      'You dream about finding yourself on a ridge at 16,000 feet.',
+      '“Let’s try it” and “full send” are regular parts of your vocabulary.',
+    ]}
+    quotes={quotes}
+    showQuoteDestination={false}
+    destinationHref="/destinations/nepal/"
+    destinationLabel="Nepal"
+  />
+</Base>

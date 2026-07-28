@@ -1,0 +1,61 @@
+---
+/**
+ * /india-lp01/ — paid-social landing page for the India (Ladakh) campaign.
+ *
+ * Rebuild of the original WordPress LP (lost in the migration). Copy recovered
+ * from the original design mockup. noindex: paid traffic only.
+ *
+ * This one keeps the Ladakh-specific testimonials — they match the offer, and
+ * this campaign historically converted at ~1.0% vs Nepal's 0.4%.
+ */
+import Base from '../../layouts/Base.astro';
+import CampaignLanding from '../../components/CampaignLanding.astro';
+import testimonials from '../../data/testimonials.json';
+
+// Ladakh / Zanskar reviews — on-message for this campaign.
+const quotes = testimonials.items.filter((t) => (t.destination ?? '').includes('India'));
+---
+
+<Base
+  title="India — Ladakh Trekking & Mountain Biking | Adventure Access"
+  description="High-altitude mountain biking and trekking across Ladakh's ridgelines, glaciers and remote villages. Small groups, local guides. Express interest — no card required."
+  ogImage="/images/2024/05/Ladakh-hero-image.jpg"
+  hideNavBg={true}
+  noindex={true}
+>
+  <CampaignLanding
+    campaign="india-lp01"
+    hsFormId=""
+    place="India"
+    eyebrow="Ladakh, India · Small-group adventures"
+    h1Lead="The trip that takes you off the grid —"
+    h1Accent="and off the map."
+    sub="Forget beach chairs. Forget posh hotels. This is high-altitude everything: mountain biking across Himalayan ridgelines, trekking toward glaciers, and sipping tea in Ladakh's most remote villages. If your soul's been begging for something real, you just found it."
+    heroImage="/images/2024/05/Ladakh-hero-image.jpg"
+    heroAlt="High Himalayan valley in Ladakh, northern India"
+    agitationHeading="Ever feel like life is on repeat?"
+    agitationBody={[
+      'You scroll. You work. You plan “someday” trips. But deep down, you know you weren’t built for beige routines. You were built for big moments. For hard trails. For staring out over a mountain pass and thinking, “I never knew I could feel this alive.”',
+    ]}
+    promiseHeading="This isn’t a normal vacation. It’s a reset."
+    promiseBody={[
+      'You’ll mountain bike ridgelines in the western Himalayas. Trek through wind-carved valleys to villages few outsiders ever reach. Sleep under stars at 15,000 feet. Share laughs, rituals, and chai with locals. And yeah, probably get the most epic profile pic you’ve ever posted.',
+      'You won’t just collect memories. You’ll collect perspective.',
+    ]}
+    ctaMid="Say Less. Show Me The Trips."
+    notRightItems={[
+      'You think “adventure” means ordering the spicy option.',
+      'You’d rather nap than hike.',
+      'You believe comfort zones are for staying in.',
+    ]}
+    rightItems={[
+      'Strava is your social media.',
+      'You like your views earned, not handed to you.',
+      'You’re ready to get uncomfortable in all the right ways.',
+    ]}
+    quotes={quotes}
+    showQuoteDestination={true}
+    destinationHref="/destinations/ladakh/"
+    destinationLabel="Ladakh"
+  />
+</Base>
