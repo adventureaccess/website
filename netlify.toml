@@ -227,3 +227,11 @@
   from = "/favicon.ico"
   to = "/favicon.png"
   status = 301
+
+# Internal, Identity-gated pages must never be indexed. The page itself also
+# sets <meta name="robots" content="noindex">; this covers the response headers
+# too (and the data functions set the same header themselves).
+[[headers]]
+  for = "/internal/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

@@ -1,0 +1,417 @@
+---
+/**
+ * /internal/dashboard/ — marketing dashboard for Will and Brian.
+ *
+ * Replaces a desktop-only Cowork artifact that couldn't be opened on a phone or
+ * shared. Data comes from two gated Netlify Functions:
+ *   /.netlify/functions/pageviews        → GA4 traffic (how many humans visited)
+ *   /.netlify/functions/hubspot-metrics  → HubSpot contacts (conversions)
+ *
+ * Auth is Netlify Identity — the same instance /admin (Decap CMS) uses. Access
+ * needs the "dashboard" role; see netlify/functions/_identity.mjs.
+ *
+ * The page shell is public but contains NO data: everything is fetched
+ * client-side with a bearer token. noindex + X-Robots-Tag (netlify.toml) and
+ * excluded from sitemap.xml.ts.
+ *
+ * Mobile-first on purpose — being usable on a phone is the whole reason it exists.
+ */
+import Base from '../../layouts/Base.astro';
+---
+
+<Base
+  title="Marketing Dashboard — Adventure Access"
+  description="Internal marketing dashboard."
+  noindex={true}
+>
+  <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script is:inline src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js"></script>
+
+  <div class="pt-32 md:pt-40 pb-20 md:pb-28 min-h-[70vh]">
+    <div class="max-w-8xl mx-auto px-5 md:px-14">
+
+      <!-- Header -->
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-8">
+        <div>
+          <div class="eyebrow mb-3">— Internal</div>
+          <h1 class="display text-4xl md:text-6xl">Marketing dashboard.</h1>
+        </div>
+        <button id="btn-logout" class="btn-ghost hidden">Log out</button>
+      </div>
+
+      <!-- Loading -->
+      <p id="state-loading" class="text-ink-soft py-12">Checking your session…</p>
+
+      <!-- Logged out -->
+      <div id="state-login" class="hidden py-8">
+        <p class="text-lg leading-relaxed text-ink-soft max-w-xl mb-8">
+          This page is for the Adventure Access team. Log in with your Netlify Identity
+          account — the same one you use for the CMS.
+        </p>
+        <button id="btn-login" class="btn !bg-saffron hover:!bg-saffron-dark">Log in</button>
+      </div>
+
+      <!-- Logged in, but no dashboard role -->
+      <div id="state-noaccess" class="hidden py-8">
+        <p class="text-lg leading-relaxed text-ink-soft max-w-xl mb-4">
+          You're logged in as <span id="noaccess-email" class="text-ink font-medium"></span>,
+          but this account doesn't have dashboard access yet.
+        </p>
+        <p class="text-ink-soft max-w-xl mb-8">
+          Ask Will to add the <code class="text-saffron">dashboard</code> role to your
+          Identity user, then reload this page.
+        </p>
+        <button id="btn-logout-2" class="btn-ghost">Log out</button>
+      </div>
+
+      <!-- Error -->
+      <div id="state-error" class="hidden py-8">
+        <p class="text-lg text-ink mb-2">Couldn't load the data.</p>
+        <p id="error-detail" class="text-sm text-ink-soft font-mono break-words max-w-2xl mb-8"></p>
+        <button id="btn-retry" class="btn !bg-saffron hover:!bg-saffron-dark">Try again</button>
+      </div>
+
+      <!-- Dashboard -->
+      <div id="dash" class="hidden">
+
+        <!-- Controls -->
+        <div class="flex flex-wrap items-center gap-3 mb-10">
+          <div class="flex" role="group" aria-label="Time window">
+            <button data-days="7"  class="win-btn">7 days</button>
+            <button data-days="30" class="win-btn">30 days</button>
+            <button data-days="90" class="win-btn">90 days</button>
+          </div>
+          <button id="btn-refresh" class="btn-ghost text-xs ml-auto">Refresh</button>
+        </div>
+
+        <!-- Traffic -->
+        <div class="eyebrow mb-4">— Traffic · how many humans visited (GA4)</div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-6">
+          <div class="card"><div class="k-label">Page views</div><div class="k-val" id="k-views">–</div><div class="k-hint" id="k-views-hint">&nbsp;</div></div>
+          <div class="card"><div class="k-label">Daily average</div><div class="k-val" id="k-avg">–</div><div class="k-hint">views/day</div></div>
+          <div class="card"><div class="k-label">Best day</div><div class="k-val" id="k-best">–</div><div class="k-hint" id="k-best-day">&nbsp;</div></div>
+          <div class="card"><div class="k-label">Pages seen</div><div class="k-val" id="k-pages">–</div><div class="k-hint">distinct paths</div></div>
+        </div>
+
+        <div class="card mb-10">
+          <div class="k-label mb-1">Daily page views</div>
+          <p class="text-[11px] text-ink-soft/70 mb-4">
+            Bot-filtered and client-side. Consent-gated here, so read it as a trend, not a
+            to-the-unit count.
+          </p>
+          <div class="h-52 md:h-64 relative"><canvas id="chart-views"></canvas></div>
+        </div>
+
+        <!-- Funnel -->
+        <div class="eyebrow mb-4">— Funnel · the trackable subset tied to the CRM (HubSpot)</div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-6">
+          <div class="card"><div class="k-label">New contacts</div><div class="k-val" id="k-contacts">–</div><div class="k-hint" id="k-contacts-delta">&nbsp;</div></div>
+          <div class="card"><div class="k-label">Previous period</div><div class="k-val" id="k-contacts-prev">–</div><div class="k-hint">same length, before</div></div>
+          <div class="card col-span-2"><div class="k-label">Lifecycle stages</div><div class="k-val text-lg md:text-xl leading-snug" id="k-stages">–</div><div class="k-hint">of the contacts listed below</div></div>
+        </div>
+
+        <!-- Tables -->
+        <div class="grid lg:grid-cols-2 gap-4 md:gap-6">
+          <div class="card">
+            <div class="k-label mb-4">Top pages</div>
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="text-ink-soft">
+                  <th class="text-left font-medium pb-2 border-b border-ink/10">Path</th>
+                  <th class="text-right font-medium pb-2 border-b border-ink/10 w-20">Views</th>
+                </tr>
+              </thead>
+              <tbody id="tbl-pages"></tbody>
+            </table>
+          </div>
+
+          <div class="card">
+            <div class="k-label mb-4">Recent conversions</div>
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="text-ink-soft">
+                  <th class="text-left font-medium pb-2 border-b border-ink/10">Contact</th>
+                  <th class="text-right font-medium pb-2 border-b border-ink/10 w-24">Created</th>
+                </tr>
+              </thead>
+              <tbody id="tbl-contacts"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <p class="text-xs text-ink-soft mt-8" id="stamp">&nbsp;</p>
+        <p class="text-xs text-ink-soft/70 mt-2 max-w-2xl">
+          Netlify's own traffic numbers are deliberately not shown here — they're server-side
+          and roughly 95% bots (vulnerability scanners hitting <code>/wp-login.php</code> and
+          similar).
+        </p>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .card { @apply bg-cream border border-ink/10 p-4 md:p-5; }
+  .k-label { @apply text-[11px] font-medium tracking-[0.12em] uppercase text-ink-soft; }
+  .k-val { @apply font-display text-3xl md:text-4xl text-ink leading-none mt-2; }
+  .k-hint { @apply text-[11px] text-ink-soft/70 mt-1.5; }
+  .win-btn {
+    @apply px-4 py-2.5 text-xs font-medium tracking-[0.08em] uppercase border border-ink/15
+      -ml-px first:ml-0 text-ink-soft bg-cream transition-colors hover:text-ink;
+    min-height: 44px;
+  }
+  .win-btn[aria-pressed='true'] { @apply bg-ink text-cream border-ink; }
+  #tbl-pages td, #tbl-contacts td { @apply py-2 border-b border-ink/5 align-top; }
+</style>
+
+<script is:inline>
+  (() => {
+    const DAYS_DEFAULT = 30;
+    let days = DAYS_DEFAULT;
+    let chart = null;
+    let identityReady = false;
+
+    const $ = (id) => document.getElementById(id);
+    const show = (which) => {
+      ['state-loading', 'state-login', 'state-noaccess', 'state-error', 'dash'].forEach((id) => {
+        $(id).classList.toggle('hidden', id !== which);
+      });
+      $('btn-logout').classList.toggle('hidden', which !== 'dash');
+    };
+
+    // ---- Identity ---------------------------------------------------------
+    // The widget may already be present: Base.astro loads its own copy when an
+    // invite/recovery token is in the URL hash. Reuse whatever is there.
+    function identity() {
+      return window.netlifyIdentity || null;
+    }
+
+    function initIdentity() {
+      const id = identity();
+      if (!id) {
+        fail('Netlify Identity failed to load. Check your connection and reload.');
+        return;
+      }
+      if (identityReady) return;
+      identityReady = true;
+
+      id.on('init', (user) => (user ? load() : show('state-login')));
+      id.on('login', () => {
+        id.close();
+        load();
+      });
+      id.on('logout', () => show('state-login'));
+      id.init({ APIUrl: undefined });
+    }
+
+    async function token() {
+      const user = identity()?.currentUser();
+      if (!user) return null;
+      try {
+        return await user.jwt(); // refreshes if near expiry
+      } catch {
+        return null;
+      }
+    }
+
+    // ---- Data -------------------------------------------------------------
+    async function api(path) {
+      const jwt = await token();
+      if (!jwt) throw Object.assign(new Error('No session'), { code: 401 });
+      const res = await fetch(path, { headers: { Authorization: `Bearer ${jwt}` } });
+      if (res.status === 401) throw Object.assign(new Error('Not authorised'), { code: 401 });
+      if (!res.ok) {
+        let detail = '';
+        try {
+          detail = (await res.json()).error || '';
+        } catch {}
+        throw new Error(`${path.split('/').pop()} → HTTP ${res.status} ${detail}`);
+      }
+      return res.json();
+    }
+
+    function fail(msg) {
+      $('error-detail').textContent = msg;
+      show('state-error');
+    }
+
+    async function load() {
+      show('state-loading');
+      try {
+        const [daily, pages, hs] = await Promise.all([
+          api(`/.netlify/functions/pageviews?days=${days}`),
+          api(`/.netlify/functions/pageviews?days=${days}&breakdown=page`),
+          api(`/.netlify/functions/hubspot-metrics?days=${days}`),
+        ]);
+        render(daily, pages, hs);
+        show('dash');
+      } catch (e) {
+        if (e.code === 401) {
+          const user = identity()?.currentUser();
+          if (user) {
+            $('noaccess-email').textContent = user.email || '';
+            show('state-noaccess');
+          } else {
+            show('state-login');
+          }
+          return;
+        }
+        fail(e.message || String(e));
+      }
+    }
+
+    // ---- Render -----------------------------------------------------------
+    const fmt = (n) => Number(n || 0).toLocaleString();
+    // GA4 date keys are YYYYMMDD
+    const label = (k) => (k && k.length === 8 ? `${k.slice(4, 6)}/${k.slice(6, 8)}` : k);
+
+    function render(daily, pages, hs) {
+      // Traffic KPIs
+      $('k-views').textContent = fmt(daily.total);
+      $('k-views-hint').textContent = `last ${days} days`;
+      $('k-avg').textContent = (Number(daily.total || 0) / days).toFixed(1);
+
+      const best = (daily.rows || []).reduce(
+        (a, r) => (!a || r.pageviews > a.pageviews ? r : a),
+        null
+      );
+      $('k-best').textContent = best ? fmt(best.pageviews) : '–';
+      $('k-best-day').textContent = best ? label(best.key) : '';
+      $('k-pages').textContent = fmt((pages.rows || []).length);
+
+      // Gapless daily series — GA4 omits zero days
+      const byKey = {};
+      (daily.rows || []).forEach((r) => (byKey[r.key] = r.pageviews));
+      const labels = [];
+      const values = [];
+      for (let i = days - 1; i >= 0; i--) {
+        const d = new Date(Date.now() - i * 86400000);
+        const k =
+          d.getFullYear() +
+          String(d.getMonth() + 1).padStart(2, '0') +
+          String(d.getDate()).padStart(2, '0');
+        labels.push(label(k));
+        values.push(byKey[k] || 0);
+      }
+
+      if (chart) chart.destroy();
+      if (window.Chart) {
+        chart = new window.Chart($('chart-views'), {
+          type: 'bar',
+          data: {
+            labels,
+            datasets: [{ label: 'Page views', data: values, backgroundColor: '#d97a2c', borderRadius: 2 }],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: { beginAtZero: true, ticks: { precision: 0, color: '#5a6470' }, grid: { color: 'rgba(43,53,64,0.08)' } },
+              x: {
+                ticks: { color: '#5a6470', maxRotation: 0, autoSkip: true, maxTicksLimit: days <= 7 ? 7 : 8 },
+                grid: { display: false },
+              },
+            },
+            plugins: { legend: { display: false } },
+          },
+        });
+      }
+
+      // Funnel KPIs
+      $('k-contacts').textContent = fmt(hs.total);
+      $('k-contacts-prev').textContent = fmt(hs.previousTotal);
+      const diff = Number(hs.total || 0) - Number(hs.previousTotal || 0);
+      $('k-contacts-delta').textContent =
+        diff === 0 ? 'flat vs previous' : `${diff > 0 ? '+' : ''}${diff} vs previous`;
+
+      const stages = Object.entries(hs.byStage || {});
+      $('k-stages').textContent = stages.length
+        ? stages.map(([s, n]) => `${s} ${n}`).join(' · ')
+        : 'none yet';
+
+      // Top pages
+      const pagesBody = $('tbl-pages');
+      pagesBody.innerHTML = '';
+      const top = (pages.rows || []).slice(0, 12);
+      if (!top.length) {
+        pagesBody.innerHTML = '<tr><td colspan="2" class="text-ink-soft">No data in this window</td></tr>';
+      }
+      top.forEach((r) => {
+        const tr = document.createElement('tr');
+        const td1 = document.createElement('td');
+        const a = document.createElement('a');
+        a.href = r.key;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.className = 'text-ink hover:text-saffron-dark break-all';
+        a.textContent = r.key === '/' ? '/ (home)' : r.key;
+        td1.appendChild(a);
+        const td2 = document.createElement('td');
+        td2.className = 'text-right';
+        td2.textContent = fmt(r.pageviews);
+        tr.append(td1, td2);
+        pagesBody.appendChild(tr);
+      });
+
+      // Recent contacts
+      const cBody = $('tbl-contacts');
+      cBody.innerHTML = '';
+      const contacts = hs.contacts || [];
+      if (!contacts.length) {
+        cBody.innerHTML = '<tr><td colspan="2" class="text-ink-soft">No new contacts in this window</td></tr>';
+      }
+      contacts.slice(0, 12).forEach((c) => {
+        const tr = document.createElement('tr');
+        const td1 = document.createElement('td');
+        const a = document.createElement('a');
+        a.href = c.url;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.className = 'text-ink hover:text-saffron-dark break-words';
+        a.textContent = c.name;
+        td1.appendChild(a);
+        if (c.lifecyclestage) {
+          const span = document.createElement('span');
+          span.className = 'block text-[11px] text-ink-soft';
+          span.textContent = c.lifecyclestage;
+          td1.appendChild(span);
+        }
+        const td2 = document.createElement('td');
+        td2.className = 'text-right whitespace-nowrap';
+        td2.textContent = c.createdate ? new Date(c.createdate).toLocaleDateString() : '–';
+        tr.append(td1, td2);
+        cBody.appendChild(tr);
+      });
+
+      $('stamp').textContent = `Updated ${new Date().toLocaleString()} · GA4 data can lag a few hours, so today fills in through the day.`;
+    }
+
+    // ---- Wiring -----------------------------------------------------------
+    function setWindow(next) {
+      days = next;
+      document.querySelectorAll('.win-btn').forEach((b) => {
+        b.setAttribute('aria-pressed', String(Number(b.dataset.days) === days));
+      });
+      load();
+    }
+
+    document.querySelectorAll('.win-btn').forEach((b) => {
+      b.addEventListener('click', () => setWindow(Number(b.dataset.days)));
+    });
+    document.querySelectorAll('.win-btn').forEach((b) => {
+      b.setAttribute('aria-pressed', String(Number(b.dataset.days) === DAYS_DEFAULT));
+    });
+
+    $('btn-login').addEventListener('click', () => identity()?.open('login'));
+    $('btn-refresh').addEventListener('click', () => load());
+    $('btn-retry').addEventListener('click', () => load());
+    $('btn-logout').addEventListener('click', () => identity()?.logout());
+    $('btn-logout-2').addEventListener('click', () => identity()?.logout());
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initIdentity);
+    } else {
+      initIdentity();
+    }
+  })();
+</script>

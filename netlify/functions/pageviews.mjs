@@ -10,6 +10,11 @@
  *   GA4_SA_KEY       – the full service-account JSON, pasted as a single value
  *   GA4_PROPERTY_ID  – the numeric GA4 property ID (e.g. 522290801), NOT the G- id
  *
+ * Access: requires a Netlify Identity bearer token with the "dashboard" role.
+ * This endpoint was previously public — anyone with the URL could read the site's
+ * traffic numbers — so it is now gated like every other dashboard data source.
+ * Nothing automated depended on it being open.
+ *
  * Usage:
  *   GET /.netlify/functions/pageviews              → last 30 days, daily totals
  *   GET /.netlify/functions/pageviews?days=7       → last 7 days
@@ -17,14 +22,9 @@
  */
 
 import crypto from 'node:crypto';
+import { requireUser, unauthorized, corsHeaders } from './_identity.mjs';
 
 const SCOPE = 'https://www.googleapis.com/auth/analytics.readonly';
-const CORS = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
-  'Content-Type': 'application/json',
-};
 
 function base64url(input) {
   return Buffer.from(input)
@@ -71,10 +71,15 @@ async function getAccessToken(sa) {
   return json.access_token;
 }
 
-export default async (req) => {
+export default async (req, context) => {
+  const CORS = corsHeaders(req);
+
   if (req.method === 'OPTIONS') {
     return new Response('', { status: 204, headers: CORS });
   }
+
+  const user = await requireUser(req, context);
+  if (!user) return unauthorized(req);
 
   const propertyId = process.env.GA4_PROPERTY_ID;
   const rawKey = process.env.GA4_SA_KEY;
