@@ -131,6 +131,7 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
 
         <!-- Funnel -->
         <div class="eyebrow mb-4">— Funnel · the trackable subset tied to the CRM (HubSpot)</div>
+        <p id="hs-note" class="hidden text-[11px] text-saffron-dark bg-saffron/10 border border-saffron/25 rounded px-3 py-2 mb-4"></p>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-6">
           <div class="card"><div class="k-label">Conversions</div><div class="k-val" id="k-conversions">–</div><div class="k-hint" id="k-conversions-delta">&nbsp;</div></div>
           <div class="card"><div class="k-label">New contacts</div><div class="k-val" id="k-contacts">–</div><div class="k-hint" id="k-contacts-delta">&nbsp;</div></div>
@@ -298,12 +299,17 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
         const netlifyPromise = api(`/.netlify/functions/netlify-traffic?days=${days}`).catch(
           (e) => ({ available: false, reason: e.message || String(e) })
         );
-        const [daily, pages, hs] = await Promise.all([
+        // HubSpot is allowed to fail too. Its search API is capped at five
+        // requests per second per account, so a 429 is always possible — traffic
+        // should still render rather than the whole page erroring out.
+        const hsPromise = api(`/.netlify/functions/hubspot-metrics?days=${days}`).catch((e) => ({
+          hsError: e.message || String(e),
+        }));
+        const [daily, pages] = await Promise.all([
           api(`/.netlify/functions/pageviews?days=${days}`),
           api(`/.netlify/functions/pageviews?days=${days}&breakdown=page`),
-          api(`/.netlify/functions/hubspot-metrics?days=${days}`),
         ]);
-        const netlify = await netlifyPromise;
+        const [hs, netlify] = [await hsPromise, await netlifyPromise];
         render(daily, pages, hs, netlify);
         show('dash');
       } catch (e) {
@@ -442,6 +448,19 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
       const diff = Number(hs.total || 0) - Number(hs.previousTotal || 0);
       $('k-contacts-delta').textContent =
         diff === 0 ? 'flat vs previous' : `${diff > 0 ? '+' : ''}${diff} vs previous`;
+
+      // If HubSpot didn't answer, say so in the funnel section and leave the
+      // traffic panels alone.
+      const hsNote = $('hs-note');
+      if (hs && hs.hsError) {
+        hsNote.textContent = `HubSpot data unavailable — ${hs.hsError} Traffic figures above are unaffected.`;
+        hsNote.classList.remove('hidden');
+      } else if (hs && (hs.warning || hs.stale)) {
+        hsNote.textContent = hs.warning || 'Showing the last successful HubSpot figures.';
+        hsNote.classList.remove('hidden');
+      } else {
+        hsNote.classList.add('hidden');
+      }
 
       // Conversions (by conversion date — includes existing contacts)
       $('k-conversions').textContent = hs.conversions != null ? fmt(hs.conversions) : '–';
