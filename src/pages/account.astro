@@ -19,6 +19,7 @@
  * tidier but optional.
  */
 import Base from '../layouts/Base.astro';
+import IdentityWidgetGuard from '../components/IdentityWidgetGuard.astro';
 ---
 
 <Base
@@ -26,7 +27,7 @@ import Base from '../layouts/Base.astro';
   description="Sign in to the Adventure Access team tools."
   noindex={true}
 >
-  <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <IdentityWidgetGuard />
 
   <article class="pt-32 md:pt-40 pb-24 md:pb-32 min-h-[70vh]">
     <div class="max-w-xl mx-auto px-5 md:px-14">
@@ -127,6 +128,10 @@ import Base from '../layouts/Base.astro';
     const settle = (id) => {
       settled = true;
       show(id);
+      // Critical: the widget leaves a transparent full-viewport iframe over the
+      // page even after close(), which swallows clicks and keystrokes — that's
+      // why the reset field looked typeable but wasn't. See IdentityWidgetGuard.
+      window.aaIdentity && window.aaIdentity.close();
     };
 
     // ---- Request a fresh password link -----------------------------------
@@ -165,8 +170,10 @@ import Base from '../layouts/Base.astro';
 
     // ---- Identity ---------------------------------------------------------
     function identity() {
-      return window.netlifyIdentity || null;
+      return (window.aaIdentity && window.aaIdentity.get()) || window.netlifyIdentity || null;
     }
+    const openLogin = () =>
+      window.aaIdentity ? window.aaIdentity.open('login') : identity()?.open('login');
 
     function onSignedIn(user) {
       $('in-email').textContent = (user && user.email) || '';
@@ -189,10 +196,7 @@ import Base from '../layouts/Base.astro';
         if (!tokenType) settle('s-out');
       });
 
-      id.on('login', (user) => {
-        id.close();
-        onSignedIn(user);
-      });
+      id.on('login', (user) => onSignedIn(user));
 
       id.on('logout', () => settle('s-out'));
 
@@ -226,8 +230,8 @@ import Base from '../layouts/Base.astro';
 
     if (hashError && !tokenType) settle('s-badlink');
 
-    $('btn-in').addEventListener('click', () => identity()?.open('login'));
-    $('btn-in-2').addEventListener('click', () => identity()?.open('login'));
+    $('btn-in').addEventListener('click', openLogin);
+    $('btn-in-2').addEventListener('click', openLogin);
     $('btn-out').addEventListener('click', () => identity()?.logout());
     $('btn-reload').addEventListener('click', () => window.location.reload());
 

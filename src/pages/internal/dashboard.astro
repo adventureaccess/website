@@ -17,6 +17,7 @@
  * Mobile-first on purpose — being usable on a phone is the whole reason it exists.
  */
 import Base from '../../layouts/Base.astro';
+import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
 ---
 
 <Base
@@ -24,7 +25,7 @@ import Base from '../../layouts/Base.astro';
   description="Internal marketing dashboard."
   noindex={true}
 >
-  <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <IdentityWidgetGuard />
   <script is:inline src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js"></script>
 
   <div class="pt-32 md:pt-40 pb-20 md:pb-28 min-h-[70vh]">
@@ -183,7 +184,7 @@ import Base from '../../layouts/Base.astro';
     // The widget may already be present: Base.astro loads its own copy when an
     // invite/recovery token is in the URL hash. Reuse whatever is there.
     function identity() {
-      return window.netlifyIdentity || null;
+      return (window.aaIdentity && window.aaIdentity.get()) || window.netlifyIdentity || null;
     }
 
     function initIdentity() {
@@ -196,8 +197,11 @@ import Base from '../../layouts/Base.astro';
       identityReady = true;
 
       id.on('init', (user) => (user ? load() : show('state-login')));
+      // aaIdentity.close() rather than id.close(): the widget's own close leaves a
+      // transparent full-viewport iframe over the page that swallows every click,
+      // which would make the whole dashboard unusable after logging in.
       id.on('login', () => {
-        id.close();
+        window.aaIdentity && window.aaIdentity.close();
         load();
       });
       id.on('logout', () => show('state-login'));
@@ -402,7 +406,9 @@ import Base from '../../layouts/Base.astro';
       b.setAttribute('aria-pressed', String(Number(b.dataset.days) === DAYS_DEFAULT));
     });
 
-    $('btn-login').addEventListener('click', () => identity()?.open('login'));
+    $('btn-login').addEventListener('click', () =>
+      window.aaIdentity ? window.aaIdentity.open('login') : identity()?.open('login')
+    );
     $('btn-refresh').addEventListener('click', () => load());
     $('btn-retry').addEventListener('click', () => load());
     $('btn-logout').addEventListener('click', () => identity()?.logout());
