@@ -132,9 +132,34 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
         <!-- Funnel -->
         <div class="eyebrow mb-4">— Funnel · the trackable subset tied to the CRM (HubSpot)</div>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-6">
+          <div class="card"><div class="k-label">Conversions</div><div class="k-val" id="k-conversions">–</div><div class="k-hint" id="k-conversions-delta">&nbsp;</div></div>
           <div class="card"><div class="k-label">New contacts</div><div class="k-val" id="k-contacts">–</div><div class="k-hint" id="k-contacts-delta">&nbsp;</div></div>
-          <div class="card"><div class="k-label">Previous period</div><div class="k-val" id="k-contacts-prev">–</div><div class="k-hint">same length, before</div></div>
-          <div class="card col-span-2"><div class="k-label">Lifecycle stages</div><div class="k-val text-lg md:text-xl leading-snug" id="k-stages">–</div><div class="k-hint">of the contacts listed below</div></div>
+          <div class="card"><div class="k-label">Previous period</div><div class="k-val" id="k-contacts-prev">–</div><div class="k-hint">new contacts, before</div></div>
+          <div class="card"><div class="k-label">Lifecycle stages</div><div class="k-val text-base md:text-lg leading-snug" id="k-stages">–</div><div class="k-hint">of contacts listed below</div></div>
+        </div>
+        <p class="text-[11px] text-ink-soft/70 mb-6 max-w-2xl">
+          Conversions counts form submissions by conversion date, so someone already in the CRM
+          — a newsletter subscriber who later fills in a landing page — still counts. New
+          contacts only counts people who didn't exist before, so it will usually be lower.
+        </p>
+
+        <!-- Per-campaign conversions -->
+        <div class="card mb-10">
+          <div class="k-label mb-1">Conversions by campaign</div>
+          <p class="text-[11px] text-ink-soft/70 mb-4">
+            From the campaign_source_page property set by each landing page's interest form.
+            Reflects each contact's most recent conversion.
+          </p>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-ink-soft">
+                <th class="text-left font-medium pb-2 border-b border-ink/10">Campaign</th>
+                <th class="text-right font-medium pb-2 border-b border-ink/10 w-28">This window</th>
+                <th class="text-right font-medium pb-2 border-b border-ink/10 w-24">All time</th>
+              </tr>
+            </thead>
+            <tbody id="tbl-campaigns"></tbody>
+          </table>
         </div>
 
         <!-- Tables -->
@@ -417,6 +442,44 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
       const diff = Number(hs.total || 0) - Number(hs.previousTotal || 0);
       $('k-contacts-delta').textContent =
         diff === 0 ? 'flat vs previous' : `${diff > 0 ? '+' : ''}${diff} vs previous`;
+
+      // Conversions (by conversion date — includes existing contacts)
+      $('k-conversions').textContent = hs.conversions != null ? fmt(hs.conversions) : '–';
+      const cDiff = Number(hs.conversions || 0) - Number(hs.previousConversions || 0);
+      $('k-conversions-delta').textContent =
+        hs.conversions == null
+          ? 'all forms'
+          : cDiff === 0
+            ? 'flat vs previous'
+            : `${cDiff > 0 ? '+' : ''}${cDiff} vs previous`;
+
+      // Per-campaign table
+      const campBody = $('tbl-campaigns');
+      campBody.innerHTML = '';
+      const camps = hs.campaigns || [];
+      if (!camps.length) {
+        campBody.innerHTML =
+          '<tr><td colspan="3" class="text-ink-soft">No campaign data yet — it appears once a landing-page form is submitted.</td></tr>';
+      }
+      camps.forEach((c) => {
+        const tr = document.createElement('tr');
+        const td1 = document.createElement('td');
+        const a = document.createElement('a');
+        a.href = '/' + c.slug + '/';
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.className = 'text-ink hover:text-saffron-dark';
+        a.textContent = c.label || c.slug;
+        td1.appendChild(a);
+        const td2 = document.createElement('td');
+        td2.className = 'text-right';
+        td2.textContent = fmt(c.inWindow);
+        const td3 = document.createElement('td');
+        td3.className = 'text-right text-ink-soft';
+        td3.textContent = fmt(c.allTime);
+        tr.append(td1, td2, td3);
+        campBody.appendChild(tr);
+      });
 
       const stages = Object.entries(hs.byStage || {});
       $('k-stages').textContent = stages.length

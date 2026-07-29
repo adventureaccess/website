@@ -26,7 +26,24 @@ import { requireUser, unauthorized, corsHeaders } from './_identity.mjs';
 
 const SEARCH_URL = 'https://api.hubapi.com/crm/v3/objects/contacts/search';
 const PORTAL_ID = '244183775';
-const PROPERTIES = ['email', 'firstname', 'lastname', 'createdate', 'lifecyclestage'];
+const PROPERTIES = [
+  'email',
+  'firstname',
+  'lastname',
+  'createdate',
+  'lifecyclestage',
+  'campaign_source_page',
+  'recent_conversion_event_name',
+];
+
+/**
+ * Paid-campaign landing pages. The slug matches the `campaign` prop on each
+ * page, which is what gets written to the campaign_source_page contact property.
+ */
+const CAMPAIGNS = [
+  { slug: 'nepal-lp01', label: 'Nepal LP01' },
+  { slug: 'india-lp01', label: 'India LP01' },
+];
 
 /** One search request; returns { total, results }. */
 async function searchContacts(token, fromMs, toMs, limit) {
@@ -54,6 +71,37 @@ async function searchContacts(token, fromMs, toMs, limit) {
     });
   }
   return res.json();
+}
+
+/**
+ * Count matching contacts without pulling the records back.
+ *
+ * WHY THIS EXISTS: counting contacts *created* in the window undercounts real
+ * conversions. Anyone already in the CRM — a newsletter subscriber who later
+ * fills in a landing-page form — submits a genuine conversion but creates no new
+ * contact. Filtering on recent_conversion_date instead catches them. (Confirmed
+ * against a real submission: a contact created 8 July registered a conversion
+ * today and would otherwise have been invisible.)
+ *
+ * Caveat worth knowing: recent_conversion_* holds only the LATEST conversion, so
+ * someone who converts on a landing page and then submits a different form later
+ * stops being attributed to the campaign. Fine at current volumes; the exact
+ * answer would need the Marketing-Hub-gated form submissions API.
+ */
+async function countContacts(token, filters) {
+  const res = await fetch(SEARCH_URL, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ filterGroups: [{ filters }], properties: ['email'], limit: 1 }),
+  });
+  if (!res.ok) {
+    throw Object.assign(new Error(`HubSpot API error (${res.status})`), {
+      status: res.status,
+      detail: await res.text(),
+    });
+  }
+  const json = await res.json();
+  return json.total ?? 0;
 }
 
 function displayName(props) {
@@ -86,12 +134,37 @@ export default async (req, context) => {
   const priorStart = now - 2 * days * dayMs;
 
   try {
-    // Current window (with the contact list) and the window before it (count only,
-    // for a period-over-period comparison).
-    const [current, prior] = await Promise.all([
+    const conversionFilter = (from, to) => {
+      const f = [{ propertyName: 'recent_conversion_date', operator: 'GTE', value: String(from) }];
+      if (to) f.push({ propertyName: 'recent_conversion_date', operator: 'LT', value: String(to) });
+      return f;
+    };
+
+    const [current, prior, conversions, priorConversions, ...campaignCounts] = await Promise.all([
+      // Contacts created in the window (with the list), and the window before it.
       searchContacts(token, windowStart, null, 50),
       searchContacts(token, priorStart, windowStart, 1),
+      // Conversions — any form — by conversion date, so repeat submitters count.
+      countContacts(token, conversionFilter(windowStart, null)),
+      countContacts(token, conversionFilter(priorStart, windowStart)),
+      // Per campaign: this window, and all time.
+      ...CAMPAIGNS.flatMap((c) => [
+        countContacts(token, [
+          { propertyName: 'campaign_source_page', operator: 'EQ', value: c.slug },
+          { propertyName: 'recent_conversion_date', operator: 'GTE', value: String(windowStart) },
+        ]),
+        countContacts(token, [
+          { propertyName: 'campaign_source_page', operator: 'EQ', value: c.slug },
+        ]),
+      ]),
     ]);
+
+    const campaigns = CAMPAIGNS.map((c, i) => ({
+      slug: c.slug,
+      label: c.label,
+      inWindow: campaignCounts[i * 2] ?? 0,
+      allTime: campaignCounts[i * 2 + 1] ?? 0,
+    }));
 
     const contacts = (current.results || []).map((c) => {
       const props = c.properties || {};
@@ -116,8 +189,13 @@ export default async (req, context) => {
       JSON.stringify({
         portalId: PORTAL_ID,
         windowDays: days,
+        // New contacts created in the window.
         total: current.total ?? contacts.length,
         previousTotal: prior.total ?? 0,
+        // Form conversions in the window, including people already in the CRM.
+        conversions,
+        previousConversions: priorConversions,
+        campaigns,
         contacts,
         byStage,
         updatedAt: new Date().toISOString(),
