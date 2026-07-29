@@ -87,8 +87,11 @@
     };
 
     // Whenever the widget reports it closed itself (user pressed X, flow
-    // finished), make sure the iframe stops blocking.
+    // finished), make sure the iframe stops blocking. And when it opens — which
+    // it does by itself for invite/recovery links, without going through
+    // aaIdentity.open() — un-mute, or its own modal would be unclickable.
     if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('open', unmute);
       window.netlifyIdentity.on('close', muteSoon);
       window.netlifyIdentity.on('login', muteSoon);
       window.netlifyIdentity.on('logout', muteSoon);

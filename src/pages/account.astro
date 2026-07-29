@@ -35,8 +35,11 @@ import IdentityWidgetGuard from '../components/IdentityWidgetGuard.astro';
 
       <!-- Processing a token from an email link -->
       <section id="s-working">
-        <h1 class="display text-4xl md:text-5xl mb-6">One moment.</h1>
-        <p class="text-ink-soft">Checking your link…</p>
+        <h1 id="working-title" class="display text-4xl md:text-5xl mb-6">One moment.</h1>
+        <p id="working-note" class="text-ink-soft mb-8">Checking your link…</p>
+        <button id="btn-stuck" class="text-sm text-ink-soft underline hover:text-ink hidden">
+          Nothing happening? Request a new link
+        </button>
       </section>
 
       <!-- Signed in -->
@@ -125,13 +128,20 @@ import IdentityWidgetGuard from '../components/IdentityWidgetGuard.astro';
     const hashError = /error=|error_description=/.test(hash);
 
     let settled = false;
+    let widgetOpen = false; // the widget's own modal is showing (its UI lives in an iframe)
+    let errorSeen = false;
+    let timer = null;
+
     const settle = (id) => {
       settled = true;
+      clearTimeout(timer);
       show(id);
-      // Critical: the widget leaves a transparent full-viewport iframe over the
-      // page even after close(), which swallows clicks and keystrokes — that's
-      // why the reset field looked typeable but wasn't. See IdentityWidgetGuard.
-      window.aaIdentity && window.aaIdentity.close();
+      // The widget leaves a transparent full-viewport iframe over the page even
+      // after close(), which swallows clicks and keystrokes — that's why the
+      // reset field looked typeable but wasn't. See IdentityWidgetGuard.
+      // Only ever close it when it ISN'T mid-flow: closing an open recovery pane
+      // is exactly the bug that made every valid link look expired.
+      if (!widgetOpen) window.aaIdentity && window.aaIdentity.close();
     };
 
     // ---- Request a fresh password link -----------------------------------
@@ -196,14 +206,38 @@ import IdentityWidgetGuard from '../components/IdentityWidgetGuard.astro';
         if (!tokenType) settle('s-out');
       });
 
+      // The widget opens itself for invite/recovery links. Its UI is inside an
+      // iframe, so the page cannot inspect it — this event is the only reliable
+      // signal that a real pane is showing. Don't touch it while it's open.
+      id.on('open', () => {
+        widgetOpen = true;
+        clearTimeout(timer);
+        if (!settled && tokenType) {
+          $('working-title').textContent =
+            tokenType === 'invite_token' ? 'Welcome aboard.' : 'Set a new password.';
+          $('working-note').textContent =
+            'Use the form that just opened. Once it saves, you’ll be signed in here.';
+          $('btn-stuck').classList.remove('hidden');
+        }
+      });
+
+      id.on('close', () => {
+        widgetOpen = false;
+        if (settled) return;
+        // Closed without signing in — either dismissed, or the token failed.
+        settle(errorSeen || tokenType ? 's-badlink' : 's-out');
+      });
+
       id.on('login', (user) => onSignedIn(user));
 
       id.on('logout', () => settle('s-out'));
 
       id.on('error', (err) => {
+        errorSeen = true;
         const text = String((err && err.message) || err || '');
         // A spent or expired token surfaces as a 404/401 from /identity/verify.
         if (tokenType || /404|not found|expired|invalid|401/i.test(text)) {
+          widgetOpen = false; // safe to dismiss the widget now
           settle('s-badlink');
         } else {
           $('err-detail').textContent = text || 'Unknown Identity error.';
@@ -213,15 +247,16 @@ import IdentityWidgetGuard from '../components/IdentityWidgetGuard.astro';
 
       id.init();
 
-      // The widget can fail silently — that was the original bug. If a token
-      // flow hasn't produced a user, a pane, or an error shortly after init,
-      // stop showing "one moment" and offer a way forward.
+      // Last resort only. If a token flow produces no user, no pane and no error
+      // at all, don't sit on "one moment" forever. Note this deliberately does
+      // NOT try to inspect the widget's DOM — it's in an iframe, so any such
+      // check always fails, which is what previously made valid links look
+      // expired.
       if (tokenType || hashError) {
-        setTimeout(() => {
-          if (settled) return;
-          const modalOpen = !!document.querySelector('[class*="netlify-identity"] form, #netlify-modal form');
-          if (!modalOpen) settle('s-badlink');
-        }, 4000);
+        timer = setTimeout(() => {
+          if (settled || widgetOpen) return;
+          settle('s-badlink');
+        }, 6000);
       }
     }
 
@@ -234,6 +269,10 @@ import IdentityWidgetGuard from '../components/IdentityWidgetGuard.astro';
     $('btn-in-2').addEventListener('click', openLogin);
     $('btn-out').addEventListener('click', () => identity()?.logout());
     $('btn-reload').addEventListener('click', () => window.location.reload());
+    $('btn-stuck').addEventListener('click', () => {
+      widgetOpen = false;
+      settle('s-badlink');
+    });
 
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', start);
