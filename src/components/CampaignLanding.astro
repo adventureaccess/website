@@ -28,6 +28,15 @@ export interface Props {
   campaign: string;
   /** HubSpot form GUID. Leave '' until the form exists; Netlify still captures. */
   hsFormId?: string;
+  /**
+   * Internal name of a HubSpot contact property to receive the campaign slug,
+   * so campaign can be filtered and reported on rather than read out of the
+   * message body. Requires the property to exist AND to be a field on the
+   * HubSpot form. Safe either way — if HubSpot rejects it as unknown, the
+   * submission is retried without it (see submitToHubSpot below).
+   * Set to '' to skip entirely.
+   */
+  hsCampaignField?: string;
   /** Place name used in the self-qualifier headings ("Nepal is right for you if…"). */
   place: string;
   eyebrow: string;
@@ -59,6 +68,7 @@ export interface Props {
 const {
   campaign,
   hsFormId = '',
+  hsCampaignField = 'campaign_source_page',
   place,
   eyebrow,
   h1Lead,
@@ -389,7 +399,7 @@ const faqs = [
   </div>
 </section>
 
-<script define:vars={{ hsFormId, campaign }}>
+<script define:vars={{ hsFormId, campaign, hsCampaignField }}>
   (() => {
     const form = document.getElementById('interest-form');
     if (!form) return;
@@ -420,14 +430,20 @@ const faqs = [
       return m ? m[1] : undefined;
     }
 
-    function submitToHubSpot() {
-      if (!hsFormId) return;
+    const HS_ENDPOINTS = [
+      `https://api-na2.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${hsFormId}`,
+      `https://api.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${hsFormId}`,
+    ];
 
+    function buildPayload(includeCampaign) {
       const fullName = val('name');
       const spaceIdx = fullName.indexOf(' ');
       const firstname = spaceIdx > 0 ? fullName.slice(0, spaceIdx) : fullName;
       const lastname = spaceIdx > 0 ? fullName.slice(spaceIdx + 1) : '';
 
+      // The campaign also stays in the message body: it makes the Netlify
+      // notification email and the HubSpot message field self-describing even if
+      // the property isn't in place.
       const message = [`Campaign: ${campaign}`, val('message') && `Message: ${val('message')}`]
         .filter(Boolean)
         .join('\n');
@@ -438,9 +454,12 @@ const faqs = [
         { objectTypeId: '0-1', name: 'message', value: message },
       ];
       if (lastname) fields.push({ objectTypeId: '0-1', name: 'lastname', value: lastname });
+      if (includeCampaign && hsCampaignField) {
+        fields.push({ objectTypeId: '0-1', name: hsCampaignField, value: campaign });
+      }
 
       const hutk = hubspotCookie();
-      const payload = JSON.stringify({
+      return JSON.stringify({
         fields,
         context: {
           ...(hutk ? { hutk } : {}),
@@ -448,42 +467,85 @@ const faqs = [
           pageName: document.title,
         },
       });
+    }
 
-      const endpoints = [
-        `https://api-na2.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${hsFormId}`,
-        `https://api.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${hsFormId}`,
-      ];
-
-      // keepalive lets the request finish even as Netlify navigates away.
-      fetch(endpoints[0], {
+    function post(url, body) {
+      // keepalive so the request still completes if the page navigates away.
+      return fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: payload,
+        body,
         keepalive: true,
-      }).catch(() => {
-        fetch(endpoints[1], {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: payload,
-          keepalive: true,
-        }).catch(() => {});
       });
+    }
+
+    /**
+     * Mirror the submission into HubSpot. Netlify Forms remains the system of
+     * record — this only adds the CRM contact — so every failure path here is
+     * swallowed and can never cost us the lead.
+     *
+     * The campaign property is sent optimistically. HubSpot rejects a whole
+     * submission if it contains a field the form doesn't have, so on any failure
+     * we retry once without it. That means this works before the property exists
+     * in HubSpot and keeps working after, with no deploy needed in between.
+     */
+    async function submitToHubSpot() {
+      if (!hsFormId) return;
+
+      let res = null;
+      try {
+        res = await post(HS_ENDPOINTS[0], buildPayload(true));
+      } catch (_) {
+        try {
+          res = await post(HS_ENDPOINTS[1], buildPayload(true));
+        } catch (_) {
+          return; // network is down; Netlify still has the submission
+        }
+      }
+
+      if (res && !res.ok && hsCampaignField) {
+        try {
+          await post(HS_ENDPOINTS[0], buildPayload(false));
+        } catch (_) {
+          /* nothing further to try */
+        }
+      }
     }
     // -----------------------------------------------------------------------
 
-    form.addEventListener('submit', (e) => {
+    // Hold the native submit just long enough to hear back from HubSpot, so a
+    // rejected field can be retried. Capped hard: the user's submission is never
+    // held up for more than a moment, and goes through regardless of the outcome.
+    let submitting = false;
+
+    form.addEventListener('submit', async (e) => {
+      if (submitting) return; // the programmatic submit below
+      e.preventDefault();
+
       const name = form.querySelector('#name');
       const email = form.querySelector('#email');
       if (!name.value.trim() || !email.value.trim() || !email.checkValidity()) {
-        e.preventDefault();
         fail('We need a name and a working email to reply.');
         return;
       }
+
+      const btn = form.querySelector('button[type="submit"]');
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+      }
+
       try {
-        submitToHubSpot();
+        await Promise.race([
+          submitToHubSpot(),
+          new Promise((resolve) => setTimeout(resolve, 2500)),
+        ]);
       } catch (_) {
         /* never block the Netlify submit */
       }
+
+      submitting = true;
+      form.submit(); // bypasses this handler, posts to Netlify as normal
     });
   })();
 </script>
