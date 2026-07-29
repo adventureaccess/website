@@ -19,6 +19,7 @@ const staticUrls = [
   // /nepal-lp01/ and /india-lp01/ (+ their /thank-you/ pages) intentionally
   //   excluded — noindex paid-campaign landing pages, reached via ads only.
   // /internal/dashboard/ intentionally excluded — Identity-gated internal tool.
+  // /account/ intentionally excluded — team sign-in / Identity token handling.
 ];
 
 export const GET: APIRoute = async () => {

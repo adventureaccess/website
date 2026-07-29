@@ -99,35 +99,32 @@ const allSchemas = [orgSchema, ...extraSchemas];
       <script type="application/ld+json" set:html={JSON.stringify(s)}></script>
     ))}
 
-    <!-- Netlify Identity (required for Decap CMS login redirect).
-         Loaded ONLY when an invite/recovery/confirmation token is in the URL hash —
-         that's the one case where a public page needs the widget. /admin loads its
-         own copy. This keeps ~70KB of JS off normal page views. -->
+    <!-- Netlify Identity email links (invite / password recovery / confirmation)
+         point at the site root with the token in the URL hash. Forward those to
+         /account/, hash intact, which handles every flow with visible success and
+         failure states.
+
+         This used to load the widget here and call open() blind, then redirect to
+         /admin/ on login. If a token was expired or already spent — which happens
+         a lot, since mail clients and security scanners pre-fetch links and these
+         tokens are single-use — the verify call 404'd, nothing rendered, the hash
+         was stripped, and the user was stranded on the homepage. Forwarding keeps
+         the token handling in exactly one place, and keeps ~70KB of widget JS off
+         normal page views. -->
     <script is:inline>
       (function () {
-        var hash = window.location.hash;
+        var hash = window.location.hash || '';
         if (
           hash.indexOf('invite_token=') === -1 &&
           hash.indexOf('recovery_token=') === -1 &&
-          hash.indexOf('confirmation_token=') === -1
+          hash.indexOf('confirmation_token=') === -1 &&
+          hash.indexOf('email_change_token=') === -1
         ) return;
 
-        var s = document.createElement('script');
-        s.src = 'https://identity.netlify.com/v1/netlify-identity-widget.js';
-        s.onload = function () {
-          if (!window.netlifyIdentity) return;
-          window.netlifyIdentity.on('init', function (user) {
-            // Auto-open the modal AFTER the widget has fully initialized
-            window.netlifyIdentity.open();
-            if (!user) {
-              window.netlifyIdentity.on('login', function () {
-                document.location.href = '/admin/';
-              });
-            }
-          });
-          window.netlifyIdentity.init();
-        };
-        document.head.appendChild(s);
+        // /account/ handles these itself — never forward to ourselves.
+        if (window.location.pathname.indexOf('/account') === 0) return;
+
+        window.location.replace('/account/' + hash);
       })();
     </script>
 

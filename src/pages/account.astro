@@ -1,0 +1,240 @@
+---
+/**
+ * /account/ — one place to handle every Netlify Identity flow, with visible states.
+ *
+ * Why this exists: Identity's emails (invite, password recovery, confirmation)
+ * link to the site root with the token in the URL hash. Base.astro used to load
+ * the widget there and call open() blind, then redirect to /admin/ on login.
+ * When a token was expired or already spent, the verify call 404'd, the widget
+ * rendered nothing, the hash was stripped, and the user just landed on the
+ * homepage with no explanation and no way to retry. That's the bug this fixes.
+ *
+ * Note that recovery/invite tokens are SINGLE USE. A link is commonly spent
+ * before the user ever clicks it, because mail clients and corporate security
+ * scanners pre-fetch links in email. Hence the "request a new link" form here.
+ *
+ * Base.astro now forwards any root URL carrying a token hash to this page,
+ * preserving the hash, so existing emails keep working without touching
+ * Identity's email templates. Pointing those templates at /account/ directly is
+ * tidier but optional.
+ */
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Account — Adventure Access"
+  description="Sign in to the Adventure Access team tools."
+  noindex={true}
+>
+  <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <article class="pt-32 md:pt-40 pb-24 md:pb-32 min-h-[70vh]">
+    <div class="max-w-xl mx-auto px-5 md:px-14">
+      <div class="eyebrow mb-5">— Team access</div>
+
+      <!-- Processing a token from an email link -->
+      <section id="s-working">
+        <h1 class="display text-4xl md:text-5xl mb-6">One moment.</h1>
+        <p class="text-ink-soft">Checking your link…</p>
+      </section>
+
+      <!-- Signed in -->
+      <section id="s-in" class="hidden">
+        <h1 class="display text-4xl md:text-5xl mb-6">You're signed in.</h1>
+        <p class="text-lg leading-relaxed text-ink-soft mb-10">
+          Signed in as <span id="in-email" class="text-ink font-medium"></span>.
+        </p>
+        <div class="flex flex-wrap gap-5 items-center mb-12">
+          <a href="/internal/dashboard/" class="btn !bg-saffron hover:!bg-saffron-dark">Marketing dashboard</a>
+          <a href="/admin/" class="btn-ghost">Content editor →</a>
+        </div>
+        <button id="btn-out" class="text-sm text-ink-soft underline hover:text-ink">Sign out</button>
+      </section>
+
+      <!-- Signed out -->
+      <section id="s-out" class="hidden">
+        <h1 class="display text-4xl md:text-5xl mb-6">Sign in.</h1>
+        <p class="text-lg leading-relaxed text-ink-soft mb-10">
+          For the Adventure Access team — the marketing dashboard and the content editor.
+        </p>
+        <button id="btn-in" class="btn !bg-saffron hover:!bg-saffron-dark mb-14">Sign in</button>
+        <div id="reset-slot"></div>
+      </section>
+
+      <!-- The emailed link didn't work -->
+      <section id="s-badlink" class="hidden">
+        <h1 class="display text-4xl md:text-5xl mb-6">That link has expired.</h1>
+        <p class="text-lg leading-relaxed text-ink-soft mb-4">
+          Password and invite links can only be used once, and they don't last long.
+        </p>
+        <p class="text-ink-soft mb-10">
+          It's also common for a link to be used up before you click it — some mail apps and
+          security scanners open links automatically. If that's what happened, request a
+          fresh one below and paste it into your browser rather than clicking it.
+        </p>
+        <div id="badlink-slot"></div>
+        <p class="mt-10">
+          <button id="btn-in-2" class="text-sm text-ink-soft underline hover:text-ink">
+            Or sign in with your password
+          </button>
+        </p>
+      </section>
+
+      <!-- Unexpected failure -->
+      <section id="s-error" class="hidden">
+        <h1 class="display text-4xl md:text-5xl mb-6">Something went wrong.</h1>
+        <p id="err-detail" class="text-sm text-ink-soft font-mono break-words mb-10"></p>
+        <button id="btn-reload" class="btn !bg-saffron hover:!bg-saffron-dark">Try again</button>
+      </section>
+
+      <!-- Reset-request form, moved into whichever section needs it -->
+      <template id="tpl-reset">
+        <form class="reset-form border-t border-ink/15 pt-8">
+          <p class="k-label mb-3">Send a new password link</p>
+          <div class="flex flex-wrap gap-3 items-start">
+            <input
+              type="email" name="email" required autocomplete="email" placeholder="you@adventure-access.com"
+              class="flex-1 min-w-[15rem] bg-transparent border-b border-ink/25 py-2 text-ink
+                     placeholder:text-ink-soft/50 focus:outline-none focus:border-saffron transition-colors"
+            />
+            <button type="submit" class="btn-ghost">Send link</button>
+          </div>
+          <p class="reset-msg text-sm text-ink-soft mt-4 hidden"></p>
+        </form>
+      </template>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .k-label { @apply text-[11px] font-medium tracking-[0.12em] uppercase text-ink-soft; }
+</style>
+
+<script is:inline>
+  (() => {
+    const $ = (id) => document.getElementById(id);
+    const SECTIONS = ['s-working', 's-in', 's-out', 's-badlink', 's-error'];
+    const show = (id) => SECTIONS.forEach((s) => $(s).classList.toggle('hidden', s !== id));
+
+    // Read the hash BEFORE the widget consumes it, so we know which flow this is
+    // and can still explain things after the token is gone.
+    const hash = window.location.hash || '';
+    const tokenType = ['invite_token', 'recovery_token', 'confirmation_token', 'email_change_token']
+      .find((t) => hash.includes(t + '=')) || null;
+    const hashError = /error=|error_description=/.test(hash);
+
+    let settled = false;
+    const settle = (id) => {
+      settled = true;
+      show(id);
+    };
+
+    // ---- Request a fresh password link -----------------------------------
+    // Posts straight to GoTrue's recover endpoint rather than relying on the
+    // widget's UI. Always reports success so we don't reveal who has an account.
+    function mountResetForm(slotId) {
+      const slot = $(slotId);
+      if (!slot || slot.children.length) return;
+      slot.appendChild($('tpl-reset').content.cloneNode(true));
+      const form = slot.querySelector('.reset-form');
+      const msg = slot.querySelector('.reset-msg');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = form.querySelector('[name="email"]').value.trim();
+        if (!email) return;
+        const btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+        try {
+          await fetch('/.netlify/identity/recover', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email }),
+          });
+        } catch (_) {
+          /* fall through — the message below is deliberately generic */
+        }
+        msg.textContent =
+          'If that address has an account, a link is on its way. It works once and expires, so open it as soon as you can.';
+        msg.classList.remove('hidden');
+        btn.disabled = false;
+        btn.textContent = 'Send link';
+      });
+    }
+
+    // ---- Identity ---------------------------------------------------------
+    function identity() {
+      return window.netlifyIdentity || null;
+    }
+
+    function onSignedIn(user) {
+      $('in-email').textContent = (user && user.email) || '';
+      settle('s-in');
+    }
+
+    function start() {
+      const id = identity();
+      if (!id) {
+        $('err-detail').textContent =
+          'The Netlify Identity script failed to load. Check your connection, or an extension may be blocking identity.netlify.com.';
+        settle('s-error');
+        return;
+      }
+
+      id.on('init', (user) => {
+        if (user) return onSignedIn(user);
+        // No user. If we arrived with a token, the widget is mid-flow (e.g. the
+        // "set a new password" pane) — leave it alone. Otherwise show sign-in.
+        if (!tokenType) settle('s-out');
+      });
+
+      id.on('login', (user) => {
+        id.close();
+        onSignedIn(user);
+      });
+
+      id.on('logout', () => settle('s-out'));
+
+      id.on('error', (err) => {
+        const text = String((err && err.message) || err || '');
+        // A spent or expired token surfaces as a 404/401 from /identity/verify.
+        if (tokenType || /404|not found|expired|invalid|401/i.test(text)) {
+          settle('s-badlink');
+        } else {
+          $('err-detail').textContent = text || 'Unknown Identity error.';
+          settle('s-error');
+        }
+      });
+
+      id.init();
+
+      // The widget can fail silently — that was the original bug. If a token
+      // flow hasn't produced a user, a pane, or an error shortly after init,
+      // stop showing "one moment" and offer a way forward.
+      if (tokenType || hashError) {
+        setTimeout(() => {
+          if (settled) return;
+          const modalOpen = !!document.querySelector('[class*="netlify-identity"] form, #netlify-modal form');
+          if (!modalOpen) settle('s-badlink');
+        }, 4000);
+      }
+    }
+
+    mountResetForm('reset-slot');
+    mountResetForm('badlink-slot');
+
+    if (hashError && !tokenType) settle('s-badlink');
+
+    $('btn-in').addEventListener('click', () => identity()?.open('login'));
+    $('btn-in-2').addEventListener('click', () => identity()?.open('login'));
+    $('btn-out').addEventListener('click', () => identity()?.logout());
+    $('btn-reload').addEventListener('click', () => window.location.reload());
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', start);
+    } else {
+      start();
+    }
+  })();
+</script>
