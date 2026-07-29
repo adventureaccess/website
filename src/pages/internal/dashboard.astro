@@ -35,7 +35,9 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
       <div class="flex flex-wrap items-end justify-between gap-4 mb-8">
         <div>
           <div class="eyebrow mb-3">— Internal</div>
-          <h1 class="display text-4xl md:text-6xl">Marketing dashboard.</h1>
+          <h1 class="display text-4xl md:text-6xl">
+            <span id="egg" class="select-none cursor-default" title="">Marketing</span> Dashboard.
+          </h1>
         </div>
         <button id="btn-logout" class="btn-ghost hidden">Log out</button>
       </div>
@@ -94,13 +96,37 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
           <div class="card"><div class="k-label">Pages seen</div><div class="k-val" id="k-pages">–</div><div class="k-hint">distinct paths</div></div>
         </div>
 
-        <div class="card mb-10">
+        <div class="card mb-6">
           <div class="k-label mb-1">Daily page views</div>
           <p class="text-[11px] text-ink-soft/70 mb-4">
-            Bot-filtered and client-side. Consent-gated here, so read it as a trend, not a
-            to-the-unit count.
+            GA4 is bot-filtered and client-side, and consent-gated here — read it as a trend,
+            not a to-the-unit count. The Netlify line, when shown, is every request that hit
+            the edge.
           </p>
           <div class="h-52 md:h-64 relative"><canvas id="chart-views"></canvas></div>
+        </div>
+
+        <!-- Bots vs humans -->
+        <div class="card mb-10" id="bots-card">
+          <div class="k-label mb-1">Real traffic vs raw requests</div>
+          <p class="text-[11px] text-ink-soft/70 mb-4" id="bots-note">Loading comparison…</p>
+          <div class="grid grid-cols-3 gap-3 md:gap-4" id="bots-grid" hidden>
+            <div>
+              <div class="k-label">Netlify requests</div>
+              <div class="k-val" id="k-netlify">–</div>
+              <div class="k-hint">server-side, all requests</div>
+            </div>
+            <div>
+              <div class="k-label">GA4 humans</div>
+              <div class="k-val" id="k-human">–</div>
+              <div class="k-hint">real browsers</div>
+            </div>
+            <div>
+              <div class="k-label">Not a person</div>
+              <div class="k-val text-saffron" id="k-botshare">–</div>
+              <div class="k-hint" id="k-botshare-hint">of raw requests</div>
+            </div>
+          </div>
         </div>
 
         <!-- Funnel -->
@@ -242,12 +268,18 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
     async function load() {
       show('state-loading');
       try {
+        // The Netlify comparison rides along but must never break the page — its
+        // API is undocumented, so it's fetched separately and allowed to fail.
+        const netlifyPromise = api(`/.netlify/functions/netlify-traffic?days=${days}`).catch(
+          (e) => ({ available: false, reason: e.message || String(e) })
+        );
         const [daily, pages, hs] = await Promise.all([
           api(`/.netlify/functions/pageviews?days=${days}`),
           api(`/.netlify/functions/pageviews?days=${days}&breakdown=page`),
           api(`/.netlify/functions/hubspot-metrics?days=${days}`),
         ]);
-        render(daily, pages, hs);
+        const netlify = await netlifyPromise;
+        render(daily, pages, hs, netlify);
         show('dash');
       } catch (e) {
         if (e.code === 401) {
@@ -269,7 +301,7 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
     // GA4 date keys are YYYYMMDD
     const label = (k) => (k && k.length === 8 ? `${k.slice(4, 6)}/${k.slice(6, 8)}` : k);
 
-    function render(daily, pages, hs) {
+    function render(daily, pages, hs, netlify) {
       // Traffic KPIs
       $('k-views').textContent = fmt(daily.total);
       $('k-views-hint').textContent = `last ${days} days`;
@@ -298,14 +330,45 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
         values.push(byKey[k] || 0);
       }
 
+      // Netlify comparison — same day keys, so it lines up with the GA4 series.
+      const netlifyOk = netlify && netlify.available && Array.isArray(netlify.rows);
+      let netlifyValues = null;
+      if (netlifyOk) {
+        const nByKey = {};
+        netlify.rows.forEach((r) => (nByKey[r.key] = r.pageviews));
+        netlifyValues = labels.map((_, i) => {
+          const d = new Date(Date.now() - (days - 1 - i) * 86400000);
+          const k =
+            d.getFullYear() +
+            String(d.getMonth() + 1).padStart(2, '0') +
+            String(d.getDate()).padStart(2, '0');
+          return nByKey[k] || 0;
+        });
+      }
+
+      const datasets = [
+        { label: 'GA4 · humans', data: values, backgroundColor: '#d97a2c', borderRadius: 2, order: 2 },
+      ];
+      if (netlifyValues) {
+        datasets.push({
+          label: 'Netlify · all requests (incl. bots)',
+          data: netlifyValues,
+          type: 'line',
+          borderColor: '#5a6470',
+          backgroundColor: 'rgba(90,100,112,0.08)',
+          borderWidth: 1.5,
+          pointRadius: 0,
+          fill: true,
+          tension: 0.25,
+          order: 1,
+        });
+      }
+
       if (chart) chart.destroy();
       if (window.Chart) {
         chart = new window.Chart($('chart-views'), {
           type: 'bar',
-          data: {
-            labels,
-            datasets: [{ label: 'Page views', data: values, backgroundColor: '#d97a2c', borderRadius: 2 }],
-          },
+          data: { labels, datasets },
           options: {
             responsive: true,
             maintainAspectRatio: false,
@@ -316,9 +379,36 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
                 grid: { display: false },
               },
             },
-            plugins: { legend: { display: false } },
+            plugins: {
+              legend: {
+                display: !!netlifyValues,
+                position: 'bottom',
+                labels: { boxWidth: 12, color: '#5a6470', font: { size: 11 } },
+              },
+            },
           },
         });
+      }
+
+      // Bots-vs-humans card
+      const grid = $('bots-grid');
+      const bnote = $('bots-note');
+      if (netlifyOk) {
+        const raw = Number(netlify.total || 0);
+        const human = Number(daily.total || 0);
+        $('k-netlify').textContent = fmt(raw);
+        $('k-human').textContent = fmt(human);
+        const share = raw > 0 ? Math.max(0, Math.round(((raw - human) / raw) * 100)) : null;
+        $('k-botshare').textContent = share === null ? '–' : share + '%';
+        $('k-botshare-hint').textContent =
+          share === null ? 'of raw requests' : `${fmt(Math.max(0, raw - human))} requests`;
+        grid.hidden = false;
+        bnote.textContent =
+          'Netlify counts every request that reaches the edge — bots, scrapers and vulnerability scanners included. GA4 only counts real browsers. The gap is the noise. Never add these two together.';
+      } else {
+        grid.hidden = true;
+        const reason = (netlify && netlify.reason) || 'not configured';
+        bnote.textContent = `Netlify comparison unavailable — ${reason} This is an undocumented Netlify API, so it's expected to break occasionally; nothing else on this page is affected.`;
       }
 
       // Funnel KPIs
@@ -410,6 +500,20 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
       window.aaIdentity ? window.aaIdentity.open('login') : identity()?.open('login')
     );
     $('btn-refresh').addEventListener('click', () => load());
+
+    // Easter egg: double-click "Marketing" and it commits to the house spelling.
+    (() => {
+      const egg = $('egg');
+      if (!egg) return;
+      let on = false;
+      egg.addEventListener('dblclick', () => {
+        on = !on;
+        egg.textContent = on ? 'Marketting' : 'Marketing';
+        egg.style.transition = 'color 200ms ease';
+        egg.style.color = on ? '#d97a2c' : '';
+        egg.title = on ? 'As the folder intended.' : '';
+      });
+    })();
     $('btn-retry').addEventListener('click', () => load());
     $('btn-logout').addEventListener('click', () => identity()?.logout());
     $('btn-logout-2').addEventListener('click', () => identity()?.logout());
