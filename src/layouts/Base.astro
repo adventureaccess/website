@@ -26,6 +26,17 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+// Internal, staff-only pages (/account/, /internal/*) get NO marketing or
+// analytics scripts, and no consent banner. Three reasons:
+//  1. HubSpot's tracking script collects submissions from ANY form on the page
+//     ("non-HubSpot forms"), which was turning the password-reset field on
+//     /account/ into HubSpot form submissions and conversion events.
+//  2. Staff using our own tools shouldn't inflate the traffic and conversion
+//     numbers the dashboard then reports — that's circular.
+//  3. No tracking means no cookies to consent to, so the banner is pointless here.
+const INTERNAL_PREFIXES = ['/account', '/internal'];
+const isInternalPage = INTERNAL_PREFIXES.some((p) => Astro.url.pathname.startsWith(p));
 const absoluteOgImage = ogImage
   ? new URL(ogImage, Astro.site).toString()
   : new URL('/images/2024/05/Ladakh-hero-image.jpg', Astro.site).toString();
@@ -147,7 +158,10 @@ const allSchemas = [orgSchema, ...extraSchemas];
          - The Google Ads tag is intentionally NOT configured here:
            HubSpot injects it (Ads connected in HubSpot > Marketing > Ads).
     -->
+    {!isInternalPage && (
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-447VPW2H83"></script>
+    )}
+    {!isInternalPage && (
     <script is:inline>
       (function () {
         var KEY = 'aa-consent';
@@ -209,6 +223,7 @@ const allSchemas = [orgSchema, ...extraSchemas];
         }
       })();
     </script>
+    )}
   </head>
   <body class="min-h-screen flex flex-col overflow-x-hidden">
     <Nav transparent={hideNavBg} />
@@ -216,7 +231,7 @@ const allSchemas = [orgSchema, ...extraSchemas];
       <slot />
     </main>
     <Footer />
-    <ConsentBanner />
+    {!isInternalPage && <ConsentBanner />}
     <RevealObserver />
   </body>
 </html>

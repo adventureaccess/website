@@ -91,20 +91,27 @@ import IdentityWidgetGuard from '../components/IdentityWidgetGuard.astro';
         <button id="btn-reload" class="btn !bg-saffron hover:!bg-saffron-dark">Try again</button>
       </section>
 
-      <!-- Reset-request form, moved into whichever section needs it -->
+      <!-- Reset-request control, moved into whichever section needs it.
+           Deliberately NOT a <form>: HubSpot's tracking script collects
+           submissions from any non-HubSpot form it finds, which turned this
+           field into HubSpot form submissions and conversion events on a real
+           contact record. With no form element there is no submit event to
+           collect. data-hs-do-not-collect is a second line of defence, and
+           Base.astro now keeps trackers off internal pages entirely. -->
       <template id="tpl-reset">
-        <form class="reset-form border-t border-ink/15 pt-8">
+        <div class="reset-form border-t border-ink/15 pt-8">
           <p class="k-label mb-3">Send a new password link</p>
           <div class="flex flex-wrap gap-3 items-start">
             <input
-              type="email" name="email" required autocomplete="email" placeholder="you@adventure-access.com"
+              type="email" name="email" autocomplete="email" placeholder="you@adventure-access.com"
+              data-hs-do-not-collect="true"
               class="flex-1 min-w-[15rem] bg-transparent border-b border-ink/25 py-2 text-ink
                      placeholder:text-ink-soft/50 focus:outline-none focus:border-saffron transition-colors"
             />
-            <button type="submit" class="btn-ghost">Send link</button>
+            <button type="button" class="btn-ghost reset-send">Send link</button>
           </div>
           <p class="reset-msg text-sm text-ink-soft mt-4 hidden"></p>
-        </form>
+        </div>
       </template>
     </div>
   </article>
@@ -153,12 +160,16 @@ import IdentityWidgetGuard from '../components/IdentityWidgetGuard.astro';
       slot.appendChild($('tpl-reset').content.cloneNode(true));
       const form = slot.querySelector('.reset-form');
       const msg = slot.querySelector('.reset-msg');
+      const input = form.querySelector('[name="email"]');
+      const btn = form.querySelector('.reset-send');
 
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const email = form.querySelector('[name="email"]').value.trim();
-        if (!email) return;
-        const btn = form.querySelector('button[type="submit"]');
+      const send = async () => {
+        const email = input.value.trim();
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          msg.textContent = 'Enter the email address on your account.';
+          msg.classList.remove('hidden');
+          return;
+        }
         btn.disabled = true;
         btn.textContent = 'Sending…';
         try {
@@ -175,6 +186,14 @@ import IdentityWidgetGuard from '../components/IdentityWidgetGuard.astro';
         msg.classList.remove('hidden');
         btn.disabled = false;
         btn.textContent = 'Send link';
+      };
+
+      btn.addEventListener('click', send);
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault(); // no form, so Enter needs wiring up by hand
+          send();
+        }
       });
     }
 
