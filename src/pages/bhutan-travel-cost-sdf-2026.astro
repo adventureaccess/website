@@ -1,0 +1,505 @@
+---
+// src/pages/bhutan-travel-cost-sdf-2026.astro
+// Pillar anchor page — Bhutan Travel Cost 2026 / SDF.
+// Root-level slug by decision 2026-07-29: evergreen anchor page, refreshed annually.
+//
+// WIRING (all done 2026-07-29):
+//   - Listed in `pillarUrls` in src/pages/sitemap.xml.ts. That file is hand-maintained,
+//     so a missing entry means this page never gets crawled.
+//   - Inbound link comes from the Bhutan `guides` array in src/data/destinations.json,
+//     rendered by the "Before you go" block in destinations/[slug].astro. Needed because
+//     this page sits at the site root and so is NOT listed by the /blog/ index — without
+//     that link it would be orphaned. Nepal/Ladakh/Tibet reuse the same `guides` field.
+//
+// STILL TO DO: cross-link the Nepal pillar once it is live.
+//
+// ANNUAL REFRESH: keep this URL, update LAST_REVIEWED + the visible year in the H1, and
+// bump `lastmod` for this entry in sitemap.xml.ts to match. Those two dates are the same
+// fact stored twice — if they drift, the sitemap is lying about freshness.
+// Do not roll the slug to -2027; link equity outweighs the digits in the URL.
+//
+// IMAGERY NOTES
+//   - bhutan01–08 have NO variants in public/images/resp/, so respSrcset() must not be
+//     called on them (see the warning in src/utils/resp.ts). Plain src only.
+//   - The four 2026/07 photos were ingested from the Drive footage bank via
+//     process-bhutan-photos.py and DO have real variants — except khotokha-valley,
+//     whose source is only 1080px wide. Its -1400/-2000 "variants" are 1080px copies,
+//     so respSrcset() would promise the browser detail that does not exist. That one
+//     image is deliberately a plain src, displayed at half column.
+//   - bhutan-masked-dance and bhutan-hiker-on-trail are both 3:4 portrait. They are
+//     rendered at aspect-[3/4] so nothing is cropped, and paired with SIZES_HALF so
+//     the browser never downloads the 2000px variant for a half-width slot.
+
+import Base from '../layouts/Base.astro';
+import { respSrcset, SIZES_FULL, SIZES_HALF } from '../utils/resp';
+
+const LAST_REVIEWED = '29 July 2026';
+
+const title = 'Bhutan Travel Cost 2026: How the SDF Actually Works';
+const description =
+  "Bhutan's $100/night SDF confuses everyone. Here's what it covers, what it doesn't, and what a Bhutan trip really costs in 2026 — from operators who go there.";
+
+const HERO = '/images/2024/05/Bhutan-Hero-Image.jpg';
+const IMG_TREK = '/images/2026/07/bhutan-hiker-on-trail.jpg';
+const IMG_FESTIVAL = '/images/2026/07/bhutan-masked-dance.jpg';
+const IMG_KHOTOKHA_BALCONY = '/images/2026/07/khotokha-balcony.jpg';
+const IMG_KHOTOKHA_VALLEY = '/images/2026/07/khotokha-valley.jpg';
+
+const faqs = [
+  {
+    q: "How much is Bhutan's SDF in 2026?",
+    a: 'US$100 per person per night, confirmed through August 31, 2027, plus a one-time $40 visa fee. Children 6–12 pay half; under-6s are exempt.',
+  },
+  {
+    q: 'Does the SDF include hotels and meals?',
+    a: 'No. The SDF goes to the Bhutanese government for healthcare, education, and conservation. Accommodation, meals, guide, and transport are booked separately through your operator.',
+  },
+  {
+    q: 'Is there tax on top of the SDF?',
+    a: 'Since 1 January 2026, a 5% Goods and Services Tax applies to tourism services — hotels, guides, and transport. It does not apply to the SDF or the visa fee.',
+  },
+  {
+    q: 'Can I visit Bhutan without a tour operator?',
+    a: 'Every foreign visitor needs a licensed Bhutanese guide and pre-arranged visa. There’s no independent backpacking — but itineraries are fully customizable; "tour" doesn’t have to mean "bus group."',
+  },
+  {
+    q: 'What does a week in Bhutan realistically cost?',
+    a: 'Around $1,800–2,500 per person excluding international flights, depending on hotel level and route.',
+  },
+  {
+    q: 'When is the best time to visit Bhutan?',
+    a: 'October–November and March–May for weather and festivals; December–February for value and quiet; monsoon summer for green valleys and lower costs.',
+  },
+];
+
+// Single source of truth: the schema is generated from the same array that renders the
+// accordion, so the JSON-LD and the visible questions can never drift apart.
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+
+const costRows = [
+  { item: 'SDF', cost: '$100 pp/night' },
+  { item: 'Visa fee', cost: '$40 one-time' },
+  { item: 'Hotel (comfortable 3-star)', cost: '$60–120/night' },
+  { item: 'Guide, driver, vehicle, meals', cost: '$80–150 pp/night' },
+  { item: '5% GST on tourism services', cost: 'Included in the ranges above', muted: true },
+];
+
+const shortList = [
+  {
+    h: "Paro & the Tiger's Nest",
+    p: 'Everyone goes; everyone should. The hike to Taktsang Monastery, clinging to a 900 m cliff face, earns its fame. Go at dawn, before the day-trippers.',
+    img: '/images/2024/03/bhutan01.jpg',
+    alt: "Taktsang — the Tiger's Nest monastery — clinging to a sheer cliff face above the Paro valley",
+  },
+  {
+    h: 'Thimphu & Punakha',
+    p: "The capital without traffic lights, then to Punakha's fortress-monastery at the meeting of two rivers — winter home of Bhutan's monastic body.",
+    img: '/images/2024/03/bhutan02.jpg',
+    alt: 'Punakha Dzong and its cantilever bridge at the confluence of two rivers',
+  },
+  {
+    h: 'Over the Dochula Pass',
+    p: 'One hundred and eight chortens on a ridge, and on a clear morning the eastern Himalaya laid out behind them. It is the drive between Thimphu and Punakha, and not one you sleep through.',
+    img: '/images/2024/03/bhutan03.jpg',
+    alt: 'Chortens on the Dochula Pass with the snow peaks of the eastern Himalaya behind',
+  },
+];
+
+const seasons = [
+  ['March–May', 'rhododendrons in bloom, clear trekking weather, Paro Tshechu. Peak season for good reason.'],
+  ['June–August', 'monsoon greenery, fewer visitors, lower hotel rates. Valley travel stays pleasant; high treks get wet.'],
+  ['September–November', 'the classic window — crisp air, harvest gold in the valleys, Thimphu Tshechu, black-necked cranes arriving in Punakha and Phobjikha.'],
+  ['December–February', 'cold, quiet, and clear. Best-value season; lower valleys are entirely travelable.'],
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  ogImage={HERO}
+  hideNavBg={true}
+  schema={schema}
+>
+  {/* ---------- Hero (pattern copied from destinations/index.astro) ---------- */}
+  <section class="relative h-[55vh] md:h-[65vh] overflow-hidden bg-ink">
+    <img
+      src={HERO}
+      srcset={respSrcset(HERO)}
+      sizes={SIZES_FULL}
+      alt="Taktsang monastery built into the cliffs above the Paro valley, Bhutan"
+      class="absolute inset-0 w-full h-full object-cover"
+      fetchpriority="high"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-ink/35 via-ink/15 to-ink/80"></div>
+    <div class="relative z-10 h-full max-w-8xl mx-auto px-6 md:px-14 flex flex-col justify-end pb-14 md:pb-20 text-cream">
+      <div class="max-w-3xl">
+        <div class="eyebrow-cream mb-6 text-shadow-hero">— Bhutan · Costs &amp; Permits</div>
+        <h1 class="display text-5xl md:text-7xl mb-6 text-shadow-hero">
+          Bhutan travel cost 2026: how the SDF actually works.
+        </h1>
+        <p class="text-lg md:text-xl leading-relaxed text-cream/85 max-w-2xl">
+          Bhutan has a reputation as the world's most expensive stamp in your passport — and the
+          reputation is only half true.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- Intro ---------- */}
+  <section class="py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl space-y-6 text-lg leading-relaxed text-ink-soft">
+        <p>
+          The Sustainable Development Fee scares off travelers who would happily pay the same money
+          spread across a normal trip, simply because nobody explains clearly what the fee is, what
+          it buys, and what the real total comes to.
+        </p>
+        <p>
+          We've been guiding travelers through the Himalayas for more than twenty years, and Bhutan
+          is where our partner network runs deepest. So here's the honest math for 2026 — no
+          mystery, no markup hidden in vague "package pricing."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- The SDF + cost table ---------- */}
+  <section class="bg-paper py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl">
+        <div class="eyebrow mb-5">— The fee, plainly</div>
+        <h2 class="display text-4xl md:text-5xl mb-8">The SDF, explained simply.</h2>
+
+        <div class="space-y-6 text-lg leading-relaxed text-ink-soft">
+          <p>
+            The Sustainable Development Fee is <strong class="text-ink font-medium">US$100 per
+            person, per night</strong>, paid to the Royal Government of Bhutan — not to any tour
+            operator. The current rate is a 50% reduction from the original $200 and is confirmed
+            through <strong class="text-ink font-medium">August 31, 2027</strong>. On top of that
+            sits a one-time <strong class="text-ink font-medium">$40 visa application fee</strong>.
+          </p>
+          <p>
+            What the SDF is <em>not</em>: it is not your hotel, your meals, your guide, or your
+            transport. Those are separate, booked through your operator. What it <em>is</em>:
+            Bhutan's deliberate choice to fund free healthcare and education, keep the country
+            carbon-negative, and cap visitor numbers so the Tiger's Nest never looks like a theme
+            park queue.
+          </p>
+          <p>
+            <strong class="text-ink font-medium">Discounts worth knowing:</strong> children aged
+            6–12 pay half; children 5 and under are exempt.
+          </p>
+        </div>
+
+        {/* GST callout — added 2026-07-29; the approved copy predated the 1 Jan 2026 change */}
+        <div class="border-l-[3px] border-saffron pl-6 my-10">
+          <p class="text-lg leading-relaxed text-ink-soft">
+            <strong class="text-ink font-medium">New for 2026:</strong> since 1 January, a 5% Goods
+            and Services Tax applies to tourism services — hotels, guides, and transport. It does
+            <em>not</em> touch the SDF or the visa fee, and the ranges below already absorb it.
+          </p>
+        </div>
+
+        <h3 class="display text-2xl md:text-3xl mt-14 mb-2">What a real trip costs</h3>
+
+        <div class="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
+          <table class="w-full border-collapse min-w-[26rem] text-base">
+            <thead>
+              <tr>
+                <th class="text-left py-4 pr-4 border-b border-ink/15 text-xs font-medium uppercase tracking-[0.15em] text-ink-soft">Item</th>
+                <th class="text-left py-4 border-b border-ink/15 text-xs font-medium uppercase tracking-[0.15em] text-ink-soft">Typical 2026 cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              {costRows.map(({ item, cost, muted }) => (
+                <tr>
+                  <td class="py-4 pr-4 border-b border-ink/10 text-ink-soft">{item}</td>
+                  <td class:list={['py-4 border-b border-ink/10', muted ? 'text-ink-soft/70 text-sm' : 'text-ink-soft']}>
+                    {cost}
+                  </td>
+                </tr>
+              ))}
+              <tr>
+                <td class="py-4 pr-4 border-t-2 border-ink font-medium text-ink">Realistic total</td>
+                <td class="py-4 border-t-2 border-ink font-medium text-ink">$250–350 pp/night</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-sm text-ink-soft mt-3">Excludes international flights.</p>
+
+        <p class="mt-8 text-lg leading-relaxed text-ink-soft">
+          That lands a one-week Bhutan trip around $1,800–2,500 per person before flights —
+          comparable to an African safari or a Galápagos cruise, and for a similar reason: you're
+          paying for a place that has chosen not to be overrun.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- How booking works ---------- */}
+  <section class="py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div>
+          <div class="eyebrow mb-5">— How it works</div>
+          <h2 class="display text-4xl md:text-5xl mb-8">You can't just show up.</h2>
+          <div class="space-y-6 text-lg leading-relaxed text-ink-soft">
+            <p>
+              Independent travel in the backpacker sense doesn't exist in Bhutan — every itinerary
+              runs with a licensed Bhutanese guide, and your visa is approved only after your SDF is
+              paid. In practice: choose your operator, agree an itinerary, pay SDF and visa fee in
+              advance, and your visa arrives electronically before you fly. Flights enter via Paro —
+              one of the most spectacular landings in the Himalaya.
+            </p>
+            <p>
+              This is where working with a team that knows Bhutan personally matters. Our family of
+              operators and guides span Bhutan, and we build routes around what you actually want —
+              trekking, festivals, farmhouse stays — rather than the standard minibus circuit.
+            </p>
+            <p class="text-base text-ink-soft/85">
+              A note on the "independent travel" headlines of the past year: it has been promoted
+              online, but the infrastructure and policies aren't working yet. Most sites in the
+              country still require a licensed guide simply to buy an entry ticket.
+            </p>
+          </div>
+          <a href="/destinations/bhutan/" class="btn-ghost mt-8">See our Bhutan trips</a>
+        </div>
+        <img
+          src="/images/2024/03/bhutan06.jpg"
+          alt="Punakha Dzong lit at night above the river"
+          loading="lazy"
+          class="w-full aspect-[4/3] object-cover reveal reveal-right"
+        />
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- Short list (3-up so there is no orphan card) ---------- */}
+  <section class="bg-paper py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="eyebrow mb-5">— Where to go</div>
+      <h2 class="display text-4xl md:text-5xl max-w-2xl">Our Bhutan short list.</h2>
+      <div class="grid md:grid-cols-3 gap-10 md:gap-x-10 md:gap-y-14 mt-14">
+        {shortList.map(({ h, p, img, alt }, i) => (
+          <div class="reveal" data-delay={`${(i + 1) * 100}`}>
+            <img src={img} alt={alt} loading="lazy" class="w-full aspect-[16/9] object-cover mb-6" />
+            <h3 class="display text-xl md:text-2xl mb-3">{h}</h3>
+            <p class="leading-relaxed text-ink-soft">{p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- Trekking (3:4 portrait — no crop) ---------- */}
+  <section class="py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div>
+          <div class="eyebrow mb-5">— On foot</div>
+          <h2 class="display text-4xl md:text-5xl mb-8">The emptiest trails in the Himalaya.</h2>
+          <div class="space-y-6 text-lg leading-relaxed text-ink-soft">
+            <p>
+              The Druk Path — 4–5 days, Paro to Thimphu over ridgeline lakes — suits most fitness
+              levels. The Trans Bhutan Trail restoration means you can now walk sections of the
+              historic route that once connected the whole kingdom. When in Khotokha, join the three
+              valleys trek to connect to Gangtey.
+            </p>
+            <p>
+              What the photograph does not show is anyone else on the trail. That is not luck or
+              timing; it is what capping visitor numbers actually buys you.
+            </p>
+          </div>
+        </div>
+        <img
+          src={IMG_TREK}
+          srcset={respSrcset(IMG_TREK)}
+          sizes={SIZES_HALF}
+          alt="A single hiker on a narrow earth trail climbing through mossy conifer forest in Bhutan"
+          loading="lazy"
+          class="w-full aspect-[3/4] object-cover reveal reveal-right"
+        />
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- Festivals (3:4 portrait — no crop) ---------- */}
+  <section class="bg-paper py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <img
+          src={IMG_FESTIVAL}
+          srcset={respSrcset(IMG_FESTIVAL)}
+          sizes={SIZES_HALF}
+          alt="Two masked cham dancers in gold brocade performing before a seated crowd in national dress at a Bhutanese tshechu"
+          loading="lazy"
+          class="w-full aspect-[3/4] object-cover reveal reveal-left"
+        />
+        <div>
+          <div class="eyebrow mb-5">— Festival season</div>
+          <h2 class="display text-4xl md:text-5xl mb-8">Tshechus.</h2>
+          <div class="space-y-6 text-lg leading-relaxed text-ink-soft">
+            <p>
+              Masked dances, whole valleys turned out in their finest kira and gho. Paro Tshechu
+              (spring) and Thimphu Tshechu (autumn) are the big ones — book months ahead.
+            </p>
+            <p>
+              Festival dates move with the lunar calendar, which is the single most common reason a
+              Bhutan itinerary gets built around the wrong week. Tell us which tshechu you want and
+              we will fix the dates first and the rest of the route around them.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- Khotokha ----------
+      khotokha-valley is a plain src on purpose: its source is 1080px wide, so the
+      -1400/-2000 variants would be upscaled lies. Half-column display keeps it sharp. */}
+  <section class="py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl">
+        <div class="eyebrow mb-5">— Opening 2027</div>
+        <h2 class="display text-4xl md:text-5xl mb-8">Khotokha.</h2>
+        <div class="space-y-6 text-lg leading-relaxed text-ink-soft">
+          <p>
+            This is where our recommendations become unique. In 2027, one of our newest partnerships
+            opens in Khotokha Valley — a lodge built using traditional rammed earth construction,
+            making it one of the nation's most sustainable properties. A base for days of exploring
+            on foot or by bicycle, and intentional rest when you return each afternoon.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 md:gap-10 mt-12">
+        <figure class="reveal m-0">
+          <img
+            src={IMG_KHOTOKHA_BALCONY}
+            srcset={respSrcset(IMG_KHOTOKHA_BALCONY)}
+            sizes={SIZES_HALF}
+            alt="The Khotokha valley floor and its ridgeline seen through a carved traditional Bhutanese timber balcony"
+            loading="lazy"
+            class="w-full aspect-[4/3] object-cover"
+          />
+          <figcaption class="mt-3 text-sm text-ink-soft">
+            The view from the lodge balcony — rammed earth and carved timber, looking down the valley.
+          </figcaption>
+        </figure>
+        <figure class="reveal m-0" data-delay="200">
+          <img
+            src={IMG_KHOTOKHA_VALLEY}
+            alt="Last light over the flat floor of the Khotokha valley, forested ridges on both sides"
+            loading="lazy"
+            class="w-full aspect-[4/3] object-cover"
+          />
+          <figcaption class="mt-3 text-sm text-ink-soft">
+            Khotokha at last light. The three valleys trek to Gangtey starts from here.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- Seasons ---------- */}
+  <section class="bg-paper py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <img
+          src="/images/2024/03/bhutan05.jpg"
+          alt="Himalayan peaks rising above a sea of cloud at first light, Bhutan"
+          loading="lazy"
+          class="w-full aspect-[4/3] object-cover reveal reveal-left"
+        />
+        <div>
+          <div class="eyebrow mb-5">— Seasons</div>
+          <h2 class="display text-4xl md:text-5xl mb-8">When to go.</h2>
+          <ul class="space-y-4">
+            {seasons.map(([when, what]) => (
+              <li class="relative pl-6 text-lg leading-relaxed text-ink-soft">
+                <span class="absolute left-0 top-[0.7em] w-1.5 h-1.5 rounded-full bg-saffron"></span>
+                <strong class="text-ink font-medium">{when}:</strong> {what}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- Honest take ---------- */}
+  <section class="py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl">
+        <div class="eyebrow mb-5">— An honest take</div>
+        <h2 class="display text-4xl md:text-5xl mb-8">Is Bhutan worth the fee?</h2>
+        <p class="text-lg leading-relaxed text-ink-soft">
+          If your measure is cost-per-sight, maybe not. If it's cost-per-experience, few places on
+          earth compete: you will share trails with yaks instead of crowds, eat in farmhouses instead
+          of buffet halls, and see a Buddhist kingdom that runs on Gross National Happiness rather
+          than gross national anything-else. The SDF is why it stays that way. We'd rather send you
+          for fewer nights done well than talk you out of going.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- FAQ ---------- */}
+  <section class="bg-paper py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl">
+        <div class="eyebrow mb-5">— Questions</div>
+        <h2 class="display text-4xl md:text-5xl mb-10">The things people actually ask.</h2>
+
+        {faqs.map(({ q, a }) => (
+          <details class="group border-b border-ink/15">
+            <summary class="cursor-pointer list-none py-6 pr-10 relative display text-lg md:text-xl min-h-[44px]">
+              {q}
+              <span class="absolute right-1 top-5 text-2xl leading-none text-saffron font-sans select-none group-open:hidden" aria-hidden="true">+</span>
+              <span class="absolute right-1 top-5 text-2xl leading-none text-saffron font-sans select-none hidden group-open:inline" aria-hidden="true">–</span>
+            </summary>
+            <div class="pb-7 pr-10 leading-relaxed text-ink-soft">{a}</div>
+          </details>
+        ))}
+
+        <p class="mt-10 text-sm text-ink-soft tracking-wide">
+          Last reviewed: {LAST_REVIEWED} · SDF rate confirmed through 31 August 2027
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- CTA ----------
+      No NewsletterSignup here on purpose: Footer.astro already renders it (dark) on
+      every page, so an in-body block would be a second identical HubSpot form. */}
+  <section class="py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl">
+        <div class="eyebrow mb-5">— Start a conversation</div>
+        <h2 class="display text-4xl md:text-5xl mb-8">Plan your trip.</h2>
+        <p class="text-lg leading-relaxed text-ink-soft">
+          Bhutan rewards travelers who come with intention — which, frankly, is the whole point of
+          the fee. Talk to our team about a route built around your interests, and we'll give you the
+          real numbers up front.
+        </p>
+        <div class="flex flex-wrap items-center gap-8 mt-10">
+          <a href="/plan/" class="btn !bg-saffron hover:!bg-saffron-dark">Plan a journey</a>
+          <a href="/destinations/bhutan/" class="btn-ghost">Bhutan trips</a>
+        </div>
+        <p class="mt-10 text-base text-ink-soft">
+          Permit and access rules change — we re-check them for our own departures. Subscribe to
+          the Monthly Dispatch below to get the updates.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

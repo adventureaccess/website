@@ -22,11 +22,22 @@ const staticUrls = [
   // /account/ intentionally excluded — team sign-in / Identity token handling.
 ];
 
+// Evergreen pillar pages. These live at the site root (not under /blog/) because they
+// are anchor pages we refresh in place each year rather than dated journal entries —
+// so they carry an explicit lastmod, and it must be bumped whenever the page's
+// "Last reviewed" date changes. Keep the URL stable across annual refreshes; do not
+// roll the slug to a new year.
+const pillarUrls = [
+  { loc: '/bhutan-travel-cost-sdf-2026/', lastmod: '2026-07-29', priority: '0.9', changefreq: 'yearly' },
+  // Nepal, Ladakh and Tibet pillars to follow.
+];
+
 export const GET: APIRoute = async () => {
   const posts = await getCollection('blog');
 
   const urls = [
     ...staticUrls,
+    ...pillarUrls,
     ...(destinations as any[]).map((d) => ({
       loc:        `/destinations/${d.slug}/`,
       priority:   '0.8',
