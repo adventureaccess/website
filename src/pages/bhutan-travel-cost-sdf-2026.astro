@@ -33,7 +33,17 @@
 import Base from '../layouts/Base.astro';
 import { respSrcset, SIZES_FULL, SIZES_HALF } from '../utils/resp';
 
-const LAST_REVIEWED = '29 July 2026';
+// One source of truth for the review date: the ISO value feeds the Article schema's
+// dateModified, and the human string shown next to the FAQ is derived from it. They
+// used to be separate strings, which is exactly how a page ends up claiming one
+// freshness date to readers and a different one to crawlers.
+const LAST_REVIEWED_ISO = '2026-07-29';
+const LAST_REVIEWED = new Date(`${LAST_REVIEWED_ISO}T00:00:00Z`).toLocaleDateString('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
 
 const title = 'Bhutan Travel Cost 2026: How the SDF Actually Works';
 const description =
@@ -59,6 +69,13 @@ const faqs = [
     a: 'Since 1 January 2026, a 5% Goods and Services Tax applies to tourism services — hotels, guides, and transport. It does not apply to the SDF or the visa fee.',
   },
   {
+    // Added 2026-07-29. Not our core market, but omitting a whole rate tier made this
+    // an incomplete answer to "how much is the SDF" — and an incomplete source loses
+    // the citation to a complete one, regardless of who is asking.
+    q: 'How much is the SDF for Indian, Bangladeshi and Maldivian nationals?',
+    a: 'A reduced regional rate of INR 1,200 per person per night, rather than US$100. It applies to tourism: the SAARC exemption some sources mention covers official and national business only, not leisure travel. The same August 31, 2027 expiry applies.',
+  },
+  {
     q: 'Can I visit Bhutan without a tour operator?',
     a: 'Every foreign visitor needs a licensed Bhutanese guide and pre-arranged visa. There’s no independent backpacking — but itineraries are fully customizable; "tour" doesn’t have to mean "bus group."',
   },
@@ -74,7 +91,7 @@ const faqs = [
 
 // Single source of truth: the schema is generated from the same array that renders the
 // accordion, so the JSON-LD and the visible questions can never drift apart.
-const schema = {
+const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: faqs.map(({ q, a }) => ({
@@ -82,6 +99,50 @@ const schema = {
     name: q,
     acceptedAnswer: { '@type': 'Answer', text: a },
   })),
+};
+
+// Article schema exists for one reason: this page carries no visible post date, unlike
+// everything under /blog/, so dateModified is the only machine-readable freshness
+// signal it has. That matters more here than on a dated post — the whole value of a
+// "2026" cost page is being current, and crawlers and AI assistants have no other way
+// to tell that the SDF figures were re-checked this month rather than two years ago.
+const canonical = new URL('/bhutan-travel-cost-sdf-2026/', Astro.site).toString();
+
+// A named author, not just the Organization. The page asserts twenty years of guiding
+// experience; attributing that to a person rather than a logo is a standard E-E-A-T
+// signal. CHANGE THIS if the Bhutan byline should sit with someone else — and consider
+// a visible byline too, which is stronger than schema alone but is a brand decision.
+const author = {
+  '@type': 'Person',
+  name: 'Will Buie',
+  worksFor: { '@type': 'Organization', name: 'Adventure Access' },
+};
+
+// Entity linking. Models resolve "Bhutan" or "Taktsang" from strings unless you tell
+// them which entity you mean; sameAs against Wikipedia removes the guesswork and is
+// how a page gets associated with a topic rather than just containing a keyword.
+const entities = [
+  { '@type': 'Country', name: 'Bhutan', sameAs: 'https://en.wikipedia.org/wiki/Bhutan' },
+  { '@type': 'Thing', name: 'Tourism in Bhutan', sameAs: 'https://en.wikipedia.org/wiki/Tourism_in_Bhutan' },
+  { '@type': 'Thing', name: 'Sustainable Development Fee' },
+  { '@type': 'LandmarksOrHistoricalBuildings', name: 'Paro Taktsang', sameAs: 'https://en.wikipedia.org/wiki/Paro_Taktsang' },
+  { '@type': 'LandmarksOrHistoricalBuildings', name: 'Punakha Dzong', sameAs: 'https://en.wikipedia.org/wiki/Punakha_Dzong' },
+];
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  image: new URL(HERO, Astro.site).toString(),
+  datePublished: LAST_REVIEWED_ISO,
+  dateModified: LAST_REVIEWED_ISO,
+  inLanguage: 'en',
+  author,
+  publisher: { '@type': 'Organization', name: 'Adventure Access' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  about: entities.slice(0, 3),
+  mentions: entities.slice(3),
 };
 
 const costRows = [
@@ -126,7 +187,7 @@ const seasons = [
   description={description}
   ogImage={HERO}
   hideNavBg={true}
-  schema={schema}
+  schema={[faqSchema, articleSchema]}
 >
   {/* ---------- Hero (pattern copied from destinations/index.astro) ---------- */}
   <section class="relative h-[55vh] md:h-[65vh] overflow-hidden bg-ink">
@@ -149,12 +210,43 @@ const seasons = [
           Bhutan has a reputation as the world's most expensive stamp in your passport — and the
           reputation is only half true.
         </p>
+        {/* Two intents arrive here from search: "what does it cost" and "book me a trip".
+            The anchor serves the first without making them scroll past a sales pitch,
+            which is also what keeps the page feeling like a guide rather than a funnel. */}
+        <div class="flex flex-wrap items-center gap-6 mt-9">
+          <a href="#what-it-costs" class="btn !bg-saffron hover:!bg-saffron-dark">See the real numbers</a>
+          <a href="/plan/" class="btn-ghost-cream">Plan a journey →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- Short answer ----------
+      Deliberately the first thing after the hero. Someone arriving from "bhutan travel
+      cost" wants the number, and both featured snippets and AI answers extract from a
+      definitive early statement — the narrative below is for the reader who stays.
+      Keep this in sync with the cost table and the FAQ; it is the same facts three times
+      and the fastest place for a stale figure to hide. */}
+  <section class="pt-16 md:pt-24">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl bg-paper border-l-[3px] border-saffron p-8 md:p-10">
+        <h2 class="display text-2xl md:text-3xl mb-5">The short answer</h2>
+        <p class="text-lg leading-relaxed text-ink-soft">
+          Bhutan charges a <strong class="text-ink font-medium">Sustainable Development Fee of
+          US$100 per person, per night</strong>, plus a one-time <strong class="text-ink font-medium">US$40
+          visa fee</strong>. The SDF covers none of your trip — no hotel, no meals, no guide, no
+          transport. Add those and a comfortable mid-range trip runs
+          <strong class="text-ink font-medium">US$250–350 per person per day</strong>, or roughly
+          <strong class="text-ink font-medium">US$1,800–2,500 for a week</strong>, excluding
+          international flights. Since 1 January 2026 a 5% GST also applies to tourism services,
+          though not to the SDF or visa fee. The $100 rate is confirmed through 31 August 2027.
+        </p>
       </div>
     </div>
   </section>
 
   {/* ---------- Intro ---------- */}
-  <section class="py-24 md:py-36">
+  <section class="pt-16 md:pt-24 pb-24 md:pb-36">
     <div class="max-w-8xl mx-auto px-6 md:px-14">
       <div class="max-w-3xl space-y-6 text-lg leading-relaxed text-ink-soft">
         <p>
@@ -195,7 +287,14 @@ const seasons = [
           </p>
           <p>
             <strong class="text-ink font-medium">Discounts worth knowing:</strong> children aged
-            6–12 pay half; children 5 and under are exempt.
+            6–12 pay half; children 5 and under are exempt. The fee is charged in US dollars.
+          </p>
+          <p>
+            <strong class="text-ink font-medium">Regional nationals pay a different rate.</strong>
+            Indian, Bangladeshi and Maldivian travellers pay a reduced SDF of INR 1,200 per person
+            per night instead of the US$100. Worth stating plainly because it is widely muddled
+            online: the SAARC exemption you may read about covers official and national business,
+            not tourism, so leisure travellers from those countries do pay the regional rate.
           </p>
         </div>
 
@@ -208,14 +307,24 @@ const seasons = [
           </p>
         </div>
 
-        <h3 class="display text-2xl md:text-3xl mt-14 mb-2">What a real trip costs</h3>
+        <h3 id="what-it-costs" class="display text-2xl md:text-3xl mt-14 mb-2 scroll-mt-28">
+          What a real trip costs
+        </h3>
 
         <div class="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
           <table class="w-full border-collapse min-w-[26rem] text-base">
+            {/* A caption and scope="col" cost nothing and help two audiences at once:
+                screen readers, and the crawlers that treat tables as high-confidence
+                structured facts. Tables are among the most-extracted elements on a
+                cost page, so it is worth them being unambiguous. */}
+            <caption class="sr-only">
+              Typical per-person daily cost of a Bhutan trip in 2026, in US dollars, excluding
+              international flights.
+            </caption>
             <thead>
               <tr>
-                <th class="text-left py-4 pr-4 border-b border-ink/15 text-xs font-medium uppercase tracking-[0.15em] text-ink-soft">Item</th>
-                <th class="text-left py-4 border-b border-ink/15 text-xs font-medium uppercase tracking-[0.15em] text-ink-soft">Typical 2026 cost</th>
+                <th scope="col" class="text-left py-4 pr-4 border-b border-ink/15 text-xs font-medium uppercase tracking-[0.15em] text-ink-soft">Item</th>
+                <th scope="col" class="text-left py-4 border-b border-ink/15 text-xs font-medium uppercase tracking-[0.15em] text-ink-soft">Typical 2026 cost</th>
               </tr>
             </thead>
             <tbody>
@@ -241,6 +350,35 @@ const seasons = [
           comparable to an African safari or a Galápagos cruise, and for a similar reason: you're
           paying for a place that has chosen not to be overrun.
         </p>
+
+        {/* Added 2026-07-29. Other sources quote anywhere from $250 to $2,000 a night, so our
+            figure reads as an outlier without this. Explaining the spread is what makes it the
+            considered answer rather than the cheap one. */}
+        <p class="mt-6 text-lg leading-relaxed text-ink-soft">
+          You will see wildly different numbers elsewhere — anything from $250 to $2,000 a night.
+          That spread is real, and it is almost entirely accommodation. The top end is Amankora,
+          Six Senses and the like, where lodging alone can exceed $1,000 a night. The bottom is
+          basic group travel on a fixed coach itinerary. Our range describes the middle: comfortable
+          three-star hotels or farmhouse stays, a private guide and vehicle, and a route built
+          around you rather than a bus schedule. If someone quotes you far below it, ask what the
+          hotel is and how many people are in the van.
+        </p>
+
+        {/* The highest-intent moment on the page: the reader searched for a cost and has
+            just been given one. Previously the next call to action was ~1,500 words away,
+            so anyone who came for the number and left had no path at all. */}
+        <div class="mt-12 bg-cream border-l-[3px] border-saffron p-8 md:p-10">
+          <h3 class="display text-2xl md:text-3xl mb-4">Want these numbers for your dates?</h3>
+          <p class="text-lg leading-relaxed text-ink-soft mb-8">
+            Ranges only get you so far. Tell us your dates, group size and how you want to travel,
+            and we'll come back with an actual figure — itemised, with the SDF broken out, so you
+            can see exactly what goes to the government and what goes to the trip.
+          </p>
+          <div class="flex flex-wrap items-center gap-8">
+            <a href="/plan/" class="btn !bg-saffron hover:!bg-saffron-dark">Get a real quote</a>
+            <a href="/destinations/bhutan/" class="btn-ghost">Browse Bhutan trips</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>

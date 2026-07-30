@@ -33,5 +33,3 @@ Allow: /
 Disallow: /_astro/
 
 Sitemap: https://www.adventure-access.com/sitemap.xml
-
-# Test commit — Tue Jun 16 03:11:30 UTC 2026
