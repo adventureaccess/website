@@ -1,0 +1,66 @@
+---
+/**
+ * Full-bleed hero for the evergreen pillar pages.
+ *
+ * Deliberately min-h and NOT the fixed h-[55vh] md:h-[65vh] used by
+ * destinations/index.astro. That page gets away with a fixed height because its
+ * H1 is one word; a pillar headline is a full sentence that wraps to three lines
+ * and sits above a subhead and two buttons. With a fixed height and justify-end
+ * the stack grows upward, runs under the absolutely-positioned nav, and
+ * overflow-hidden clips it. This bit us on the Bhutan pillar in production.
+ *
+ * pt-32 md:pt-40 reserves space for the nav explicitly rather than relying on
+ * the headline happening to be short enough.
+ *
+ * Pass hideNavBg={true} on the page's <Base> so the nav sits over the image.
+ */
+import { respSrcset, SIZES_FULL } from '../utils/resp';
+
+interface Props {
+  eyebrow: string;
+  /** Full sentence. Kept at text-4xl md:text-6xl, a notch below other heroes —
+   *  text-7xl is scaled for "Destinations", not for a sentence. */
+  heading: string;
+  intro: string;
+  image: string;
+  imageAlt: string;
+  /** Only pass true when /images/resp/<base>-{800,1400,2000}.jpg all exist AND
+   *  are genuinely those widths. A variant narrower than its filename claims
+   *  makes the browser pick a soft upscale. */
+  hasVariants?: boolean;
+  primaryHref: string;
+  primaryLabel: string;
+  secondaryHref: string;
+  secondaryLabel: string;
+}
+
+const {
+  eyebrow, heading, intro, image, imageAlt, hasVariants = false,
+  primaryHref, primaryLabel, secondaryHref, secondaryLabel,
+} = Astro.props;
+---
+<section class="relative min-h-[70vh] md:min-h-[80vh] flex items-end overflow-hidden bg-ink">
+  <img
+    src={image}
+    srcset={hasVariants ? respSrcset(image) : undefined}
+    sizes={hasVariants ? SIZES_FULL : undefined}
+    alt={imageAlt}
+    class="absolute inset-0 w-full h-full object-cover"
+    fetchpriority="high"
+  />
+  <div class="absolute inset-0 bg-gradient-to-b from-ink/35 via-ink/15 to-ink/80"></div>
+  <div class="relative z-10 w-full max-w-8xl mx-auto px-6 md:px-14 pt-32 md:pt-40 pb-14 md:pb-20 text-cream">
+    <div class="max-w-3xl">
+      <div class="eyebrow-cream mb-6 text-shadow-hero">{eyebrow}</div>
+      <h1 class="display text-4xl md:text-6xl mb-6 text-shadow-hero">{heading}</h1>
+      <p class="text-lg md:text-xl leading-relaxed text-cream/85 max-w-2xl">{intro}</p>
+      {/* Two intents arrive from search — "what are the rules" and "book me a trip".
+          The primary is usually an in-page anchor so the first is served without
+          scrolling past a pitch, which keeps the page reading as a guide. */}
+      <div class="flex flex-wrap items-center gap-6 mt-9">
+        <a href={primaryHref} class="btn !bg-saffron hover:!bg-saffron-dark">{primaryLabel}</a>
+        <a href={secondaryHref} class="btn-ghost-cream">{secondaryLabel}</a>
+      </div>
+    </div>
+  </div>
+</section>

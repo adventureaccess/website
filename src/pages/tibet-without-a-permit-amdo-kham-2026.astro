@@ -1,0 +1,400 @@
+---
+// src/pages/tibet-without-a-permit-amdo-kham-2026.astro
+// Pillar 3 of 4 — the flagship.
+//
+// COPY IS VERBATIM from the Drive doc "Tibet Without a Permit: Traveling The
+// Eastern Tibetan Plateau in 2026". Do not reword it here. An earlier version of
+// this file paraphrased sentences, added paragraphs, added an FAQ and switched
+// American spellings to British; all of that has been reverted. If the copy needs
+// to change, change it in the doc and bring it across.
+//
+// The only things resolved in code are the placeholders the doc asks a builder to
+// resolve, and they change no prose:
+//   - [EXTERNAL LINK: authoritative permit overview] -> China's National
+//     Immigration Administration.
+//   - [INTERNAL LINK: /the-tibet-travel-permit-and-eastern-tibet/ "our original
+//     explainer"] -> /blog/the-tibet-travel-permit-and-eastern-tibet. The doc
+//     gives a root-level path but the old explainer is a blog post.
+//   - The doc's publishing checklist calls for cross-linking the other pillars;
+//     those are links, not new prose.
+//
+// FACT-CHECK 2026-08-01 (recorded, not applied to the copy). Every claim in the
+// doc verified: 55 eligible countries, 240 hours, onward ticket to a third
+// country, Chengdu and Kunming both eligible ports. Three things are TRUE and
+// ABSENT from the copy, left out because the copy is not mine to extend —
+// they are worth adding at the doc:
+//   1. Sichuan and Yunnan are both inside the permitted area and you may travel
+//      BETWEEN them on a single 240-hour entry. The shortlist spans both
+//      provinces, so this is the fact that makes the page's own itinerary work.
+//   2. Passport validity of at least three months is required.
+//   3. The scheme runs to roughly 60 ports across 24 provinces and regions.
+//
+// SHORT-ANSWER BLOCK: present, and built from the doc's own words. Search and AI
+// assistants extract from a definitive early statement, but writing one normally
+// means writing new copy. It doesn't here — the doc's opening paragraph already
+// IS the summary, so it is promoted into the block verbatim and the article then
+// begins at the second paragraph. Every word is the author's and each is used
+// once. If this block ever needs different wording, write it at the doc.
+//
+// WIRING: pillarUrls entry in sitemap.xml.ts + a `guides` entry on the yunnan
+// record in destinations.json. Root-level pages are in no collection, so nothing
+// links or crawls them automatically.
+//
+// IMAGERY: none of these have genuine resp/ variants, so respSrcset is not used.
+// Do not add it without generating real 800/1400/2000 files — see src/utils/resp.ts.
+// The hero is a stand-in: the doc asks for a nomad black tent on the Tangke
+// grasslands at golden hour, which the repo does not have.
+
+import Base from '../layouts/Base.astro';
+import PillarHero from '../components/PillarHero.astro';
+import PillarShortAnswer from '../components/PillarShortAnswer.astro';
+import PillarFaq from '../components/PillarFaq.astro';
+import { reviewedOn, faqSchema, articleSchema, type Faq } from '../utils/pillar';
+
+const LAST_REVIEWED_ISO = '2026-08-01';
+const LAST_REVIEWED = reviewedOn(LAST_REVIEWED_ISO);
+
+const title = 'Tibet Without a Permit: Amdo & Kham Travel Guide 2026';
+const description =
+  "You don't need a Tibet Travel Permit to experience the Tibetan Plateau. Our 2026 guide to Amdo & Kham — permits, routes, seasons — from guides who live here.";
+
+const HERO = '/images/2018/11/Adventure-Access-Songpan_resize.jpg';
+const IMG_LABRANG = '/images/2020/01/Labrang-Monlam-Photo.jpg';
+const IMG_LIJIANG = '/images/2024/05/Hero-Image-Lijiang.jpg';
+const IMG_JIUZHAIGOU = '/images/2021/08/jiuzhaigou-hero-image.jpg';
+const IMG_YAKS = '/images/2020/01/Yaks-over-blue-water.jpg';
+
+// Verbatim from the doc's FAQ section — all five. Note the doc's own pasted
+// FAQPage schema only carried four of them; generating the schema from this one
+// array fixes that without touching a word of the answers.
+const faqs: Faq[] = [
+  {
+    q: 'Do I need a Tibet Travel Permit for Sichuan, Gansu, Qinghai or Yunnan?',
+    a: 'No. The Tibet Travel Permit applies only to the Tibet Autonomous Region (Lhasa, EBC north side, Kailash). The Tibetan regions of Sichuan, Gansu, Qinghai, and Yunnan require only a valid Chinese visa or qualifying visa-free entry.',
+  },
+  {
+    q: 'Is Eastern Tibet "really" Tibet?',
+    a: "Culturally and historically, absolutely. Amdo and Kham are two of Tibet's three traditional provinces — home to Labrang Monastery, vast nomad grasslands, and some of the most intact Tibetan culture on the plateau. The Dalai Lama was born in Amdo.",
+  },
+  {
+    q: 'Can I use China’s visa-free transit to visit?',
+    a: 'Citizens of 55 eligible countries can enter for up to 240 hours (10 days) when transiting to a third country via eligible ports — Chengdu included. You need an onward ticket to a third country and must stay within permitted regions. Verify current rules before booking; they evolve.',
+  },
+  {
+    q: 'How high is the region, and is altitude a problem?',
+    a: "Most destinations sit between 2,800 m and 4,000 m. That's high enough to respect: plan a gradual ascent and easy first days. Our itineraries build acclimatization in by design.",
+  },
+  {
+    q: 'Can areas close without notice?',
+    a: 'Occasionally, yes — specific counties or sites sometimes restrict foreign access temporarily. Main routes are reliably open, but this is why current, on-the-ground knowledge matters more here than anywhere.',
+  },
+];
+
+const schema = [
+  faqSchema(faqs),
+  articleSchema({
+    title,
+    description,
+    path: '/tibet-without-a-permit-amdo-kham-2026/',
+    image: HERO,
+    reviewedIso: LAST_REVIEWED_ISO,
+    site: Astro.site,
+    about: [
+      { '@type': 'Place', name: 'Tibetan Plateau', sameAs: 'https://en.wikipedia.org/wiki/Tibetan_Plateau' },
+      { '@type': 'Place', name: 'Amdo', sameAs: 'https://en.wikipedia.org/wiki/Amdo' },
+      { '@type': 'Place', name: 'Kham', sameAs: 'https://en.wikipedia.org/wiki/Kham' },
+    ],
+    mentions: [
+      { '@type': 'Place', name: 'Labrang Monastery', sameAs: 'https://en.wikipedia.org/wiki/Labrang_Monastery' },
+      { '@type': 'Place', name: 'Tibet Autonomous Region', sameAs: 'https://en.wikipedia.org/wiki/Tibet_Autonomous_Region' },
+      { '@type': 'Place', name: 'Tea Horse Road', sameAs: 'https://en.wikipedia.org/wiki/Tea_Horse_Road' },
+    ],
+  }),
+];
+
+// Verbatim, including the "+ Pumi" in the second column header.
+const compareRows = [
+  { row: 'Tibet Travel Permit', tar: 'Required', east: 'Not required' },
+  { row: 'Mandatory guide & fixed itinerary', tar: 'Required', east: 'Not required' },
+  { row: 'Standard Chinese visa', tar: 'Required', east: 'Required (or qualifying visa-free entry)' },
+  { row: 'Lead time', tar: 'Weeks (permit processing)', east: 'Book when you like' },
+  { row: 'Tibetan culture, monasteries, nomads, 4,000 m+ landscapes', tar: 'Yes', east: 'Yes — with fewer crowds' },
+];
+
+const seasons = [
+  ['May–June', 'Early season for the plateau. This is when things come to life and time outdoors begins for everyone, locals and visitors alike.'],
+  ['July–August', 'peak season and festival season on the grasslands; warm days, afternoon showers, everything vividly green.'],
+  ['September–October', 'crisp air, golden larch and birch, the clearest mountain views of the year. Best for photography.'],
+  ['November–April', 'cold and quiet. Monastery towns like Xiahe are atmospheric (Losar, Tibetan New Year, usually falls February–March), but high routes become less comfortable.'],
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  ogImage={HERO}
+  hideNavBg={true}
+  schema={schema}
+>
+  <PillarHero
+    eyebrow="— Eastern Tibetan Plateau · Permits"
+    heading="Tibet Without a Permit: Traveling The Eastern Tibetan Plateau in 2026"
+    intro="Here's something most travelers never learn: the majority of the Tibetan Plateau lies outside the Tibet Autonomous Region."
+    image={HERO}
+    imageAlt="Dense strings of Tibetan prayer flags above a trail near Songpan on the eastern Tibetan Plateau"
+    primaryHref="#permit-rules"
+    primaryLabel="The permit rules"
+    secondaryHref="/plan/"
+    secondaryLabel="Plan a journey →"
+  />
+
+  {/* Verbatim: the doc's opening paragraph, promoted here so the answer lands in the
+      first screen. Not repeated below — the article picks up at paragraph two. */}
+  <PillarShortAnswer>
+    Here's something most travelers never learn: the majority of the Tibetan Plateau lies
+    <em>outside</em> the Tibet Autonomous Region — and you can travel there
+    <strong class="text-ink font-medium">without a Tibet Travel Permit, without a mandated tour
+    group</strong>, and without the paperwork that makes a Lhasa trip feel like a bureaucratic
+    expedition of its own.
+  </PillarShortAnswer>
+
+  {/* ---------- Intro ---------- */}
+  <section class="pt-16 md:pt-24 pb-24 md:pb-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl space-y-6 text-lg leading-relaxed text-ink-soft">
+        <p>
+          We've been living and guiding in Eastern Tibetan regions for more than twenty years. We've
+          shared butter tea in nomad tents on the Tangke grasslands, ridden mountain bikes along old
+          shepherd's trails above Songpan, wandered through the depths of Labrang Monastery, and
+          hopped between towns in Yunnan with no permit in anyone's pocket. This guide explains
+          exactly how the rules work in 2026, where to go, and how to do it well.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- The Permit Rules, Explained Simply ---------- */}
+  <section class="bg-paper py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl">
+        <div class="eyebrow mb-5">— Permits</div>
+        <h2 id="permit-rules" class="display text-4xl md:text-5xl mb-8 scroll-mt-28">
+          The Permit Rules, Explained Simply
+        </h2>
+
+        <div class="space-y-6 text-lg leading-relaxed text-ink-soft">
+          <p>
+            <strong class="text-ink font-medium">Where you DO need a Tibet Travel Permit:</strong>
+            the Tibet Autonomous Region (TAR) — Lhasa, Everest Base Camp (north side), Mount Kailash,
+            Shigatse. Every foreign traveler entering the TAR must hold a Tibet Travel Permit,
+            arranged through a licensed tour operator, and must travel with a guide on an organized
+            itinerary. You cannot board a flight or train to Lhasa without one.
+            <a href="https://en.nia.gov.cn/" rel="noopener" class="text-saffron-dark underline underline-offset-4 hover:text-rust">See China's National Immigration Administration</a>.
+          </p>
+          <p>
+            <strong class="text-ink font-medium">Where you DON'T:</strong> the Tibetan cultural
+            regions of Amdo and Kham, which lie in Qinghai, Gansu, Sichuan, and Yunnan provinces.
+            These areas are administered as ordinary Chinese provinces. A standard Chinese visa — or
+            a qualifying visa-free entry — is all you need. No Tibet Travel Permit. No mandatory
+            group tour. No fixed itinerary.
+          </p>
+          <p>
+            One honest caveat, because we'd rather you hear it from us: specific areas within Amdo
+            and Kham are occasionally restricted to foreign travelers at short notice, and a handful
+            of locations have their own local accessibility quirks. Many of these places are part of
+            a local Tibetan Autonomous Prefecture such as Aba Prefecture in Sichuan, and Gannan
+            Prefecture in Gansu. Rules here are stable most of the year but not guaranteed. This is
+            exactly why traveling with an operator who is on the ground matters — we know what's open
+            this month, not what was open when a guidebook went to print.
+            <a href="/blog/the-tibet-travel-permit-and-eastern-tibet" class="text-saffron-dark underline underline-offset-4 hover:text-rust">Read our original explainer</a>.
+          </p>
+        </div>
+
+        <h3 class="display text-2xl md:text-3xl mt-14 mb-2">What this means in practice</h3>
+
+        <div class="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
+          <table class="w-full border-collapse min-w-[34rem] text-base">
+            <caption class="sr-only">
+              Travel requirements compared: the Tibet Autonomous Region versus Amdo and Kham on the
+              Eastern Tibetan Plateau.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col" class="text-left py-4 pr-4 border-b border-ink/15 text-xs font-medium uppercase tracking-[0.15em] text-ink-soft"></th>
+                <th scope="col" class="text-left py-4 pr-4 border-b border-ink/15 text-xs font-medium uppercase tracking-[0.15em] text-ink-soft">Lhasa / TAR</th>
+                <th scope="col" class="text-left py-4 border-b border-ink/15 text-xs font-medium uppercase tracking-[0.15em] text-ink-soft">Amdo &amp; Kham + Pumi (Eastern Tibetan Plateau)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {compareRows.map(({ row, tar, east }) => (
+                <tr>
+                  <th scope="row" class="text-left font-normal py-4 pr-4 border-b border-ink/10 text-ink">{row}</th>
+                  <td class="py-4 pr-4 border-b border-ink/10 text-ink-soft">{tar}</td>
+                  <td class="py-4 border-b border-ink/10 text-ink-soft">{east}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- The Visa-Free Angle ---------- */}
+  <section class="py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div>
+          <div class="eyebrow mb-5">— Visa-free entry</div>
+          <h2 class="display text-4xl md:text-5xl mb-8">
+            The Visa-Free Angle: 10 Days on the Plateau
+          </h2>
+          <div class="space-y-6 text-lg leading-relaxed text-ink-soft">
+            <p>
+              Since China expanded its visa-free transit policy, citizens of 55 countries —
+              including the US, UK, Canada, Australia, and most of Europe — can enter China without a
+              visa for up to 240 hours (10 days) when transiting to a third country through eligible
+              ports. Chengdu, the gateway city to the Amdo and Kham regions of Sichuan, is an
+              eligible entry port. Kunming is the portal for Yunnan.
+            </p>
+            <p>
+              Ten days is real time out here. Fly into Chengdu or Kunming and access Sichuan and
+              Yunnan from these convenient gateways.
+            </p>
+            <p>
+              Two rules to respect: you need a booked onward ticket to a <em>third</em> country (not
+              back where you came from), and you must stay within the permitted regions for your
+              entry port. Policies evolve — check the current official list before booking. We
+              confirm the latest rules with every traveler who books with us.
+            </p>
+          </div>
+        </div>
+        <img
+          src={IMG_YAKS}
+          alt="Two yaks grazing beside vivid turquoise water on the Tibetan Plateau"
+          loading="lazy"
+          class="w-full aspect-[16/10] object-cover reveal reveal-right"
+        />
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- Where to Go ---------- */}
+  <section class="bg-paper py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="eyebrow mb-5">— Where to go</div>
+      <h2 class="display text-4xl md:text-5xl max-w-3xl">
+        Our Eastern Tibetan Shortlist
+      </h2>
+      <div class="grid md:grid-cols-3 gap-10 md:gap-x-10 md:gap-y-14 mt-14">
+        <div class="reveal" data-delay="100">
+          <img src={IMG_LIJIANG} alt="Jade Dragon Snow Mountain rising behind the waterways of Lijiang, Yunnan" loading="lazy" class="w-full aspect-[16/9] object-cover mb-6" />
+          <h3 class="display text-xl md:text-2xl mb-3">The Ancient Tea Horse Road (Yunnan)</h3>
+          <p class="leading-relaxed text-ink-soft">
+            This is where Kham blends with other Tibetan Buddhist cultures such as the Pumi. Famous
+            towns such as Lijiang, Shaxi, Shangri La, and Dali fill itineraries for the region. It is
+            one of the region's most culturally diverse places.
+          </p>
+        </div>
+        <div class="reveal" data-delay="200">
+          <img src={IMG_JIUZHAIGOU} alt="Travertine terraces and turquoise pools in the Jiuzhaigou valley, Sichuan" loading="lazy" class="w-full aspect-[16/9] object-cover mb-6" />
+          <h3 class="display text-xl md:text-2xl mb-3">The Minshan Mountains (Sichuan)</h3>
+          <p class="leading-relaxed text-ink-soft">
+            Songpan and Jiuzhaigou: National Parks and hidden gems. Most guide books get this area
+            wrong. Contact us for a self-guided planner for an overland route between
+            Xining/Lanzhou to Chengdu.
+          </p>
+        </div>
+        <div class="reveal" data-delay="300">
+          <img src={IMG_LABRANG} alt="Crowds gathered before Labrang Monastery during the Monlam festival, Gansu" loading="lazy" class="w-full aspect-[16/9] object-cover mb-6" />
+          <h3 class="display text-xl md:text-2xl mb-3">Grasslands and Great Monasteries: Labrang &amp; Langmusi (Gansu/Sichuan)</h3>
+          <p class="leading-relaxed text-ink-soft">
+            Labrang Monastery in Xiahe is one of the six great monasteries of Tibetan Buddhism.
+            Langmusi straddles the Gansu–Sichuan border with monasteries on both sides and gorge
+            hikes out the back door. The Zoige Grasslands fill the expanse between this border region
+            and places like Songpan and Jiuzhaigou.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- When to Go ---------- */}
+  <section class="py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl">
+        <div class="eyebrow mb-5">— Seasons</div>
+        <h2 class="display text-4xl md:text-5xl mb-8">When to Go</h2>
+        <ul class="space-y-4">
+          {seasons.map(([when, what]) => (
+            <li class="relative pl-6 text-lg leading-relaxed text-ink-soft">
+              <span class="absolute left-0 top-[0.7em] w-1.5 h-1.5 rounded-full bg-saffron"></span>
+              <strong class="text-ink font-medium">{when}:</strong> {what}
+            </li>
+          ))}
+        </ul>
+        <p class="mt-8 text-lg leading-relaxed text-ink-soft">
+          Most of the plateau sits between 2,800 m and 4,000 m. Wherever you go, build in
+          acclimatization days — ascend gradually, drink water, and take the first two days easy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- Independent vs. Guided ---------- */}
+  <section class="bg-paper py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl">
+        <div class="eyebrow mb-5">— An honest take</div>
+        <h2 class="display text-4xl md:text-5xl mb-8">Independent vs. Guided: An Honest Take</h2>
+        <div class="space-y-6 text-lg leading-relaxed text-ink-soft">
+          <p>
+            You <em>can</em> travel the Eastern Tibetan Plateau independently — that's part of what
+            makes it special. Buses run, guesthouses exist, and nobody will ask for a permit at a
+            checkpoint on the main routes.
+          </p>
+          <p>
+            What a local operator adds is depth and certainty: knowing which areas are open this
+            month, which trails are in good condition, which festivals are actually happening, and —
+            most of all — the relationships. The nomad family, the monastery contact, the village
+            homestay: those doors open because of twenty years of showing up, not because of a
+            booking platform.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <PillarFaq
+    faqs={faqs}
+    heading="FAQ"
+    reviewedNote={`Last reviewed: ${LAST_REVIEWED}`}
+  />
+
+  {/* ---------- Plan Your Trip ----------
+      Cross-links only, per the doc's own publishing checklist. No NewsletterSignup:
+      Footer.astro already renders the Monthly Dispatch on every page. */}
+  <section class="bg-paper py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl">
+        <div class="eyebrow mb-5">— Start a conversation</div>
+        <h2 class="display text-4xl md:text-5xl mb-8">Plan Your Trip</h2>
+        <p class="text-lg leading-relaxed text-ink-soft">
+          The Tibetan Plateau without the paperwork: it's not a loophole, it's just geography most
+          travelers never learn. If you're ready to see the Tibet beyond Lhasa, talk to our team —
+          we'll tell you honestly what's open, what fits your dates, and what we'd do with your ten
+          days.
+        </p>
+        <div class="flex flex-wrap items-center gap-8 mt-10">
+          <a href="/plan/" class="btn !bg-saffron hover:!bg-saffron-dark">Plan a journey</a>
+          <a href="/destinations/yunnan/" class="btn-ghost">Yunnan &amp; Lijiang trips</a>
+        </div>
+        <p class="mt-10 text-base text-ink-soft">
+          <a href="/nepal-trekking-permits-2026/" class="text-saffron-dark underline underline-offset-4 hover:text-rust">Nepal trekking permits 2026</a>
+          ·
+          <a href="/bhutan-travel-cost-sdf-2026/" class="text-saffron-dark underline underline-offset-4 hover:text-rust">Bhutan travel cost 2026</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

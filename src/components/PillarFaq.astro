@@ -1,0 +1,56 @@
+---
+/**
+ * FAQ accordion for the pillar pages.
+ *
+ * Pass the SAME `faqs` array to this component and to faqSchema() in
+ * src/utils/pillar.ts. That is the whole point of the shared array: the visible
+ * questions and the FAQPage JSON-LD cannot drift apart at the annual refresh,
+ * which is the usual way FAQ rich results break silently.
+ *
+ * <details>/<summary> rather than JS: it works without hydration, is keyboard
+ * accessible for free, and — the reason that matters here — the answers are in
+ * the HTML for crawlers whether or not the panel is open.
+ */
+import type { Faq } from '../utils/pillar';
+
+interface Props {
+  eyebrow?: string;
+  heading?: string;
+  faqs: Faq[];
+  /** Rendered under the accordion. Pairs with LAST_REVIEWED on the page. */
+  reviewedNote?: string;
+  /** Section background. Pillars alternate cream/paper down the page. */
+  paper?: boolean;
+}
+
+const {
+  eyebrow = '— Questions',
+  heading = 'The things people actually ask.',
+  faqs,
+  reviewedNote,
+  paper = false,
+} = Astro.props;
+---
+<section class:list={['py-24 md:py-36', paper && 'bg-paper']}>
+  <div class="max-w-8xl mx-auto px-6 md:px-14">
+    <div class="max-w-3xl">
+      <div class="eyebrow mb-5">{eyebrow}</div>
+      <h2 class="display text-4xl md:text-5xl mb-10">{heading}</h2>
+
+      {faqs.map(({ q, a }) => (
+        <details class="group border-b border-ink/15">
+          <summary class="cursor-pointer list-none py-6 pr-10 relative display text-lg md:text-xl min-h-[44px]">
+            {q}
+            <span class="absolute right-1 top-5 text-2xl leading-none text-saffron font-sans select-none group-open:hidden" aria-hidden="true">+</span>
+            <span class="absolute right-1 top-5 text-2xl leading-none text-saffron font-sans select-none hidden group-open:inline" aria-hidden="true">–</span>
+          </summary>
+          <div class="pb-7 pr-10 leading-relaxed text-ink-soft">{a}</div>
+        </details>
+      ))}
+
+      {reviewedNote && (
+        <p class="mt-10 text-sm text-ink-soft tracking-wide">{reviewedNote}</p>
+      )}
+    </div>
+  </div>
+</section>

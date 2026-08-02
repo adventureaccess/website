@@ -1,0 +1,28 @@
+---
+/**
+ * The extractable answer, placed directly under the hero.
+ *
+ * Pillars open with narrative, which reads well and extracts badly — a reader
+ * arriving from search wants the number or the rule, and both featured snippets
+ * and AI assistants pull from a definitive early statement. This block gives
+ * them one without changing the voice of the article below it.
+ *
+ * Keep it factually identical to the body and FAQ. It is the same facts stated
+ * a second time, and therefore the fastest place for a stale figure to hide at
+ * the annual refresh.
+ *
+ * Content goes in the default slot so pages can bold the key figures.
+ */
+interface Props {
+  heading?: string;
+}
+const { heading = 'The short answer' } = Astro.props;
+---
+<section class="pt-16 md:pt-24">
+  <div class="max-w-8xl mx-auto px-6 md:px-14">
+    <div class="max-w-3xl bg-paper border-l-[3px] border-saffron p-8 md:p-10">
+      <h2 class="display text-2xl md:text-3xl mb-5">{heading}</h2>
+      <p class="text-lg leading-relaxed text-ink-soft"><slot /></p>
+    </div>
+  </div>
+</section>

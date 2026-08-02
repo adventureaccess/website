@@ -70,6 +70,13 @@
       "/images/2023/12/napal-slider05.jpg",
       "/images/2023/12/napal-slider07.jpg"
     ],
+    "guides": [
+      {
+        "title": "Nepal Trekking Permits 2026: EBC, Annapurna & Mustang",
+        "blurb": "Upper Mustang dropped from $500 flat to $50 a day, solo trekkers can get restricted-area permits again, and TIMS is no longer checked on the two big routes. What each trek actually needs this season.",
+        "href": "/nepal-trekking-permits-2026/"
+      }
+    ],
     "youliTag": "nepal"
   },
   {
@@ -156,6 +163,13 @@
       "/images/2020/10/IMG_5084-1920x900.jpg",
       "/images/2020/10/IMG_8242-1920x900.jpg",
       "/images/2020/10/IMG_8717-1920x900.jpg"
+    ],
+    "guides": [
+      {
+        "title": "Tibet Without a Permit: Amdo & Kham Travel Guide 2026",
+        "blurb": "Most of the Tibetan Plateau sits outside the Tibet Autonomous Region, so no Tibet Travel Permit, no mandated guide and no fixed itinerary — and 55 nationalities can enter visa-free for ten days via Kunming or Chengdu.",
+        "href": "/tibet-without-a-permit-amdo-kham-2026/"
+      }
     ],
     "youliTag": "Yunnan"
   }

@@ -28,8 +28,10 @@ const staticUrls = [
 // "Last reviewed" date changes. Keep the URL stable across annual refreshes; do not
 // roll the slug to a new year.
 const pillarUrls = [
-  { loc: '/bhutan-travel-cost-sdf-2026/', lastmod: '2026-07-29', priority: '0.9', changefreq: 'yearly' },
-  // Nepal, Ladakh and Tibet pillars to follow.
+  { loc: '/bhutan-travel-cost-sdf-2026/',           lastmod: '2026-07-29', priority: '0.9', changefreq: 'yearly' },
+  { loc: '/nepal-trekking-permits-2026/',           lastmod: '2026-08-01', priority: '0.9', changefreq: 'yearly' },
+  { loc: '/tibet-without-a-permit-amdo-kham-2026/', lastmod: '2026-08-01', priority: '0.9', changefreq: 'yearly' },
+  // Ladakh pillar to follow — draft still has open reviewer questions.
 ];
 
 export const GET: APIRoute = async () => {
