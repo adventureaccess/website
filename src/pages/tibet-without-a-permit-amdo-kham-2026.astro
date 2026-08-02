@@ -82,7 +82,7 @@ const faqs: Faq[] = [
   },
   {
     q: 'How high is the region, and is altitude a problem?',
-    a: "Most destinations sit between 2,800 m and 4,000 m. That's high enough to respect: plan a gradual ascent and easy first days. Our itineraries build acclimatization in by design.",
+    a: "Most destinations sit between 2,800 m and 4,000 m (9,200 to 13,100 ft). That's high enough to respect: plan a gradual ascent and easy first days. Our itineraries build acclimatization in by design.",
   },
   {
     q: 'Can areas close without notice?',
@@ -118,7 +118,9 @@ const compareRows = [
   { row: 'Mandatory guide & fixed itinerary', tar: 'Required', east: 'Not required' },
   { row: 'Standard Chinese visa', tar: 'Required', east: 'Required (or qualifying visa-free entry)' },
   { row: 'Lead time', tar: 'Weeks (permit processing)', east: 'Book when you like' },
-  { row: 'Tibetan culture, monasteries, nomads, 4,000 m+ landscapes', tar: 'Yes', east: 'Yes — with fewer crowds' },
+  // Units: meters with feet in parentheses, matching the convention set on the
+  // Ladakh pillar 2026-08-02 and applied across all four for consistency.
+  { row: 'Tibetan culture, monasteries, nomads, 4,000 m+ (13,100 ft+) landscapes', tar: 'Yes', east: 'Yes — with fewer crowds' },
 ];
 
 const seasons = [
@@ -334,8 +336,9 @@ const seasons = [
           ))}
         </ul>
         <p class="mt-8 text-lg leading-relaxed text-ink-soft">
-          Most of the plateau sits between 2,800 m and 4,000 m. Wherever you go, build in
-          acclimatization days — ascend gradually, drink water, and take the first two days easy.
+          Most of the plateau sits between 2,800 m and 4,000 m (9,200 to 13,100 ft). Wherever you
+          go, build in acclimatization days — ascend gradually, drink water, and take the first two
+          days easy.
         </p>
       </div>
     </div>
