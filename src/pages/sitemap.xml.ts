@@ -31,7 +31,7 @@ const pillarUrls = [
   { loc: '/bhutan-travel-cost-sdf-2026/',           lastmod: '2026-07-29', priority: '0.9', changefreq: 'yearly' },
   { loc: '/nepal-trekking-permits-2026/',           lastmod: '2026-08-01', priority: '0.9', changefreq: 'yearly' },
   { loc: '/tibet-without-a-permit-amdo-kham-2026/', lastmod: '2026-08-01', priority: '0.9', changefreq: 'yearly' },
-  // Ladakh pillar to follow — draft still has open reviewer questions.
+  { loc: '/ladakh-permits-foreigners-2026/',        lastmod: '2026-08-02', priority: '0.9', changefreq: 'yearly' },
 ];
 
 export const GET: APIRoute = async () => {

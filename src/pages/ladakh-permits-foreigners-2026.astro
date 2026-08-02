@@ -1,0 +1,648 @@
+---
+// src/pages/ladakh-permits-foreigners-2026.astro
+// Pillar 4 of 4.
+//
+// COPY IS VERBATIM from the Drive doc "APPROVED v3.1 (repaired) — Ladakh Permits
+// for Foreigners 2026". Do not reword it here. If the copy needs to change,
+// change it at the doc and bring it across.
+//
+// Two deltas from the doc as it currently reads, both agreed on 2026-08-02:
+//   1. MILES added alongside km — "275 km (171 miles)", "105 km (65 miles)".
+//      These are the only two distances on the page. Matches the meters-with-feet
+//      treatment already applied to every altitude.
+//   2. The short-answer block uses the HARVESTED version, assembled from sentences
+//      already in the doc, rather than the freshly-written draft sitting in the
+//      doc's "PROPOSED" section. See the note above <PillarShortAnswer> below.
+//
+// Placeholders resolved (no prose changed): [INTERNAL LINK: /plan/] and
+// [INTERNAL LINK: /tibet-without-a-permit-amdo-kham-2026/]. The Monthly Dispatch
+// placeholder is dropped — Footer.astro already renders that signup on every page,
+// so an in-body block would be a second identical HubSpot form.
+//
+// Production scaffolding in the doc — the "Supersedes…" header, PROPOSED block,
+// Open questions, Images and Publishing checklist — is not page content.
+//
+// IMAGERY. The hero has 800/1400/2000 files in public/images/resp/, but the
+// "2000" is actually 1920px because the source is 1920 wide. That is not a
+// genuine variant, so respSrcset is NOT used here — it would tell the browser to
+// expect detail that isn't there. Every other image is a plain src by the same
+// rule. THREE SECTIONS RUN WITHOUT A PHOTOGRAPH — Tso Moriri, Hanle & Umling La,
+// and Mig La — because the repo has nothing for them. They are styled as callouts
+// so the gap reads as deliberate rather than broken. Zanskar is covered only by a
+// mountain-biking shot; the copy calls it "our home in Ladakh" and deserves
+// better. Images have been requested from the Ladakh contact.
+//
+// WIRING: pillarUrls entry in sitemap.xml.ts + a `guides` entry on the ladakh
+// record in destinations.json. Root-level pages are in no collection, so nothing
+// links or crawls them automatically.
+//
+// ANNUAL REFRESH: keep this URL. Two facts here are unusually perishable — the
+// PAP/ILP split changed during 2026, and the Hanle/Umling La opening is recent.
+// Both need re-checking, not just re-dating.
+
+import Base from '../layouts/Base.astro';
+import PillarHero from '../components/PillarHero.astro';
+import PillarShortAnswer from '../components/PillarShortAnswer.astro';
+import PillarFaq from '../components/PillarFaq.astro';
+import { reviewedOn, faqSchema, articleSchema, type Faq } from '../utils/pillar';
+
+const LAST_REVIEWED_ISO = '2026-08-02';
+const LAST_REVIEWED = reviewedOn(LAST_REVIEWED_ISO);
+
+const title = 'Ladakh Permits 2026: PAP for Foreigners, ILP for Indians';
+const description =
+  "Ladakh's permit splits by passport in 2026: foreigners get a Protected Area Permit, Indian nationals an Inner Line Permit. Which areas need one, and how to apply.";
+
+const HERO = '/images/2024/05/Ladakh-hero-image.jpg';
+const IMG_RIDGE = '/images/2024/03/ladakh07.jpg';
+const IMG_MONASTERY = '/images/2024/03/ladakh06.jpg';
+const IMG_VILLAGE = '/images/2024/03/ladakh03.jpg';
+const IMG_BIKE = '/images/2024/03/ladakh05.jpg';
+const IMG_TREKKERS = '/images/2024/03/ladakh01.jpg';
+
+// Verbatim from the doc's FAQ section — all eleven, in the doc's order.
+const faqs: Faq[] = [
+  {
+    q: 'Do foreigners need a permit for Ladakh?',
+    a: 'Not for Leh airport, Leh town, or the nearest Indus Valley monasteries, and not for the first two days in the Sham Valley. For everywhere else in Ladakh you need a Protected Area Permit — on a tourist visa or OCI, a registered travel agent arranges it in Leh after you arrive.',
+  },
+  {
+    q: 'Is it a PAP or an Inner Line Permit?',
+    a: 'Both, depending on your passport. Foreign nationals are issued a Protected Area Permit; Indian nationals are issued an Inner Line Permit for the same restricted areas. Locals use "inner line permit" as shorthand for the whole system, which is why the two get mixed up constantly.',
+  },
+  {
+    q: 'Do I need a permit for Alchi and Lamayuru?',
+    a: "They're in the Sham Valley, so no permit for the first two days of your visit, and a permit from day three onward. Apply on arrival in Leh and it's a non-issue.",
+  },
+  {
+    q: 'Can foreigners visit Hanle and Umling La?',
+    a: 'Yes. Both were previously closed to foreign nationals and are now open with the correct permit — a Protected Area Permit arranged through a registered agent in Leh. Most travel sites still say these areas are off-limits to foreigners; that information is out of date.',
+  },
+  {
+    q: "Can I drive Mig La, the world's highest road?",
+    a: "Not as a matter of course. Mig La is primarily an army logistics route, so access depends on army clearance for your dates rather than on a permit you can buy. Ask well before you travel and we'll check on your behalf.",
+  },
+  {
+    q: "How do I get the permit if I'm not on a tourist visa?",
+    a: 'Indian nationals apply online for an Inner Line Permit. Foreigners on employment or business visas apply through the e-FRRO portal a few weeks ahead, then complete paperwork at the Leh police station on arrival — allow a few days. Diplomatic visa holders apply through the Ministry of External Affairs in Delhi at least a month before travel.',
+  },
+  {
+    q: 'Do I need a permit to visit Turtuk?',
+    a: "Yes — the same Protected Area Permit that covers the rest of Nubra. It isn't a separate document.",
+  },
+  {
+    q: 'Do I need a permit to leave Ladakh for Himachal or Kashmir?',
+    a: "No. The permit governs travel within Ladakh's restricted areas, not travel out of the region.",
+  },
+  {
+    q: "Is Umling La still the world's highest motorable road?",
+    a: 'Not since October 2025, when Mig La — also in Ladakh, also built by the Border Roads Organisation — took the record at roughly 5,900 m (19,400 ft). Umling La sits at about 5,800 m (19,024 ft) and held the title from 2021.',
+  },
+  {
+    q: 'How bad is the altitude?',
+    a: "It's Real. Leh is 3,500 m (11,550 ft) and passes exceed 4,900 m (16,000 ft), with Umling La near 5,800 m (19,024 ft). Two acclimatization days before going higher is the minimum responsible plan — and it's when your permit gets arranged anyway. And by acclimatization, we mean days with little to no physical activity planned.",
+  },
+  {
+    q: 'Can I trek independently?',
+    a: 'Yes on non-restricted routes like the Markha Valley. Restricted areas need the agency-arranged permit; a guide adds route knowledge and the homestay relationships that make the trip.',
+  },
+];
+
+const schema = [
+  faqSchema(faqs),
+  articleSchema({
+    title,
+    description,
+    path: '/ladakh-permits-foreigners-2026/',
+    image: HERO,
+    reviewedIso: LAST_REVIEWED_ISO,
+    site: Astro.site,
+    about: [
+      { '@type': 'Place', name: 'Ladakh', sameAs: 'https://en.wikipedia.org/wiki/Ladakh' },
+      { '@type': 'Thing', name: 'Inner Line Permit', sameAs: 'https://en.wikipedia.org/wiki/Inner_Line_Permit' },
+      { '@type': 'Thing', name: 'Protected Area Permit' },
+    ],
+    mentions: [
+      { '@type': 'Place', name: 'Nubra Valley', sameAs: 'https://en.wikipedia.org/wiki/Nubra' },
+      { '@type': 'Place', name: 'Pangong Tso', sameAs: 'https://en.wikipedia.org/wiki/Pangong_Tso' },
+      { '@type': 'Place', name: 'Umling La', sameAs: 'https://en.wikipedia.org/wiki/Umling_La' },
+      { '@type': 'Place', name: 'Turtuk', sameAs: 'https://en.wikipedia.org/wiki/Turtuk' },
+    ],
+  }),
+];
+
+const visaRows = [
+  { who: 'Indian nationals', doc: 'Inner Line Permit', how: 'Online. Straightforward — do it before you fly.' },
+  { who: 'Foreigners on a tourist visa, or OCI holders', doc: 'Protected Area Permit', how: 'Through a registered travel agent, after you arrive in Leh. Nothing to arrange in advance.' },
+  { who: 'Foreigners on an employment or business visa', doc: 'Protected Area Permit', how: 'Apply online through the e-FRRO portal a few weeks before your trip, then visit the police station in Leh on arrival to complete the paperwork. Processing can take a few days — leave time in Leh for it.' },
+  { who: 'Foreigners on a diplomatic visa', doc: 'Protected Area Permit', how: 'Apply directly with the Ministry of External Affairs in Delhi, at least one month before travelling to Ladakh.' },
+];
+
+const glanceRows = [
+  ['Leh airport on arrival', 'Nothing'],
+  ['Leh town & the nearest Indus Valley monasteries', 'Nothing'],
+  ['Sham Valley incl. Alchi and Lamayuru, days 1–2', 'Nothing (apply on arrival; show from day 3)'],
+  ['Sham Valley from day 3', 'Protected Area Permit'],
+  ['Nubra Valley & Khardung La', 'Protected Area Permit'],
+  ['Turtuk', 'Protected Area Permit'],
+  ['Pangong Tso (Spangmik, north shore)', 'Protected Area Permit'],
+  ['Tso Moriri (Korzok)', 'Protected Area Permit'],
+  ['Hanle', 'Protected Area Permit — open to foreigners, previously closed'],
+  ['Umling La', 'Protected Area Permit — open to foreigners, previously closed'],
+  ['Mig La', 'Army clearance, requested against your dates — ask us'],
+  ['Pangong Tso south bank', 'Likely permitted — ask us to confirm'],
+  ['Exiting overland to Himachal or Kashmir', 'Nothing'],
+];
+
+const seasons = [
+  ['June–September', 'the season. High passes open, treks running, lakes accessible. July–August is peak.'],
+  ['May & October', 'shoulder — cold nights, thin crowds, superb light. Some passes are marginal.'],
+  ['November–April', 'deep winter. Leh functions but most touring stops.'],
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  ogImage={HERO}
+  hideNavBg={true}
+  schema={schema}
+>
+  <PillarHero
+    eyebrow="— Ladakh · Permits"
+    heading="Ladakh Permits for Foreigners 2026: Little Tibet on an Indian Visa"
+    intro='They call Ladakh "Little Tibet," and the name undersells it.'
+    image={HERO}
+    imageAlt="A chorten hung with prayer flags beside a dirt track in Ladakh, mountain bikers riding past"
+    primaryHref="#permits"
+    primaryLabel="What you need"
+    secondaryHref="/plan/"
+    secondaryLabel="Plan a journey →"
+  />
+
+  {/* HARVESTED short answer. Unlike Nepal and Tibet — where the doc's opening
+      paragraph already was a summary and could simply be moved — Ladakh opens on
+      scene-setting, so no such paragraph exists. Every clause below is lifted
+      from copy elsewhere on this page; only the joins ("In the Sham Valley,",
+      "Everywhere else in Ladakh:") are connective. The doc's PROPOSED section
+      holds a freshly-written alternative if this one is ever preferred.
+      NOTE this duplicates facts stated further down, which Nepal and Tibet do
+      not — most likely thing to drift at the annual refresh. */}
+  <PillarShortAnswer>
+    Arriving at Leh airport, nothing is required. Leh town and the monasteries closest to it —
+    Thiksey and Hemis among them — are open to everyone, no permit. In the Sham Valley, no permit
+    is required for the first two days of your visit; <strong class="text-ink font-medium">Alchi and
+    Lamayuru are in the Sham Valley</strong>, not the open Indus Valley — free for your first two
+    days, permit from day three. Everywhere else in Ladakh:
+    <strong class="text-ink font-medium">foreign nationals are issued a Protected Area Permit
+    (PAP)</strong>; <strong class="text-ink font-medium">Indian nationals are issued an Inner Line
+    Permit (ILP)</strong> for the same restricted areas. Hanle and Umling La, previously closed,
+    are now open to foreigners holding the correct permit.
+  </PillarShortAnswer>
+
+  {/* ---------- Intro ---------- */}
+  <section class="pt-16 md:pt-24 pb-24 md:pb-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl space-y-6 text-lg leading-relaxed text-ink-soft">
+        <p>
+          They call Ladakh "Little Tibet," and the name undersells it. Whitewashed monasteries on
+          crags, chortens against 6,000-meter (19,700 ft) peaks, a high-altitude desert where
+          Buddhist culture runs as deep as anywhere on the plateau — and all of it reachable on a
+          standard Indian tourist visa, with none of the Tibet Travel Permit process that governs
+          Lhasa and the surrounding Tibet Autonomous Region (TAR).
+        </p>
+        <p>
+          There is paperwork, though, and almost everything written about it online is wrong in the
+          same two ways. Here's the 2026 picture in plain English, from a team that resides in this
+          region.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- First, the Name Everyone Gets Wrong ---------- */}
+  <section class="bg-paper py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl">
+        <div class="eyebrow mb-5">— Terminology</div>
+        <h2 class="display text-4xl md:text-5xl mb-8">First, the Name Everyone Gets Wrong</h2>
+        <div class="space-y-6 text-lg leading-relaxed text-ink-soft">
+          <p>
+            Ask three people in Leh what permit you need and you'll hear "inner line permit" from
+            all three. That's the local shorthand for the whole system, and it's why so much of the
+            internet gets this wrong.
+          </p>
+          <p>
+            Here's the actual position in 2026.
+            <strong class="text-ink font-medium">Foreign nationals are issued a Protected Area
+            Permit (PAP)</strong> — that's the term printed on the document you'll carry.
+            <strong class="text-ink font-medium">Indian nationals are issued an Inner Line Permit
+            (ILP)</strong> for the same restricted areas.
+          </p>
+          <p>
+            Two names, two documents, one system, split by passport. The distinction matters because
+            most advice online quietly assumes an Indian reader, so a foreign traveler following it
+            asks for the wrong paperwork and gets confused answers. Ask for a Protected Area Permit
+            and everyone will know exactly what you mean.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- Second, Hanle and Umling La Are Open Now ---------- */}
+  <section class="py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div>
+          <div class="eyebrow mb-5">— Newly open</div>
+          <h2 class="display text-4xl md:text-5xl mb-8">Second, Hanle and Umling La Are Open Now</h2>
+          <div class="space-y-6 text-lg leading-relaxed text-ink-soft">
+            <p>
+              This is the bigger error, and it costs people trips. Search for whether foreigners can
+              visit <strong class="text-ink font-medium">Hanle</strong> or
+              <strong class="text-ink font-medium">Umling La</strong> and you will find page after
+              page saying no — closed to foreign nationals regardless of permits. That was true.
+              <strong class="text-ink font-medium">It isn't any more.</strong> Both are now open to
+              foreigners holding the correct permit.
+            </p>
+            <p>
+              Almost nothing online has caught up, which means the highest-altitude corner of Ladakh
+              — India's dark-sky reserve, and a pass near 5,800 m (19,000 ft) — is currently open
+              and largely unvisited by foreign travelers who assume they're barred. If you were told
+              no in the past, ask again.
+            </p>
+          </div>
+        </div>
+        <img
+          src={IMG_RIDGE}
+          alt="A lone hiker standing on a high grassy ridge in Ladakh, arid peaks beyond"
+          loading="lazy"
+          class="w-full aspect-[16/10] object-cover reveal reveal-right"
+        />
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- Where You Need No Permit At All ---------- */}
+  <section class="bg-paper py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl">
+        <div class="eyebrow mb-5">— No permit</div>
+        <h2 class="display text-4xl md:text-5xl mb-8">Where You Need No Permit At All</h2>
+        <ul class="space-y-5">
+          <li class="relative pl-6 text-lg leading-relaxed text-ink-soft">
+            <span class="absolute left-0 top-[0.7em] w-1.5 h-1.5 rounded-full bg-saffron"></span>
+            Arriving at Leh airport. Nothing required. You land on your Indian visa and walk out.
+          </li>
+          <li class="relative pl-6 text-lg leading-relaxed text-ink-soft">
+            <span class="absolute left-0 top-[0.7em] w-1.5 h-1.5 rounded-full bg-saffron"></span>
+            Leh town and the Indus Valley. Leh sits in the Indus Valley, and the monasteries closest
+            to town — Thiksey and Hemis among them — are open to everyone, no permit. This is also
+            where your acclimatization days go.
+          </li>
+          <li class="relative pl-6 text-lg leading-relaxed text-ink-soft">
+            <span class="absolute left-0 top-[0.7em] w-1.5 h-1.5 rounded-full bg-saffron"></span>
+            The Sham Valley, days 1 and 2. No permit is required for the first two days of your
+            visit. The authorities do ask that you apply for your permit once you arrive, and from
+            day 3 onward you'll be asked to show it if you enter the Sham Valley. Practically: apply
+            on arrival and stop thinking about it. Note that
+            <strong class="text-ink font-medium">Alchi and Lamayuru are in the Sham Valley</strong>,
+            not the open Indus Valley — free for your first two days, permit from day three.
+          </li>
+          <li class="relative pl-6 text-lg leading-relaxed text-ink-soft">
+            <span class="absolute left-0 top-[0.7em] w-1.5 h-1.5 rounded-full bg-saffron"></span>
+            Leaving Ladakh overland to Himachal or Kashmir. No permit is required for travel
+            <em>out</em> of Ladakh — driving the Manali road or heading west to Kashmir isn't an
+            inner-line movement.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- Where You Need a Permit ---------- */}
+  <section class="py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl">
+        <div class="eyebrow mb-5">— Permits</div>
+        <h2 id="permits" class="display text-4xl md:text-5xl mb-8 scroll-mt-28">
+          Where You Need a Permit
+        </h2>
+
+        <div class="space-y-6 text-lg leading-relaxed text-ink-soft">
+          <p>
+            Technically, everywhere else in Ladakh. Nubra Valley over Khardung La, Turtuk, Pangong
+            Tso, Tso Moriri, the Changthang plateau, and now Hanle and Umling La — all of it. The
+            saving grace: it's a single document covering multiple areas, so this is one errand, not
+            five.
+          </p>
+          <p>
+            Turtuk and the other villages close to the Chinese border sit under this same permit.
+            Earlier versions of this guide treated Turtuk as a separate, pricier class of document;
+            that is not the case.
+          </p>
+        </div>
+
+        <h3 class="display text-2xl md:text-3xl mt-14 mb-2">
+          How to apply — it depends on your passport and visa
+        </h3>
+
+        <div class="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
+          <table class="w-full border-collapse min-w-[38rem] text-base">
+            <caption class="sr-only">
+              How to apply for a Ladakh permit in 2026, by passport and visa type, showing which
+              document is issued and where to apply.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col" class="text-left py-4 pr-4 border-b border-ink/15 text-xs font-medium uppercase tracking-[0.15em] text-ink-soft">Who you are</th>
+                <th scope="col" class="text-left py-4 pr-4 border-b border-ink/15 text-xs font-medium uppercase tracking-[0.15em] text-ink-soft">Document</th>
+                <th scope="col" class="text-left py-4 border-b border-ink/15 text-xs font-medium uppercase tracking-[0.15em] text-ink-soft">How you apply</th>
+              </tr>
+            </thead>
+            <tbody>
+              {visaRows.map(({ who, doc, how }) => (
+                <tr>
+                  <th scope="row" class="text-left font-normal align-top py-4 pr-4 border-b border-ink/10 text-ink">{who}</th>
+                  <td class="align-top py-4 pr-4 border-b border-ink/10 text-ink font-medium">{doc}</td>
+                  <td class="align-top py-4 border-b border-ink/10 text-ink-soft">{how}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="space-y-6 text-lg leading-relaxed text-ink-soft mt-8">
+          <p>
+            Most readers are on a tourist visa, and that route is genuinely easy: your operator
+            handles it in Leh while you're acclimatizing. The two worth planning around are
+            employment and business visas — travelers on those regularly arrive assuming they can do
+            what tourists do, and lose days in Leh to it.
+          </p>
+          <p>
+            Once issued: <strong class="text-ink font-medium">carry several printed copies.</strong>
+            Four is the safe number, because checkpoints collect them. An e-permit on a phone is not
+            enough.
+          </p>
+        </div>
+
+        <div class="border-l-[3px] border-saffron pl-6 my-10">
+          <p class="text-lg leading-relaxed text-ink-soft">
+            <strong class="text-ink font-medium">The one genuinely murky case: Pangong Tso's south
+            bank.</strong> Everything else on this page we can state plainly. The south-bank
+            corridor we can't — it's most likely permit-able, and we'd rather tell you we're
+            checking than guess. If a south-bank route matters to you, ask and we'll confirm current
+            status before you commit to an itinerary.
+          </p>
+        </div>
+
+        <h3 class="display text-2xl md:text-3xl mt-14 mb-2">At a glance</h3>
+
+        <div class="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
+          <table class="w-full border-collapse min-w-[32rem] text-base">
+            <caption class="sr-only">
+              What foreign nationals need in each part of Ladakh in 2026.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col" class="text-left py-4 pr-4 border-b border-ink/15 text-xs font-medium uppercase tracking-[0.15em] text-ink-soft">Where</th>
+                <th scope="col" class="text-left py-4 border-b border-ink/15 text-xs font-medium uppercase tracking-[0.15em] text-ink-soft">What foreigners need in 2026</th>
+              </tr>
+            </thead>
+            <tbody>
+              {glanceRows.map(([where, needs]) => (
+                <tr>
+                  <th scope="row" class="text-left font-normal py-4 pr-4 border-b border-ink/10 text-ink">{where}</th>
+                  <td class="py-4 border-b border-ink/10 text-ink-soft">{needs}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-sm text-ink-soft mt-3 italic">
+          Indian nationals need an Inner Line Permit wherever this table says Protected Area Permit.
+        </p>
+
+        <div class="border-l-[3px] border-saffron pl-6 mt-10">
+          <p class="text-lg leading-relaxed text-ink-soft">
+            <strong class="text-ink font-medium">The honest caveat:</strong> these areas sit near
+            sensitive borders, and access rules shift in both directions — Hanle and Umling La
+            opening up is proof of that, and so is the permit terminology itself, which changed
+            during 2026. What was closed last season may be open this one, and vice versa. One more
+            reason current, on-the-ground information beats a two-year-old blog post. Note too that
+            much of the online advice quietly assumes you're an Indian citizen, who travels under a
+            lighter, fully online system. See
+            <a href="/tibet-without-a-permit-amdo-kham-2026/" class="text-saffron-dark underline underline-offset-4 hover:text-rust">our companion guide to Tibet without a permit</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- Short list ---------- */}
+  <section class="bg-paper py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="eyebrow mb-5">— Where to go</div>
+      <h2 class="display text-4xl md:text-5xl max-w-2xl">Our Ladakh Short List</h2>
+
+      <div class="grid md:grid-cols-3 gap-10 md:gap-x-10 md:gap-y-14 mt-14">
+        <div class="reveal" data-delay="100">
+          <img src={IMG_MONASTERY} alt="A whitewashed Ladakhi monastery building above mud-brick walls and poplars" loading="lazy" class="w-full aspect-[16/9] object-cover mb-6" />
+          <h3 class="display text-xl md:text-2xl mb-3">The Indus Valley Monasteries</h3>
+          <p class="leading-relaxed text-ink-soft">
+            Thiksey at dawn (morning prayers with butter-lamp light), Hemis hidden in its gorge,
+            Nimmu to restfully acclimatize. This is the cultural spine of Ladakh and needs no permit
+            at all. But this is just where true adventure begins.
+          </p>
+        </div>
+        <div class="reveal" data-delay="200">
+          <img src={IMG_VILLAGE} alt="A Ladakhi village of stacked whitewashed houses on a rocky hillside, strung with prayer flags" loading="lazy" class="w-full aspect-[16/9] object-cover mb-6" />
+          <h3 class="display text-xl md:text-2xl mb-3">The Sham Valley — Alchi and Lamayuru</h3>
+          <p class="leading-relaxed text-ink-soft">
+            Alchi's thousand-year-old murals are among the finest surviving Indo-Tibetan painting
+            anywhere, and Lamayuru sits above the eroded badlands people call the moonland. Free to
+            visit in your first two days, permit needed from day three — worth planning deliberately
+            rather than discovering at a checkpoint.
+          </p>
+        </div>
+        <div class="reveal" data-delay="300">
+          <img src={IMG_BIKE} alt="A mountain biker pausing before a vast wall of folded, striated rock in Ladakh" loading="lazy" class="w-full aspect-[16/9] object-cover mb-6" />
+          <h3 class="display text-xl md:text-2xl mb-3">Zanskar Valley</h3>
+          <p class="leading-relaxed text-ink-soft">
+            This is immersive authenticity. Zanskar has become more accessible over the past few
+            years but it has not lost its hospitality or suffered from over-tourism. Spend your
+            nights eating with local families. Climb to great heights while trekking. Mountain bike
+            trails that have been designed by goats and yak. This is our home in Ladakh.
+          </p>
+        </div>
+      </div>
+
+      {/* No photography exists for these three. Styled as callouts so the absence
+          reads as deliberate rather than as broken cards. */}
+      <div class="max-w-3xl mt-16 space-y-10">
+        <div class="border-l-[3px] border-saffron pl-6">
+          <h3 class="display text-xl md:text-2xl mb-3">Tso Moriri</h3>
+          <p class="leading-relaxed text-ink-soft">
+            We recommend this lake over Pangong Lake, mainly because there are less crowds, if any
+            at all. It is everything you want for a lake on the roof of the world.
+          </p>
+        </div>
+        <div class="border-l-[3px] border-saffron pl-6">
+          <h3 class="display text-xl md:text-2xl mb-3">Hanle &amp; Umling La — the newly open corner</h3>
+          <div class="space-y-5 leading-relaxed text-ink-soft">
+            <p>
+              Roughly 275 km (171 miles) from Leh, <strong class="text-ink font-medium">Hanle</strong>
+              sits under some of the darkest skies on earth and hosts India's astronomical
+              observatory and dark-sky reserve. Astro-tourism here is in its infancy; for foreign
+              travelers it has effectively just begun, because until recently we couldn't bring you.
+            </p>
+            <p>
+              From Hanle it's around 105 km (65 miles) to
+              <strong class="text-ink font-medium">Umling La</strong>, the pass road running between
+              Chisumle and Demchok at roughly 5,800 m (19,024 ft). It held the Guinness record as
+              the world's highest motorable road from 2021 until October 2025, when the Border Roads
+              Organisation beat its own record with Mig La at about 5,900 m (19,400 ft) — also in
+              Ladakh. Umling La is no less extraordinary for having been demoted; it's simply the
+              second-highest road on the planet now, and most guidebooks haven't noticed either fact.
+            </p>
+          </div>
+        </div>
+        <div class="border-l-[3px] border-saffron pl-6">
+          <h3 class="display text-xl md:text-2xl mb-3">Mig La is a different case</h3>
+          <div class="space-y-5 leading-relaxed text-ink-soft">
+            <p>
+              In October 2025 the Border Roads Organisation completed Mig La at roughly 5,900 m
+              (19,400 ft), taking the world's-highest-motorable-road record from Umling La.
+              Predictably, people now want to drive it.
+            </p>
+            <p>
+              It isn't a permit you can simply buy. Mig La is primarily an army logistics route, and
+              access depends on the army granting clearance to use the road. The workable approach
+              is to fix your dates first, then have us call and ask on your behalf whether the pass
+              will be open to your group. Asking in advance is the whole game here; turning up and
+              hoping is not a plan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- When to Go ---------- */}
+  <section class="py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <img
+          src={IMG_TREKKERS}
+          alt="A line of trekkers on a stony trail crossing arid Ladakhi slopes"
+          loading="lazy"
+          class="w-full aspect-[16/10] object-cover reveal reveal-left"
+        />
+        <div>
+          <div class="eyebrow mb-5">— Seasons</div>
+          <h2 class="display text-4xl md:text-5xl mb-8">When to Go</h2>
+          <ul class="space-y-4">
+            {seasons.map(([when, what]) => (
+              <li class="relative pl-6 text-lg leading-relaxed text-ink-soft">
+                <span class="absolute left-0 top-[0.7em] w-1.5 h-1.5 rounded-full bg-saffron"></span>
+                <strong class="text-ink font-medium">{when}:</strong> {what}
+              </li>
+            ))}
+          </ul>
+          <p class="mt-8 text-lg leading-relaxed text-ink-soft">
+            <strong class="text-ink font-medium">Altitude note:</strong> Leh sits at 3,500 m
+            (11,550 ft) and most itineraries climb from there. Fly-in travelers need two easy
+            acclimatization days minimum — we build them in, no exceptions. This matters doubly if
+            Hanle and Umling La are on your route: you'd be going from 3,500 m to nearly 5,800 m
+            (11,550 to 19,000 ft), and that is not a trip to rush. The happy accident is that those
+            acclimatization days are exactly when your permit gets sorted, so the paperwork costs
+            you no trip time at all.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------- Getting the Permit Right ---------- */}
+  <section class="bg-paper py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl">
+        <div class="eyebrow mb-5">— Pitfalls</div>
+        <h2 class="display text-4xl md:text-5xl mb-8">Getting the Permit Right</h2>
+        <p class="text-lg leading-relaxed text-ink-soft mb-8">
+          For tourist-visa travelers the Protected Area Permit is close to a non-event when an
+          operator handles it: passport and visa copies, photos, arranged in Leh during
+          acclimatization. Where travelers actually get burned:
+        </p>
+        <ul class="space-y-5">
+          <li class="relative pl-6 text-lg leading-relaxed text-ink-soft">
+            <span class="absolute left-0 top-[0.7em] w-1.5 h-1.5 rounded-full bg-saffron"></span>
+            <strong class="text-ink font-medium">Believing the internet about Hanle and Umling
+            La.</strong> The most common mistake is now the opposite of what it used to be — people
+            rule out the far southeast because an old page said foreigners are barred, and never ask.
+          </li>
+          <li class="relative pl-6 text-lg leading-relaxed text-ink-soft">
+            <span class="absolute left-0 top-[0.7em] w-1.5 h-1.5 rounded-full bg-saffron"></span>
+            <strong class="text-ink font-medium">Assuming Alchi and Lamayuru need nothing.</strong>
+            They're Sham Valley. Fine on days one and two, permit from day three, and plenty of
+            itineraries put them later in the trip.
+          </li>
+          <li class="relative pl-6 text-lg leading-relaxed text-ink-soft">
+            <span class="absolute left-0 top-[0.7em] w-1.5 h-1.5 rounded-full bg-saffron"></span>
+            <strong class="text-ink font-medium">Treating Mig La as bookable.</strong> It needs army
+            clearance against your dates, requested ahead.
+          </li>
+          <li class="relative pl-6 text-lg leading-relaxed text-ink-soft">
+            <span class="absolute left-0 top-[0.7em] w-1.5 h-1.5 rounded-full bg-saffron"></span>
+            <strong class="text-ink font-medium">Arriving on an employment or business visa</strong>
+            without having filed on e-FRRO weeks earlier — that's days lost at a Leh police station.
+          </li>
+          <li class="relative pl-6 text-lg leading-relaxed text-ink-soft">
+            <span class="absolute left-0 top-[0.7em] w-1.5 h-1.5 rounded-full bg-saffron"></span>
+            <strong class="text-ink font-medium">Assuming a phone screenshot is a permit.</strong>
+            Checkpoints take paper copies. Carry four.
+          </li>
+          <li class="relative pl-6 text-lg leading-relaxed text-ink-soft">
+            <span class="absolute left-0 top-[0.7em] w-1.5 h-1.5 rounded-full bg-saffron"></span>
+            <strong class="text-ink font-medium">Asking for an inner line permit as a
+            foreigner.</strong> It's the local shorthand, but your document is a Protected Area
+            Permit — ask for that and you'll get a straight answer.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <PillarFaq faqs={faqs} heading="FAQ" reviewedNote={`Last reviewed: ${LAST_REVIEWED}`} />
+
+  {/* ---------- Plan Your Trip ----------
+      Cross-links only, per the doc's publishing checklist. No NewsletterSignup:
+      Footer.astro already renders the Monthly Dispatch on every page. */}
+  <section class="bg-paper py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl">
+        <div class="eyebrow mb-5">— Start a conversation</div>
+        <h2 class="display text-4xl md:text-5xl mb-8">Plan Your Trip</h2>
+        <p class="text-lg leading-relaxed text-ink-soft">
+          Ladakh gives you the Tibetan world with Indian paperwork — which, once you know which
+          permit you're actually asking for, is manageable paperwork. Tell us your dates, your
+          passport and visa type, and your fitness level, and we'll tell you honestly what's open,
+          what needs a permit, and what we'd skip. If Mig La or the far southeast is on your list,
+          we'll ask ahead on your behalf.
+        </p>
+        <div class="flex flex-wrap items-center gap-8 mt-10">
+          <a href="/plan/" class="btn !bg-saffron hover:!bg-saffron-dark">Plan a journey</a>
+          <a href="/destinations/ladakh/" class="btn-ghost">Ladakh &amp; Zanskar trips</a>
+        </div>
+        <p class="mt-10 text-base text-ink-soft">
+          <a href="/bhutan-travel-cost-sdf-2026/" class="text-saffron-dark underline underline-offset-4 hover:text-rust">Bhutan travel cost 2026</a>
+          ·
+          <a href="/nepal-trekking-permits-2026/" class="text-saffron-dark underline underline-offset-4 hover:text-rust">Nepal trekking permits 2026</a>
+          ·
+          <a href="/tibet-without-a-permit-amdo-kham-2026/" class="text-saffron-dark underline underline-offset-4 hover:text-rust">Tibet without a permit</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>
