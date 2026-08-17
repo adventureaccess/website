@@ -1,6 +1,11 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: adventureaccess/website
   branch: main
+  # GitHub OAuth relay (netlify/functions/auth-github*). base_url is this site;
+  # auth_endpoint is where the CMS opens the login popup.
+  base_url: https://www.adventure-access.com
+  auth_endpoint: /auth/github
 
 # Uncomment the line below to enable editorial workflow
 # (changes go to a draft branch and require review before publishing)
