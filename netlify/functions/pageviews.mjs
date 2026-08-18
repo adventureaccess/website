@@ -22,7 +22,7 @@
  */
 
 import crypto from 'node:crypto';
-import { requireUser, unauthorized, corsHeaders } from './_identity.mjs';
+import { requireUser, unauthorized, corsHeaders } from './_auth.mjs';
 
 const SCOPE = 'https://www.googleapis.com/auth/analytics.readonly';
 
