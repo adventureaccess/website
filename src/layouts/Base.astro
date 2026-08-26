@@ -27,15 +27,12 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
-// Internal, staff-only pages (/account/, /internal/*) get NO marketing or
-// analytics scripts, and no consent banner. Three reasons:
-//  1. HubSpot's tracking script collects submissions from ANY form on the page
-//     ("non-HubSpot forms"), which was turning the password-reset field on
-//     /account/ into HubSpot form submissions and conversion events.
-//  2. Staff using our own tools shouldn't inflate the traffic and conversion
+// Internal, staff-only pages (/internal/*) get NO marketing or analytics
+// scripts, and no consent banner. Two reasons:
+//  1. Staff using our own tools shouldn't inflate the traffic and conversion
 //     numbers the dashboard then reports — that's circular.
-//  3. No tracking means no cookies to consent to, so the banner is pointless here.
-const INTERNAL_PREFIXES = ['/account', '/internal'];
+//  2. No tracking means no cookies to consent to, so the banner is pointless here.
+const INTERNAL_PREFIXES = ['/internal'];
 const isInternalPage = INTERNAL_PREFIXES.some((p) => Astro.url.pathname.startsWith(p));
 const absoluteOgImage = ogImage
   ? new URL(ogImage, Astro.site).toString()
@@ -109,35 +106,6 @@ const allSchemas = [orgSchema, ...extraSchemas];
     {allSchemas.map((s) => (
       <script type="application/ld+json" set:html={JSON.stringify(s)}></script>
     ))}
-
-    <!-- Netlify Identity email links (invite / password recovery / confirmation)
-         point at the site root with the token in the URL hash. Forward those to
-         /account/, hash intact, which handles every flow with visible success and
-         failure states.
-
-         This used to load the widget here and call open() blind, then redirect to
-         /admin/ on login. If a token was expired or already spent — which happens
-         a lot, since mail clients and security scanners pre-fetch links and these
-         tokens are single-use — the verify call 404'd, nothing rendered, the hash
-         was stripped, and the user was stranded on the homepage. Forwarding keeps
-         the token handling in exactly one place, and keeps ~70KB of widget JS off
-         normal page views. -->
-    <script is:inline>
-      (function () {
-        var hash = window.location.hash || '';
-        if (
-          hash.indexOf('invite_token=') === -1 &&
-          hash.indexOf('recovery_token=') === -1 &&
-          hash.indexOf('confirmation_token=') === -1 &&
-          hash.indexOf('email_change_token=') === -1
-        ) return;
-
-        // /account/ handles these itself — never forward to ourselves.
-        if (window.location.pathname.indexOf('/account') === 0) return;
-
-        window.location.replace('/account/' + hash);
-      })();
-    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -5,9 +5,41 @@
 [build.environment]
   NODE_VERSION = "18"
 
-# Serverless functions (GA4 page-views proxy for the marketing dashboard)
+# Serverless functions (GA4 page-views proxy for the marketing dashboard,
+# plus the Google/GitHub sign-in flow).
 [functions]
   directory = "netlify/functions"
+
+# Edge functions auto-load from netlify/edge-functions/ (gate.js protects
+# /internal/* via its exported config.path — no declaration needed here).
+#
+# Pretty URLs for the auth functions. status=200 rewrites keep the path in the
+# address bar and pass query strings through to the function.
+#
+# Google sign-in (gates /internal/dashboard/):
+[[redirects]]
+  from = "/auth/login"
+  to = "/.netlify/functions/auth-login"
+  status = 200
+[[redirects]]
+  from = "/auth/callback"
+  to = "/.netlify/functions/auth-callback"
+  status = 200
+[[redirects]]
+  from = "/auth/logout"
+  to = "/.netlify/functions/auth-logout"
+  status = 200
+
+# GitHub OAuth relay for the CMS (Sveltia). Kept on a distinct /auth/github*
+# path so it never collides with the Google endpoints above.
+[[redirects]]
+  from = "/auth/github"
+  to = "/.netlify/functions/auth-github"
+  status = 200
+[[redirects]]
+  from = "/auth/github/callback"
+  to = "/.netlify/functions/auth-github-callback"
+  status = 200
 
 # Redirects for old WordPress URLs
 [[redirects]]
@@ -241,7 +273,7 @@
 # 302s to the page with its ?s= source code attached, so a QR on a badge is
 # distinguishable from one on the one-pager in Netlify Forms and GA4.
 # Keep this list in sync with SOURCE_CODES in src/pages/summit/index.astro and
-# the QR files in public/atws26/.
+# the QR files in atws26-kit/qr/.
 # 302, not 301: browsers cache 301s forever and these are single-event links.
 [[redirects]]
   from = "/s/badge"
@@ -284,6 +316,16 @@
   to = "/summit/?s=verbal"
   status = 302
 
+# Baseline security headers for every response.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
 # Belt and braces on top of the page's own noindex tag — this URL should never
 # be indexed even if someone links to it from a public conference recap.
 [[headers]]
@@ -291,10 +333,12 @@
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
 
-# Internal, Identity-gated pages must never be indexed. The page itself also
-# sets <meta name="robots" content="noindex">; this covers the response headers
-# too (and the data functions set the same header themselves).
+# Internal, auth-gated pages must never be indexed. The page itself also sets
+# <meta name="robots" content="noindex">; this covers the response headers too
+# (and the data functions set the same header themselves). frame-ancestors here
+# is the modern clickjacking control that pairs with X-Frame-Options above.
 [[headers]]
   for = "/internal/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+    Content-Security-Policy = "frame-ancestors 'none'"

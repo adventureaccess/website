@@ -32,7 +32,7 @@
  *   GET /.netlify/functions/netlify-traffic?days=30
  */
 
-import { requireUser, unauthorized, corsHeaders } from './_identity.mjs';
+import { requireUser, unauthorized, corsHeaders } from './_auth.mjs';
 
 const DEFAULT_SITE_ID = '52d84b14-344a-45ce-a108-0a8b47d29057';
 const BASE = 'https://analytics.services.netlify.com/v2';

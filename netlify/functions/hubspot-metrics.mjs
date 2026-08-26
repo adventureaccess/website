@@ -30,7 +30,7 @@
  *   GET /.netlify/functions/hubspot-metrics?days=30
  */
 
-import { requireUser, unauthorized, corsHeaders } from './_identity.mjs';
+import { requireUser, unauthorized, corsHeaders } from './_auth.mjs';
 
 const SEARCH_URL = 'https://api.hubapi.com/crm/v3/objects/contacts/search';
 const PORTAL_ID = '244183775';

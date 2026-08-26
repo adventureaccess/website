@@ -7,17 +7,18 @@
  *   /.netlify/functions/pageviews        → GA4 traffic (how many humans visited)
  *   /.netlify/functions/hubspot-metrics  → HubSpot contacts (conversions)
  *
- * Auth is Netlify Identity — the same instance /admin (Decap CMS) uses. Access
- * needs the "dashboard" role; see netlify/functions/_identity.mjs.
+ * Auth is Google sign-in (see netlify/functions/_auth.mjs and the auth-* funcs).
+ * Unauthenticated visitors are redirected to /auth/login by the edge function
+ * (netlify/edge-functions/gate.js); the data functions independently require a
+ * valid session cookie, which the browser sends automatically same-origin.
  *
  * The page shell is public but contains NO data: everything is fetched
- * client-side with a bearer token. noindex + X-Robots-Tag (netlify.toml) and
- * excluded from sitemap.xml.ts.
+ * client-side. noindex + X-Robots-Tag (netlify.toml) and excluded from
+ * sitemap.xml.ts.
  *
  * Mobile-first on purpose — being usable on a phone is the whole reason it exists.
  */
 import Base from '../../layouts/Base.astro';
-import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
 ---
 
 <Base
@@ -25,7 +26,6 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
   description="Internal marketing dashboard."
   noindex={true}
 >
-  <IdentityWidgetGuard />
   <script is:inline src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js"></script>
 
   <div class="pt-32 md:pt-40 pb-20 md:pb-28 min-h-[70vh]">
@@ -39,7 +39,7 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
             <span id="egg" class="select-none cursor-default" title="">Marketing</span> Dashboard.
           </h1>
         </div>
-        <button id="btn-logout" class="btn-ghost hidden">Log out</button>
+        <a id="btn-logout" href="/auth/logout" class="btn-ghost hidden">Log out</a>
       </div>
 
       <!-- Loading -->
@@ -48,23 +48,10 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
       <!-- Logged out -->
       <div id="state-login" class="hidden py-8">
         <p class="text-lg leading-relaxed text-ink-soft max-w-xl mb-8">
-          This page is for the Adventure Access team. Log in with your Netlify Identity
-          account — the same one you use for the CMS.
+          This page is for the Adventure Access team. Sign in with your
+          <span class="text-ink font-medium">@adventure-access.com</span> Google account.
         </p>
-        <button id="btn-login" class="btn !bg-saffron hover:!bg-saffron-dark">Log in</button>
-      </div>
-
-      <!-- Logged in, but no dashboard role -->
-      <div id="state-noaccess" class="hidden py-8">
-        <p class="text-lg leading-relaxed text-ink-soft max-w-xl mb-4">
-          You're logged in as <span id="noaccess-email" class="text-ink font-medium"></span>,
-          but this account doesn't have dashboard access yet.
-        </p>
-        <p class="text-ink-soft max-w-xl mb-8">
-          Ask Will to add the <code class="text-saffron">dashboard</code> role to your
-          Identity user, then reload this page.
-        </p>
-        <button id="btn-logout-2" class="btn-ghost">Log out</button>
+        <a href="/auth/login" class="btn !bg-saffron hover:!bg-saffron-dark">Sign in with Google</a>
       </div>
 
       <!-- Error -->
@@ -222,59 +209,24 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
     const DAYS_DEFAULT = 30;
     let days = DAYS_DEFAULT;
     let chart = null;
-    let identityReady = false;
 
     const $ = (id) => document.getElementById(id);
     const show = (which) => {
-      ['state-loading', 'state-login', 'state-noaccess', 'state-error', 'dash'].forEach((id) => {
+      ['state-loading', 'state-login', 'state-error', 'dash'].forEach((id) => {
         $(id).classList.toggle('hidden', id !== which);
       });
       $('btn-logout').classList.toggle('hidden', which !== 'dash');
     };
 
-    // ---- Identity ---------------------------------------------------------
-    // The widget may already be present: Base.astro loads its own copy when an
-    // invite/recovery token is in the URL hash. Reuse whatever is there.
-    function identity() {
-      return (window.aaIdentity && window.aaIdentity.get()) || window.netlifyIdentity || null;
-    }
-
-    function initIdentity() {
-      const id = identity();
-      if (!id) {
-        fail('Netlify Identity failed to load. Check your connection and reload.');
-        return;
-      }
-      if (identityReady) return;
-      identityReady = true;
-
-      id.on('init', (user) => (user ? load() : show('state-login')));
-      // aaIdentity.close() rather than id.close(): the widget's own close leaves a
-      // transparent full-viewport iframe over the page that swallows every click,
-      // which would make the whole dashboard unusable after logging in.
-      id.on('login', () => {
-        window.aaIdentity && window.aaIdentity.close();
-        load();
-      });
-      id.on('logout', () => show('state-login'));
-      id.init({ APIUrl: undefined });
-    }
-
-    async function token() {
-      const user = identity()?.currentUser();
-      if (!user) return null;
-      try {
-        return await user.jwt(); // refreshes if near expiry
-      } catch {
-        return null;
-      }
-    }
+    const toLogin = () => {
+      window.location.href = '/auth/login?rt=' + encodeURIComponent(location.pathname);
+    };
 
     // ---- Data -------------------------------------------------------------
+    // The session is an httpOnly cookie sent automatically on same-origin
+    // requests. A 401 means signed out (or access revoked) → go sign in.
     async function api(path) {
-      const jwt = await token();
-      if (!jwt) throw Object.assign(new Error('No session'), { code: 401 });
-      const res = await fetch(path, { headers: { Authorization: `Bearer ${jwt}` } });
+      const res = await fetch(path, { credentials: 'same-origin' });
       if (res.status === 401) throw Object.assign(new Error('Not authorised'), { code: 401 });
       if (!res.ok) {
         let detail = '';
@@ -314,13 +266,9 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
         show('dash');
       } catch (e) {
         if (e.code === 401) {
-          const user = identity()?.currentUser();
-          if (user) {
-            $('noaccess-email').textContent = user.email || '';
-            show('state-noaccess');
-          } else {
-            show('state-login');
-          }
+          // Edge gate usually catches this first; if we got here, sign in again.
+          show('state-login');
+          toLogin();
           return;
         }
         fail(e.message || String(e));
@@ -578,9 +526,6 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
       b.setAttribute('aria-pressed', String(Number(b.dataset.days) === DAYS_DEFAULT));
     });
 
-    $('btn-login').addEventListener('click', () =>
-      window.aaIdentity ? window.aaIdentity.open('login') : identity()?.open('login')
-    );
     $('btn-refresh').addEventListener('click', () => load());
 
     // Easter egg: double-click "Marketing" and it commits to the house spelling.
@@ -597,13 +542,12 @@ import IdentityWidgetGuard from '../../components/IdentityWidgetGuard.astro';
       });
     })();
     $('btn-retry').addEventListener('click', () => load());
-    $('btn-logout').addEventListener('click', () => identity()?.logout());
-    $('btn-logout-2').addEventListener('click', () => identity()?.logout());
+    // btn-logout is a plain <a href="/auth/logout"> — no JS needed.
 
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initIdentity);
+      document.addEventListener('DOMContentLoaded', load);
     } else {
-      initIdentity();
+      load();
     }
   })();
 </script>

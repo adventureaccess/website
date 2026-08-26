@@ -20,8 +20,7 @@ const staticUrls = [
   //   excluded — noindex paid-campaign landing pages, reached via ads only.
   // /summit/ (+ /summit/thank-you/) intentionally excluded — noindex event
   //   page for ATWS 2026, handed out only in Québec so traffic stays attributable.
-  // /internal/dashboard/ intentionally excluded — Identity-gated internal tool.
-  // /account/ intentionally excluded — team sign-in / Identity token handling.
+  // /internal/dashboard/ intentionally excluded — auth-gated internal tool.
 ];
 
 // Evergreen pillar pages. These live at the site root (not under /blog/) because they
