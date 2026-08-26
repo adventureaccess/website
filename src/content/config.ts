@@ -4,6 +4,12 @@ const blog = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    /**
+     * Optional SEO <title>. When set it is used verbatim, instead of the default
+     * `{title} — AA Journal`. Use it when the approved copy specifies a title tag
+     * that differs from the on-page H1 (as trip dispatches usually do).
+     */
+    seo_title: z.string().optional(),
     date: z.coerce.date(),
     /** Shown in blog cards and used as the SEO meta description. Max 155 chars. */
     excerpt: z.string().optional(),

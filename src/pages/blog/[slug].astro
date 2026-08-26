@@ -23,10 +23,12 @@ function formatDate(date: Date) {
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
-// Trim excerpt to 155 chars for meta description
+// Trim excerpt to 160 chars for meta description. 160 is the usual SERP ceiling and
+// the length approved copy is written to — trimming at 155 silently truncated the
+// last word off meta descriptions that had been signed off at 156–160 chars.
 const rawExcerpt = entry.data.excerpt ?? '';
-const metaDescription = rawExcerpt.length > 155
-  ? rawExcerpt.slice(0, 155).replace(/\s+\S*$/, '') + '…'
+const metaDescription = rawExcerpt.length > 160
+  ? rawExcerpt.slice(0, 160).replace(/\s+\S*$/, '') + '…'
   : rawExcerpt;
 
 // BreadcrumbList schema
@@ -69,7 +71,7 @@ const destinationMeta: Record<string, { name: string; country: string; href: str
 const destCta = entry.data.destination ? destinationMeta[entry.data.destination] : null;
 ---
 <Base
-  title={`${entry.data.title} — AA Journal`}
+  title={entry.data.seo_title ?? `${entry.data.title} — AA Journal`}
   description={metaDescription || `Read ${entry.data.title} on the Adventure Access journal.`}
   ogImage={entry.data.featured_image || undefined}
   schema={[articleSchema, breadcrumbSchema]}
@@ -218,6 +220,14 @@ const destCta = entry.data.destination ? destinationMeta[entry.data.destination]
     .prose-post figure { margin: 4rem -8rem; }
   }
   .prose-post figure img { margin: 0; aspect-ratio: 16 / 10; object-fit: cover; }
+  /* Portrait shots: the 16/10 crop above keeps only a narrow centre band of a tall
+     photo, and the negative figure margins would then blow it up full-bleed. Show
+     these at their real aspect ratio, centred at a readable width instead. */
+  .prose-post figure.portrait { margin: 3rem auto; max-width: 32rem; }
+  .prose-post figure.portrait img { aspect-ratio: auto; }
+  @media (min-width: 1024px) {
+    .prose-post figure.portrait { margin: 4rem auto; max-width: 34rem; }
+  }
   .prose-post figcaption {
     font-size: 0.875rem;
     color: #5a6470;

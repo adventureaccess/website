@@ -243,6 +243,14 @@
   to = "/blog/xian/"
   status = 301
 
+# The approved copy for the July 2026 Ladakh MTB dispatch specifies a root-level slug,
+# but dated Journal entries live under /blog/ so they are listed and sitemapped
+# automatically. Keep the approved URL working.
+[[redirects]]
+  from = "/dispatch-ladakh-mtb-zanskar-2026/"
+  to = "/blog/dispatch-ladakh-mtb-zanskar-2026/"
+  status = 301
+
 # Old WordPress image redirects
 [[redirects]]
   from = "/wp-content/uploads/2020/05/Image-1.jpg"
@@ -260,6 +268,54 @@
   to = "/favicon.png"
   status = 301
 
+# ─────────────── ATWS 2026 (Québec, Sept 13–18) short links ───────────────
+# /summit/ is handed out only at the event. Each channel gets a short alias that
+# 302s to the page with its ?s= source code attached, so a QR on a badge is
+# distinguishable from one on the one-pager in Netlify Forms and GA4.
+# Keep this list in sync with SOURCE_CODES in src/pages/summit/index.astro and
+# the QR files in atws26-kit/qr/.
+# 302, not 301: browsers cache 301s forever and these are single-event links.
+[[redirects]]
+  from = "/s/badge"
+  to = "/summit/?s=badge"
+  status = 302
+
+[[redirects]]
+  from = "/s/card"
+  to = "/summit/?s=card"
+  status = 302
+
+[[redirects]]
+  from = "/s/onepager"
+  to = "/summit/?s=onepager"
+  status = 302
+
+[[redirects]]
+  from = "/s/marketplace"
+  to = "/summit/?s=marketplace"
+  status = 302
+
+[[redirects]]
+  from = "/s/media"
+  to = "/summit/?s=media"
+  status = 302
+
+[[redirects]]
+  from = "/s/adventure"
+  to = "/summit/?s=adventure"
+  status = 302
+
+[[redirects]]
+  from = "/s/signage"
+  to = "/summit/?s=signage"
+  status = 302
+
+# Spoken-aloud fallback: "adventure-access.com/atws26".
+[[redirects]]
+  from = "/atws26"
+  to = "/summit/?s=verbal"
+  status = 302
+
 # Baseline security headers for every response.
 [[headers]]
   for = "/*"
@@ -269,6 +325,13 @@
     X-Frame-Options = "DENY"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Belt and braces on top of the page's own noindex tag — this URL should never
+# be indexed even if someone links to it from a public conference recap.
+[[headers]]
+  for = "/summit/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
 
 # Internal, auth-gated pages must never be indexed. The page itself also sets
 # <meta name="robots" content="noindex">; this covers the response headers too

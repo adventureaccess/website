@@ -18,6 +18,8 @@ const staticUrls = [
   // /404/ intentionally excluded — error page
   // /nepal-lp01/ and /india-lp01/ (+ their /thank-you/ pages) intentionally
   //   excluded — noindex paid-campaign landing pages, reached via ads only.
+  // /summit/ (+ /summit/thank-you/) intentionally excluded — noindex event
+  //   page for ATWS 2026, handed out only in Québec so traffic stays attributable.
   // /internal/dashboard/ intentionally excluded — auth-gated internal tool.
 ];
 

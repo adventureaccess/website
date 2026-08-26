@@ -1,0 +1,811 @@
+---
+/**
+ * /summit/ — Adventure Travel World Summit 2026 (Québec City, Sept 13–18) landing page.
+ *
+ * This URL is given out ONLY at the event: on badges, business cards, the
+ * one-pager, in Marketplace appointments and MediaConnect pitches, and in the
+ * pre-Summit emails. It is `noindex` and excluded from src/pages/sitemap.xml.ts
+ * so it never shows up in search and never competes with /about/ or /destinations/.
+ *
+ * SOURCE TRACKING
+ * ---------------
+ * Every printed/handed-out variant carries a `?s=` code (see SOURCE_CODES below).
+ * The script at the bottom of this file:
+ *   1. reads ?s= (and any utm_* params) on load,
+ *   2. stores them in sessionStorage so they survive in-page navigation,
+ *   3. writes them into hidden fields on the meeting form, and
+ *   4. fires a GA4 `summit_view` event with the source as a parameter.
+ * So a submission tells us the person came from, e.g., the badge QR at the
+ * Marketplace table rather than "direct traffic".
+ *
+ * Short aliases (/s/badge, /s/card, …) are defined in netlify.toml and 302 here
+ * with the ?s= attached, so nothing long has to be printed.
+ *
+ * FORM
+ * ----
+ * Posts to Netlify Forms (name: summit-atws26) for the notification email and
+ * the thank-you redirect, and mirrors into HubSpot — same dual-submit pattern
+ * as CampaignLanding.astro and /plan/. Netlify remains the system of record.
+ *
+ * TODO for Will before the event:
+ *   - Fill in ATTENDEES below with who is actually going.
+ *   - Paste the HubSpot form GUID into HS_FORM_ID (works without it; Netlify
+ *     still captures).
+ *   - Paste a meeting-booking link into MEETING_URL to show the "grab a slot"
+ *     button (hidden while empty).
+ *   - Turn on a Netlify form notification for `summit-atws26` — notifications
+ *     are per-form, so the journey-planner one does not cover this.
+ */
+import Base from '../../layouts/Base.astro';
+import { respSrcset, SIZES_FULL } from '../../utils/resp';
+
+// ── Event facts ────────────────────────────────────────────────────────────
+const EVENT = {
+  name: 'Adventure Travel World Summit 2026',
+  short: 'ATWS 2026',
+  city: 'Québec City, Canada',
+  dates: 'September 13–18, 2026',
+  theme: 'Trace',
+};
+
+// ── Editable before the event ──────────────────────────────────────────────
+/** Who from Adventure Access is on the ground in Québec. */
+const ATTENDEES = [
+  {
+    name: 'Brian',
+    role: 'Founder',
+    region: 'Bhutan · China · India · Nepal',
+    image: '/images/2023/06/Brian-1024x720.jpg',
+    note: 'Twenty years living and building in the region. The person to talk to about ground operations, custom programs, and the Bhutan concept.',
+  },
+];
+
+/** HubSpot form GUID. Leave '' until the form exists — Netlify still captures. */
+const HS_FORM_ID = '';
+/** Meeting-booking link (HubSpot meetings, Calendly, etc). Button hides while ''. */
+const MEETING_URL = '';
+
+/**
+ * Source codes handed out at the event. Keep this list and the QR codes in
+ * /public/atws26/ in sync — the QR filenames match these codes.
+ */
+const SOURCE_CODES = [
+  'badge',        // lanyard / badge sticker
+  'card',         // business card back
+  'onepager',     // printed one-pager
+  'marketplace',  // Marketplace appointment
+  'media',        // MediaConnect pitch
+  'adventure',    // Day of Adventure / pre-Summit adventure
+  'email',        // pre-Summit email
+  'followup',     // post-Summit email
+  'signage',      // any printed signage
+  'verbal',       // typed in by hand after we said it out loud
+];
+
+const heroImage = '/images/2024/05/Ladakh-hero-image.jpg';
+const heroSrcset = respSrcset(heroImage);
+const bhutanImage = '/images/2026/07/bhutan-masked-dance.jpg';
+const bhutanSrcset = respSrcset(bhutanImage);
+const closingImage = '/images/2026/07/bhutan-hiker-on-trail.jpg';
+const closingSrcset = respSrcset(closingImage);
+
+// The scroller cards are ~a third of the viewport on desktop and most of it on
+// mobile — without this the browser downloads the 2000px variant for a card that
+// is never wider than about 450 CSS pixels.
+const SIZES_CARD = '(min-width: 1280px) 32vw, (min-width: 1024px) 38vw, (min-width: 640px) 60vw, 80vw';
+
+const FORM_NAME = 'summit-atws26';
+const THANK_YOU = '/summit/thank-you/';
+
+// ── Content ────────────────────────────────────────────────────────────────
+const facts = [
+  { n: '20+', label: 'Years living and operating in the region' },
+  { n: '4', label: 'Countries: Bhutan, India, Nepal, China' },
+  { n: '100%', label: 'Programs run by our own people, never farmed out' },
+  { n: '3', label: "Memberships: ATTA, CREST, Tomorrow's Air" },
+];
+
+const offerings = [
+  {
+    eyebrow: 'For tour operators',
+    title: 'Ground operations across the Himalaya.',
+    body: 'Trekking, mountain biking, mountaineering, and cultural programs in Bhutan, Ladakh and the wider Indian Himalaya, Nepal, and the Tibetan Plateau and Yunnan. Permits, logistics, guides, and the relationships that make the hard places possible.',
+  },
+  {
+    eyebrow: 'For agencies and specialists',
+    title: 'Custom programs, built not catalogued.',
+    body: 'Our itineraries are starting points. Length, route, pace, and comfort level get rebuilt around your client. We are a small team by design — you deal with the people who actually run the trip.',
+  },
+  {
+    eyebrow: 'For destination partners',
+    title: 'A local network, not a subcontract chain.',
+    body: 'We invest in local adventure entrepreneurs and hospitality operators throughout the region and bring guests into that community. Guides from Ladakh, Nepal, Bhutan and eastern Tibet, working in their own home ground.',
+  },
+];
+
+const places = [
+  {
+    name: 'Bhutan',
+    line: 'Trekking, festivals, and the country that priced tourism for value over volume.',
+    image: '/images/2026/07/bhutan-hiker-on-trail.jpg',
+    href: '/destinations/bhutan/',
+  },
+  {
+    name: 'Ladakh & the Indian Himalaya',
+    line: 'High-altitude riding and trekking out of Leh, with Ladakhi guides.',
+    image: '/images/2024/05/Ladakh-hero-image.jpg',
+    href: '/destinations/ladakh/',
+  },
+  {
+    name: 'Nepal',
+    line: 'Manaslu, Everest region, and the routes that are not the queue.',
+    image: '/images/2024/05/Nepal-Page-Hero-image-scaled-1.jpeg',
+    href: '/destinations/nepal/',
+  },
+  {
+    name: 'Yunnan & the Tibetan Plateau',
+    line: 'Amdo and Kham without a Tibet permit — the plateau most itineraries miss.',
+    image: '/images/2024/05/Hero-Image-Lijiang.jpg',
+    href: '/destinations/yunnan/',
+  },
+];
+
+const differentiators = [
+  'You talk to the operator, not a reseller. Brian, Trevor, Lenduk and Stanzin are the people who run your clients’ trips.',
+  'We are licensed and connected where it matters — permits in Tibet, Ladakh inner-line, Bhutan SDF, Nepal restricted areas.',
+  'Custom is the default. We would rather rebuild an itinerary than sell you a fixed departure that half fits.',
+  'Social enterprise structure: margin goes back into local entrepreneurs, guides, and hospitality points across the region.',
+  'Responsible travel is documented, not claimed — ATTA, CREST, and Tomorrow’s Air memberships, and a climate partnership we will happily walk you through.',
+];
+
+/** MediaConnect: concrete story angles rather than a generic press-kit ask. */
+const storyAngles = [
+  {
+    title: 'The plateau you can reach without a Tibet permit',
+    body: 'Amdo and Kham are Tibetan in language, food, and faith, sit inside Sichuan, Qinghai and Yunnan, and need no Tibet Travel Permit. Most travel writing does not know this.',
+  },
+  {
+    title: '“Sherpa” is an ethnicity, not a job title',
+    body: 'A correction piece the industry keeps needing, told through our Nepali team.',
+  },
+  {
+    title: 'What Bhutan’s Sustainable Development Fee actually buys',
+    body: 'The real 2026 numbers, and what high-value/low-volume looks like from inside the country.',
+  },
+  {
+    title: 'A female guide in Ladakh',
+    body: 'Stanzin Padma on leading treks in a place where that was not a job women did.',
+  },
+  {
+    title: 'Singletrack at 16,000 feet',
+    body: 'Mountain biking Zanskar and Ladakh — routes that are not in any guidebook yet.',
+  },
+];
+
+const roles = [
+  'Tour operator / reseller',
+  'Travel agency or advisor',
+  'Destination / tourism board',
+  'Media — writer, editor, creator',
+  'Hospitality or investment partner',
+  'Gear or industry partner',
+  'Something else',
+];
+
+const interests = [
+  { v: 'ground-ops', label: 'Himalayan ground operations' },
+  { v: 'custom', label: 'Custom programs for my clients' },
+  { v: 'bhutan-concept', label: 'The Bhutan hospitality concept' },
+  { v: 'media', label: 'A story / press access' },
+  { v: 'general', label: 'Just staying in touch' },
+];
+---
+
+<Base
+  title={`Adventure Access at ${EVENT.short} — Québec City`}
+  description={`We're at the Adventure Travel World Summit in Québec City, ${EVENT.dates}. Twenty years of Himalayan ground operations across Bhutan, India, Nepal and the Tibetan Plateau — and a new hospitality concept in Bhutan.`}
+  ogImage={heroImage}
+  hideNavBg={true}
+  noindex={true}
+>
+  <!-- ─────────────────────────── 1. HERO ─────────────────────────── -->
+  <section class="relative min-h-[88vh] md:min-h-[94vh] overflow-hidden bg-ink flex">
+    <img
+      src={heroImage}
+      srcset={heroSrcset}
+      sizes={SIZES_FULL}
+      alt="High Himalayan ridgeline in Ladakh"
+      class="absolute inset-0 w-full h-full object-cover kenburns"
+      fetchpriority="high"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-ink/95"></div>
+
+    <div class="relative z-10 w-full max-w-8xl mx-auto px-6 md:px-14 flex flex-col justify-end pb-16 md:pb-24 pt-40 text-cream">
+      <div class="max-w-4xl">
+        <div class="eyebrow-cream mb-5 text-shadow-hero fade-up">
+          — {EVENT.short} · {EVENT.city} · {EVENT.dates}
+        </div>
+        <h1 class="display text-5xl md:text-7xl lg:text-8xl mb-8 text-shadow-hero fade-up-delay-1">
+          Good to meet you<br />
+          <em class="not-italic font-light text-saffron font-display italic">in Québec</em>.
+        </h1>
+        <p class="text-lg md:text-2xl leading-relaxed text-cream/90 max-w-2xl mb-10 text-shadow-hero fade-up-delay-2">
+          Adventure Access has spent twenty years building trips in the places that are
+          hard to reach — Bhutan, Ladakh, Nepal, and the Tibetan Plateau. This page is
+          the short version, and the fastest way to get on our calendar this week.
+        </p>
+        <div class="flex flex-wrap gap-6 items-center fade-up-delay-3">
+          <a href="#meet" class="btn !bg-saffron hover:!bg-saffron-dark">Get on our calendar →</a>
+          <a href="#who" class="btn-ghost-cream">The 60-second version</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────── 2. THE 60-SECOND VERSION ─────────────────── -->
+  <section id="who" class="bg-cream py-24 md:py-36 scroll-mt-20">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="grid lg:grid-cols-[1.2fr_1fr] gap-16 lg:gap-24 items-start">
+        <div class="reveal-left">
+          <div class="eyebrow mb-4">— Who we are, quickly</div>
+          <h2 class="display text-4xl md:text-6xl mb-8">
+            We put people on the mountain in the places with no infrastructure.
+          </h2>
+          <div class="text-lg md:text-xl leading-relaxed text-ink-soft space-y-6">
+            <p>
+              Adventure Access is a small, multi-cultural team — American, Bhutanese, Chinese,
+              Indian, Nepali — running trekking, mountain biking, mountaineering, and cultural
+              programs across the Himalaya and the Tibetan Plateau. We live there. We have for
+              over twenty years.
+            </p>
+            <p>
+              The region is extraordinary and it is maddening: permits, closed areas, thin
+              infrastructure, and a hundred ways a trip quietly goes wrong. Our value to a
+              buyer is that we have already solved that, with our own people, in four countries.
+            </p>
+            <p class="font-display text-2xl md:text-3xl italic text-ink pt-2">
+              Real adventure changes you. Our job is making sure it can happen at all.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal-right grid grid-cols-2 gap-x-8 gap-y-10 lg:pt-16">
+          {facts.map((f) => (
+            <div class="border-t-2 border-saffron pt-5">
+              <div class="display text-4xl md:text-5xl mb-2">{f.n}</div>
+              <div class="text-sm leading-relaxed text-ink-soft">{f.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────── 3. WHAT WE BRING (dark) ─────────────────── -->
+  <section class="bg-ink text-cream py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl mb-16 reveal">
+        <div class="eyebrow-cream mb-4">— What we came to talk about</div>
+        <h2 class="display text-4xl md:text-6xl">
+          Three conversations we<br />
+          <em class="not-italic font-light text-saffron font-display italic">want to have</em> this week.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10 md:gap-12">
+        {offerings.map((o, i) => (
+          <div class="reveal border-t border-cream/20 pt-8" data-delay={String(i * 100)}>
+            <div class="eyebrow mb-4">{o.eyebrow}</div>
+            <h3 class="font-display text-2xl md:text-3xl mb-5 leading-tight">{o.title}</h3>
+            <p class="text-cream/75 leading-relaxed">{o.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────── 4. WHERE WE RUN (scroller) ─────────────────── -->
+  <section class="bg-paper py-24 md:py-32 overflow-hidden">
+    <div class="max-w-8xl mx-auto px-6 md:px-14 mb-12">
+      <div class="eyebrow mb-4 reveal">— Where we run</div>
+      <h2 class="display text-4xl md:text-6xl reveal">Four countries, one region.</h2>
+    </div>
+
+    <div class="h-scroller" id="summit-scroller">
+      {places.map((p) => (
+        <a href={p.href} class="group block">
+          <div class="aspect-[4/5] overflow-hidden bg-ink mb-5">
+            <img
+              src={p.image}
+              srcset={respSrcset(p.image)}
+              sizes={SIZES_CARD}
+              alt={p.name}
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+          <h3 class="font-display text-2xl md:text-3xl mb-2 group-hover:text-saffron-dark transition-colors">
+            {p.name}
+          </h3>
+          <p class="text-ink-soft leading-relaxed text-sm md:text-base">{p.line}</p>
+        </a>
+      ))}
+    </div>
+
+    <div class="max-w-8xl mx-auto px-6 md:px-14 mt-4">
+      <div class="h-scroller-progress" aria-hidden="true">
+        <div class="h-scroller-progress__bar" id="summit-scroller-bar"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────── 5. BHUTAN TEASER (photo, dark) ─────────────────── -->
+  <section class="relative overflow-hidden bg-ink">
+    <img
+      src={bhutanImage}
+      srcset={bhutanSrcset}
+      sizes={SIZES_FULL}
+      alt="Masked cham dance at a Bhutanese festival"
+      loading="lazy"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/80 to-ink/45"></div>
+
+    <div class="relative z-10 max-w-8xl mx-auto px-6 md:px-14 py-28 md:py-40 text-cream">
+      <div class="max-w-2xl reveal">
+        <div class="eyebrow-cream mb-6">— Not on the website yet</div>
+        <h2 class="display text-4xl md:text-6xl mb-8 text-shadow-hero">
+          We are building something<br />
+          <em class="not-italic font-light text-saffron font-display italic">in Bhutan</em>.
+        </h2>
+        <p class="text-lg md:text-xl leading-relaxed text-cream/85 mb-6">
+          A hospitality concept, shaped by the same idea as everything else we do: that the
+          value of a place is in how deeply you can actually enter it, and that the people
+          who live there should be the ones who benefit.
+        </p>
+        <p class="text-lg md:text-xl leading-relaxed text-cream/85 mb-10">
+          It is early, and we are being deliberate about who hears the detail before it is
+          public. If Bhutan is your market — as an operator, a partner, or a writer — tell us
+          below and we will walk you through it in Québec.
+        </p>
+        <a href="#meet" class="btn !bg-saffron hover:!bg-saffron-dark">Ask us about Bhutan →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────── 6. WHY US (cream) ─────────────────── -->
+  <section class="bg-cream py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
+        <div class="reveal-left">
+          <div class="eyebrow mb-4">— Why work with us</div>
+          <h2 class="display text-4xl md:text-6xl mb-8">
+            Small on purpose.<br />Deep on purpose.
+          </h2>
+          <p class="text-lg leading-relaxed text-ink-soft">
+            We do not run high volume and we do not hand your clients to a subcontractor.
+            That is the whole proposition — and it is also the reason we would rather have
+            twenty real conversations in Québec than a hundred badge scans.
+          </p>
+        </div>
+
+        <ul class="space-y-6 reveal-right">
+          {differentiators.map((d) => (
+            <li class="flex gap-5 text-lg leading-relaxed text-ink border-b border-ink/10 pb-6">
+              <span class="text-saffron select-none shrink-0" aria-hidden="true">→</span>
+              <span set:html={d} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────── 7. WHO'S HERE ─────────────────── -->
+  {ATTENDEES.length > 0 && (
+    <section class="bg-paper py-24 md:py-32">
+      <div class="max-w-8xl mx-auto px-6 md:px-14">
+        <div class="eyebrow mb-4 reveal">— On the ground in Québec</div>
+        <h2 class="display text-4xl md:text-6xl mb-14 reveal">Say hello.</h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {ATTENDEES.map((m, i) => (
+            <div class="reveal flex gap-6 items-start" data-delay={String(i * 100)}>
+              <div class="w-28 h-36 shrink-0 overflow-hidden bg-ink/10">
+                <img src={m.image} alt={m.name} loading="lazy" class="w-full h-full object-cover" />
+              </div>
+              <div>
+                <h3 class="font-display text-2xl mb-1">{m.name}</h3>
+                <div class="eyebrow mb-3">{m.role}</div>
+                <p class="text-sm text-ink-soft leading-relaxed mb-2">{m.region}</p>
+                <p class="text-sm text-ink-soft leading-relaxed">{m.note}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ─────────────────── 8. FOR MEDIA (dark) ─────────────────── -->
+  <section id="media" class="bg-ink text-cream py-24 md:py-36 scroll-mt-20">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl mb-14 reveal">
+        <div class="eyebrow-cream mb-4">— MediaConnect</div>
+        <h2 class="display text-4xl md:text-6xl mb-8">
+          Five stories we can<br />
+          <em class="not-italic font-light text-saffron font-display italic">actually get you into</em>.
+        </h2>
+        <p class="text-lg leading-relaxed text-cream/80">
+          Not a press kit — angles, with the people and the access already attached. Pick one
+          and we will send sources, images, and the logistics of making the trip happen.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        {storyAngles.map((s, i) => (
+          <div class="reveal border-t border-cream/20 pt-6" data-delay={String(Math.min(i * 100, 400))}>
+            <h3 class="font-display text-xl md:text-2xl mb-3 leading-tight text-saffron">{s.title}</h3>
+            <p class="text-cream/75 leading-relaxed text-sm md:text-base">{s.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-14 reveal">
+        <a href="#meet" class="btn !bg-saffron hover:!bg-saffron-dark">Pitch me one of these →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────── 9. THE FORM ─────────────────── -->
+  <section id="meet" class="bg-cream py-24 md:py-36 scroll-mt-20">
+    <div class="max-w-3xl mx-auto px-6 md:px-14">
+      <div class="eyebrow mb-4">— Two minutes, and we will find you</div>
+      <h2 class="display text-4xl md:text-6xl mb-8">Let's get a time.</h2>
+      <p class="text-lg leading-relaxed text-ink-soft mb-4">
+        Marketplace slots fill fast and the hallway is loud. Leave this and we will come back
+        with a specific time and place — or the material you asked for, if a meeting is not
+        the point.
+      </p>
+
+      {MEETING_URL && (
+        <p class="text-lg leading-relaxed text-ink-soft mb-4">
+          Prefer to just grab a slot yourself?
+          <a href={MEETING_URL} target="_blank" rel="noopener" class="text-saffron border-b border-saffron/40 hover:border-saffron ml-1">
+            Open the calendar →
+          </a>
+        </p>
+      )}
+
+      <p class="text-sm text-ink-soft/80 mb-12">
+        We will not add you to a newsletter you did not ask for.
+      </p>
+
+      <form
+        id="summit-form"
+        name={FORM_NAME}
+        method="POST"
+        action={THANK_YOU}
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        novalidate
+      >
+        <input type="hidden" name="form-name" value={FORM_NAME} />
+        <!-- Populated by the tracking script below. -->
+        <input type="hidden" name="source_code" id="f-source" value="" />
+        <input type="hidden" name="landing_url" id="f-landing" value="" />
+        <input type="hidden" name="referrer" id="f-referrer" value="" />
+        <input type="hidden" name="event" value="ATWS 2026 Québec" />
+        <p class="hidden">
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <label class="block eyebrow !text-ink-soft mb-2" for="name">Your name</label>
+            <input
+              id="name" name="name" required type="text" autocomplete="name"
+              class="w-full bg-transparent border-b border-ink/25 py-2 text-ink focus:outline-none focus:border-saffron transition-colors"
+            />
+          </div>
+          <div>
+            <label class="block eyebrow !text-ink-soft mb-2" for="company">Company</label>
+            <input
+              id="company" name="company" type="text" autocomplete="organization"
+              class="w-full bg-transparent border-b border-ink/25 py-2 text-ink focus:outline-none focus:border-saffron transition-colors"
+            />
+          </div>
+          <div>
+            <label class="block eyebrow !text-ink-soft mb-2" for="email">Email</label>
+            <input
+              id="email" name="email" required type="email" autocomplete="email"
+              class="w-full bg-transparent border-b border-ink/25 py-2 text-ink focus:outline-none focus:border-saffron transition-colors"
+            />
+          </div>
+          <div>
+            <label class="block eyebrow !text-ink-soft mb-2" for="role">You are a…</label>
+            <select
+              id="role" name="role"
+              class="w-full bg-transparent border-b border-ink/25 py-2 text-ink focus:outline-none focus:border-saffron transition-colors"
+            >
+              {roles.map((r) => <option value={r}>{r}</option>)}
+            </select>
+          </div>
+        </div>
+
+        <fieldset class="mb-10">
+          <legend class="block eyebrow !text-ink-soft mb-4">What should we bring to the conversation?</legend>
+          <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+            {interests.map((it) => (
+              <label class="flex gap-3 items-start text-ink cursor-pointer">
+                <input
+                  type="checkbox" name="interest" value={it.v}
+                  class="mt-1.5 accent-[#d97a2c] w-4 h-4 shrink-0"
+                />
+                <span class="leading-relaxed">{it.label}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <div class="mb-4">
+          <label class="block eyebrow !text-ink-soft mb-2" for="message">
+            Anything specific
+            <span class="text-ink-soft/60 normal-case tracking-normal">(optional)</span>
+          </label>
+          <textarea
+            id="message" name="message" rows="3"
+            class="w-full bg-transparent border-b border-ink/25 py-2 text-ink placeholder:text-ink-soft/50 focus:outline-none focus:border-saffron transition-colors resize-none"
+            placeholder="Days that work, clients you're building for, a story you're chasing."
+          ></textarea>
+        </div>
+
+        <p id="summit-form-error" class="hidden text-rust text-sm mt-6" role="alert"></p>
+
+        <div class="mt-12 pt-8 border-t border-ink/15">
+          <button type="submit" class="btn !bg-saffron hover:!bg-saffron-dark">
+            Send it →
+          </button>
+        </div>
+      </form>
+
+      <p class="text-ink-soft text-sm mt-10">
+        Or write directly:
+        <a href="mailto:info@adventure-access.com" class="text-saffron border-b border-saffron/40 hover:border-saffron">info@adventure-access.com</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ─────────────────── 10. CLOSING ───────────────────
+       On a photo rather than flat ink: the footer is dark, so a plain ink band
+       here would read as one long dark slab running off the bottom of the page. -->
+  <section class="relative overflow-hidden bg-ink">
+    <img
+      src={closingImage}
+      srcset={closingSrcset}
+      sizes={SIZES_FULL}
+      alt=""
+      aria-hidden="true"
+      loading="lazy"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-ink/70"></div>
+    <div class="relative z-10 max-w-8xl mx-auto px-6 md:px-14 py-24 md:py-32 text-center text-cream">
+      <div class="eyebrow-cream mb-6">— {EVENT.theme} · {EVENT.short}</div>
+      <p class="display text-3xl md:text-5xl mb-10 text-shadow-hero">Real adventure changes you.</p>
+      <div class="flex flex-wrap gap-8 justify-center items-center">
+        <a href="/destinations/" class="btn-ghost-cream">See the destinations →</a>
+        <a href="https://www.trustpilot.com/review/adventure-access.com" target="_blank" rel="noopener" class="btn-ghost-cream">
+          4.6 on Trustpilot →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ SOURCE TRACKING + FORM SUBMIT ══════════════ -->
+  <script define:vars={{ hsFormId: HS_FORM_ID, sourceCodes: SOURCE_CODES }}>
+    (() => {
+      // ── 1. Work out where this visitor came from ────────────────────────
+      const KEY = 'aa-summit-src';
+      const params = new URLSearchParams(window.location.search);
+
+      // ?s= is ours; utm_source/utm_content are accepted as fallbacks so a link
+      // pasted into an email client that rewrites URLs still attributes.
+      const raw = (params.get('s') || params.get('utm_content') || params.get('utm_source') || '')
+        .toLowerCase()
+        .replace(/[^a-z0-9_-]/g, '')
+        .slice(0, 40);
+
+      let source = '';
+      try {
+        source = raw || sessionStorage.getItem(KEY) || '';
+        if (raw) sessionStorage.setItem(KEY, raw);
+      } catch (e) {
+        source = raw;
+      }
+      // Anything not on the printed list still gets recorded, flagged so we can
+      // tell a typo/shared link apart from a channel we actually handed out.
+      const known = source && sourceCodes.indexOf(source) !== -1;
+      const sourceLabel = source ? (known ? source : 'other:' + source) : 'unattributed';
+
+      const setVal = (id, v) => {
+        const el = document.getElementById(id);
+        if (el) el.value = v;
+      };
+      setVal('f-source', sourceLabel);
+      setVal('f-landing', window.location.href.slice(0, 500));
+      setVal('f-referrer', (document.referrer || '').slice(0, 300));
+
+      // ── 2. Tell GA4 ─────────────────────────────────────────────────────
+      // Cookieless until the visitor accepts (Consent Mode defaults are denied
+      // in Base.astro), but the event itself still lands, which is all we need
+      // to compare channels.
+      try {
+        if (window.gtag) {
+          window.gtag('event', 'summit_view', {
+            summit_source: sourceLabel,
+            event_name_detail: 'atws26',
+          });
+        }
+      } catch (e) {}
+
+      // ── 3. Form submit: Netlify (system of record) + HubSpot mirror ─────
+      const form = document.getElementById('summit-form');
+      if (!form) return;
+
+      const errorEl = document.getElementById('summit-form-error');
+      const fail = (msg) => {
+        if (!errorEl) return;
+        errorEl.textContent = msg;
+        errorEl.classList.remove('hidden');
+      };
+
+      const val = (name) => {
+        const el = form.querySelector(`[name="${name}"]`);
+        return el && el.value ? el.value.trim() : '';
+      };
+      const checked = () =>
+        Array.from(form.querySelectorAll('input[name="interest"]:checked'))
+          .map((el) => el.value)
+          .join(', ');
+
+      const HS_PORTAL = '244183775';
+      const HS_ENDPOINTS = [
+        `https://api-na2.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${hsFormId}`,
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${hsFormId}`,
+      ];
+
+      function hubspotCookie() {
+        const m = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/);
+        return m ? m[1] : undefined;
+      }
+
+      // The custom properties are sent optimistically. HubSpot rejects an entire
+      // submission containing a field the form does not have, so on failure we
+      // retry once with the core fields only — this works before the properties
+      // exist in HubSpot and keeps working after, with no deploy in between.
+      function buildPayload(includeCustom) {
+        const fullName = val('name');
+        const spaceIdx = fullName.indexOf(' ');
+        const firstname = spaceIdx > 0 ? fullName.slice(0, spaceIdx) : fullName;
+        const lastname = spaceIdx > 0 ? fullName.slice(spaceIdx + 1) : '';
+
+        const message = [
+          'Event: ATWS 2026 Québec',
+          `Source: ${sourceLabel}`,
+          val('role') && `Role: ${val('role')}`,
+          checked() && `Interested in: ${checked()}`,
+          val('message') && `Message: ${val('message')}`,
+        ]
+          .filter(Boolean)
+          .join('\n');
+
+        const fields = [
+          { objectTypeId: '0-1', name: 'email', value: val('email') },
+          { objectTypeId: '0-1', name: 'firstname', value: firstname },
+          { objectTypeId: '0-1', name: 'message', value: message },
+        ];
+        if (lastname) fields.push({ objectTypeId: '0-1', name: 'lastname', value: lastname });
+        if (val('company')) fields.push({ objectTypeId: '0-1', name: 'company', value: val('company') });
+        if (includeCustom) {
+          fields.push({ objectTypeId: '0-1', name: 'atws26_source', value: sourceLabel });
+          fields.push({ objectTypeId: '0-1', name: 'atws26_track', value: val('role') });
+          if (checked()) {
+            fields.push({ objectTypeId: '0-1', name: 'atws26_interest', value: checked() });
+          }
+        }
+
+        const hutk = hubspotCookie();
+        return JSON.stringify({
+          fields,
+          context: {
+            ...(hutk ? { hutk } : {}),
+            pageUri: window.location.href,
+            pageName: document.title,
+          },
+        });
+      }
+
+      function post(url, body) {
+        return fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body,
+          keepalive: true,
+        });
+      }
+
+      async function submitToHubSpot() {
+        if (!hsFormId) return;
+        let res = null;
+        try {
+          res = await post(HS_ENDPOINTS[0], buildPayload(true));
+        } catch (_) {
+          try {
+            res = await post(HS_ENDPOINTS[1], buildPayload(true));
+          } catch (_) {
+            return; // Netlify still has the submission
+          }
+        }
+        if (res && !res.ok) {
+          try {
+            await post(HS_ENDPOINTS[0], buildPayload(false));
+          } catch (_) {}
+        }
+      }
+
+      let submitting = false;
+      form.addEventListener('submit', async (e) => {
+        if (submitting) return;
+        e.preventDefault();
+
+        const email = form.querySelector('#email');
+        if (!val('name') || !val('email') || !email.checkValidity()) {
+          fail('We need a name and a working email to come back to you.');
+          return;
+        }
+
+        const btn = form.querySelector('button[type="submit"]');
+        if (btn) {
+          btn.disabled = true;
+          btn.textContent = 'Sending…';
+        }
+
+        try {
+          if (window.gtag) {
+            window.gtag('event', 'summit_submit', { summit_source: sourceLabel });
+          }
+        } catch (_) {}
+
+        try {
+          await Promise.race([
+            submitToHubSpot(),
+            new Promise((resolve) => setTimeout(resolve, 2500)),
+          ]);
+        } catch (_) {}
+
+        submitting = true;
+        form.submit();
+      });
+    })();
+  </script>
+
+  <!-- Horizontal scroller progress bar (mirrors DestinationScroller.astro) -->
+  <script is:inline>
+    (() => {
+      const rail = document.getElementById('summit-scroller');
+      const bar = document.getElementById('summit-scroller-bar');
+      if (!rail || !bar) return;
+      const update = () => {
+        const max = rail.scrollWidth - rail.clientWidth;
+        const pct = max > 0 ? rail.scrollLeft / max : 0;
+        const width = Math.max(12, (rail.clientWidth / rail.scrollWidth) * 100);
+        bar.style.width = width + '%';
+        bar.style.transform = `translateX(${(pct * (100 - width) * 100) / width}%)`;
+      };
+      rail.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
+</Base>
