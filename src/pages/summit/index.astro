@@ -31,8 +31,9 @@
  *   - Fill in ATTENDEES below with who is actually going.
  *   - Paste the HubSpot form GUID into HS_FORM_ID (works without it; Netlify
  *     still captures).
- *   - Paste a meeting-booking link into MEETING_URL to show the "grab a slot"
- *     button (hidden while empty).
+ *   - MEETING_URL points at ATTA's Compass app. If Compass ever exposes a
+ *     per-company deep link, use that instead — this one opens the event, not
+ *     our profile, so the buyer still has to search for us.
  *   - Turn on a Netlify form notification for `summit-atws26` — notifications
  *     are per-form, so the journey-planner one does not cover this.
  */
@@ -62,8 +63,20 @@ const ATTENDEES = [
 
 /** HubSpot form GUID — "ATWS 2026 - Quebec", portal 244183775, region na2. */
 const HS_FORM_ID = 'b6030887-15de-43ff-87d4-05a810edaf8d';
-/** Meeting-booking link (HubSpot meetings, Calendly, etc). Button hides while ''. */
-const MEETING_URL = '';
+/**
+ * Where meetings actually get booked. Adventure Access does not host scheduling
+ * on the web — it happens in ATTA's Compass app, the Summit's own event app.
+ *
+ * This is the clean Branch deep link: it opens Compass on a phone, falls back to
+ * the app store if it is not installed, and lands on the Compass web app on
+ * desktop. Do NOT swap in a link copied out of an ATTA email — those are
+ * per-recipient tracking URLs carrying the original recipient's address and a
+ * one-off hash, so every buyer's click would be attributed to that person.
+ *
+ * Compass is delegate-only, which is why the form below stays: media and anyone
+ * not registered for the Summit cannot book there. Link hides while ''.
+ */
+const MEETING_URL = 'https://09sz6.app.link/ATWS26';
 
 /**
  * Source codes handed out at the event. Keep this list and the QR codes in
@@ -470,9 +483,15 @@ const interests = [
 
       {MEETING_URL && (
         <p class="text-lg leading-relaxed text-ink-soft mb-4">
-          Prefer to just grab a slot yourself?
-          <a href={MEETING_URL} target="_blank" rel="noopener" class="text-saffron border-b border-saffron/40 hover:border-saffron ml-1">
-            Open the calendar →
+          Already registered for the Summit? We take meetings in the event's own app.
+          <a
+            href={MEETING_URL}
+            id="compass-link"
+            target="_blank"
+            rel="noopener"
+            class="text-saffron border-b border-saffron/40 hover:border-saffron ml-1"
+          >
+            Find us in Compass →
           </a>
         </p>
       )}
@@ -648,6 +667,21 @@ const interests = [
           });
         }
       } catch (e) {}
+
+      // ── 2b. Compass hand-off ────────────────────────────────────────────
+      // Booking happens in ATTA's app, so that click leaves the site and would
+      // otherwise be invisible. Record it before the browser navigates away,
+      // carrying the same source code as everything else on this page.
+      var compass = document.getElementById('compass-link');
+      if (compass) {
+        compass.addEventListener('click', function () {
+          try {
+            if (window.gtag) {
+              window.gtag('event', 'summit_compass_click', { summit_source: sourceLabel });
+            }
+          } catch (e) {}
+        });
+      }
 
       // ── 3. Form submit: Netlify (system of record) + HubSpot mirror ─────
       const form = document.getElementById('summit-form');
