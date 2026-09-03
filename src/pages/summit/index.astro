@@ -97,7 +97,7 @@ const SOURCE_CODES = [
 
 const heroImage = '/images/2024/05/Ladakh-hero-image.jpg';
 const heroSrcset = respSrcset(heroImage);
-const bhutanImage = '/images/2026/07/bhutan-masked-dance.jpg';
+const bhutanImage = '/images/2026/09/bhutan-village-path.jpg';
 const bhutanSrcset = respSrcset(bhutanImage);
 const closingImage = '/images/2026/07/bhutan-hiker-on-trail.jpg';
 const closingSrcset = respSrcset(closingImage);
@@ -358,11 +358,14 @@ const interests = [
       src={bhutanImage}
       srcset={bhutanSrcset}
       sizes={SIZES_FULL}
-      alt="Masked cham dance at a Bhutanese festival"
+      alt="A footpath crossing farmland toward a Bhutanese village below forested hills"
       loading="lazy"
       class="absolute inset-0 w-full h-full object-cover"
     />
-    <div class="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/80 to-ink/45"></div>
+    <!-- The teaser photo is a 2.1:1 panorama, so on a narrow viewport object-cover
+         crops to the bright centre field and the left-weighted gradient no longer
+         sits over anything dark. Vertical wash on mobile, original gradient from md. -->
+    <div class="absolute inset-0 bg-gradient-to-b from-ink/90 via-ink/85 to-ink/80 md:bg-gradient-to-r md:from-ink/95 md:via-ink/80 md:to-ink/45"></div>
 
     <div class="relative z-10 max-w-8xl mx-auto px-6 md:px-14 py-28 md:py-40 text-cream">
       <div class="max-w-2xl reveal">
@@ -476,9 +479,9 @@ const interests = [
       <div class="eyebrow mb-4">— Two minutes, and we will find you</div>
       <h2 class="display text-4xl md:text-6xl mb-8">Let's get a time.</h2>
       <p class="text-lg leading-relaxed text-ink-soft mb-4">
-        Summit days are short and loud. Leave this and we will come back with a time — in
-        Québec if there is still room in the week, on a call if there is not. Or just the
-        material you asked for, if a meeting is not the point.
+        Conference days are short and loud, and most of what gets said in them evaporates.
+        Leave this and we will come back with a time — in person if we overlap, on a call if
+        we do not. Or just the material you asked for, if a meeting is not the point.
       </p>
 
       {MEETING_URL && (
