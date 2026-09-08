@@ -36,9 +36,18 @@
 // record in destinations.json. Root-level pages are in no collection, so nothing
 // links or crawls them automatically.
 //
-// ANNUAL REFRESH: keep this URL. Two facts here are unusually perishable — the
-// PAP/ILP split changed during 2026, and the Hanle/Umling La opening is recent.
-// Both need re-checking, not just re-dating.
+// ANNUAL REFRESH: keep this URL. Three facts here are unusually perishable — the
+// PAP/ILP split changed during 2026, the Hanle/Umling La opening is recent, and
+// the Mig La / Umling La access position moves within a single season. All need
+// re-checking, not just re-dating.
+//
+// 2026-09-07 UPDATE (source: Ladakh contact via Jamyang, plus on-the-ground
+// report from Umling La the same week): Mig La is NOT open to tourists and did
+// not open at all during the 2026 season — paving is the reason usually given,
+// some reports say it may open later in 2026. Umling La is open but access is
+// periodically restricted; the Demchok-Koyal-Dungti approach is refused to
+// foreigners at some checkpoints and not others. The page previously said Mig La
+// was available with army clearance against your dates. That was wrong.
 
 import Base from '../layouts/Base.astro';
 import PillarHero from '../components/PillarHero.astro';
@@ -46,7 +55,7 @@ import PillarShortAnswer from '../components/PillarShortAnswer.astro';
 import PillarFaq from '../components/PillarFaq.astro';
 import { reviewedOn, faqSchema, articleSchema, type Faq } from '../utils/pillar';
 
-const LAST_REVIEWED_ISO = '2026-08-02';
+const LAST_REVIEWED_ISO = '2026-09-07';
 const LAST_REVIEWED = reviewedOn(LAST_REVIEWED_ISO);
 
 const title = 'Ladakh Permits 2026: PAP for Foreigners, ILP for Indians';
@@ -76,11 +85,11 @@ const faqs: Faq[] = [
   },
   {
     q: 'Can foreigners visit Hanle and Umling La?',
-    a: 'Yes. Both were previously closed to foreign nationals and are now open with the correct permit — a Protected Area Permit arranged through a registered agent in Leh. Most travel sites still say these areas are off-limits to foreigners; that information is out of date.',
+    a: 'Hanle, yes — with a Protected Area Permit arranged through a registered agent in Leh. Umling La is normally open as well, and was running unusually busy in September 2026. Access there does get tightened at short notice, though, and the checkpoints below the pass have been turning some foreign travelers back, so treat it as open-but-verify. Most travel sites still say the whole corner is off-limits to foreigners; that information is out of date. Email us and we will check the position for your dates.',
   },
   {
     q: "Can I drive Mig La, the world's highest road?",
-    a: "Not as a matter of course. Mig La is primarily an army logistics route, so access depends on army clearance for your dates rather than on a permit you can buy. Ask well before you travel and we'll check on your behalf.",
+    a: "No. Mig La is not open to tourists, and our contacts in Ladakh report it did not open to visitors at all during the 2026 season — paving work is the reason usually given. Some reports say it may open later in 2026, but the information circulating is contradictory. It is also an army logistics route, so any future access would depend on army clearance rather than a permit you can buy. Email us for the current position before you plan around it.",
   },
   {
     q: "How do I get the permit if I'm not on a tourist visa?",
@@ -96,7 +105,7 @@ const faqs: Faq[] = [
   },
   {
     q: "Is Umling La still the world's highest motorable road?",
-    a: 'Not since October 2025, when Mig La — also in Ladakh, also built by the Border Roads Organisation — took the record at roughly 5,900 m (19,400 ft). Umling La sits at about 5,800 m (19,024 ft) and held the title from 2021.',
+    a: 'Not since October 2025, when Mig La — also in Ladakh, also built by the Border Roads Organisation — took the record at roughly 5,900 m (19,400 ft). Umling La sits at about 5,800 m (19,024 ft) and held the title from 2021. Mig La, however, is not open to tourists, so Umling La remains the highest road you can actually drive.',
   },
   {
     q: 'How bad is the altitude?',
@@ -148,8 +157,8 @@ const glanceRows = [
   ['Pangong Tso (Spangmik, north shore)', 'Protected Area Permit'],
   ['Tso Moriri (Korzok)', 'Protected Area Permit'],
   ['Hanle', 'Protected Area Permit — open to foreigners, previously closed'],
-  ['Umling La', 'Protected Area Permit — open to foreigners, previously closed'],
-  ['Mig La', 'Army clearance, requested against your dates — ask us'],
+  ['Umling La', 'Protected Area Permit — open, but access can be restricted at short notice'],
+  ['Mig La', 'Closed to tourists — email us for the current position'],
   ['Pangong Tso south bank', 'Likely permitted — ask us to confirm'],
   ['Exiting overland to Himachal or Kashmir', 'Nothing'],
 ];
@@ -197,7 +206,9 @@ const seasons = [
     <strong class="text-ink font-medium">foreign nationals are issued a Protected Area Permit
     (PAP)</strong>; <strong class="text-ink font-medium">Indian nationals are issued an Inner Line
     Permit (ILP)</strong> for the same restricted areas. Hanle and Umling La, previously closed,
-    are now open to foreigners holding the correct permit.
+    are now open to foreigners holding the correct permit, though access to Umling La can be
+    restricted at short notice. <strong class="text-ink font-medium">Mig La is not open to
+    tourists.</strong>
   </PillarShortAnswer>
 
   {/* ---------- Intro ---------- */}
@@ -271,6 +282,11 @@ const seasons = [
               — India's dark-sky reserve, and a pass near 5,800 m (19,000 ft) — is currently open
               and largely unvisited by foreign travelers who assume they're barred. If you were told
               no in the past, ask again.
+            </p>
+            <p>
+              Open is not the same as guaranteed. Umling La access has been tightened more than once
+              after incidents on the border roads, and what the checkpoints allow can change from one
+              day to the next. Ask us for the current position before you build an itinerary on it.
             </p>
           </div>
         </div>
@@ -505,23 +521,38 @@ const seasons = [
               Organisation beat its own record with Mig La at about 5,900 m (19,400 ft) — also in
               Ladakh. Umling La is no less extraordinary for having been demoted; it's simply the
               second-highest road on the planet now, and most guidebooks haven't noticed either fact.
+              It is also the highest road you can actually drive, because Mig La is closed to
+              tourists.
+            </p>
+            <p>
+              Access to Umling La can tighten without warning. It was open and busier than usual in
+              September 2026, but restrictions have followed security incidents in the Chushul area,
+              and the Demchok–Koyal–Dungti approach is refused to foreign travelers on some days and
+              waved through on others. Plan on confirming locally in Hanle — with your hotel and, if
+              needed, the police there — before committing to the drive, and ask us in advance so
+              you are not finding out at the checkpoint.
             </p>
           </div>
         </div>
         <div class="border-l-[3px] border-saffron pl-6">
-          <h3 class="display text-xl md:text-2xl mb-3">Mig La is a different case</h3>
+          <h3 class="display text-xl md:text-2xl mb-3">Mig La is closed to tourists</h3>
           <div class="space-y-5 leading-relaxed text-ink-soft">
             <p>
               In October 2025 the Border Roads Organisation completed Mig La at roughly 5,900 m
               (19,400 ft), taking the world's-highest-motorable-road record from Umling La.
-              Predictably, people now want to drive it.
+              Predictably, people now want to drive it. At the moment, nobody can.
             </p>
             <p>
-              It isn't a permit you can simply buy. Mig La is primarily an army logistics route, and
-              access depends on the army granting clearance to use the road. The workable approach
-              is to fix your dates first, then have us call and ask on your behalf whether the pass
-              will be open to your group. Asking in advance is the whole game here; turning up and
-              hoping is not a plan.
+              <strong class="text-ink font-medium">Mig La is not open to tourists.</strong> Our
+              contacts in Ladakh report that it did not open to visitors at all during the 2026
+              season, with paving work the reason usually given. Some reports say it may open later
+              in 2026. The information circulating online is contradictory, and a good deal of it is
+              wishful.
+            </p>
+            <p>
+              It is also primarily an army logistics route, so whenever it does open, access is
+              likely to depend on army clearance rather than a permit you can buy. Email us before
+              you build a trip around it and we'll tell you where it stands for your dates.
             </p>
           </div>
         </div>
@@ -590,8 +621,9 @@ const seasons = [
           </li>
           <li class="relative pl-6 text-lg leading-relaxed text-ink-soft">
             <span class="absolute left-0 top-[0.7em] w-1.5 h-1.5 rounded-full bg-saffron"></span>
-            <strong class="text-ink font-medium">Treating Mig La as bookable.</strong> It needs army
-            clearance against your dates, requested ahead.
+            <strong class="text-ink font-medium">Treating Mig La as bookable.</strong> It is closed
+            to tourists and stayed closed through the 2026 season. Anything you read suggesting
+            otherwise is worth checking with us first.
           </li>
           <li class="relative pl-6 text-lg leading-relaxed text-ink-soft">
             <span class="absolute left-0 top-[0.7em] w-1.5 h-1.5 rounded-full bg-saffron"></span>
@@ -628,8 +660,8 @@ const seasons = [
           Ladakh gives you the Tibetan world with Indian paperwork — which, once you know which
           permit you're actually asking for, is manageable paperwork. Tell us your dates, your
           passport and visa type, and your fitness level, and we'll tell you honestly what's open,
-          what needs a permit, and what we'd skip. If Mig La or the far southeast is on your list,
-          we'll ask ahead on your behalf.
+          what needs a permit, and what we'd skip. If Umling La, Mig La, or the far southeast is on your
+          list, we'll check the current access position on your behalf.
         </p>
         <div class="flex flex-wrap items-center gap-8 mt-10">
           <a href="/plan/" class="btn !bg-saffron hover:!bg-saffron-dark">Plan a journey</a>
