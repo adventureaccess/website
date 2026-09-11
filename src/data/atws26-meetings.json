@@ -1,0 +1,807 @@
+[
+  {
+    "token": "ybyp",
+    "slug": "cate-collins",
+    "name": "Cate Collins",
+    "first": "Cate",
+    "title": "Director of Tour Operations & Lead Scientist",
+    "company": "Classic Canadian Tours / Gold Star Canadian Tours",
+    "time": "09:00",
+    "shape": "peer",
+    "lang": "en",
+    "headline": [
+      "Good to meet you,",
+      "Cate"
+    ],
+    "lede": "You run wildlife trips in places with weather, permits and no infrastructure — polar bears, grizzlies, the Yukon in winter. We do the same thing at altitude. This page is not a pitch; it is the short version of where the two might usefully touch.",
+    "facts": [
+      {
+        "n": "4",
+        "label": "Countries we operate in: Bhutan, India, Nepal, China"
+      },
+      {
+        "n": "20+",
+        "label": "Years running our own crews in the region"
+      },
+      {
+        "n": "3,500–5,400 m",
+        "label": "The altitude band our programs work in"
+      },
+      {
+        "n": "Own",
+        "label": "Guides and logistics, never subcontracted"
+      }
+    ],
+    "angle": {
+      "eyebrow": "— Where a Canadian wildlife operator and a Himalayan one actually meet",
+      "heading": "Your clients travel to see one animal in a hard place. Ours is the snow leopard.",
+      "body": "Ladakh in winter is the one place on earth where snow leopard sightings are a realistic itinerary rather than a lottery ticket, and it sits in the same category of trip you already sell: cold, remote, permit-bound, and worth it for one encounter. We are not suggesting you add the Himalaya to your catalogue. We are suggesting your guest list and ours overlap more than the map does.",
+      "cards": [
+        {
+          "eyebrow": "The obvious bridge",
+          "title": "Referral, both directions",
+          "body": "A guest who has done Churchill and Yukon in the same year is running out of Canadian firsts. We would happily be the place you send them next, and send ours to you when they ask about polar bears.",
+          "note": ""
+        },
+        {
+          "eyebrow": "The less obvious one",
+          "title": "Science-led programming",
+          "body": "You carry a Lead Scientist on staff, which most operators do not. High-altitude Ladakh has active conservation and glaciology work that a scientifically framed itinerary could sit alongside.",
+          "note": "Confirm what wildlife programming Adventure Access actually runs before this is claimed as product."
+        }
+      ]
+    },
+    "specifics": [
+      {
+        "title": "The season is the mirror image of yours.",
+        "body": "Snow leopard tracking is a February and March activity, when Ladakh is at its coldest and the cats come below the treeline. That is your Canadian shoulder season."
+      },
+      {
+        "title": "Permits are the real barrier, not the terrain.",
+        "body": "Ladakh's inner-line areas need permits that change without notice. It is the same class of problem as operating in the Yukon, and it is the part we already solve."
+      },
+      {
+        "title": "No infrastructure means the operator is the product.",
+        "body": "You know this already. There is no supplier chain to fall back on in Zanskar in winter; the trip is whoever is standing there."
+      }
+    ],
+    "closing": {
+      "heading": "Nothing to sell you today.",
+      "body": "Eleanor's read was that our specialties are too different for a straightforward commercial fit, and we agree. That makes this a conversation between two people who operate in hard places rather than a sales call."
+    },
+    "after": "",
+    "hero": "/images/2024/05/Ladakh-hero-image.jpg"
+  },
+  {
+    "token": "9f6x",
+    "slug": "andrea-vinyard",
+    "name": "Andrea Vinyard",
+    "first": "Andrea",
+    "title": "Owner & Travel Advisor",
+    "company": "Going Places",
+    "time": "09:15",
+    "shape": "access",
+    "lang": "en",
+    "headline": [
+      "Good to meet you,",
+      "Andrea"
+    ],
+    "lede": "You already sell Bhutan, Nepal, India and China. So this is not a page about the Himalaya being wonderful — you know that. It is about the difference between booking the region and having someone in it.",
+    "facts": [
+      {
+        "n": "4",
+        "label": "Of your Asia destinations are our home ground"
+      },
+      {
+        "n": "20+",
+        "label": "Years living and operating there"
+      },
+      {
+        "n": "100%",
+        "label": "Programs run by our own people, never farmed out"
+      },
+      {
+        "n": "0",
+        "label": "Layers between you and the person running the trip"
+      }
+    ],
+    "angle": {
+      "eyebrow": "— What changes when the operator is local",
+      "heading": "The four countries are already on your list. The question is who is standing there when something goes wrong.",
+      "body": "A Caribbean-based travel management company selling Bhutan is almost certainly selling it through a consolidator — which works until a permit lapses, a pass closes, or a client wants the itinerary rebuilt three weeks out. We are the layer underneath that. You keep the client relationship; we take the operational risk.",
+      "cards": [
+        {
+          "eyebrow": "For your individual bookings",
+          "title": "Custom is the default, not a surcharge",
+          "body": "Length, route, pace and comfort get rebuilt around your client rather than fitted to a fixed departure. Our itineraries are starting points.",
+          "note": ""
+        },
+        {
+          "eyebrow": "For your group business",
+          "title": "Private group departures",
+          "body": "You already do group bookings. A private Himalayan departure for an affinity group is the same sale you make now, with ground handling that does not evaporate at the airport.",
+          "note": ""
+        }
+      ]
+    },
+    "specifics": [
+      {
+        "title": "Permits, in plain terms.",
+        "body": "Tibet travel permits, Ladakh inner-line, Bhutan's SDF, Nepal's restricted areas. All four work differently, all four change, and all four are ours to manage rather than yours to track."
+      },
+      {
+        "title": "The plateau you can reach without a Tibet permit.",
+        "body": "Amdo and Kham are Tibetan in language, food and faith, sit inside Sichuan, Qinghai and Yunnan, and need no Tibet Travel Permit. Most catalogues do not know this."
+      },
+      {
+        "title": "One contact, four countries.",
+        "body": "A client who wants Nepal and Bhutan in one trip is currently two suppliers and a handoff. With us it is one itinerary."
+      }
+    ],
+    "closing": {
+      "heading": "You sell it. We run it.",
+      "body": "The useful next step is probably a live enquiry rather than a brochure — give us a real client and a real set of dates and you will learn more about us in a week than any deck would tell you."
+    },
+    "after": "",
+    "hero": "/images/2026/07/bhutan-village-path.jpg"
+  },
+  {
+    "token": "dnth",
+    "slug": "monica-price",
+    "name": "Monica Price",
+    "first": "Monica",
+    "title": "Owner / Director of International Operations",
+    "company": "ExperiencePlus! Bicycle Tours",
+    "time": "09:30",
+    "shape": "first-product",
+    "lang": "en",
+    "headline": [
+      "Good to meet you,",
+      "Monica"
+    ],
+    "lede": "Fifty years of supported cycling across Europe, Latin America and Africa — and nothing yet on the Asian side of the map. This page is the short version of what we could put there, and the one question we want to ask you in person.",
+    "facts": [
+      {
+        "n": "50",
+        "label": "Years ExperiencePlus! has been running bicycle tours"
+      },
+      {
+        "n": "0",
+        "label": "Asian itineraries currently on your map"
+      },
+      {
+        "n": "20+",
+        "label": "Years we have operated our own crews in Ladakh"
+      },
+      {
+        "n": "Apr–Oct",
+        "label": "The riding window, once the passes clear"
+      }
+    ],
+    "angle": {
+      "eyebrow": "— The question we actually want to ask you",
+      "heading": "Do your riders want tarmac, or do they want dirt?",
+      "body": "It changes the whole proposition, and we would rather ask than guess. Your catalogue reads as road touring; the Ladakh product we run today is shuttle-supported mountain biking. Both are buildable. They are not the same trip.",
+      "cards": [
+        {
+          "eyebrow": "Option one · paved",
+          "title": "The high-pass road ride",
+          "body": "Sealed roads over some of the highest driveable passes anywhere, with a support vehicle and village-scale lodging — structurally the closest thing to what you already sell, moved to 4,000 metres.",
+          "note": "Confirm before the meeting: do we run paved/supported touring, or MTB only?"
+        },
+        {
+          "eyebrow": "Option two · dirt",
+          "title": "Zanskar, shuttle-supported",
+          "body": "The programme we run now: caravan routes and yak trails between 3,500 and 5,400 metres, laps served by our own shuttle crew, heritage lodging at each end. This one exists and has run.",
+          "note": ""
+        }
+      ]
+    },
+    "specifics": [
+      {
+        "title": "Altitude is handled before the bikes come out.",
+        "body": "Ladakh starts at 11,500 feet. The tour opens with two soft days at Nimmu House, a heritage home in the orchards where the Indus and Zanskar meet — short walks, no riding."
+      },
+      {
+        "title": "The descents are repeatable, not one-shot.",
+        "body": "Below Khar Kongma, the royal palace at Zangla, a short cliffy descent becomes shuttle laps. Higher up, the drop from Kyupa La at 4,400 m starts on rock and scree and mellows into singletrack."
+      },
+      {
+        "title": "The season is late April to early October.",
+        "body": "Once the passes clear and the ground is firm. Outside it the valleys are shut — worth knowing before a June-to-September assumption goes into print."
+      }
+    ],
+    "closing": {
+      "heading": "One region you are not in, run by people who live there.",
+      "body": "If the answer to the tarmac question is tarmac, we have work to do before we can promise it. If it is dirt, the trip already exists and has run."
+    },
+    "after": "",
+    "hero": "/images/2025/11/MTB-Exploration-Photo-3-scaled.jpeg"
+  },
+  {
+    "token": "63vr",
+    "slug": "patricia-dube",
+    "name": "Patricia Dubé",
+    "first": "Patricia",
+    "title": "Propriétaire de l'agence",
+    "company": "Odyssée Agence",
+    "time": "09:45",
+    "shape": "first-product",
+    "lang": "fr",
+    "headline": [
+      "Heureux de vous",
+      "rencontrer, Patricia"
+    ],
+    "lede": "Vous organisez des voyages à forte valeur pour des professionnels, des entrepreneurs et des groupes privés — et l'Himalaya ne figure pas encore à votre programme. Cette page est la version courte de ce que nous pourrions y mettre.",
+    "facts": [
+      {
+        "n": "4",
+        "label": "Pays : Bhoutan, Inde, Népal, Chine"
+      },
+      {
+        "n": "20+",
+        "label": "Années passées à vivre et à opérer dans la région"
+      },
+      {
+        "n": "100 %",
+        "label": "Programmes menés par nos propres équipes"
+      },
+      {
+        "n": "Sur mesure",
+        "label": "Par défaut, jamais en supplément"
+      }
+    ],
+    "angle": {
+      "eyebrow": "— Pourquoi cette conversation vaut douze minutes",
+      "heading": "Un voyage de formation continue dans l'Himalaya n'est pas un voyage d'agrément déguisé.",
+      "body": "Les voyages de formation continue et les groupes corporatifs sont votre spécialité, et c'est précisément le format que l'Himalaya sert le mieux : un groupe restreint, un objectif commun, un lieu qui impose l'attention. Nous ne vendons pas des départs fixes — nous construisons le programme autour du groupe que vous nous confiez.",
+      "cards": [
+        {
+          "eyebrow": "Pour vos groupes privés",
+          "title": "Programmes bâtis, non catalogués",
+          "body": "Durée, rythme, niveau de confort et itinéraire sont reconstruits autour de votre groupe. Nos itinéraires ne sont que des points de départ.",
+          "note": ""
+        },
+        {
+          "eyebrow": "Pour vos clients exigeants",
+          "title": "L'accès plutôt que la destination",
+          "body": "Permis au Tibet, ligne intérieure au Ladakh, redevance SDF au Bhoutan, zones restreintes au Népal. Quatre régimes différents, tous à notre charge.",
+          "note": ""
+        }
+      ]
+    },
+    "specifics": [
+      {
+        "title": "Le français ne devrait pas être un obstacle.",
+        "body": "Nos équipes travaillent en anglais sur le terrain. Pour un groupe québécois, la question de l'accompagnement francophone est réelle et nous préférons en parler franchement plutôt que de la contourner."
+      },
+      {
+        "title": "Le plateau tibétain sans permis pour le Tibet.",
+        "body": "L'Amdo et le Kham sont tibétains par la langue, la cuisine et la foi, se situent dans le Sichuan, le Qinghai et le Yunnan, et ne requièrent aucun permis pour le Tibet."
+      },
+      {
+        "title": "Un seul interlocuteur, quatre pays.",
+        "body": "Un groupe qui souhaite combiner le Népal et le Bhoutan représente aujourd'hui deux fournisseurs et un transfert de responsabilité. Chez nous, c'est un seul itinéraire."
+      }
+    ],
+    "specificsNote": "Traduction rédigée par Claude — à faire relire par un locuteur francophone avant publication.",
+    "closing": {
+      "heading": "Vous vendez. Nous opérons.",
+      "body": "Les rencontres se font dans l'application Compass de l'ATTA. Si vous lisez ceci une fois rentrée, le formulaire parvient directement à Brian."
+    },
+    "after": "",
+    "hero": "/images/2026/07/bhutan-hiker-on-trail.jpg"
+  },
+  {
+    "token": "yvwt",
+    "slug": "curtis-fox",
+    "name": "Curtis Fox",
+    "first": "Curtis",
+    "title": "Managing Partner",
+    "company": "Privada Travel",
+    "time": "10:00",
+    "shape": "first-product",
+    "lang": "en",
+    "headline": [
+      "Good to meet you,",
+      "Curtis"
+    ],
+    "lede": "You sell Asia, and you sell India. What your catalogue does not appear to reach is the Himalaya — which is the one part of the subcontinent where private access is worth paying for, and the one part you cannot buy off a shelf.",
+    "facts": [
+      {
+        "n": "4",
+        "label": "Countries: Bhutan, India, Nepal, China"
+      },
+      {
+        "n": "20+",
+        "label": "Years operating there with our own people"
+      },
+      {
+        "n": "Private",
+        "label": "Every program built for one party, not a departure"
+      },
+      {
+        "n": "0",
+        "label": "Resellers between you and the ground"
+      }
+    ],
+    "angle": {
+      "eyebrow": "— Why this conversation is worth twelve minutes",
+      "heading": "Discerning explorers is the phrase on your site. The Himalaya is where that phrase gets tested.",
+      "body": "Private travel in Europe means a better hotel and a good driver. Private travel in Ladakh or Bhutan means permits nobody else can get, a crew who live there, and an itinerary that can be rebuilt at forty-eight hours' notice because the pass closed. That is a harder product to source and a much easier one to sell.",
+      "cards": [
+        {
+          "eyebrow": "The immediate fit",
+          "title": "Custom private journeys",
+          "body": "Already your core product. Ours too — we would rather rebuild an itinerary than sell you a fixed departure that half fits.",
+          "note": ""
+        },
+        {
+          "eyebrow": "The one to talk about",
+          "title": "Your hosted founder's trip",
+          "body": "A founder-hosted Himalayan departure is a natural fit for this region, and the kind of trip that is remembered rather than repeated.",
+          "note": "Ask what the hosted founder's trip actually is before pitching into it."
+        }
+      ]
+    },
+    "specifics": [
+      {
+        "title": "Four permit regimes, none of them alike.",
+        "body": "Tibet travel permits, Ladakh inner-line, Bhutan's Sustainable Development Fee, Nepal's restricted areas. We hold the licences and the relationships; you hold the client."
+      },
+      {
+        "title": "Expedition-grade without the expedition.",
+        "body": "You already sell cruises and expeditions. The plateau delivers the same remoteness with a bed at the end of the day and no ship's schedule."
+      },
+      {
+        "title": "Small by design.",
+        "body": "We are a small team on purpose — you deal with the people who actually run the trip, which is the only way a private program stays private."
+      }
+    ],
+    "closing": {
+      "heading": "The access is the product.",
+      "body": "The fastest way to judge us is a live brief: one real client, one real set of dates, and see what comes back."
+    },
+    "after": "",
+    "hero": "/images/2024/05/Hero-Image-Lijiang.jpg"
+  },
+  {
+    "token": "2uwu",
+    "slug": "tilghman-whitacre",
+    "name": "Tilghman Whitacre",
+    "first": "Tilghman",
+    "title": "Travel Advisor",
+    "company": "Fora",
+    "time": "10:15",
+    "shape": "access",
+    "lang": "en",
+    "headline": [
+      "Good to meet you,",
+      "Tilghman"
+    ],
+    "lede": "Fora advisors already sell Bhutan, Nepal, India and China. So the useful conversation is not whether the region sells — it is what an advisor needs from a ground operator in order to sell it without fear.",
+    "facts": [
+      {
+        "n": "4",
+        "label": "Of the destinations Fora lists are our home ground"
+      },
+      {
+        "n": "20+",
+        "label": "Years operating there with our own crews"
+      },
+      {
+        "n": "48 hrs",
+        "label": "What it takes us to rebuild an itinerary on the ground"
+      },
+      {
+        "n": "1",
+        "label": "Person you talk to, who also runs the trip"
+      }
+    ],
+    "angle": {
+      "eyebrow": "— What an advisor actually needs from a Himalayan operator",
+      "heading": "The reason advisors avoid the Himalaya is not demand. It is that nobody wants to be the one who sold it when the permit fails.",
+      "body": "An advisor is selling their own judgement. That makes an unfamiliar region a reputational risk long before it is a commercial one, and it is why the same clients get sold Japan a second time instead of Bhutan a first. What we can offer is the thing that removes that risk: the operator on the other end of the email is the operator on the mountain.",
+      "cards": [
+        {
+          "eyebrow": "The leverage",
+          "title": "One advisor, a network behind them",
+          "body": "If this works for your clients, it works for the advisors who ask you what you used. We would rather earn that slowly and properly than be listed somewhere.",
+          "note": "Ask how a supplier actually works with Fora — centrally, or advisor by advisor?"
+        },
+        {
+          "eyebrow": "The practical ask",
+          "title": "Something you can forward",
+          "body": "A quick-quote turnaround, clear commission terms, and one page an advisor can send a client without rewriting it. Tell us what shape that needs to take.",
+          "note": ""
+        }
+      ]
+    },
+    "specifics": [
+      {
+        "title": "Quotes come back with the permits already checked.",
+        "body": "Not a price with an asterisk. If an inner-line area is closed or an SDF change lands, it is in the quote before you see it."
+      },
+      {
+        "title": "Group travel and celebrations translate directly.",
+        "body": "Two of the categories Fora lists. A private Himalayan departure for a milestone birthday is a real and recurring sale, and it is the kind we are built for."
+      },
+      {
+        "title": "The plateau without a Tibet permit.",
+        "body": "Amdo and Kham are Tibetan in language, food and faith, sit inside Sichuan, Qinghai and Yunnan, and need no Tibet Travel Permit. A genuinely differentiated thing for an advisor to know."
+      }
+    ],
+    "closing": {
+      "heading": "Sell your judgement. We will stand behind it.",
+      "body": "Start with one client and one brief. If we are wrong for Fora you will know inside a week, and so will we."
+    },
+    "after": "",
+    "hero": "/images/2026/07/bhutan-village-path.jpg"
+  },
+  {
+    "token": "hhfq",
+    "slug": "nahum-avila",
+    "name": "Nahum Avila",
+    "first": "Nahum",
+    "title": "Conseiller en voyages",
+    "company": "Voyage Plein Soleil",
+    "time": "10:45",
+    "shape": "first-product",
+    "lang": "fr",
+    "headline": [
+      "Heureux de vous",
+      "rencontrer, Nahum"
+    ],
+    "lede": "Vous envoyez déjà des clients en Asie — au Japon, en Thaïlande, en Indonésie. L'Himalaya est le cran au-dessus, pour le client qui a déjà fait ces trois-là et qui redemande.",
+    "facts": [
+      {
+        "n": "4",
+        "label": "Pays : Bhoutan, Inde, Népal, Chine"
+      },
+      {
+        "n": "20+",
+        "label": "Années sur place, avec nos propres équipes"
+      },
+      {
+        "n": "3",
+        "label": "Destinations asiatiques à votre programme aujourd'hui"
+      },
+      {
+        "n": "Sur mesure",
+        "label": "Chaque programme rebâti pour le client"
+      }
+    ],
+    "angle": {
+      "eyebrow": "— Pourquoi cette conversation vaut douze minutes",
+      "heading": "Le client qui revient de Thaïlande cherche rarement une autre plage.",
+      "body": "Votre offre asiatique actuelle est solide et grand public. L'Himalaya ne la remplace pas : il lui donne une suite. C'est le voyage que l'on vend une fois au bon client, et dont il parle pendant dix ans.",
+      "cards": [
+        {
+          "eyebrow": "Le point de départ réaliste",
+          "title": "Un premier produit, pas un catalogue",
+          "body": "Inutile de bâtir une région entière. Un seul itinéraire solide, au Népal ou au Bhoutan, suffit pour voir si votre clientèle suit.",
+          "note": ""
+        },
+        {
+          "eyebrow": "Ce que nous prenons en charge",
+          "title": "Les permis et la logistique",
+          "body": "Permis au Tibet, ligne intérieure au Ladakh, redevance SDF au Bhoutan, zones restreintes au Népal. Rien de tout cela ne vous revient.",
+          "note": ""
+        }
+      ]
+    },
+    "specifics": [
+      {
+        "title": "Le français sur le terrain : parlons-en franchement.",
+        "body": "Nos équipes travaillent en anglais. Pour une clientèle québécoise, c'est une vraie question et nous préférons l'aborder de front que la contourner."
+      },
+      {
+        "title": "Groupes et départs accompagnés.",
+        "body": "Vous organisez déjà des groupes. Un départ privé dans l'Himalaya se vend comme un groupe, avec une opération au sol qui ne disparaît pas à l'arrivée."
+      },
+      {
+        "title": "La saison décide de tout.",
+        "body": "Les fenêtres sont courtes et non négociables : les cols s'ouvrent et se ferment. Mieux vaut le savoir avant qu'une brochure annonce des dates impossibles."
+      }
+    ],
+    "specificsNote": "Traduction rédigée par Claude — à faire relire par un locuteur francophone avant publication.",
+    "closing": {
+      "heading": "Vous vendez. Nous opérons.",
+      "body": "Les rencontres se font dans l'application Compass de l'ATTA. Si vous lisez ceci une fois rentré, le formulaire parvient directement à Brian."
+    },
+    "after": "",
+    "hero": "/images/2024/05/Hero-Image-Lijiang.jpg"
+  },
+  {
+    "token": "juxr",
+    "slug": "scott-abbott",
+    "name": "Scott Abbott",
+    "first": "Scott",
+    "title": "Managing Director",
+    "company": "Wilderness Travel",
+    "time": "11:00",
+    "shape": "access",
+    "lang": "en",
+    "headline": [
+      "Good to meet you,",
+      "Scott"
+    ],
+    "lede": "You already run Bhutan, Nepal, Tibet and India. We are not here to sell you a destination you have been programming for years — we are here to ask which parts of it are hardest to operate, because those are the parts we are for.",
+    "facts": [
+      {
+        "n": "4",
+        "label": "Countries, all of them already on your map"
+      },
+      {
+        "n": "20+",
+        "label": "Years living and operating in them"
+      },
+      {
+        "n": "100%",
+        "label": "Run by our own people, never farmed out"
+      },
+      {
+        "n": "0",
+        "label": "Interest in competing with your itineraries"
+      }
+    ],
+    "angle": {
+      "eyebrow": "— The honest version of why we asked for twelve minutes",
+      "heading": "The wrong question is whether you would sell what we have. The right one is what operational gaps we could fill.",
+      "body": "A company with your catalogue does not need a Bhutan supplier; you have one. What you may have is a set of places your itineraries stop short of, or a region where the ground handling has been merely adequate for a long time. That is a more interesting conversation than a capability deck, and a shorter one.",
+      "cards": [
+        {
+          "eyebrow": "Where we think the gap is",
+          "title": "Ladakh and Zanskar",
+          "body": "Programmed far less often than Bhutan or the Everest region, harder to operate, and our deepest ground. High-altitude trekking and riding out of Leh with Ladakhi guides.",
+          "note": ""
+        },
+        {
+          "eyebrow": "The one most catalogues miss",
+          "title": "Amdo and Kham, no Tibet permit",
+          "body": "Tibetan in language, food and faith, inside Sichuan, Qinghai and Yunnan, and needing no Tibet Travel Permit. A different plateau from the one your Tibet trips reach.",
+          "note": ""
+        }
+      ]
+    },
+    "specifics": [
+      {
+        "title": "Our guides are from the valleys they guide in.",
+        "body": "Ladakhi, Nepali, Bhutanese and eastern Tibetan staff working on home ground — including Stanzin Padma, leading treks in a place where that was not a job women did."
+      },
+      {
+        "title": "Mountain biking as a discipline, not an add-on.",
+        "body": "Zanskar riding between 3,500 and 5,400 metres on caravan routes and yak trails, with our own shuttle crew. If it is not in your catalogue, it is because almost nobody can run it."
+      },
+      {
+        "title": "Licensed where it matters.",
+        "body": "Tibet permits, Ladakh inner-line, Bhutan SDF, Nepal restricted areas. Not a brokered relationship — ours."
+      }
+    ],
+    "closing": {
+      "heading": "Tell us where it hurts.",
+      "body": "Twelve minutes is enough to name one operational problem. If we can solve it, that is a better start than a proposal neither of us asked for."
+    },
+    "after": "",
+    "hero": "/images/2024/05/Ladakh-hero-image.jpg"
+  },
+  {
+    "token": "4qxq",
+    "slug": "breanne-kiefner",
+    "name": "Breanne Kiefner",
+    "first": "Breanne",
+    "title": "Founder",
+    "company": "Root Adventures",
+    "time": "11:15",
+    "shape": "access",
+    "lang": "en",
+    "headline": [
+      "Good to meet you,",
+      "Breanne"
+    ],
+    "lede": "Trekking, cultural immersion, wellness, custom and self-guided — of everyone we are meeting this week, your product list overlaps ours most closely. Which makes this the easiest conversation to have and the easiest one to waste on generalities.",
+    "facts": [
+      {
+        "n": "4",
+        "label": "Countries: Bhutan, India, Nepal, China"
+      },
+      {
+        "n": "20+",
+        "label": "Years running our own crews there"
+      },
+      {
+        "n": "100%",
+        "label": "Local guides, on their own home ground"
+      },
+      {
+        "n": "Custom",
+        "label": "The default, not an upgrade"
+      }
+    ],
+    "angle": {
+      "eyebrow": "— The specific thing we would like to talk about",
+      "heading": "Self-guided in the Himalaya is the hardest thing on your list, and the one that most needs a local operator.",
+      "body": "Self-guided works in Europe because the infrastructure carries the traveller. In Nepal or Ladakh there is no infrastructure to carry anyone: permits, transfers, closed valleys, altitude. Self-guided there does not mean unsupported — it means invisibly supported, which is a ground operator's job rather than a route description.",
+      "cards": [
+        {
+          "eyebrow": "Where the overlap is real",
+          "title": "Trekking and cultural immersion",
+          "body": "Your two strongest categories and our two deepest. Guides from the valleys they guide in, and routes that are not the queue.",
+          "note": ""
+        },
+        {
+          "eyebrow": "Where it gets interesting",
+          "title": "Wellness that is not a spa",
+          "body": "Altitude, silence, walking and monastery towns do something a retreat cannot. Bhutan in particular priced its tourism for value over volume, which is why it still feels that way.",
+          "note": ""
+        }
+      ]
+    },
+    "specifics": [
+      {
+        "title": "Like-hearted travel needs small groups, and small groups need ground.",
+        "body": "Your phrase, and it is the right one. Groups of that size only work when the operator can absorb a change without renegotiating with a consolidator."
+      },
+      {
+        "title": "Acclimatisation built in, not bolted on.",
+        "body": "Ladakh starts at 11,500 feet. Our programs open with soft days at low activity because pretending altitude is not there is the most common way these trips fail."
+      },
+      {
+        "title": "Four countries, one itinerary.",
+        "body": "Nepal and Bhutan in one trip is currently two suppliers and a handoff. With us it is one operator and one set of permits."
+      }
+    ],
+    "closing": {
+      "heading": "The overlap is obvious. The useful part is what you cannot currently run.",
+      "body": "If there is a trip you have wanted to offer and shelved because the ground was not there, that is the twelve minutes well spent."
+    },
+    "after": "",
+    "hero": "/images/2024/05/Nepal-Page-Hero-image-scaled-1.jpeg"
+  },
+  {
+    "token": "t5p8",
+    "slug": "meagan-coates",
+    "name": "Meagan Coates",
+    "first": "Meagan",
+    "title": "Director of Product",
+    "company": "Trek Travel",
+    "time": "11:30",
+    "shape": "first-product",
+    "lang": "en",
+    "headline": [
+      "Good to meet you,",
+      "Meagan"
+    ],
+    "lede": "Cycling and hiking across five continents, with Asia-Pacific currently meaning Japan, New Zealand and Thailand. This page is about the region that is missing, written for someone who will want the operational detail rather than the brochure.",
+    "facts": [
+      {
+        "n": "3",
+        "label": "Asia-Pacific destinations on your map today"
+      },
+      {
+        "n": "11,500 ft",
+        "label": "Where Ladakh starts, before any climbing"
+      },
+      {
+        "n": "3,500–5,400 m",
+        "label": "The band our Zanskar riding works in"
+      },
+      {
+        "n": "Apr–Oct",
+        "label": "The window, once the passes clear"
+      }
+    ],
+    "angle": {
+      "eyebrow": "— The thing a Director of Product will notice first",
+      "heading": "Your activity levels measure climbing. The Himalaya measures altitude, which is a different axis entirely.",
+      "body": "Level 4 road tops out around 8,000 feet of climbing in a day. Ladakh does not start there — it starts at 11,500 feet of elevation and rides between 3,500 and 5,400 metres, where the constraint is acclimatisation rather than watts. Any Himalayan product you build needs a fifth axis on that scale, and we would rather raise that ourselves than let you discover it on a recce.",
+      "cards": [
+        {
+          "eyebrow": "The style that maps",
+          "title": "Gravel and Cross Country",
+          "body": "Caravan routes, yak trails and old shepherd paths between villages. Point-to-point, high, and genuinely not in any guidebook yet.",
+          "note": ""
+        },
+        {
+          "eyebrow": "The style that maps second",
+          "title": "Hiking & Walking",
+          "body": "The same valleys work on foot, which means one region can carry two of your product lines rather than one.",
+          "note": ""
+        }
+      ]
+    },
+    "specifics": [
+      {
+        "title": "Shuttle-supported, with our own rig and crew.",
+        "body": "Below Khar Kongma at Zangla, a short cliffy descent becomes repeatable laps. The crew has been refining the drop-ins and the viewpoints for years."
+      },
+      {
+        "title": "The soft start is not optional.",
+        "body": "Two low days at Nimmu House, a heritage home where the Indus and Zanskar meet, before anyone rides. Skipping it is how a strong group has a bad week."
+      },
+      {
+        "title": "Season is the hard constraint.",
+        "body": "Late April to early October, when the passes clear and the ground is firm. Outside it the valleys are shut — no negotiating."
+      }
+    ],
+    "closing": {
+      "heading": "A region nobody in your category sells.",
+      "body": "If it is worth a recce, that is the ask. Twelve minutes is enough to decide whether it goes on a list for next year."
+    },
+    "after": "",
+    "hero": "/images/2025/11/MTB-Exploration-Photo-3-scaled.jpeg"
+  },
+  {
+    "token": "e2sb",
+    "slug": "javi-galvez",
+    "name": "Javi Galvez",
+    "first": "Javi",
+    "title": "CEO",
+    "company": "Arctic Yeti Group",
+    "time": "11:45",
+    "shape": "peer",
+    "lang": "en",
+    "headline": [
+      "Good to meet you,",
+      "Javi"
+    ],
+    "lede": "A Spanish company operating exclusively in the Nordics, meeting an American-led company operating exclusively in the Himalaya. Neither of us is buying anything today, which makes this one of the more interesting twelve minutes of the week.",
+    "facts": [
+      {
+        "n": "6",
+        "label": "Nordic countries you operate in"
+      },
+      {
+        "n": "4",
+        "label": "Himalayan countries we operate in"
+      },
+      {
+        "n": "0",
+        "label": "Overlap in the map"
+      },
+      {
+        "n": "Own",
+        "label": "Ground operations, both of us"
+      }
+    ],
+    "angle": {
+      "eyebrow": "— Two operators of extreme terrain, opposite ends of the earth",
+      "heading": "You run volcanoes and glaciers. We run 5,000-metre passes. The operational problems are almost identical.",
+      "body": "Weather windows that close without warning, permits and access rights, guests who under-estimate the environment, and no supplier chain to fall back on. Companies that do this are rare enough that comparing notes is worth more than a referral agreement — though the referral is easy too.",
+      "cards": [
+        {
+          "eyebrow": "The simple version",
+          "title": "Referral, both directions",
+          "body": "Your guest who has done Greenland and wants altitude, ours who has done Zanskar and wants ice. Neither of us loses anything by sending them.",
+          "note": ""
+        },
+        {
+          "eyebrow": "The more useful version",
+          "title": "How you handle the hard parts",
+          "body": "Guest screening for extreme terrain, insurance, evacuation, and how you price a trip whose season might not open. We would genuinely like to know how you do it.",
+          "note": ""
+        }
+      ]
+    },
+    "specifics": [
+      {
+        "title": "Glaciers, from the other side.",
+        "body": "Ours are at 5,000 metres and retreating fast enough that route notes go out of date between seasons. Yours are at sea level. The measurement problems are probably the same."
+      },
+      {
+        "title": "Adrenaline product, without a safety net.",
+        "body": "You run extreme tours; so do we. In Zanskar the nearest hospital is a day's drive, which changes what you are willing to sell."
+      },
+      {
+        "title": "Small operators, own crews.",
+        "body": "Neither of us subcontracts. That is the whole reason either of us can promise anything."
+      }
+    ],
+    "closing": {
+      "heading": "No pitch.",
+      "body": "Eleanor's read was that a Nordic specialist and a Himalayan one have no natural commercial fit, and that is right. Peer conversation and a standing referral is the honest ceiling, and it is worth having."
+    },
+    "after": "",
+    "hero": "/images/2024/05/Ladakh-hero-image.jpg"
+  }
+]

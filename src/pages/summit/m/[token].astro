@@ -1,0 +1,542 @@
+---
+/**
+ * /summit/m/<token> — per-meeting Marketplace pages for ATWS 2026.
+ *
+ * One page per booked Marketplace meeting (Wed 16 Sept, Table A-305), written
+ * from the research in the ATWS26 Research Assignment sheet. Handed over as a
+ * printed card in the room; also reachable by typing the URL off the card back.
+ *
+ * TWO PATHS PER MEETING, ONE PAGE
+ * -------------------------------
+ * Each meeting resolves at two URLs, both generated here:
+ *   /m/<token>   e.g. /m/dnth          — encoded in the QR (short = fewer modules)
+ *   /m/<slug>    e.g. /m/monica-price  — printed in readable type on the card back
+ * They render identically. The source code differs so GA4 can tell a scan from
+ * someone typing it in, which is the only way we learn whether the artful QR
+ * actually works in a convention hall:
+ *   mkt-<token>         scanned
+ *   mkt-<token>-typed   typed off the card
+ * Both start `mkt-` so they group in GA4 rather than appearing as a dozen
+ * unrelated `other:` values. NOTE the ?s= sanitiser in ../index.astro strips
+ * anything outside [a-z0-9_-], so never use a colon in these codes.
+ *
+ * PRIVACY
+ * -------
+ * `noindex` (X-Robots-Tag is also set for /summit/* in netlify.toml) and absent
+ * from sitemap.xml.ts, which is an explicit allowlist so this needs no change
+ * there. But these pages are PUBLICLY REACHABLE by anyone holding or guessing a
+ * URL, and the name slugs are guessable by design. So the content rule is
+ * binding, not advisory: nothing here that would embarrass us if two buyers
+ * compared pages. No pricing they have not been quoted, no notes on their
+ * catalogue gaps phrased as weaknesses, nothing about their current suppliers,
+ * and nothing whatsoever about the Bhutan hospitality concept — that stays a
+ * conversation Brian has in person.
+ *
+ * INTERNAL NOTES
+ * --------------
+ * Some entries carry `note` / `specificsNote` — open questions to resolve before
+ * the meeting. They render ONLY with ?check=1 so Will can review the pages, and
+ * never for a buyer. Do not link that anywhere.
+ */
+import Base from '../../../layouts/Base.astro';
+import { respSrcset, SIZES_FULL } from '../../../utils/resp';
+import meetings from '../../../data/atws26-meetings.json';
+
+export function getStaticPaths() {
+  const paths = [];
+  for (const meeting of meetings as any[]) {
+    paths.push({ params: { token: meeting.token }, props: { meeting, via: 'qr' } });
+    paths.push({ params: { token: meeting.slug }, props: { meeting, via: 'typed' } });
+  }
+  return paths;
+}
+
+const { meeting, via } = Astro.props as { meeting: any; via: 'qr' | 'typed' };
+
+const sourceCode = via === 'qr' ? `mkt-${meeting.token}` : `mkt-${meeting.token}-typed`;
+const heroSrcset = respSrcset(meeting.hero);
+const isFr = meeting.lang === 'fr';
+
+/** Shared, not per-meeting: what sits on our side of the line. */
+const HANDLED_EN = [
+  { title: 'Permits where they matter', body: 'Tibet travel permits, Ladakh inner-line, Bhutan SDF, Nepal restricted areas. Held by us, not brokered.' },
+  { title: 'Our own guides', body: 'Ladakhi, Nepali, Bhutanese and eastern Tibetan staff, working on their own home ground.' },
+  { title: 'Altitude protocol', body: 'Built into the itinerary rather than bolted on, because it is the most common way these trips fail.' },
+  { title: 'Custom by default', body: 'Length, route, pace and comfort get rebuilt around your client. Our itineraries are starting points.' },
+  { title: 'You deal with the operator', body: 'Brian, Trevor, Lenduk and Stanzin run the trips. No layer between you and them.' },
+  { title: 'Documented, not claimed', body: 'ATTA, CREST and Tomorrow’s Air memberships, and a climate partnership we will walk you through.' },
+];
+const HANDLED_FR = [
+  { title: 'Les permis, là où ils comptent', body: 'Permis au Tibet, ligne intérieure au Ladakh, redevance SDF au Bhoutan, zones restreintes au Népal. Détenus par nous.' },
+  { title: 'Nos propres guides', body: 'Équipes ladakhi, népalaise, bhoutanaise et tibétaine orientale, sur leur propre terrain.' },
+  { title: 'Protocole d’acclimatation', body: 'Intégré à l’itinéraire plutôt qu’ajouté après coup — c’est la première cause d’échec de ces voyages.' },
+  { title: 'Sur mesure par défaut', body: 'Durée, itinéraire, rythme et confort rebâtis autour de votre client.' },
+  { title: 'Vous parlez à l’opérateur', body: 'Brian, Trevor, Lenduk et Stanzin mènent les voyages. Aucun intermédiaire.' },
+  { title: 'Documenté, non proclamé', body: 'Membres de l’ATTA, du CREST et de Tomorrow’s Air, et un partenariat climatique que nous vous détaillerons.' },
+];
+const handled = isFr ? HANDLED_FR : HANDLED_EN;
+
+const T = isFr
+  ? {
+      meetLabel: 'ATWS 2026 · Marketplace, table A-305 · mercredi 16 septembre',
+      more: 'Besoin de plus de temps avec nous ?',
+      note: 'Envoyer un mot',
+      handledEyebrow: '— Ce qui relève de nous',
+      handledHeading: 'Vous vendez. Nous opérons, avec nos propres équipes.',
+      afterEyebrow: '— Après notre rencontre',
+      afterHeading: 'Ce dont nous avons parlé.',
+      formHeading: 'Si douze minutes n’ont pas suffi.',
+      formBody:
+        'Les créneaux du Marketplace sont courts par nature. Tant que nous sommes tous les deux à Québec, Compass permet de prolonger la conversation.',
+      formFallback:
+        'Compass est réservé aux délégués et ferme avec le Sommet. Une fois rentré, ceci parvient directement à Brian.',
+      notYou: 'ce n’est pas vous ?',
+      emailLabel: 'Votre courriel',
+      msgLabel: 'Qu’est-ce qui vous serait le plus utile ?',
+      send: 'Envoyer à Brian',
+      formFine:
+        'Deux champs seulement : la page sait déjà qui vous êtes. Nom, entreprise et référence de la rencontre voyagent en champs cachés.',
+      signed: '— Brian, après notre rencontre',
+    }
+  : {
+      meetLabel: 'ATWS 2026 · Marketplace, Table A-305 · Wednesday 16 September',
+      more: 'Need more time with us?',
+      note: 'Send us a note',
+      handledEyebrow: '— What sits on our side of the line',
+      handledHeading: 'You sell it. We run it, with our own people.',
+      afterEyebrow: '— After we talked',
+      afterHeading: 'What we actually covered.',
+      formHeading: 'If twelve minutes wasn’t enough.',
+      formBody:
+        'Marketplace slots are short by design. While we are both still in Québec there is room in Compass for a longer conversation — a coffee, a walk, the Day of Adventure.',
+      formFallback:
+        'Compass is delegate-only and closes with the Summit. Once you are home, this reaches Brian directly and he answers it himself.',
+      notYou: 'not you?',
+      emailLabel: 'Your email',
+      msgLabel: 'What would be most useful?',
+      send: 'Send to Brian',
+      formFine:
+        'Two fields, because the page already knows who you are. Name, company and meeting reference travel as hidden values.',
+      signed: '— Brian, after our meeting',
+    };
+
+/**
+ * Where more time gets booked — ATTA's Compass app.
+ *
+ * This is the PROFILE-SPECIFIC URL Will supplied on 11 Sep, which finally
+ * answers the long-standing open question of whether Compass exposes a
+ * per-company deep link. It is a clean path with a numeric profile id and
+ * carries no recipient address or one-off hash, so unlike a link copied out of
+ * an ATTA email it is safe to print and hand out.
+ *
+ * TESTED 11 Sep, AND IT HAS ONE REAL LIMITATION. Opened unauthenticated, this
+ * URL does NOT keep the profile path: it redirects to the bare Compass root and
+ * shows "Please log in below to get started". The /atws26/app/profile/<id>
+ * segment is discarded before login rather than held as a return URL, so a
+ * visitor who is not already signed in does not reach our profile — and
+ * probably lands on the app home after logging in.
+ *
+ * We use it anyway, deliberately: every person holding one of these cards is a
+ * registered delegate, and a delegate scanning on their phone is very likely
+ * already signed into Compass, which is the case where this lands correctly on
+ * the Adventure Access profile instead of the event home. The failure mode is a
+ * login screen, which is recoverable, and the note form below is the fallback
+ * for anyone who cannot or will not sign in.
+ *
+ * ../index.astro uses this same URL — Will switched it there first, so /summit/
+ * and every /m/ page now point at one destination. The Branch link it replaced
+ * (https://09sz6.app.link/ATWS26) routed to the app or the app store on a
+ * phone, which this URL does not, but it opened the EVENT rather than our
+ * profile. Keep the two pages in sync if either changes.
+ *
+ * VERIFIED 11 Sept 2026, in Will's signed-in Chrome: 13694867 is the Adventure
+ * Access COMPANY profile. It shows "Adventure Access · Company · United States",
+ * a "Meetings with Adventure Access" panel with Brian Glorioso already set as
+ * the representative, plus Skip / Message / Show Interest. The URL carries no
+ * session token or one-off hash, so it is safe to print.
+ *
+ * Two things that check did NOT establish, both still open:
+ *   - whether ATTA has universal links configured for attacompass.adventuretravel.biz.
+ *     If not, a delegate with the native app installed gets a browser tab and may
+ *     have to sign in again on web.
+ *   - what a signed-OUT visitor actually sees. Auth is a client-side `teams_token`
+ *     in localStorage, so it is a sign-in wall rather than a 404, but the exact
+ *     screen is unconfirmed. Test it on the deploy preview before printing.
+ */
+const MEETING_URL = 'https://attacompass.adventuretravel.biz/atws26/app/profile/13694867';
+const HS_FORM_ID = 'b6030887-15de-43ff-87d4-05a810edaf8d';
+const FORM_NAME = 'summit-atws26';
+const THANK_YOU = '/summit/thank-you/';
+
+const showChecks = Astro.url.searchParams.get('check') === '1';
+const openNotes = [
+  ...meeting.angle.cards.filter((c: any) => c.note).map((c: any) => c.note),
+  ...(meeting.specificsNote ? [meeting.specificsNote] : []),
+];
+---
+
+<Base
+  title={`Adventure Access · ${meeting.name} — ATWS 2026`}
+  description={`A page written for ${meeting.name} of ${meeting.company}, for our Marketplace meeting at the Adventure Travel World Summit in Québec City.`}
+  ogImage={meeting.hero}
+  hideNavBg={true}
+  noindex={true}
+  lang={meeting.lang}
+>
+  {showChecks && openNotes.length > 0 && (
+    <div class="bg-rust text-cream px-6 md:px-14 py-4 text-sm leading-relaxed">
+      <strong class="font-semibold">Internal check ({meeting.slug}) — not shown to the buyer:</strong>
+      <ul class="list-disc pl-6 pt-2 space-y-1">
+        {openNotes.map((n: string) => <li>{n}</li>)}
+      </ul>
+    </div>
+  )}
+
+  <!-- ─────────────────────────── 1. HERO ─────────────────────────── -->
+  <section class="relative min-h-[78vh] md:min-h-[86vh] overflow-hidden bg-ink flex">
+    <img
+      src={meeting.hero}
+      srcset={heroSrcset}
+      sizes={SIZES_FULL}
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover kenburns"
+      fetchpriority="high"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-ink/95"></div>
+
+    <div class="relative z-10 w-full max-w-8xl mx-auto px-6 md:px-14 flex flex-col justify-end pb-16 md:pb-24 pt-40 text-cream">
+      <div class="max-w-4xl">
+        <div class="eyebrow-cream mb-5 text-shadow-hero fade-up">
+          — {T.meetLabel}, {meeting.time}
+        </div>
+        <h1 class="display text-5xl md:text-7xl lg:text-8xl mb-8 text-shadow-hero fade-up-delay-1">
+          {meeting.headline[0]}<br />
+          <em class="not-italic font-light text-saffron font-display italic">{meeting.headline[1]}</em>.
+        </h1>
+        <p class="text-lg md:text-2xl leading-relaxed text-cream/90 max-w-2xl mb-10 text-shadow-hero fade-up-delay-2">
+          {meeting.lede}
+        </p>
+        <div class="flex flex-wrap gap-6 items-center fade-up-delay-3">
+          <a href={MEETING_URL} id="compass-link" class="btn !bg-saffron hover:!bg-saffron-dark">{T.more} →</a>
+          <a href="#note" class="btn-ghost-cream">{T.note}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────── 2. THE ANGLE + FACTS (cream) ───────────────────── -->
+  <section class="bg-cream py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="grid lg:grid-cols-[1.2fr_1fr] gap-16 lg:gap-24 items-start">
+        <div class="reveal-left">
+          <div class="eyebrow mb-4">{meeting.angle.eyebrow}</div>
+          <h2 class="display text-4xl md:text-6xl mb-8">{meeting.angle.heading}</h2>
+          <p class="text-lg md:text-xl leading-relaxed text-ink-soft">{meeting.angle.body}</p>
+        </div>
+        <div class="reveal-right grid grid-cols-2 gap-x-8 gap-y-10 lg:pt-16">
+          {meeting.facts.map((f: any) => (
+            <div class="border-t-2 border-saffron pt-5">
+              <div class="display text-3xl md:text-4xl mb-2">{f.n}</div>
+              <div class="text-sm leading-relaxed text-ink-soft">{f.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────── 3. THE TWO CARDS (dark) ─────────────────── -->
+  <section class="bg-ink text-cream py-24 md:py-36">
+    <div class="max-w-8xl mx-auto px-6 md:px-14 grid md:grid-cols-2 gap-8 md:gap-10">
+      {meeting.angle.cards.map((c: any) => (
+        <div class="bg-cream/[0.06] border-t-2 border-saffron p-9 md:p-10 reveal">
+          <div class="eyebrow-cream mb-4">{c.eyebrow}</div>
+          <h3 class="display text-2xl md:text-3xl mb-4">{c.title}</h3>
+          <p class="text-base md:text-lg leading-relaxed text-cream/80">{c.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ─────────────── 4. SPECIFICS (paper) ─────────────── -->
+  <section class="bg-paper py-24 md:py-36">
+    <div class="max-w-4xl mx-auto px-6 md:px-14">
+      <div class="flex flex-col gap-8">
+        {meeting.specifics.map((s: any) => (
+          <div class="border-l-2 border-saffron pl-6 md:pl-8 reveal">
+            <div class="font-semibold text-lg md:text-xl mb-2">{s.title}</div>
+            <p class="text-base md:text-lg leading-relaxed text-ink-soft">{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── 5. WHAT WE HANDLE (cream, shared) ─────────────── -->
+  <section class="bg-cream py-24 md:py-32">
+    <div class="max-w-8xl mx-auto px-6 md:px-14">
+      <div class="max-w-3xl mb-14 reveal">
+        <div class="eyebrow mb-4">{T.handledEyebrow}</div>
+        <h2 class="display text-3xl md:text-5xl">{T.handledHeading}</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">
+        {handled.map((h) => (
+          <div class="reveal">
+            <div class="font-semibold mb-2">{h.title}</div>
+            <p class="text-sm leading-relaxed text-ink-soft">{h.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── 6. AFTER THE MEETING — only once it exists ─────────── -->
+  {meeting.after && (
+    <section class="bg-paper py-20 md:py-28 border-t border-ink/10">
+      <div class="max-w-8xl mx-auto px-6 md:px-14">
+        <div class="max-w-3xl flex flex-col gap-5">
+          <div class="eyebrow">{T.afterEyebrow}</div>
+          <h2 class="display text-3xl md:text-4xl">{T.afterHeading}</h2>
+          <div class="bg-cream border-l-2 border-saffron p-8 md:p-10">
+            <p class="font-display text-xl md:text-2xl italic leading-relaxed">{meeting.after}</p>
+            <div class="text-sm text-ink-soft pt-4">{T.signed}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ─────────────── 7. COMPASS + NOTE FORM (dark) ─────────────── -->
+  <section id="note" class="bg-ink text-cream py-24 md:py-32 scroll-mt-20">
+    <div class="max-w-8xl mx-auto px-6 md:px-14 grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+
+      <div class="flex flex-col gap-7">
+        <h2 class="display text-4xl md:text-5xl">{T.formHeading}</h2>
+        <p class="text-lg leading-relaxed text-cream/80">{T.formBody}</p>
+        <a href={MEETING_URL} class="btn !bg-saffron hover:!bg-saffron-dark self-start">{T.more} →</a>
+        <p class="text-base leading-relaxed text-cream/60">{T.formFallback}</p>
+      </div>
+
+      <form
+        id="meeting-form"
+        name={FORM_NAME}
+        method="POST"
+        action={THANK_YOU}
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="bg-cream/[0.055] p-8 md:p-10 flex flex-col gap-6"
+      >
+        <input type="hidden" name="form-name" value={FORM_NAME} />
+        <p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+        <input type="hidden" name="name" value={meeting.name} />
+        <input type="hidden" name="company" value={meeting.company} />
+        <input type="hidden" name="role" value={meeting.title} />
+        <input type="hidden" id="f-source" name="source_code" value={sourceCode} />
+        <input type="hidden" id="f-landing" name="landing_url" value="" />
+        <input type="hidden" id="f-referrer" name="referrer" value="" />
+
+        <div class="flex flex-col gap-1">
+          <div class="font-display text-2xl md:text-3xl">{meeting.name}</div>
+          <div class="text-sm text-cream/60">
+            {meeting.company} · <a href="/summit/#meet" class="text-saffron hover:text-saffron-dark">{T.notYou}</a>
+          </div>
+        </div>
+
+        <div class="h-px bg-cream/15"></div>
+
+        <div class="flex flex-col gap-2">
+          <label for="email" class="eyebrow-cream">{T.emailLabel}</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+            class="bg-cream/90 text-ink rounded-sm px-4 py-3 text-base"
+          />
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label for="message" class="eyebrow-cream">{T.msgLabel}</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            class="bg-cream/90 text-ink rounded-sm px-4 py-3 text-base leading-relaxed"
+          ></textarea>
+        </div>
+
+        <p id="meeting-form-error" class="hidden text-sm text-saffron"></p>
+
+        <button type="submit" class="btn !bg-saffron hover:!bg-saffron-dark w-full text-center">{T.send}</button>
+
+        <p class="text-xs leading-relaxed text-cream/45">{T.formFine}</p>
+      </form>
+    </div>
+
+    <div class="max-w-8xl mx-auto px-6 md:px-14 pt-14">
+      <div class="text-sm text-cream/50 border-t border-cream/15 pt-6">
+        Adventure Access · Bhutan · India · Nepal · China — adventure-access.com/m/{meeting.slug}
+      </div>
+    </div>
+  </section>
+
+  <!--
+    Source tracking + dual submit. Same pattern as ../index.astro, with one
+    difference: the source code is baked in at build time from the path that was
+    requested, so there is no ?s= to read and nothing to stash in sessionStorage.
+  -->
+  <script is:inline define:vars={{ sourceCode, hsFormId: HS_FORM_ID }}>
+    (() => {
+      const setVal = (id, v) => {
+        const el = document.getElementById(id);
+        if (el) el.value = v;
+      };
+      setVal('f-landing', window.location.href.slice(0, 500));
+      setVal('f-referrer', (document.referrer || '').slice(0, 300));
+
+      try {
+        if (window.gtag) {
+          window.gtag('event', 'summit_view', {
+            summit_source: sourceCode,
+            event_name_detail: 'atws26',
+          });
+        }
+      } catch (e) {}
+
+      const compass = document.getElementById('compass-link');
+      if (compass) {
+        compass.addEventListener('click', function () {
+          try {
+            if (window.gtag) {
+              window.gtag('event', 'summit_compass_click', { summit_source: sourceCode });
+            }
+          } catch (e) {}
+        });
+      }
+
+      const form = document.getElementById('meeting-form');
+      if (!form) return;
+
+      const errorEl = document.getElementById('meeting-form-error');
+      const fail = (msg) => {
+        if (!errorEl) return;
+        errorEl.textContent = msg;
+        errorEl.classList.remove('hidden');
+      };
+      const val = (name) => {
+        const el = form.querySelector(`[name="${name}"]`);
+        return el && el.value ? el.value.trim() : '';
+      };
+
+      const HS_PORTAL = '244183775';
+      const HS_ENDPOINTS = [
+        `https://api-na2.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${hsFormId}`,
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${hsFormId}`,
+      ];
+
+      function hubspotCookie() {
+        const m = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/);
+        return m ? m[1] : undefined;
+      }
+
+      // Custom properties sent optimistically; HubSpot rejects a whole
+      // submission containing a field the form lacks, so retry once without.
+      function buildPayload(includeCustom) {
+        const fullName = val('name');
+        const spaceIdx = fullName.indexOf(' ');
+        const firstname = spaceIdx > 0 ? fullName.slice(0, spaceIdx) : fullName;
+        const lastname = spaceIdx > 0 ? fullName.slice(spaceIdx + 1) : '';
+
+        const message = [
+          'Event: ATWS 2026 Québec — Marketplace meeting',
+          `Source: ${sourceCode}`,
+          val('role') && `Role: ${val('role')}`,
+          val('message') && `Message: ${val('message')}`,
+        ]
+          .filter(Boolean)
+          .join('\n');
+
+        const fields = [
+          { objectTypeId: '0-1', name: 'email', value: val('email') },
+          { objectTypeId: '0-1', name: 'firstname', value: firstname },
+          { objectTypeId: '0-1', name: 'message', value: message },
+        ];
+        if (lastname) fields.push({ objectTypeId: '0-1', name: 'lastname', value: lastname });
+        if (val('company')) fields.push({ objectTypeId: '0-1', name: 'company', value: val('company') });
+        if (includeCustom) {
+          fields.push({ objectTypeId: '0-1', name: 'atws26_source', value: sourceCode });
+          fields.push({ objectTypeId: '0-1', name: 'atws26_track', value: val('role') });
+        }
+
+        const hutk = hubspotCookie();
+        return JSON.stringify({
+          fields,
+          context: {
+            ...(hutk ? { hutk } : {}),
+            pageUri: window.location.href,
+            pageName: document.title,
+          },
+        });
+      }
+
+      const post = (url, body) =>
+        fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body,
+          keepalive: true,
+        });
+
+      async function submitToHubSpot() {
+        if (!hsFormId) return;
+        let res = null;
+        try {
+          res = await post(HS_ENDPOINTS[0], buildPayload(true));
+        } catch (_) {
+          try {
+            res = await post(HS_ENDPOINTS[1], buildPayload(true));
+          } catch (_) {
+            return; // Netlify still has it
+          }
+        }
+        if (res && !res.ok) {
+          try {
+            await post(HS_ENDPOINTS[0], buildPayload(false));
+          } catch (_) {}
+        }
+      }
+
+      let submitting = false;
+      form.addEventListener('submit', async (e) => {
+        if (submitting) return;
+        e.preventDefault();
+
+        const email = form.querySelector('#email');
+        if (!val('email') || !email.checkValidity()) {
+          fail('We need a working email to come back to you.');
+          return;
+        }
+
+        const btn = form.querySelector('button[type="submit"]');
+        if (btn) {
+          btn.disabled = true;
+          btn.textContent = 'Sending…';
+        }
+
+        try {
+          if (window.gtag) {
+            window.gtag('event', 'summit_submit', { summit_source: sourceCode });
+          }
+        } catch (_) {}
+
+        try {
+          await Promise.race([submitToHubSpot(), new Promise((r) => setTimeout(r, 2500))]);
+        } catch (_) {}
+
+        submitting = true;
+        form.submit();
+      });
+    })();
+  </script>
+</Base>

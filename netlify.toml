@@ -316,6 +316,18 @@
   to = "/summit/?s=verbal"
   status = 302
 
+# Per-meeting Marketplace cards. The pages are built at /summit/m/<token> by
+# src/pages/summit/m/[token].astro, but the card carries the SHORT path: the QR
+# encodes /m/<token> (39 chars keeps the symbol at 37 modules instead of 41, so
+# the card can be smaller) and the card back prints /m/<slug> in readable type.
+# Without this splat both of those 404 — the pages only exist under /summit/.
+# 302 for the same reason as the /s/ codes: single-event links, and a cached 301
+# would outlive the event.
+[[redirects]]
+  from = "/m/*"
+  to = "/summit/m/:splat"
+  status = 302
+
 # Baseline security headers for every response.
 [[headers]]
   for = "/*"
