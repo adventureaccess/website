@@ -14,6 +14,10 @@ export interface Props {
   noindex?: boolean;
   /** Optional extra JSON-LD blocks to append (Article, TouristTrip, Place, etc). */
   schema?: object | object[];
+  /** BCP-47 language for <html lang>. Defaults to 'en'; set 'fr' for the
+   *  French-language ATWS 2026 meeting pages so assistive tech, hyphenation
+   *  and browser translate prompts behave correctly. */
+  lang?: string;
 }
 
 const {
@@ -23,6 +27,7 @@ const {
   hideNavBg = false,
   noindex = false,
   schema,
+  lang = 'en',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
@@ -74,7 +79,7 @@ const extraSchemas: object[] = !schema ? [] : (Array.isArray(schema) ? schema : 
 const allSchemas = [orgSchema, ...extraSchemas];
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

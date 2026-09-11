@@ -31,9 +31,19 @@
  *   - Fill in ATTENDEES below with who is actually going.
  *   - Paste the HubSpot form GUID into HS_FORM_ID (works without it; Netlify
  *     still captures).
- *   - MEETING_URL points at ATTA's Compass app. If Compass ever exposes a
- *     per-company deep link, use that instead — this one opens the event, not
- *     our profile, so the buyer still has to search for us.
+ *   - MEETING_URL now points at the Adventure Access COMPANY profile in Compass
+ *     rather than the event root, so a delegate lands on us with a "Meetings
+ *     with Adventure Access" panel and Brian already set as representative —
+ *     no searching. Two consequences worth keeping in mind:
+ *       * It is a plain https URL, not the old Branch deep link, so on mobile it
+ *         opens the Compass WEB app rather than an installed native app unless
+ *         ATTA has universal links configured for that host. Untested.
+ *       * Compass auth is a client-side token, so a NON-delegate gets a sign-in
+ *         wall with no explanation. The copy below must keep leading with
+ *         "Already registered for the Summit?" and the form must stay the
+ *         visible fallback — that sentence is load-bearing, not decoration.
+ *     Both this and the old link are event-scoped and will likely die after
+ *     ATWS26; the page is built to still read correctly with this block gone.
  *   - Turn on a Netlify form notification for `summit-atws26` — notifications
  *     are per-form, so the journey-planner one does not cover this.
  */
@@ -76,7 +86,7 @@ const HS_FORM_ID = 'b6030887-15de-43ff-87d4-05a810edaf8d';
  * Compass is delegate-only, which is why the form below stays: media and anyone
  * not registered for the Summit cannot book there. Link hides while ''.
  */
-const MEETING_URL = 'https://09sz6.app.link/ATWS26';
+const MEETING_URL = 'https://attacompass.adventuretravel.biz/atws26/app/profile/13694867';
 
 /**
  * Source codes handed out at the event. Keep this list and the QR codes in
@@ -494,7 +504,7 @@ const interests = [
             rel="noopener"
             class="text-saffron border-b border-saffron/40 hover:border-saffron ml-1"
           >
-            Find us in Compass →
+            Open our Compass profile →
           </a>
         </p>
       )}
