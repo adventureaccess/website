@@ -772,7 +772,7 @@
     "slug": "javi-galvez",
     "name": "Javi Galvez",
     "first": "Javi",
-    "title": "CEO",
+    "title": "CEO & Co-founder",
     "company": "Arctic Yeti Group",
     "time": "11:45",
     "shape": "peer",
@@ -781,11 +781,11 @@
       "Good to meet you,",
       "Javi"
     ],
-    "lede": "A Spanish company operating exclusively in the Nordics, meeting an American-led company operating exclusively in the Himalaya. Neither of us is buying anything today, which makes this one of the more interesting twelve minutes of the week.",
+    "lede": "An Icelandic DMC with offices in Spain, Germany and Italy, meeting an American-led company operating exclusively in the Himalaya. Neither of us is buying anything today, which makes this one of the more interesting twelve minutes of the week.",
     "facts": [
       {
-        "n": "6",
-        "label": "Nordic countries you operate in"
+        "n": "3",
+        "label": "Arctic destinations: Iceland, Greenland, Faroes"
       },
       {
         "n": "4",
@@ -796,14 +796,14 @@
         "label": "Overlap in the map"
       },
       {
-        "n": "Own",
-        "label": "Ground operations, both of us"
+        "n": "2",
+        "label": "Very different ground models, one shared problem"
       }
     ],
     "angle": {
       "eyebrow": "— Two operators of extreme terrain, opposite ends of the earth",
       "heading": "You run volcanoes and glaciers. We run 16,400-foot passes. The operational problems are almost identical.",
-      "body": "Weather windows that close without warning, permits and access rights, guests who under-estimate the environment, and no supplier chain to fall back on. Companies that do this are rare enough that comparing notes is worth more than a referral agreement — though the referral is easy too.",
+      "body": "Weather windows that close without warning, permits and access rights, and guests who under-estimate the environment. Companies that do this are rare enough that comparing notes is worth more than a referral agreement — though the referral is easy too.",
       "cards": [
         {
           "eyebrow": "The simple version",
@@ -829,8 +829,8 @@
         "body": "You run extreme tours; so do we. In Zanskar the nearest hospital is a day's drive, which changes what you are willing to sell."
       },
       {
-        "title": "Small operators, own crews.",
-        "body": "Neither of us subcontracts. That is the whole reason either of us can promise anything."
+        "title": "Two ways of holding the same line.",
+        "body": "You work through local operators across Iceland, Greenland and the Faroes; we run our own crews in four Himalayan countries. Both models stand or fall on the same thing — whether the person who actually meets the guest does what was promised. How you hold that across contractors, in three destinations and out of offices in three countries, is the thing we would most like to ask you about."
       }
     ],
     "closing": {
@@ -838,6 +838,7 @@
       "body": "Eleanor's read was that a Nordic specialist and a Himalayan one have no natural commercial fit, and that is right. Peer conversation and a standing referral is the honest ceiling, and it is worth having."
     },
     "after": "",
-    "hero": "/images/2024/05/Ladakh-hero-image.jpg"
+    "hero": "/images/2024/05/Ladakh-hero-image.jpg",
+    "specificsNote": "Corrected 15 Sep from arcticyeti.com, not the research sheet. The sheet said 'a Spanish company' operating in 'six Nordic countries'. Their own site: 'We are an Icelandic DMC with offices throughout Europe like Spain, Germany and Italy' and 'specializes exclusively in Nordic destinations ... Iceland, Greenland and Faroe Islands'. THREE destinations, not six, and Icelandic, not Spanish. Javi Galvez is CEO & co-founder; Carolin Fincke is co-founder and CEO of Arctic Yeti Germany. HE SUBCONTRACTS (Will, 15 Sep) — the page previously claimed 'neither of us subcontracts' as a shared virtue. Their own copy, verified and used on this page: 'volcanoes and glaciers', 'We are not a travel agency... We are an Adventure Factory'. Worth raising in the room but deliberately NOT on the page: if he runs a contractor network, we are a candidate for it in a region he does not cover."
   }
 ]
