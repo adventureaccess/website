@@ -191,7 +191,7 @@
       },
       {
         "n": "20+",
-        "label": "Years living and operating across the Himalaya, with our own crews"
+        "label": "Years across the Himalaya with our own crews — 5+ of them in Ladakh"
       },
       {
         "n": "Apr–Oct",
@@ -237,7 +237,7 @@
     },
     "after": "",
     "hero": "/images/2025/11/MTB-Exploration-Photo-3-scaled.jpeg",
-    "specificsNote": "CORRECTED 15 Sep at Will's direction. (1) The 20+ years is REGIONAL — Bhutan, India, Nepal, China, as adventure-access.com/about states — NOT 20 years in Ladakh. Do not re-attach the figure to Ladakh alone on any page. (2) The old paved-option line read 'moved to 13,100 feet', which is below every road pass in Ladakh and below Leh's own valley floor. Replaced with the real band: valleys above 11,000 ft, road passes 17,500+. Pass elevations are the GPS-measured figures, not the inflated ones on the Khardung La signboard (which claims 18,379 ft)."
+    "specificsNote": "CORRECTED 15 Sep at Will's direction. (1) The 20+ years is REGIONAL — Bhutan, India, Nepal, China, as adventure-access.com/about states — NOT 20 years in Ladakh. Will gave the Ladakh figure on 15 Sep: OVER 5 YEARS. The tile now carries both, regional first — 20+ across the Himalaya, 5+ of them in Ladakh — because a bare '5' sitting under ExperiencePlus!'s '50' invites the wrong comparison. Do not re-attach the 20+ to Ladakh alone on any page. (2) The old paved-option line read 'moved to 13,100 feet', which is below every road pass in Ladakh and below Leh's own valley floor. Replaced with the real band: valleys above 11,000 ft, road passes 17,500+. Pass elevations are the GPS-measured figures, not the inflated ones on the Khardung La signboard (which claims 18,379 ft)."
   },
   {
     "token": "63vr",
@@ -715,13 +715,13 @@
     "angle": {
       "eyebrow": "— The thing a Director of Product will notice first",
       "heading": "Your activity levels measure climbing. The Himalaya measures altitude, which is a different axis entirely.",
-      "body": "Level 4 road tops out around 8,000 ft of climbing in a day. Ladakh does not start there — it starts at 11,500 feet of elevation and rides between 11,500 and 17,700 feet, where the constraint is acclimatization rather than watts. Any Himalayan product you build needs a fifth axis on that scale, and we would rather raise that ourselves than let you discover it on a recce.",
+      "body": "Your scale runs one to four and measures the day: Level 4 road is 40–70 miles and up to 8,000 feet of climbing, Level 4 gravel 30–50 miles and up to 4,000. Ladakh does not sit anywhere on it. It starts at 11,500 feet of elevation before a wheel turns and rides between 11,500 and 17,700, where the limit is acclimatization rather than watts — a Level 2 day at 16,000 feet asks more of a guest than a Level 4 at home. Whatever you build here needs altitude as a second axis beside climbing, and we would rather raise that across a table than let you find it on a recce.",
       "cards": [
         {
           "eyebrow": "The style that maps",
-          "title": "Gravel and Cross Country",
-          "body": "Caravan routes, yak trails and old shepherd paths between villages. Point-to-point, high, and genuinely not in any guidebook yet.",
-          "note": ""
+          "title": "Gravel",
+          "body": "Your only off-road line, and the one that fits. Past the sealed highways Ladakh is jeep track, caravan route and village road — Checkpoint terrain, point-to-point between villages, with almost no traffic because there is almost nobody. Worth saying plainly: the program we run in Zanskar today is shuttle-supported singletrack, which is not a style you sell. The gravel is the part that maps.",
+          "note": "Card retitled 15 Sep: it read 'Gravel and Cross Country'. Trek Travel's Cross Country is the coast-to-coast USA road trip, not MTB cross-country, and they run no singletrack product at all — their off-road line is Gravel on the Checkpoint. Confirm we can actually build a gravel week in Ladakh off unpaved road rather than trail."
         },
         {
           "eyebrow": "The style that maps second",
@@ -733,8 +733,12 @@
     },
     "specifics": [
       {
+        "title": "Trek is not a new name to us.",
+        "body": "The Adventure Provision Company, our authorized Trek retailer in Shreveport, Louisiana, is where our own bike knowledge comes from. Your fleet is a platform we already know rather than a spec sheet we would be reading for the first time — the Checkpoint you put people on for gravel included."
+      },
+      {
         "title": "Shuttle-supported, with our own rig and crew.",
-        "body": "Below Khar Kongma at Zangla, a short cliffy descent becomes repeatable laps. The crew has been refining the drop-ins and the viewpoints for years."
+        "body": "Below Khar Kongma at Zangla, a short cliffy descent becomes repeatable laps. Five seasons of our own crews in Ladakh and twenty-plus across the Himalaya — the drop-ins and the viewpoints have been refined rather than scouted."
       },
       {
         "title": "The soft start is not optional.",
@@ -743,6 +747,10 @@
       {
         "title": "Season is the hard constraint.",
         "body": "Late April to early October, when the passes clear and the ground is firm. Outside it the valleys are shut — no negotiating."
+      },
+      {
+        "title": "And the road question, which is yours to answer.",
+        "body": "Trek Travel is a road company first, and Ladakh's sealed passes are a road proposition almost nobody sells: Taglang La at 17,480 feet on the Manali–Leh highway, Khardung La at 17,582, and Umling La at 19,024 — the highest paved road on earth, in permit-controlled border country. Whether that becomes a trip depends on what we can support, which is the question to put to us in the room."
       }
     ],
     "closing": {
@@ -750,7 +758,8 @@
       "body": "If it is worth a recce, that is the ask. Twelve minutes is enough to decide whether it goes on a list for next year."
     },
     "after": "",
-    "hero": "/images/2025/11/MTB-Exploration-Photo-3-scaled.jpeg"
+    "hero": "/images/2025/11/MTB-Exploration-Photo-3-scaled.jpeg",
+    "specificsNote": "CORRECTED 15 Sep after checking Trek Travel's own site. (1) The card titled 'Gravel and Cross Country' conflated their Cross Country USA road trip with MTB cross-country; Trek Travel sells no singletrack product, so the card is now Gravel alone and says outright that our Zanskar program is not a style they sell. (2) The activity-level line cited only the road ceiling (8,000 ft) while pitching off-road; it now carries the gravel ceiling (4,000 ft) too, and the scale is four levels, not five. (3) Tenure made concrete at Will's direction: 5+ years in Ladakh, 20+ across the Himalaya — not 20 in Ladakh. (4) A fourth specific adds the sealed high passes, framed as an open question, because a road-first operator should hear that Umling La exists. VERIFIED and correct as written: three Asia-Pacific destinations (Japan, New Zealand, Thailand); Level 4 road 40–70 mi / up to 8,000 ft; Level 4 gravel 30–50 mi / up to 4,000 ft; Hiking & Walking is a real trip style. Pass heights are GPS-measured, never the Khardung La signboard's 18,379 ft. ADDED 15 Sep at Will's direction: The Adventure Provision Company (3787 Youree Dr, Shreveport LA; Trek lists it as a Preferred retailer, and it carries Trek road, mountain and Electra plus Yeti). Will asked to keep this to FAMILIARITY ONLY — no mechanics, no service department, no spares or support claims, which we cannot make in Ladakh anyway. CHECK THE WORDING: the page says 'our authorized Trek retailer', which reads as affiliation. Will did not state the corporate relationship; soften to 'a Trek retailer we work with' if that is wrong."
   },
   {
     "token": "e2sb",
