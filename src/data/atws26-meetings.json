@@ -99,46 +99,46 @@
     "title": "Owner & Travel Advisor",
     "company": "Going Places",
     "time": "09:15",
-    "shape": "access",
+    "shape": "first-product",
     "lang": "en",
     "headline": [
       "Good to meet you,",
       "Andrea"
     ],
-    "lede": "You already sell Bhutan, Nepal, India and China. So this is not a page about the Himalaya being wonderful — you know that. It is about the difference between booking the region and having someone in it.",
+    "lede": "Seven continents and nearly a hundred countries — you have been further than most of the people selling this region. So this is not a page about the Himalaya being wonderful. It is about the one part of the map where your hotel program runs out of rooms, and what we can do about it.",
     "facts": [
       {
         "n": "4",
-        "label": "Of your Asia destinations are our home ground"
+        "label": "Countries we operate: Bhutan, India, Nepal, China"
       },
       {
         "n": "20+",
-        "label": "Years living and operating there"
+        "label": "Years on the ground with our own staff"
       },
       {
-        "n": "100%",
-        "label": "Programs run by our own people, never farmed out"
+        "n": "Ours",
+        "label": "A Himalayan lodge of our own — ask me in the room"
       },
       {
         "n": "0",
-        "label": "Layers between you and the person running the trip"
+        "label": "Resellers between you and the people running the trip"
       }
     ],
     "angle": {
-      "eyebrow": "— What changes when the operator is local",
-      "heading": "The four countries are already on your list. The question is who is standing there when something goes wrong.",
-      "body": "A Caribbean-based travel management company selling Bhutan is almost certainly selling it through a consolidator — which works until a permit lapses, a pass closes, or a client wants the itinerary rebuilt three weeks out. We are the layer underneath that. You keep the client relationship; we take the operational risk.",
+      "eyebrow": "— Where the search box stops",
+      "heading": "Find a cruise, find a hotel, find a tour. The Himalaya is the place where all three come back thin.",
+      "body": "Going Places can put a client almost anywhere in the world through Cruise Planners and Signature — and that works everywhere there is chain inventory and a supplier with a rate sheet. Bhutan, Ladakh, Nepal and the Tibetan plateau are the exception. The properties worth staying in are small, family-run and not in anyone's booking engine, and the trip around them cannot be assembled from a screen. That is the whole of what we do, and we would rather extend what you already sell than ask you to replace it.",
       "cards": [
         {
-          "eyebrow": "For your individual bookings",
-          "title": "Custom is the default, not a surcharge",
-          "body": "Length, route, pace and comfort get rebuilt around your client rather than fitted to a fixed departure. Our itineraries are starting points.",
+          "eyebrow": "For the suppliers you already use",
+          "title": "We sit underneath, not in front",
+          "body": "You are not being asked to drop anyone. We are the ground layer — permits, licensed guides, vehicles, rooms — so a Himalayan segment becomes something your existing operators and your own custom land tours can actually carry.",
           "note": ""
         },
         {
-          "eyebrow": "For your group business",
-          "title": "Private group departures",
-          "body": "You already do group bookings. A private Himalayan departure for an affinity group is the same sale you make now, with ground handling that does not evaporate at the airport.",
+          "eyebrow": "For your land and stay business",
+          "title": "Places to stay that are not on any engine",
+          "body": "Village houses, monastery guesthouses, a handful of genuinely good small hotels, and one property of our own. It widens where you can place a client without widening the list of people you have to manage.",
           "note": ""
         }
       ]
@@ -146,23 +146,24 @@
     "specifics": [
       {
         "title": "Permits, in plain terms.",
-        "body": "Tibet travel permits, Ladakh inner-line, Bhutan's SDF, Nepal's restricted areas. All four work differently, all four change, and all four are ours to manage rather than yours to track."
+        "body": "Tibet travel permits, Ladakh inner-line, Bhutan's Sustainable Development Fee and licensed-operator rule, Nepal's restricted areas. Four regimes, none alike, all of them changing. They are ours to hold and manage, not yours to track."
       },
       {
-        "title": "The plateau you can reach without a Tibet permit.",
-        "body": "Amdo and Kham are Tibetan in language, food and faith, sit inside Sichuan, Qinghai and Yunnan, and need no Tibet Travel Permit. Most catalogs do not know this."
+        "title": "A place of our own — and it is not on the internet.",
+        "body": "Alongside the ground operation we are building a small lodge of our own in the Himalaya. Nothing about it is public yet, so there is nothing to look up and nothing to send you. It is the part of this worth two minutes across the table, because it changes what a Going Places client can be offered in a region where the answer today is usually a three-star in a capital city."
       },
       {
         "title": "One contact, four countries.",
-        "body": "A client who wants Nepal and Bhutan in one trip is currently two suppliers and a handoff. With us it is one itinerary."
+        "body": "A client who wants Nepal and Bhutan in one trip is two suppliers, two contracts and a handoff at the border. With us it is one itinerary, one person answering the phone, and your client relationship untouched."
       }
     ],
     "closing": {
-      "heading": "You sell it. We run it.",
-      "body": "The useful next step is probably a live inquiry rather than a brochure — give us a real client and a real set of dates and you will learn more about us in a week than any deck would tell you."
+      "heading": "You keep the client. We keep the ground.",
+      "body": "The fastest way to judge us is not a brochure — it is one real client and one real set of dates. Send a live brief and you will know more about us in a week than any deck would tell you."
     },
     "after": "",
-    "hero": "/images/2026/07/bhutan-village-path.jpg"
+    "hero": "/images/2026/07/bhutan-village-path.jpg",
+    "specificsNote": "Teaser rule holds: no name, village, key count, timeline or terms for the lodge anywhere on this page. Confirm with Brian how much he wants said in the room."
   },
   {
     "token": "dnth",
