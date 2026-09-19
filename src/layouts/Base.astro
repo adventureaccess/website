@@ -185,12 +185,30 @@ const allSchemas = [orgSchema, ...extraSchemas];
         function gtag() { dataLayer.push(arguments); }
         window.gtag = gtag;
 
+        var GRANTED = {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          analytics_storage: 'granted',
+        };
+
         gtag('consent', 'default', {
           ad_storage: 'denied',
           ad_user_data: 'denied',
           ad_personalization: 'denied',
           analytics_storage: 'denied',
         });
+
+        // ORDER MATTERS. A returning visitor who already accepted must have
+        // consent upgraded BEFORE the gtag('config') below, because that call
+        // is what sends the first page_view. Upgrading afterwards (as this
+        // file did until 19 Sep 2026) meant every single page_view left the
+        // browser under denied consent — cookieless, unattributed, and
+        // invisible in standard reports. Only later events (scroll,
+        // user_engagement) arrived properly, which is exactly what GA4 was
+        // showing: engagement events and no pageviews at all.
+        if (stored === 'granted') { gtag('consent', 'update', GRANTED); }
+
         gtag('js', new Date());
 
         var gaConfig = {};
@@ -205,12 +223,7 @@ const allSchemas = [orgSchema, ...extraSchemas];
         }
 
         function enableTracking() {
-          gtag('consent', 'update', {
-            ad_storage: 'granted',
-            ad_user_data: 'granted',
-            ad_personalization: 'granted',
-            analytics_storage: 'granted',
-          });
+          gtag('consent', 'update', GRANTED);
           // Marketing pixels never load off production, nor for staff.
           if (!isProduction || isInternal) { return; }
           if (!document.getElementById('hs-script-loader')) {
