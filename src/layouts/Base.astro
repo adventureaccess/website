@@ -14,6 +14,10 @@ export interface Props {
   noindex?: boolean;
   /** Optional extra JSON-LD blocks to append (Article, TouristTrip, Place, etc). */
   schema?: object | object[];
+  /** BCP-47 language for <html lang>. Defaults to 'en'; set 'fr' for the
+   *  French-language ATWS 2026 meeting pages so assistive tech, hyphenation
+   *  and browser translate prompts behave correctly. */
+  lang?: string;
 }
 
 const {
@@ -23,6 +27,7 @@ const {
   hideNavBg = false,
   noindex = false,
   schema,
+  lang = 'en',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
@@ -74,7 +79,7 @@ const extraSchemas: object[] = !schema ? [] : (Array.isArray(schema) ? schema : 
 const allSchemas = [orgSchema, ...extraSchemas];
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -117,6 +122,17 @@ const allSchemas = [orgSchema, ...extraSchemas];
 
     <!-- ================= Consent-managed tracking =================
          Site-native consent (see ConsentBanner.astro). Behavior:
+         - NOTHING loads unless the hostname is the live production site.
+           Netlify deploy previews, branch deploys (*.netlify.app) and
+           localhost therefore never report into the production GA4
+           property. The consent banner still runs on those so it stays
+           testable; it simply has nothing to switch on.
+         - Staff carrying the internal-traffic flag are marked: GA4 gets
+           traffic_type "internal" (which is what the GA4 Internal Traffic
+           data filter matches on) and HubSpot + Reddit never load at all.
+           Set the flag by visiting /?aa_internal=1 once in each browser
+           and on each device; /?aa_internal=0 clears it. Unlike a GA4 IP
+           rule this keeps working on hotel wifi, phones and tethering.
          - Google tag (GA4 G-447VPW2H83) loads immediately but with
            Consent Mode v2 defaults DENIED — cookieless until accepted.
          - HubSpot (244183775, also injects Google Ads AW-17730828816)
@@ -127,14 +143,43 @@ const allSchemas = [orgSchema, ...extraSchemas];
            HubSpot injects it (Ads connected in HubSpot > Marketing > Ads).
     -->
     {!isInternalPage && (
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-447VPW2H83"></script>
-    )}
-    {!isInternalPage && (
     <script is:inline>
       (function () {
-        var KEY = 'aa-consent';
-        var stored = null;
-        try { stored = localStorage.getItem(KEY); } catch (e) {}
+        var GA_ID = 'G-447VPW2H83';
+        var CONSENT_KEY = 'aa-consent';
+        var INTERNAL_KEY = 'aa-internal';
+        var PROD_HOSTS = ['www.adventure-access.com', 'adventure-access.com'];
+
+        function read(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+        function write(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+        function drop(k) { try { localStorage.removeItem(k); } catch (e) {} }
+
+        // --- Internal-traffic flag ---------------------------------------
+        // ?aa_internal=1 marks this browser as ours, and the mark persists,
+        // so we each set it once per browser and per device and stay marked
+        // wherever we happen to be. ?aa_internal=0 removes it.
+        var params = null;
+        try {
+          params = new URLSearchParams(window.location.search);
+          if (params.has('aa_internal')) {
+            var flag = params.get('aa_internal');
+            if (flag === '0' || flag === 'false') { drop(INTERNAL_KEY); } else { write(INTERNAL_KEY, '1'); }
+            // Strip the marker from the address bar so it never ends up in
+            // page_location, a shared link or a bookmark. Other query
+            // params (notably the summit ?s= source codes) are preserved.
+            if (window.history && window.history.replaceState) {
+              params.delete('aa_internal');
+              var rest = params.toString();
+              window.history.replaceState({}, '', window.location.pathname + (rest ? '?' + rest : '') + window.location.hash);
+            }
+          }
+        } catch (e) {}
+        var isInternal = read(INTERNAL_KEY) === '1';
+
+        // --- Production gate ---------------------------------------------
+        var isProduction = PROD_HOSTS.indexOf(window.location.hostname) !== -1;
+
+        var stored = read(CONSENT_KEY);
 
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -147,7 +192,17 @@ const allSchemas = [orgSchema, ...extraSchemas];
           analytics_storage: 'denied',
         });
         gtag('js', new Date());
-        gtag('config', 'G-447VPW2H83');
+
+        var gaConfig = {};
+        if (isInternal) { gaConfig.traffic_type = 'internal'; }
+        gtag('config', GA_ID, gaConfig);
+
+        if (isProduction) {
+          var ga = document.createElement('script');
+          ga.async = true;
+          ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+          document.head.appendChild(ga);
+        }
 
         function enableTracking() {
           gtag('consent', 'update', {
@@ -156,6 +211,8 @@ const allSchemas = [orgSchema, ...extraSchemas];
             ad_personalization: 'granted',
             analytics_storage: 'granted',
           });
+          // Marketing pixels never load off production, nor for staff.
+          if (!isProduction || isInternal) { return; }
           if (!document.getElementById('hs-script-loader')) {
             var hs = document.createElement('script');
             hs.id = 'hs-script-loader';
@@ -172,12 +229,14 @@ const allSchemas = [orgSchema, ...extraSchemas];
         }
 
         function store(v) {
-          try { localStorage.setItem(KEY, v); } catch (e) {}
+          write(CONSENT_KEY, v);
           window.aaConsent.status = v;
         }
 
         window.aaConsent = {
           status: stored,
+          internal: isInternal,
+          production: isProduction,
           accept: function () { store('granted'); enableTracking(); document.dispatchEvent(new CustomEvent('aa-consent-change')); },
           decline: function () { store('denied'); document.dispatchEvent(new CustomEvent('aa-consent-change')); },
           show: function () { document.dispatchEvent(new CustomEvent('aa-consent-show')); },
