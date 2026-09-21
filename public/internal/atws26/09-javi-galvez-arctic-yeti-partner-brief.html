@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>09 Javi Galvez — Arctic Yeti — a peer relationship, written as one</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --display:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',ui-sans-serif,system-ui,-apple-system,sans-serif;
+  --accent:#d97a2c; --rust:#9c4a17;
+  --ink:#232c35; --ink-soft:#5a6470; --warm-light:#c2b49c;
+  --cream:#f5f1ea; --paper:#ebe4d6; --white:#fbf9f5;
+  --flag:#8a2f1a; --flag-bg:#f6e8e2;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--cream); color:var(--ink);
+  font-family:var(--sans); font-weight:400; font-size:17px; line-height:1.68;
+}
+.sheet{max-width:46rem;margin:0 auto;padding:0 16px 6rem}
+
+/* draft bar */
+.draft{
+  background:var(--flag-bg); border-bottom:1px solid #e0c9bf; color:var(--flag);
+  font-size:.78rem; letter-spacing:.09em; text-transform:uppercase; font-weight:500;
+  padding:.7rem 16px; text-align:center;
+}
+.draft b{font-weight:600}
+
+/* back to index */
+.backlink{margin:1.6rem 0 0;font-size:.8rem;letter-spacing:.04em}
+.backlink a{color:var(--ink-soft);text-decoration:none}
+.backlink a:hover{color:var(--rust);text-decoration:underline}
+
+/* masthead */
+header.top{padding:1.6rem 0 0}
+.eyebrow{
+  font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-soft);font-weight:500;margin:0 0 1.1rem
+}
+h1{
+  font-family:var(--display); font-weight:400; font-size:clamp(2rem,5.5vw,2.9rem);
+  line-height:1.08; letter-spacing:-.01em; margin:0 0 1.4rem;
+}
+.meta{
+  border-top:1px solid var(--paper); border-bottom:1px solid var(--paper);
+  padding:1.1rem 0; margin:0 0 2.6rem; font-size:.88rem;
+}
+.meta dl{display:grid;grid-template-columns:8.5rem 1fr;gap:.42rem 1.2rem;margin:0}
+.meta dt{color:var(--ink-soft);font-weight:400}
+.meta dd{margin:0}
+@media(max-width:520px){
+  .meta dl{grid-template-columns:1fr;gap:.1rem .5rem}
+  .meta dt{margin-top:.55rem;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase}
+}
+
+/* body */
+h2{
+  font-family:var(--display); font-weight:500; font-size:1.7rem; line-height:1.2;
+  margin:3rem 0 1rem; letter-spacing:-.005em;
+}
+h3{
+  font-family:var(--sans); font-weight:500; font-size:.95rem;
+  letter-spacing:.04em; margin:2rem 0 .5rem; color:var(--rust);
+}
+p{margin:0 0 1.1rem}
+strong{font-weight:600;color:#1d242c}
+em{font-style:italic}
+ul,ol{margin:0 0 1.2rem;padding-left:1.15rem}
+li{margin:0 0 .45rem}
+a{color:var(--rust);text-decoration:underline;text-underline-offset:2px}
+hr{border:0;border-top:1px solid var(--paper);margin:2.8rem 0}
+code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;
+  background:var(--paper);padding:.1em .35em;border-radius:2px
+}
+
+/* tables */
+.tw{overflow-x:auto;margin:0 0 1.5rem;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:30rem}
+th,td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--paper);vertical-align:top}
+th{
+  font-weight:500;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-soft);border-bottom:1px solid var(--warm-light)
+}
+tbody tr:last-child td{border-bottom:0}
+
+/* the Brian-only checklist, and any section that must not be skimmed */
+section.gate{
+  background:var(--white); border:1px solid var(--paper);
+  border-left:3px solid var(--accent);
+  padding:1.6rem 1.7rem .4rem; margin:3rem 0 0;
+}
+section.gate h2{margin-top:0;font-size:1.35rem}
+section.gate ol{padding-left:1.2rem}
+@media(max-width:520px){section.gate{padding:1.3rem 1.1rem .3rem}}
+
+footer.foot{
+  margin-top:4rem;padding-top:1.4rem;border-top:1px solid var(--paper);
+  font-size:.78rem;color:var(--ink-soft);
+}
+footer.foot p{margin:0 0 .4rem}
+
+/* index-only */
+.cards{list-style:none;padding:0;margin:0}
+.cards li{
+  border-bottom:1px solid var(--paper);padding:1.05rem 0;
+  display:grid;grid-template-columns:2.4rem 1fr auto;gap:0 1rem;align-items:baseline
+}
+.cards .n{font-family:var(--display);font-size:1.25rem;color:var(--warm-light)}
+.cards .who{font-weight:500}
+.cards .co{color:var(--ink-soft);font-size:.86rem;display:block;font-weight:300}
+.cards .clock{font-size:.76rem;color:var(--ink-soft);text-align:right;white-space:nowrap}
+.cards .clock.hot{color:var(--flag);font-weight:500}
+@media(max-width:560px){
+  .cards li{grid-template-columns:2rem 1fr}
+  .cards .clock{grid-column:2;text-align:left;margin-top:.25rem}
+}
+
+@media print{
+  body{background:#fff;font-size:11pt}
+  .draft{background:#fff;border-bottom:1pt solid #000;color:#000}
+  section.gate{border:1pt solid #999;break-inside:avoid}
+  .sheet{max-width:none}
+}
+</style>
+</head>
+<body>
+<div class="draft"><b>Draft &mdash; internal.</b> Not cleared to send. Read the checklist at the foot first.</div>
+<div class="sheet">
+<p class="backlink"><a href="./">&larr; All nine deliverables</a></p>
+<header class="top">
+<p class="eyebrow">Deliverable 09 &middot; Javi Galvez &middot; Arctic Yeti Group (Spanish company, based in Iceland)</p>
+<h1>Arctic Yeti — a peer relationship, written as one</h1>
+</header>
+<div class="meta"><dl><dt>Contact</dt><dd>Javi Galvez</dd><dt>Company</dt><dd>Arctic Yeti Group (Spanish company, based in Iceland)</dd><dt>Meeting</dt><dd>2026-09-16 11:45 ET — ATWS26 Marketplace, Table A-305</dd><dt>Deliverable</dt><dd>Customised materials and updated content for cross-promotion and referral, plus the guide-exchange conversation</dd><dt>Promised, verbatim</dt><dd>&quot;We&#x27;re going to send some customized stuff and some updated stuff.&quot; Plus a standing mutual invitation.</dd><dt>Due</dt><dd>Not dated. This is a relationship, not a transaction.</dd><dt>Status</dt><dd>DRAFT — partner brief, no pitch</dd><dt>Page</dt><dd>adventure-access.com/m/javi-galvez</dd><dt>Token</dt><dd>e2sb</dd><dt>Source</dt><dd>Fireflies &quot;Meeting 9.m4a&quot;</dd></dl></div>
+<h2>What he told us</h2>
+<ul>
+<li><strong>He did not request the meeting.</strong> He said so in the first minute, and he was candid about why he took it anyway: he normally writes to cancel when there is no possible fit, and he did not. He was <strong>curious, and he wanted to learn what we do there.</strong></li>
+<li>Over the years <strong>more of his clients ask for something else</strong>, and he has always said no — this is what we do, it is all we can offer. He is starting to wonder whether this region could be something he considers in future.</li>
+<li><strong>Arctic Yeti is exclusively Nordic</strong>: Iceland, Greenland, Faroes, Norway, Finland, Sweden. Those destinations are <em>not</em> similar to each other — he was clear about that, which is exactly our experience of Ladakh versus Bhutan.</li>
+<li><strong>He moved to Greenland in 2001</strong>, lived there almost ten years. Brian moved to Tibet in 2001. Neither of them had to explain the rest: building an operation where you have to teach every single step.</li>
+<li><strong>He raised the ATTA guide standard himself</strong>, and the thing he actually wanted: he has met a number of companies through it and they <strong>exchange guides across seasons</strong>. Many of his guides are seasonal and very good, and a network of trustworthy people who fit each other's programmes is worth having.</li>
+</ul>
+<h2>The shape of this relationship</h2>
+<p><strong>Third Pole and Arctic.</strong> Different cold, same problem: no infrastructure chain, so you become both ground operator and DMC because the region requires it. Same client personality at the far end of the funnel — people who ask <em>where else, and who do you trust there.</em></p>
+<p>Brian's framing in the room, and the right one: <strong>this is a connection to keep in the pocket and pull out when the opportunity comes.</strong> Not a campaign. It has been mentioned that Patagonia interests our client base as much as the Himalaya does, and his part of the world is not unrelated to that instinct.</p>
+<hr />
+<h2>1. What we are sending — the referral one-pager</h2>
+<p>A single page he can keep and use when a client asks him what else:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Who</td>
+<td>Adventure Access, founded 2009; Brian living and working in the region 27 years</td>
+</tr>
+<tr>
+<td>Where</td>
+<td>Northern India (Ladakh, where the Himalaya meets the Karakoram), Nepal, Bhutan, and origins in eastern Tibet</td>
+</tr>
+<tr>
+<td>Base</td>
+<td>Bhutan from late October — offices in India, Nepal, Bhutan and China</td>
+</tr>
+<tr>
+<td>Structure</td>
+<td>Our offices, with local ownership inside them</td>
+</tr>
+<tr>
+<td>Product</td>
+<td><strong>No set departures. Everything private.</strong> The website is brochure mode — it shows what is possible, then we build</td>
+</tr>
+<tr>
+<td>Length</td>
+<td>Typically 10 to 16 days on the ground, because Europeans and North Americans lose four days either end</td>
+</tr>
+<tr>
+<td>Activity</td>
+<td>Hiking and trekking led, mountain biking where wanted, deep cultural immersion throughout. Day hikes to 19-day itineraries</td>
+</tr>
+<tr>
+<td>Lodging</td>
+<td>Homestays to five star, client's choice</td>
+</tr>
+<tr>
+<td>Guiding</td>
+<td>All core product guided; optional unguided add-ons front and back</td>
+</tr>
+<tr>
+<td><strong>Season, Bhutan</strong></td>
+<td>March–May and September–November. Monsoon out.</td>
+</tr>
+<tr>
+<td><strong>Season, Ladakh</strong></td>
+<td>June–August. Spring and fall out, winter impassable.</td>
+</tr>
+<tr>
+<td>Not us</td>
+<td>Everest expeditions. That is a different industry.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The seasonal point matters for him specifically: <strong>Ladakh's window is June to August</strong>, which is his own peak Arctic season. Bhutan's is spring and autumn, which is not. If referrals ever flow, they flow into his shoulder.</p>
+<h2>2. The guide standard and guide exchange — his ask, not ours</h2>
+<p>This is the part he actually initiated and it should be treated as the most serious item here.</p>
+<ul>
+<li>We have been part of ATTA for many years, and Brian has been on the <strong>education side</strong> — including the team ATTA ran with the Japan National Tourism Bureau.</li>
+<li><strong>Our operations are hungry for the guide standard.</strong> Adventure Access runs two sides: one develops entrepreneurs, operators and guides across the region; the other is client-facing. The development side is what makes the client-facing side trustworthy, because we built the system ourselves rather than buying it in.</li>
+<li><strong>What to propose:</strong> a first conversation on how his exchange network actually works in practice — what a placement looks like, what he expects of a visiting guide, what the seasons are on each side. Our seasonal shape and his are close to complementary.</li>
+</ul>
+<p>This is the item most likely to produce something real within a year, and it costs nothing but a call.</p>
+<h2>3. The mutual invitation</h2>
+<p>Made both ways in the room and worth converting into dates rather than sentiment:</p>
+<ul>
+<li><strong>Him to us</strong> — once the lodge is up and running, as an operator rather than a guest.</li>
+<li><strong>Us to him</strong> — Brian said he wants to come and see Arctic Yeti's operation, and the invitation was accepted on the spot.</li>
+</ul>
+<section class="gate"><h2>Before this goes out — Brian only</h2>
+<ol>
+<li><strong>No pitch.</strong> He is not buying Himalayan product and he said so. Anything that reads like a sell wastes the one genuinely warm peer relationship to come out of the day.</li>
+<li><strong>The guide exchange is the live thread.</strong> Decide whether we are actually willing to place guides in and out before proposing it — a seasonal placement has real obligations.</li>
+<li><strong>Patagonia.</strong> Raised in the room as a shared client interest. Note that Nahum Avila works with Chile Nativo in Patagonia; there may be a three-way conversation there eventually, but not yet.</li>
+<li>Confirm the founding-and-tenure numbers before they go on a printed page — 2009, 27 years, and "building this ecosystem for 25 years" were all used in the same meeting and should be consistent.</li>
+<li>The property is not named here.</li>
+</ol></section>
+<footer class="foot">
+<p>ATWS26 Marketplace follow-up &middot; Adventure Access &middot; built from the Fireflies recordings of 16 September 2026.</p><p>The strategy and the client's own words come from the recordings. The day-by-day routing is proposed, not confirmed operations.</p>
+</footer>
+</div>
+</body>
+</html>
