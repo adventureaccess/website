@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>04 Curtis Fox — Ladakh, built the way we build — and Bhutan, which we never got to</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --display:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',ui-sans-serif,system-ui,-apple-system,sans-serif;
+  --accent:#d97a2c; --rust:#9c4a17;
+  --ink:#232c35; --ink-soft:#5a6470; --warm-light:#c2b49c;
+  --cream:#f5f1ea; --paper:#ebe4d6; --white:#fbf9f5;
+  --flag:#8a2f1a; --flag-bg:#f6e8e2;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--cream); color:var(--ink);
+  font-family:var(--sans); font-weight:400; font-size:17px; line-height:1.68;
+}
+.sheet{max-width:46rem;margin:0 auto;padding:0 16px 6rem}
+
+/* draft bar */
+.draft{
+  background:var(--flag-bg); border-bottom:1px solid #e0c9bf; color:var(--flag);
+  font-size:.78rem; letter-spacing:.09em; text-transform:uppercase; font-weight:500;
+  padding:.7rem 16px; text-align:center;
+}
+.draft b{font-weight:600}
+
+/* back to index */
+.backlink{margin:1.6rem 0 0;font-size:.8rem;letter-spacing:.04em}
+.backlink a{color:var(--ink-soft);text-decoration:none}
+.backlink a:hover{color:var(--rust);text-decoration:underline}
+
+/* masthead */
+header.top{padding:1.6rem 0 0}
+.eyebrow{
+  font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-soft);font-weight:500;margin:0 0 1.1rem
+}
+h1{
+  font-family:var(--display); font-weight:400; font-size:clamp(2rem,5.5vw,2.9rem);
+  line-height:1.08; letter-spacing:-.01em; margin:0 0 1.4rem;
+}
+.meta{
+  border-top:1px solid var(--paper); border-bottom:1px solid var(--paper);
+  padding:1.1rem 0; margin:0 0 2.6rem; font-size:.88rem;
+}
+.meta dl{display:grid;grid-template-columns:8.5rem 1fr;gap:.42rem 1.2rem;margin:0}
+.meta dt{color:var(--ink-soft);font-weight:400}
+.meta dd{margin:0}
+@media(max-width:520px){
+  .meta dl{grid-template-columns:1fr;gap:.1rem .5rem}
+  .meta dt{margin-top:.55rem;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase}
+}
+
+/* body */
+h2{
+  font-family:var(--display); font-weight:500; font-size:1.7rem; line-height:1.2;
+  margin:3rem 0 1rem; letter-spacing:-.005em;
+}
+h3{
+  font-family:var(--sans); font-weight:500; font-size:.95rem;
+  letter-spacing:.04em; margin:2rem 0 .5rem; color:var(--rust);
+}
+p{margin:0 0 1.1rem}
+strong{font-weight:600;color:#1d242c}
+em{font-style:italic}
+ul,ol{margin:0 0 1.2rem;padding-left:1.15rem}
+li{margin:0 0 .45rem}
+a{color:var(--rust);text-decoration:underline;text-underline-offset:2px}
+hr{border:0;border-top:1px solid var(--paper);margin:2.8rem 0}
+code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;
+  background:var(--paper);padding:.1em .35em;border-radius:2px
+}
+
+/* tables */
+.tw{overflow-x:auto;margin:0 0 1.5rem;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:30rem}
+th,td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--paper);vertical-align:top}
+th{
+  font-weight:500;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-soft);border-bottom:1px solid var(--warm-light)
+}
+tbody tr:last-child td{border-bottom:0}
+
+/* the Brian-only checklist, and any section that must not be skimmed */
+section.gate{
+  background:var(--white); border:1px solid var(--paper);
+  border-left:3px solid var(--accent);
+  padding:1.6rem 1.7rem .4rem; margin:3rem 0 0;
+}
+section.gate h2{margin-top:0;font-size:1.35rem}
+section.gate ol{padding-left:1.2rem}
+@media(max-width:520px){section.gate{padding:1.3rem 1.1rem .3rem}}
+
+footer.foot{
+  margin-top:4rem;padding-top:1.4rem;border-top:1px solid var(--paper);
+  font-size:.78rem;color:var(--ink-soft);
+}
+footer.foot p{margin:0 0 .4rem}
+
+/* index-only */
+.cards{list-style:none;padding:0;margin:0}
+.cards li{
+  border-bottom:1px solid var(--paper);padding:1.05rem 0;
+  display:grid;grid-template-columns:2.4rem 1fr auto;gap:0 1rem;align-items:baseline
+}
+.cards .n{font-family:var(--display);font-size:1.25rem;color:var(--warm-light)}
+.cards .who{font-weight:500}
+.cards .co{color:var(--ink-soft);font-size:.86rem;display:block;font-weight:300}
+.cards .clock{font-size:.76rem;color:var(--ink-soft);text-align:right;white-space:nowrap}
+.cards .clock.hot{color:var(--flag);font-weight:500}
+@media(max-width:560px){
+  .cards li{grid-template-columns:2rem 1fr}
+  .cards .clock{grid-column:2;text-align:left;margin-top:.25rem}
+}
+
+@media print{
+  body{background:#fff;font-size:11pt}
+  .draft{background:#fff;border-bottom:1pt solid #000;color:#000}
+  section.gate{border:1pt solid #999;break-inside:avoid}
+  .sheet{max-width:none}
+}
+</style>
+</head>
+<body>
+<div class="draft"><b>Draft &mdash; internal.</b> Not cleared to send. Read the checklist at the foot first.</div>
+<div class="sheet">
+<p class="backlink"><a href="./">&larr; All nine deliverables</a></p>
+<header class="top">
+<p class="eyebrow">Deliverable 04 &middot; Curtis Fox &middot; Privada Travel</p>
+<h1>Ladakh, built the way we build — and Bhutan, which we never got to</h1>
+</header>
+<div class="meta"><dl><dt>Contact</dt><dd>Curtis Fox</dd><dt>Company</dt><dd>Privada Travel</dd><dt>Meeting</dt><dd>2026-09-16 10:00 ET — ATWS26 Marketplace, Table A-305</dd><dt>Deliverable</dt><dd>A Ladakh custom itinerary showing how we build, plus a Bhutan piece</dd><dt>Promised, verbatim</dt><dd>I want to give you an itinerary for Ladakh, show what it would be like, custom tour, build everything. Also, we didn&#x27;t hit Bhutan at all... we&#x27;ll send you both.</dd><dt>Due</dt><dd>Not dated.</dd><dt>Status</dt><dd>DRAFT — routing proposed, operational detail unverified</dd><dt>Page</dt><dd>adventure-access.com/m/curtis-fox</dd><dt>Token</dt><dd>yvwt</dd><dt>Source</dt><dd>Fireflies &quot;Meeting 4.m4a&quot;</dd></dl></div>
+<h2>What he told us</h2>
+<ul>
+<li><strong>Privada is a custom private travel agency.</strong> They assemble bespoke trips with DMC partners worldwide, and occasionally place clients onto other people's tours.</li>
+<li><strong>"We don't have anything anywhere until somebody calls me asking about it."</strong> The website carries a handful of sample itineraries purely to show they are alive and well. Almost nothing they actually sell lives on it.</li>
+<li>Everything begins with a conversation and ends in a custom trip.</li>
+<li>They <strong>do send people to India</strong>. Nepal has been quiet in the two years he has owned the business — not from lack of interest, just never promoted.</li>
+<li><strong>His guests hold out roughly four or five days of feeling adventurous before they want room service again.</strong> That is the single most useful sentence he said, and this itinerary is built around it.</li>
+<li>India was his own first backpacking destination — Rajasthan and down the west coast to Goa. He hated Delhi on arrival and loved it three weeks later.</li>
+<li>He asked directly whether we handle <strong>Delhi airport pickup</strong>.</li>
+</ul>
+<h2>Why this itinerary is the pitch</h2>
+<p>He does not need a brochure. He needs to see what a custom build from us looks like, because that is the thing he is buying. So this is written as a specimen, not a product — and the notes in the margins are deliberately part of it.</p>
+<hr />
+<h2>Ladakh — 12 days door to door, 9 on the ground</h2>
+<p><strong>Season: June, July, August.</strong> Spring and autumn are out; winter is impassable.</p>
+<h3>The Delhi answer, first, because he asked</h3>
+<p>Everything from Delhi upward is ours. <strong>We have an office in Delhi</strong> as well as our operation in Ladakh, so guests are received by our own people rather than a subcontracted meet-and-greet.</p>
+<p>Our recommendation is that we manage <strong>everything from Delhi up</strong>, including the Delhi–Leh flight, even when Privada handles the international ticketing. The logistics fall apart quickly at exactly that seam — the domestic transfers up and back — if nobody is on the ground in Delhi to catch them.</p>
+<p>Delhi is an assault on the senses. Not a problem, but a barrier to entry, and one worth removing for a private client rather than letting them discover it the way he did at 20.</p>
+<h3>Day by day</h3>
+<p><strong>Day 1 — Delhi.</strong> Met airside, transfer, hotel. Optional Delhi add-ons on the following morning for anyone who wants the city; Delhi rewards a guided first encounter more than almost anywhere.</p>
+<p><strong>Day 2 — Delhi → Leh, then out to Nimmu.</strong> We do not stay in Leh for the acclimatisation days. We move guests out to Nimmu, to a hotel converted from an old Ladakhi noble homestead — a family we have a long relationship with. Character, quiet, and the right altitude to begin.</p>
+<p><strong>Days 3–4 — Acclimatisation.</strong> Short valley walks, monasteries, nothing demanding. <strong>We do not shortcut this.</strong> Skipping it risks the entire trip: day three in a hospital on supplemental oxygen instead of day three in Zanskar. Every operator says they acclimatise; the test is whether they build two real days for it and whether their guides know what they are watching for.</p>
+<p><strong>Days 5–9 — Zanskar Valley.</strong></p>
+<p>This is the sweet spot and it is not where the crowds go. Indian domestic tourism and the standard circuit head <strong>north and east</strong> — the famous lake, the famous photograph. Zanskar is west, less visited, more culturally intact.</p>
+<ul>
+<li>Day hikes and one multi-day option</li>
+<li><strong>Non-technical summit options</strong> — physically demanding, no climbing skill required; the difficulty is altitude</li>
+<li>Palace and fort ruins, so even a day hike has a destination</li>
+<li><strong>Curated homestays</strong> with families we work with exclusively — clean, well run, updated bathrooms, and emphatically not luxury. Meals morning and evening on the floor with the family, eating what they eat</li>
+<li>Mountain biking available for anyone who wants it</li>
+</ul>
+<p><strong>Day 10 — Return to Leh.</strong> Comfortable hotel. This is the deliberate exit from roughing it.</p>
+<p><strong>Day 11 — Leh buffer.</strong> Held for weather. Domestic flights out of Leh are the single most common point of failure.</p>
+<p><strong>Day 12 — Leh → Delhi → home.</strong></p>
+<h3>The structural choice, stated for him rather than hidden</h3>
+<p><strong>Comfortable entry, comfortable exit, purposeful roughness in the middle.</strong> Nimmu at the front, Leh at the back, homestays for four or five nights between. That is his four-or-five-day tolerance window used exactly, rather than stretched.</p>
+<p>If a particular client's window is shorter, the homestay block shortens and the valley is run from fixed comfortable bases instead. Nothing else changes.</p>
+<hr />
+<h2>Bhutan — the conversation we ran out of time for</h2>
+<p>Twelve minutes did not reach it, and for Privada's clientele it may be the stronger of the two.</p>
+<p><strong>Why it suits them:</strong>
+- <strong>Quieter, more comfortable, more flexible</strong> than Ladakh. Guests who want the region without the altitude ordeal.
+- Opposite season — <strong>March–May and September–November</strong> — so the two countries cover most of the year between them.
+- <strong>We are the ground, and Brian is resident from late October.</strong>
+- A <strong>20-key property of ours</strong> is opening in central Bhutan: 16 rooms, three villas, a 15-acre working farm, full spa and traditional hot stone baths, adjacent to a protected wetland, about an hour from Punakha and off the standard circuit. For a private client, the interesting part is that it is small, it is ours, and it is not on any booking engine.</p>
+<p><strong>Shape:</strong> 10 days on the ground. Paro and Thimphu, over Dochu La to Punakha, three or four nights at the lodge with day activity chosen daily, Phobjikha, return via Paro. Harder and gentler options every day, decided that morning rather than at booking.</p>
+<p><strong>Multi-destination:</strong> Kathmandu is one of only five access points into Bhutan, and the 45-minute Kathmandu–Paro flight along the Himalayan wall is worth a routing decision on its own.</p>
+<hr />
+<h2>On Nepal, since he raised it</h2>
+<p>He has not sold much there. Our honest read: his clientele would be disappointed by most of what is available in Nepal — <strong>not by the country, by the operations</strong>. Standardised lodges, the same menu everywhere, an equalised product that is culturally driven and very hard to differentiate inside.</p>
+<p>Where we run in Nepal, we run it the way we run Ladakh and Bhutan: individualised, off the main circuits, not plug and play. If he wants a Nepal specimen too, say so and it follows.</p>
+<section class="gate"><h2>Before this goes out — Brian only</h2>
+<ol>
+<li><strong>What is the "hosted founder's trip"</strong> on Privada's site? Still unanswered, and it is the most obvious hook for a first collaboration.</li>
+<li><strong>Nepal.</strong> Be careful how the country is characterised in writing. The candid assessment above is an internal framing; the sentence that reaches him should criticise the standard product without reading as running down the destination.</li>
+<li>Confirm Nimmu availability and the homestay ceiling for a private party.</li>
+<li><strong>Namo / the property name does not appear here</strong>, and the location detail included is at the level Brian has already given verbally in other meetings. Confirm he is comfortable with that much in writing.</li>
+<li>His research row said Privada sells Asia and India but no Himalaya — he confirmed as much himself in the room.</li>
+</ol></section>
+<footer class="foot">
+<p>ATWS26 Marketplace follow-up &middot; Adventure Access &middot; built from the Fireflies recordings of 16 September 2026.</p><p>The strategy and the client's own words come from the recordings. The day-by-day routing is proposed, not confirmed operations.</p>
+</footer>
+</div>
+</body>
+</html>
