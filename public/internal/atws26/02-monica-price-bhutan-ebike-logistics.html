@@ -4,268 +4,344 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>02 Monica Price — Bhutan as a Beyond destination — logistics plan</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Bhutan as a Beyond destination — for Monica Price, ExperiencePlus!</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --display:'Cormorant Garamond',Georgia,serif;
-  --sans:'Jost',ui-sans-serif,system-ui,-apple-system,sans-serif;
-  --accent:#d97a2c; --rust:#9c4a17;
-  --ink:#232c35; --ink-soft:#5a6470; --warm-light:#c2b49c;
-  --cream:#f5f1ea; --paper:#ebe4d6; --white:#fbf9f5;
-  --flag:#8a2f1a; --flag-bg:#f6e8e2;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{
-  margin:0; background:var(--cream); color:var(--ink);
-  font-family:var(--sans); font-weight:400; font-size:17px; line-height:1.68;
-}
-.sheet{max-width:46rem;margin:0 auto;padding:0 16px 6rem}
+      --display:'Cormorant Garamond',Georgia,serif;
+      --sans:'Jost',ui-sans-serif,system-ui,sans-serif;
+      --display-track:-0.01em;
+      --display-lead:1.0;
+      --radius:0px;
+      --accent:#d97a2c;
+      --accent-light:#e5975a;
+      --dark:#1d242c;
+      --charcoal:#2b3540;
+      --warm-mid:#5a6470;
+      --warm-light:#c2b49c;
+      --cream:#f5f1ea;
+      --cream-dark:#ebe4d6;
+      --white:#fbf9f5;
+      --caveat:#9c4a17;
+    }
 
-/* draft bar */
-.draft{
-  background:var(--flag-bg); border-bottom:1px solid #e0c9bf; color:var(--flag);
-  font-size:.78rem; letter-spacing:.09em; text-transform:uppercase; font-weight:500;
-  padding:.7rem 16px; text-align:center;
-}
-.draft b{font-weight:600}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--charcoal);font-family:var(--sans);
+     font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;
+     letter-spacing:var(--display-track);text-wrap:balance;}
+::selection{background:var(--accent);color:var(--white);}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}
+  html{scroll-behavior:auto;}}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
 
-/* back to index */
-.backlink{margin:1.6rem 0 0;font-size:.8rem;letter-spacing:.04em}
-.backlink a{color:var(--ink-soft);text-decoration:none}
-.backlink a:hover{color:var(--rust);text-decoration:underline}
+.wrap{width:100%;max-width:1000px;margin:0 auto;padding-inline:20px;}
+.section-label{font-family:var(--sans);font-size:.65rem;letter-spacing:.28em;
+     text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;display:block;font-weight:500;}
 
-/* masthead */
-header.top{padding:1.6rem 0 0}
-.eyebrow{
-  font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--ink-soft);font-weight:500;margin:0 0 1.1rem
-}
-h1{
-  font-family:var(--display); font-weight:400; font-size:clamp(2rem,5.5vw,2.9rem);
-  line-height:1.08; letter-spacing:-.01em; margin:0 0 1.4rem;
-}
-.meta{
-  border-top:1px solid var(--paper); border-bottom:1px solid var(--paper);
-  padding:1.1rem 0; margin:0 0 2.6rem; font-size:.88rem;
-}
-.meta dl{display:grid;grid-template-columns:8.5rem 1fr;gap:.42rem 1.2rem;margin:0}
-.meta dt{color:var(--ink-soft);font-weight:400}
-.meta dd{margin:0}
-@media(max-width:520px){
-  .meta dl{grid-template-columns:1fr;gap:.1rem .5rem}
-  .meta dt{margin-top:.55rem;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase}
+/* hero */
+.hero{position:relative;min-height:min(680px,88svh);display:flex;flex-direction:column;
+     align-items:center;justify-content:center;text-align:center;overflow:hidden;padding-block:4rem;}
+.hero-bg{position:absolute;inset:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,
+     rgba(20,16,14,.34) 0%,rgba(20,16,14,.52) 60%,rgba(20,16,14,.84) 100%);}
+.hero-content{position:relative;z-index:2;padding-inline:20px;max-width:860px;}
+.hero-eyebrow{font-family:var(--sans);font-weight:500;font-size:.72rem;letter-spacing:.28em;
+     text-transform:uppercase;color:var(--accent-light);margin-bottom:1.6rem;}
+.hero h1{font-weight:300;font-size:clamp(2.8rem,8vw,6.2rem);line-height:var(--display-lead);
+     color:var(--white);margin-bottom:.4rem;}
+.hero h1 em{font-style:italic;color:var(--warm-light);}
+.hero-subtitle{font-family:var(--display);font-size:clamp(1.05rem,2.5vw,1.45rem);
+     color:rgba(253,250,246,.78);font-weight:300;font-style:italic;
+     margin:1.2rem auto 2.4rem;max-width:34ch;}
+.hero-meta{display:flex;justify-content:center;gap:1.6rem 2.5rem;flex-wrap:wrap;}
+.hero-meta-item span{display:block;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+     color:var(--accent-light);margin-bottom:.3rem;}
+.hero-meta-item strong{font-family:var(--display);font-size:1.2rem;font-weight:400;color:var(--white);}
+.hero-divider{width:1px;height:38px;background:rgba(253,250,246,.3);align-self:center;}
+
+/* intro */
+.intro{background:var(--cream);padding:clamp(3.5rem,8vw,5rem) 0;text-align:center;}
+.intro-inner{max-width:700px;margin:0 auto;padding-inline:20px;}
+.intro h2{font-size:clamp(1.9rem,4vw,3rem);line-height:1.2;color:var(--dark);margin-bottom:1.5rem;}
+.intro p{font-size:1.05rem;color:var(--warm-mid);line-height:1.85;}
+
+/* stats */
+.stats{background:var(--dark);display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+.stat{text-align:center;padding:1.8rem 1rem;border-right:1px solid rgba(160,140,110,.22);}
+.stat:last-child{border-right:none;}
+.stat-number{font-family:var(--display);font-size:2.9rem;font-weight:300;color:var(--accent-light);
+     line-height:1;display:block;font-variant-numeric:tabular-nums;}
+.stat-label{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+     color:rgba(200,185,160,.62);margin-top:.5rem;display:block;}
+@media(max-width:640px){.stat{border-right:none;border-bottom:1px solid rgba(160,140,110,.22);}
+  .stat:last-child{border-bottom:none;}}
+
+/* route */
+.route-bar{background:var(--cream-dark);padding:2rem 0;overflow-x:auto;scrollbar-width:none;}
+.route-bar::-webkit-scrollbar{display:none;}
+.route-inner{display:flex;align-items:flex-start;min-width:680px;max-width:1000px;
+     margin:0 auto;padding-inline:20px;}
+.route-stop{display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;
+     text-decoration:none;color:inherit;gap:.45rem;}
+.route-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);}
+.route-stop-name{font-size:.63rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+     color:var(--charcoal);}
+.route-stop-days{font-size:.6rem;color:var(--warm-mid);}
+.route-stop:hover .route-stop-name{color:var(--accent);}
+.route-line{flex:0 1 60px;height:1px;background:linear-gradient(90deg,var(--accent),var(--warm-light));
+     margin-top:.3rem;}
+
+/* photo strip */
+.photo-strip{display:grid;grid-template-columns:repeat(4,1fr);}
+.photo-strip figure{margin:0;aspect-ratio:1/1;overflow:hidden;background:var(--cream-dark);}
+.photo-strip img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease;}
+.photo-strip figure:hover img{transform:scale(1.05);}
+@media(max-width:640px){.photo-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* days */
+.days-section{padding:clamp(3.5rem,8vw,5rem) 0;max-width:1000px;margin:0 auto;padding-inline:20px;}
+.days-header{text-align:center;margin-bottom:3.2rem;}
+.days-header h2{font-size:clamp(1.9rem,4vw,2.8rem);color:var(--dark);}
+.day-group{margin-bottom:3rem;scroll-margin-top:1rem;}
+.day-group-header{display:grid;grid-template-columns:86px 1fr;}
+.day-number-block{background:var(--accent);display:flex;flex-direction:column;align-items:center;
+     justify-content:center;padding:1.2rem .5rem;border-radius:var(--radius) 0 0 0;}
+.day-num{font-family:var(--display);font-size:1.9rem;font-weight:300;color:var(--white);line-height:1;}
+.day-word{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;
+     color:rgba(253,250,246,.72);margin-top:.15rem;}
+.day-header-content{background:var(--dark);padding:1.2rem 1.6rem;border-radius:0 var(--radius) 0 0;
+     display:flex;flex-direction:column;justify-content:center;min-width:0;}
+.day-title{font-family:var(--display);font-size:clamp(1.1rem,2.4vw,1.42rem);font-weight:400;
+     color:var(--white);line-height:1.25;}
+.day-meta-row{display:flex;gap:.4rem 1.4rem;margin-top:.45rem;flex-wrap:wrap;}
+.day-meta-tag{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-light);}
+.day-body{background:var(--cream);border-radius:0 0 var(--radius) var(--radius);
+     padding:1.7rem 1.9rem;border-left:3px solid var(--accent);}
+.day-body p{font-size:.96rem;color:var(--warm-mid);line-height:1.85;margin-bottom:.85rem;}
+.day-body p:last-child{margin-bottom:0;}
+.day-body ul{list-style:none;margin-top:.9rem;}
+.day-body li{font-size:.93rem;color:var(--charcoal);padding:.4rem 0 .4rem 1.4rem;position:relative;
+     line-height:1.65;}
+.day-body li::before{content:'\2192';position:absolute;left:0;color:var(--accent);}
+.day-body strong{font-weight:500;color:var(--charcoal);}
+.day-badge{display:inline-block;background:var(--accent);color:var(--white);font-size:.58rem;
+     letter-spacing:.15em;text-transform:uppercase;padding:.3rem .7rem;border-radius:calc(var(--radius)/2);
+     margin-bottom:1rem;font-weight:500;}
+.overnight-note{display:flex;align-items:baseline;gap:.5rem;margin-top:1.1rem;padding-top:.85rem;
+     border-top:1px solid rgba(160,140,110,.32);font-size:.7rem;font-weight:500;letter-spacing:.1em;
+     text-transform:uppercase;color:var(--warm-mid);}
+.option{background:var(--cream-dark);border-left:3px solid var(--warm-light);margin-top:1.3rem;
+     padding:1.2rem 1.5rem;}
+.option p{font-size:.86rem;color:var(--charcoal);margin:0;line-height:1.75;}
+@media(max-width:560px){.day-group-header{grid-template-columns:62px 1fr;}
+  .day-num{font-size:1.5rem;}.day-body{padding:1.3rem 1.2rem;}}
+
+/* quote */
+.pull-quote{background:var(--accent);padding:clamp(3rem,7vw,4rem) 0;text-align:center;}
+.pull-quote blockquote{font-family:var(--display);font-size:clamp(1.3rem,3vw,2.1rem);font-style:italic;
+     font-weight:300;color:var(--white);max-width:44ch;margin:0 auto;line-height:1.4;padding-inline:20px;}
+
+/* highlights */
+.highlights{background:var(--dark);padding:clamp(3.5rem,8vw,5rem) 0;}
+.highlights-inner{max-width:1000px;margin:0 auto;padding-inline:20px;}
+.highlights-header{text-align:center;margin-bottom:3rem;}
+.highlights-header .section-label{color:var(--accent-light);}
+.highlights-header h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:300;color:var(--white);}
+.highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.4rem;}
+.highlight-card{border:1px solid rgba(160,140,110,.25);padding:1.9rem;border-radius:var(--radius);
+     transition:border-color .3s;}
+.highlight-card:hover{border-color:var(--accent);}
+.highlight-rule{width:32px;height:2px;background:var(--accent);margin-bottom:1.1rem;}
+.highlight-card h3{font-size:1.22rem;font-weight:400;color:var(--warm-light);margin-bottom:.6rem;}
+.highlight-card p{font-size:.88rem;color:rgba(200,185,160,.66);line-height:1.75;}
+
+/* accommodation */
+.accommodation{background:var(--cream-dark);padding:clamp(3.5rem,8vw,5rem) 0;text-align:center;}
+.accommodation-inner{max-width:780px;margin:0 auto;padding-inline:20px;}
+.accommodation h2{font-size:clamp(1.9rem,4vw,2.8rem);color:var(--dark);margin-bottom:1.2rem;}
+.accommodation p{font-size:1rem;color:var(--warm-mid);line-height:1.85;margin-bottom:1.2rem;}
+.accom-types{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap;margin-top:2rem;}
+.accom-tag{border:1px solid var(--accent);color:var(--accent);font-size:.63rem;letter-spacing:.18em;
+     text-transform:uppercase;padding:.6rem 1.1rem;border-radius:calc(var(--radius)/2);font-weight:500;}
+
+/* footer */
+.footer{background:var(--dark);padding:3rem 0;text-align:center;}
+.footer-inner{padding-inline:20px;}
+.footer-mark{font-family:var(--display);font-size:1.5rem;color:var(--warm-light);
+     letter-spacing:.02em;margin-bottom:.4rem;}
+.footer-divider{width:40px;height:1px;background:var(--accent);margin:1.3rem auto;}
+.footer p{font-size:.76rem;color:rgba(200,185,160,.5);letter-spacing:.04em;line-height:1.9;}
+
+
+/* ---- the scheduling problem ---- */
+.problem{background:var(--dark);padding:clamp(3rem,7vw,4.5rem) 0;}
+.problem-inner{max-width:860px;margin:0 auto;padding-inline:20px;}
+.problem .section-label{color:var(--accent-light);}
+.problem h2{font-size:clamp(1.8rem,4vw,2.6rem);color:var(--white);font-weight:300;margin-bottom:1.2rem;}
+.problem p{color:rgba(200,185,160,.78);font-size:1rem;line-height:1.85;margin-bottom:1rem;}
+.problem p strong{color:var(--white);font-weight:400;}
+.windows{margin-top:2rem;border-top:1px solid rgba(160,140,110,.28);}
+.window{display:grid;grid-template-columns:150px 1fr;gap:1.2rem;padding:1.2rem 0;
+        border-bottom:1px solid rgba(160,140,110,.28);}
+.window dt{font-family:var(--display);font-size:1.25rem;color:var(--accent-light);line-height:1.2;}
+.window dt small{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.2em;
+        text-transform:uppercase;color:rgba(200,185,160,.55);margin-top:.3rem;}
+.window dd{margin:0;color:rgba(200,185,160,.78);font-size:.94rem;line-height:1.8;}
+@media(max-width:600px){.window{grid-template-columns:1fr;gap:.4rem;}}
+
+/* ---- itinerary divider ---- */
+.itin-head{background:var(--cream-dark);padding:clamp(2.6rem,6vw,3.6rem) 0;}
+.itin-head-inner{max-width:1000px;margin:0 auto;padding-inline:20px;}
+.itin-head h2{font-size:clamp(1.9rem,4.4vw,3rem);color:var(--dark);line-height:1.1;margin-bottom:.6rem;}
+.itin-head .sub{font-family:var(--display);font-style:italic;font-size:1.1rem;color:var(--warm-mid);
+        margin-bottom:1.4rem;}
+.facts{display:flex;flex-wrap:wrap;gap:.6rem 2rem;padding-top:1.2rem;
+        border-top:1px solid rgba(90,100,112,.22);}
+.fact span{display:block;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;
+        color:var(--accent);margin-bottom:.2rem;font-weight:500;}
+.fact strong{font-family:var(--display);font-size:1.08rem;font-weight:400;color:var(--charcoal);}
+
+/* ---- change list (itinerary B) ---- */
+.changes{max-width:1000px;margin:0 auto;padding-inline:20px;}
+.change{display:grid;grid-template-columns:auto 1fr;gap:1rem;padding:1.15rem 0;
+        border-bottom:1px solid rgba(90,100,112,.16);align-items:start;}
+.change:last-of-type{border-bottom:none;}
+.change .mk{width:7px;height:7px;border-radius:50%;background:var(--accent);margin-top:.62rem;}
+.change h4{font-family:var(--display);font-size:1.12rem;font-weight:400;color:var(--charcoal);
+        margin-bottom:.25rem;}
+.change p{font-size:.94rem;color:var(--warm-mid);line-height:1.8;}
+
+/* ---- honesty notice ---- */
+.notice{background:var(--cream-dark);border-left:3px solid var(--caveat);padding:1.1rem 1.35rem;
+        margin-top:1.2rem;}
+.notice .lbl{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--caveat);
+        font-weight:600;margin-bottom:.4rem;display:block;font-family:var(--sans);}
+.notice p{font-size:.88rem;color:var(--charcoal);line-height:1.78;margin:0;}
+
+/* ---- draft banner ---- */
+.draft{background:var(--caveat);color:#fdf6ee;text-align:center;padding:.7rem 20px;
+       font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+       font-family:var(--sans);}
+
+
+/* multi-paragraph intros: Cate's page had one short centred line; these have several */
+.intro-inner p{text-align:left;margin:0 0 1.1rem;}
+.intro-inner p:last-child{margin-bottom:0;}
+.problem-inner p{text-align:left;}
+/* prose blocks inside a band */
+.prose{max-width:760px;margin:0 auto;padding-inline:20px;}
+.prose h3{font-family:var(--display);font-weight:500;font-size:1.45rem;
+  color:var(--charcoal);margin:2.4rem 0 .7rem;line-height:1.25;}
+.prose p{font-size:1rem;color:var(--warm-mid);line-height:1.85;margin:0 0 1.05rem;}
+.prose strong{color:var(--charcoal);font-weight:600;}
+.prose ul{margin:0 0 1.2rem;padding-left:1.15rem;}
+.prose li{font-size:1rem;color:var(--warm-mid);line-height:1.8;margin:0 0 .5rem;}
+.prose li strong{color:var(--charcoal);}
+
+/* the one-sentence line an advisor can repeat */
+.sentence{border-left:3px solid var(--accent);padding:.2rem 0 .2rem 1.15rem;
+  margin:0 0 1.4rem;}
+.sentence p{font-family:var(--display);font-size:1.32rem;line-height:1.45;
+  color:var(--charcoal);font-style:italic;margin:0;}
+
+/* back link */
+.backbar{max-width:1000px;margin:0 auto;padding:1rem 20px 0;}
+.backbar a{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--warm-mid);text-decoration:none;}
+.backbar a:hover{color:var(--caveat);}
+
+/* photo strips adapt to how many frames we actually hold */
+.photo-strip.ps-2{grid-template-columns:repeat(2,1fr);}
+.photo-strip.ps-3{grid-template-columns:repeat(3,1fr);}
+.photo-strip.ps-4{grid-template-columns:repeat(4,1fr);}
+@media(max-width:760px){
+  .photo-strip.ps-2,.photo-strip.ps-3,.photo-strip.ps-4{grid-template-columns:repeat(2,1fr);}
 }
 
-/* body */
-h2{
-  font-family:var(--display); font-weight:500; font-size:1.7rem; line-height:1.2;
-  margin:3rem 0 1rem; letter-spacing:-.005em;
-}
-h3{
-  font-family:var(--sans); font-weight:500; font-size:.95rem;
-  letter-spacing:.04em; margin:2rem 0 .5rem; color:var(--rust);
-}
-p{margin:0 0 1.1rem}
-strong{font-weight:600;color:#1d242c}
-em{font-style:italic}
-ul,ol{margin:0 0 1.2rem;padding-left:1.15rem}
-li{margin:0 0 .45rem}
-a{color:var(--rust);text-decoration:underline;text-underline-offset:2px}
-hr{border:0;border-top:1px solid var(--paper);margin:2.8rem 0}
-code{
-  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;
-  background:var(--paper);padding:.1em .35em;border-radius:2px
-}
+/* spec list: lodge facts, kit lists, anything label/value and long */
+.specs{max-width:760px;margin:0 auto;padding-inline:20px;}
+.spec{display:grid;grid-template-columns:11rem 1fr;gap:.4rem 1.4rem;
+  padding:.85rem 0;border-bottom:1px solid var(--cream-dark);}
+.spec:last-child{border-bottom:none;}
+.spec dt{font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--accent);padding-top:.22rem;}
+.spec dd{margin:0;font-size:.97rem;color:var(--warm-mid);line-height:1.8;}
+.spec dd strong{color:var(--charcoal);font-weight:600;}
+@media(max-width:620px){.spec{grid-template-columns:1fr;gap:.15rem;}}
 
-/* tables */
-.tw{overflow-x:auto;margin:0 0 1.5rem;-webkit-overflow-scrolling:touch}
-table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:30rem}
-th,td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--paper);vertical-align:top}
-th{
-  font-weight:500;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--ink-soft);border-bottom:1px solid var(--warm-light)
-}
-tbody tr:last-child td{border-bottom:0}
+/* single wide image between sections */
+.plate{margin:0;}
+.plate img{display:block;width:100%;height:clamp(240px,38vw,460px);object-fit:cover;}
+.plate figcaption{max-width:1000px;margin:.6rem auto 0;padding-inline:20px;
+  font-size:.76rem;color:var(--warm-mid);}
 
-/* the Brian-only checklist, and any section that must not be skimmed */
-section.gate{
-  background:var(--white); border:1px solid var(--paper);
-  border-left:3px solid var(--accent);
-  padding:1.6rem 1.7rem .4rem; margin:3rem 0 0;
-}
-section.gate h2{margin-top:0;font-size:1.35rem}
-section.gate ol{padding-left:1.2rem}
-@media(max-width:520px){section.gate{padding:1.3rem 1.1rem .3rem}}
-
-footer.foot{
-  margin-top:4rem;padding-top:1.4rem;border-top:1px solid var(--paper);
-  font-size:.78rem;color:var(--ink-soft);
-}
-footer.foot p{margin:0 0 .4rem}
-
-/* index-only */
-.cards{list-style:none;padding:0;margin:0}
-.cards li{
-  border-bottom:1px solid var(--paper);padding:1.05rem 0;
-  display:grid;grid-template-columns:2.4rem 1fr auto;gap:0 1rem;align-items:baseline
-}
-.cards .n{font-family:var(--display);font-size:1.25rem;color:var(--warm-light)}
-.cards .who{font-weight:500}
-.cards .co{color:var(--ink-soft);font-size:.86rem;display:block;font-weight:300}
-.cards .clock{font-size:.76rem;color:var(--ink-soft);text-align:right;white-space:nowrap}
-.cards .clock.hot{color:var(--flag);font-weight:500}
-@media(max-width:560px){
-  .cards li{grid-template-columns:2rem 1fr}
-  .cards .clock{grid-column:2;text-align:left;margin-top:.25rem}
-}
-
-@media print{
-  body{background:#fff;font-size:11pt}
-  .draft{background:#fff;border-bottom:1pt solid #000;color:#000}
-  section.gate{border:1pt solid #999;break-inside:avoid}
-  .sheet{max-width:none}
-}
 </style>
 </head>
 <body>
-<div class="draft"><b>Draft &mdash; internal.</b> Not cleared to send. Read the checklist at the foot first.</div>
-<div class="sheet">
-<p class="backlink"><a href="./">&larr; All nine deliverables</a></p>
-<header class="top">
-<p class="eyebrow">Deliverable 02 &middot; Monica Price &middot; ExperiencePlus! Bicycle Tours</p>
-<h1>Bhutan as a Beyond destination — logistics plan</h1>
-</header>
-<div class="meta"><dl><dt>Contact</dt><dd>Monica Price</dd><dt>Company</dt><dd>ExperiencePlus! Bicycle Tours</dd><dt>Meeting</dt><dd>2026-09-16 09:30 ET — ATWS26 Marketplace, Table A-305</dd><dt>Deliverable</dt><dd>Logistical plan for a Bhutan e-bike departure under the Beyond line</dd><dt>Promised, verbatim</dt><dd>&quot;One of the things that could be good is a deliverable like a logistical plan.&quot; Plus the page updated with notes from the meeting.</dd><dt>Due</dt><dd>Not dated. Her planning horizon is 2029.</dd><dt>Status</dt><dd>DRAFT — this is a feasibility and logistics document, not a costed product</dd><dt>Page</dt><dd>adventure-access.com/m/monica-price</dd><dt>Token</dt><dd>dnth</dd><dt>Source</dt><dd>Fireflies &quot;Meeting 2.m4a&quot;</dd></dl></div>
-<h2>What she told us</h2>
-<ul>
-<li><strong>Beyond</strong> is their new style and the only one that fits a destination like this: going past traditional cycling-tour geography. Current Beyond destinations are <strong>Tanzania, Jordan and Arctic Finland</strong>.</li>
-<li>Beyond is <strong>e-bike only</strong> for now. <em>"Anything can change"</em> — but that is today's answer.</li>
-<li><strong>Beyond rides as a group.</strong> Their classic tours let guests ride independently through the day; in Tanzania or the Himalaya that is not advisable, and they know it.</li>
-<li><strong>Two departures per destination, and next year's are already sold out.</strong> Medium-sized company, large destination list, high repeat rate, so each destination gets two or three departures and no more.</li>
-<li>Trip length <strong>seven to nine days on location</strong>, with guests adding extensions front or back. They do not want to build or run the extensions — they would hand those to us.</li>
-<li>Her preferred cadence: <strong>one departure in May or June, one in late September or October.</strong></li>
-<li>We are talking about <strong>2029</strong>.</li>
-<li>She knows bikes are hard in this region: ExperiencePlus <strong>shipped the first commercial e-bike into Jordan</strong> themselves.</li>
-</ul>
-<h2>The one-line answer to "why Bhutan rather than Ladakh or Nepal"</h2>
-<p>Ladakh is the extreme altitude option and its road season is June to August only. Nepal is better on foot than on wheels. <strong>Bhutan is the fit</strong>, and it is where our base, our lodge and Brian himself will be.</p>
-<hr />
-<h2>1. Season</h2>
-<p>Bhutan runs two seasons because of the monsoon.</p>
-<div class="tw"><table>
-<thead>
-<tr>
-<th>Window</th>
-<th>Status</th>
-<th>Fits her cadence?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>March – May</td>
-<td>Peak, spring</td>
-<td>Her May/June departure: <strong>May yes, June marginal</strong></td>
-</tr>
-<tr>
-<td>June – August</td>
-<td>Monsoon. Out.</td>
-<td>No</td>
-</tr>
-<tr>
-<td>September – November</td>
-<td>Peak, fall; best clear skies</td>
-<td>Her late-Sept/October departure: <strong>yes</strong></td>
-</tr>
-<tr>
-<td>December – February</td>
-<td>Cold but workable at valley altitude, dry</td>
-<td>Not proposed</td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>Recommendation: mid-to-late May, and late September into the first half of October.</strong> Her instinct of "May or June" should land on May; June is the front edge of the rains.</p>
-<h2>2. The lodge as the anchor</h2>
-<p>The plan is to build the route <strong>through</strong> the lodge rather than out of a single base:</p>
-<ul>
-<li>20 keys — 16 standard rooms plus one two-bedroom and two one-bedroom villas. A Beyond group of their size fits.</li>
-<li>15-acre working farm; kitchen is farm-to-table with no transport step in between.</li>
-<li>Full spa, <strong>traditional hot stone baths</strong>, and active-recovery massage. For a cycling group four days into a route at altitude, that is the actual argument, not a nice-to-have.</li>
-<li>Roughly <strong>three hours' drive from the capital</strong>, about an hour from Punakha. Off the main tourist circuit.</li>
-<li><strong>It is not open yet.</strong> Soft opening early spring, fully operational by summer, fall normal. For a 2029 departure that is a non-issue; for anything earlier it is not.</li>
-</ul>
-<h2>3. Bikes on the ground — the real constraint</h2>
-<p><strong>There is no bike shop in Bhutan.</strong> You cannot source bikes, parts or batteries in country.</p>
-<ul>
-<li>Our plan is to <strong>ship a container of bikes in</strong>, routed through India — all port access to Bhutan runs through India, and that is where the government relationships sit.</li>
-<li>We already run a full retail and service centre in the US, so mechanical standards and fleet management are in-house rather than outsourced.</li>
-<li><strong>E-bikes specifically:</strong> ExperiencePlus has shipped commercial e-bikes internationally before and we have not. This is the single item where their experience should lead the conversation rather than ours.</li>
-<li><strong>Open item:</strong> battery import, air-freight restrictions on lithium, charging infrastructure on a rural route, and spares depth for a group ride. None of these are solved and none should be claimed as solved.</li>
-</ul>
-<h2>4. Air access and arrival</h2>
-<p>One international airport, at Paro. Practical routings for their guests:</p>
-<ul>
-<li><strong>Bangkok</strong> — easiest</li>
-<li><strong>Singapore</strong> — easy, further south; makes sense for anyone coming via Australia</li>
-<li><strong>Delhi</strong> — access point, but a difficult transit for guests</li>
-<li><strong>Kathmandu</strong> — access point, not a good transit, but a strong front-end extension</li>
-<li><strong>Dubai</strong> — direct twice weekly, paused when the war started; restart flagged for November but seats not yet on sale</li>
-</ul>
-<p>By 2029 Bhutan's flight infrastructure is likely to have moved; the country is investing in it.</p>
-<p>We meet guests at Paro, carry permits, all domestic transport and the whole ground operation from arrival to departure.</p>
-<h2>5. Safety and evacuation</h2>
-<ul>
-<li>Serious care goes to the capital.</li>
-<li>Anything beyond in-country capability goes to <strong>Bangkok</strong>, which functions as the regional equivalent of flying someone to London or New York.</li>
-<li><strong>Helicopter service exists</strong>, and one of the three lodge partners owns the helicopters.</li>
-<li>Medical planning, permits and transport are all carried by us, not by them.</li>
-</ul>
-<h2>6. The extension question</h2>
-<p>She expects guests to add on before or after — as they already see with Tanzania safari extensions — and she said plainly they do not want to be the ones running them. That is ours:</p>
-<ul>
-<li><strong>Front end:</strong> Kathmandu, two or three days, including the 45-minute Paro flight along the Himalaya.</li>
-<li><strong>Back end:</strong> trekking days, cultural days, or a deeper eastern Bhutan loop.</li>
-<li>Priced and operated separately, sold through them or handed to us direct — her call.</li>
-</ul>
-<h2>7. What a first year looks like</h2>
-<div class="tw"><table>
-<thead>
-<tr>
-<th>Stage</th>
-<th>When</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Route reconnaissance with Brian in country</td>
-<td>Any time from late 2026 — he is resident from late October</td>
-</tr>
-<tr>
-<td>Route agreed, fleet spec agreed</td>
-<td>2027</td>
-</tr>
-<tr>
-<td>Container shipped, fleet staged</td>
-<td>2028</td>
-</tr>
-<tr>
-<td>Two departures</td>
-<td>2029 — one mid-late May, one late Sept/early Oct</td>
-</tr>
-</tbody>
-</table></div>
-<section class="gate"><h2>Before this goes out — Brian only</h2>
-<ol>
-<li><strong>Do we have a route?</strong> This document deliberately contains no day-by-day. A cycling operator of 50 years will judge us on the route, and a made-up one is worse than none. The route comes after Brian rides it.</li>
-<li><strong>E-bike charging on a rural Bhutanese route</strong> — honest answer needed before anything is promised.</li>
-<li>Confirm the container-through-India assumption with someone who has actually imported.</li>
-<li>Do we run <strong>paved/supported touring, or MTB only</strong>? Still open from the earlier page work, and it decides what kind of route this is.</li>
-<li>Nothing here names the property. It still has no decided name.</li>
-</ol></section>
-<footer class="foot">
-<p>ATWS26 Marketplace follow-up &middot; Adventure Access &middot; built from the Fireflies recordings of 16 September 2026.</p><p>The strategy and the client's own words come from the recordings. The day-by-day routing is proposed, not confirmed operations.</p>
-</footer>
-</div>
+<div class="draft">Draft &middot; A feasibility and logistics document, not a costed product &mdash; and deliberately not a route</div>
+<div class="backbar"><a href="./">&larr; All nine deliverables</a></div>
+<section class="hero">
+  <div class="hero-bg"><img src="https://adventure-access.com/images/2024/03/bhutan08.jpg" alt="Riders on a dirt road in Bhutan with forested ridges behind"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Prepared for Monica Price, ExperiencePlus! Bicycle Tours &middot; September 2026</p>
+    <h1>Bhutan as a<br><em>Beyond destination</em></h1>
+    <p class="hero-subtitle">A logistics and feasibility plan for an e-bike departure &mdash; what is solved, what is not, and what it would take</p>
+    <div class="hero-meta"><div class="hero-meta-item"><span>Your window</span><strong>2029</strong></div><div class="hero-divider"></div><div class="hero-meta-item"><span>Departures</span><strong>Two a year</strong></div><div class="hero-divider"></div><div class="hero-meta-item"><span>This document</span><strong>Logistics, not a route</strong></div></div>
+  </div>
+</section>
+<section class="intro"><div class="intro-inner">
+  <span class="section-label">What this is, and what it deliberately is not</span>
+  <h2>No route, because you would be right to judge us on one</h2>
+  <p>You have been running bicycle tours for more than fifty years. If we sent you a day-by-day for a country we have not yet ridden end to end with a loaded group, you would see through it in a paragraph, and rightly.</p><p><strong>So there is no route in this document.</strong> The route comes after Brian has ridden it, and he is resident in Bhutan from late October. What is here instead is everything that determines whether a route is possible at all: the season, the base, the bikes, the air access, the evacuation plan, and the honest list of what is not solved.</p><p>On your side the shape is already clear. Beyond is e-bike only for now, rides as a group rather than independently, runs seven to nine days on location, and gets two departures per destination. Your preferred cadence is one in May or June and one in late September or October, and we are talking about 2029.</p>
+</div></section>
+<section class="problem"><div class="problem-inner">
+  <span class="section-label">Why Bhutan and not Ladakh or Nepal</span>
+  <h2>One of the three is a cycling destination and the other two are not</h2>
+  <p><strong>Ladakh</strong> is the extreme-altitude option and its road season is June to August only &mdash; which collides with half your cadence and leaves no second window.</p><p><strong>Nepal</strong> is better on foot than on wheels. That is a statement about the standard product and the road surfaces, not about the country.</p><p><strong>Bhutan is the fit</strong>, and it is where our base, our lodge and Brian himself will be. It also runs two seasons rather than one, which is the only way your May/June and late-September cadence works in a single destination.</p><dl class="windows"><div class="window"><dt>March &ndash; May<small>Peak, spring</small></dt><dd>Your first departure lands here. <strong>May yes, June marginal</strong> &mdash; June is the front edge of the rains.</dd></div><div class="window"><dt>September &ndash; November<small>Peak, autumn &middot; best clear skies</small></dt><dd>Your second departure. Late September into the first half of October is the strongest fortnight of the year.</dd></div></dl><p style="margin-top:1.6rem;font-size:.9rem;">June to August is monsoon and is out. December to February is cold but workable at valley altitude and dry &mdash; not proposed here, but not impossible if you ever wanted a third.</p>
+</div></section>
+<div class="photo-strip ps-4"><figure><img src="https://adventure-access.com/images/2026/07/khotokha-valley.jpg" alt="The Khotokha valley floor at first light" loading="lazy"></figure><figure><img src="https://adventure-access.com/images/2024/03/bhutan03.jpg" alt="Chortens at Dochu La with the eastern Himalaya behind" loading="lazy"></figure><figure><img src="https://adventure-access.com/images/2026/09/bhutan-punakha-dzong-river-daylight.jpg" alt="Punakha Dzong above the Mo Chhu" loading="lazy"></figure><figure><img src="https://adventure-access.com/images/2026/09/bhutan-thimphu-valley-rainbow.jpg" alt="The Thimphu valley from above under heavy cloud, a faint rainbow on the far ridge" loading="lazy"></figure></div>
+<section class="itin-head"><div class="itin-head-inner">
+  <span class="section-label">One</span>
+  <h2>The lodge as the anchor</h2>
+  <p class="sub">Built through, rather than out of &mdash; a route that passes the property rather than radiating from it.</p>
+  <div class="facts"><div class="fact"><span>Keys</span><strong>20</strong></div><div class="fact"><span>Farm</span><strong>15 acres</strong></div><div class="fact"><span>From Punakha</span><strong>~1 hour</strong></div><div class="fact"><span>From the capital</span><strong>~3 hours</strong></div></div>
+</div></section>
+<section class="days-section"><dl class="specs"><div class="spec"><dt>Capacity</dt><dd>20 keys &mdash; 16 standard rooms plus one two-bedroom and two one-bedroom villas. A Beyond group of your size fits comfortably, with room for the crew.</dd></div><div class="spec"><dt>Food</dt><dd>A 15-acre working farm with a farm-to-table kitchen and no transport step in between.</dd></div><div class="spec"><dt>Recovery</dt><dd>Full spa, <strong>traditional hot stone baths</strong>, and active-recovery massage. For a cycling group four days into a route at altitude, this is the actual argument rather than a nice-to-have.</dd></div><div class="spec"><dt>Position</dt><dd>Roughly three hours&rsquo; drive from the capital, about an hour from Punakha, off the main tourist circuit. We are the only rooms in that valley.</dd></div><div class="spec"><dt>Status</dt><dd><strong>Not open yet.</strong> Soft opening early spring, fully operational by summer, autumn normal. For a 2029 departure that is a non-issue. For anything earlier it is not, and we would say so.</dd></div><div class="spec"><dt>Name</dt><dd>Not decided. Nothing in this document names it.</dd></div></dl></section>
+<section class="itin-head" id="bikes"><div class="itin-head-inner">
+  <span class="section-label">Two</span>
+  <h2>Bikes on the ground &mdash; the real constraint</h2>
+  <p class="sub">There is no bike shop in Bhutan. Not a poor one: none.</p>
+  <div class="facts"><div class="fact"><span>Sourcing in country</span><strong>None</strong></div><div class="fact"><span>Our plan</span><strong>Container via India</strong></div><div class="fact"><span>Our own workshop</span><strong>US retail + service</strong></div><div class="fact"><span>E-bike experience</span><strong>Yours, not ours</strong></div></div>
+</div></section>
+<section class="days-section"><div class="prose"><p>You cannot source bikes, parts or batteries inside Bhutan. Everything arrives or it does not exist, and that single fact shapes the whole operation.</p><ul><li>Our plan is to <strong>ship a container of bikes in</strong>, routed through India &mdash; all port access to Bhutan runs through India, and that is where the government relationships sit.</li><li>We already run a full retail and service centre in the US, so mechanical standards and fleet management are in-house rather than outsourced to whoever is available.</li><li><strong>On e-bikes specifically, your experience should lead this conversation rather than ours.</strong> ExperiencePlus shipped the first commercial e-bike into Jordan. We have not shipped commercial e-bikes internationally. Saying otherwise would be the fastest way to lose your confidence.</li></ul><div class="notice"><span class="lbl">Not solved, and not claimed as solved</span><p>Battery import and the paperwork around it. Air-freight restrictions on lithium. Charging infrastructure on a rural Bhutanese route. Spares depth for a group ride three hours from the capital. None of these have answers yet. They are all answerable, and none of them should be answered by guessing.</p></div></div></section>
+<div class="photo-strip ps-3"><figure><img src="https://adventure-access.com/images/2026/09/bhutan-mtb-rider-above-thimphu.jpg" alt="A rider with a mountain bike on a trail above Thimphu, prayer flags along the ridge" loading="lazy"></figure><figure><img src="https://adventure-access.com/images/2024/03/farmhouses.jpg" alt="Bhutanese farmhouses on a hillside in autumn" loading="lazy"></figure><figure><img src="https://adventure-access.com/images/2024/03/fired-river-stones.jpg" alt="River stones fired for a traditional hot stone bath" loading="lazy"></figure></div>
+<section class="itin-head"><div class="itin-head-inner">
+  <span class="section-label">Three</span>
+  <h2>Air access, arrival and evacuation</h2>
+  <p class="sub">One international airport, and a clear answer on what happens if something goes wrong.</p>
+  <div class="facts"><div class="fact"><span>Airport</span><strong>Paro, one</strong></div><div class="fact"><span>Best routing</span><strong>Bangkok</strong></div><div class="fact"><span>Serious care</span><strong>Bangkok</strong></div><div class="fact"><span>Helicopter</span><strong>Partner-owned</strong></div></div>
+</div></section>
+<section class="days-section"><dl class="specs"><div class="spec"><dt>Bangkok</dt><dd>The easiest routing for your guests, and the one to default to.</dd></div><div class="spec"><dt>Singapore</dt><dd>Easy, further south. Makes sense for anyone coming via Australia.</dd></div><div class="spec"><dt>Delhi</dt><dd>An access point, but a difficult transit for guests and not one to recommend lightly.</dd></div><div class="spec"><dt>Kathmandu</dt><dd>An access point, a poor transit, but a strong front-end extension &mdash; see below.</dd></div><div class="spec"><dt>Dubai</dt><dd>Direct twice weekly, paused when the war started. A November restart was mentioned but seats are not on sale. <strong>By 2029 this picture will have changed</strong>; Bhutan is investing in its flight infrastructure.</dd></div><div class="spec"><dt>On arrival</dt><dd>We meet guests at Paro and carry permits, all domestic transport and the entire ground operation from arrival to departure.</dd></div><div class="spec"><dt>Medical</dt><dd>Serious care goes to the capital. Anything beyond in-country capability goes to <strong>Bangkok</strong>, which functions here the way flying someone to London or New York does elsewhere.</dd></div><div class="spec"><dt>Helicopter</dt><dd>Helicopter service exists in Bhutan, and <strong>one of the three lodge partners owns the helicopters</strong>. Medical planning, permits and transport are carried by us, not by you.</dd></div></dl></section>
+<section class="itin-head"><div class="itin-head-inner">
+  <span class="section-label">Four</span>
+  <h2>The extensions are ours, which is what you asked for</h2>
+  <p class="sub">You said plainly that you do not want to build or run them.</p>
+  <div class="facts"><div class="fact"><span>Front end</span><strong>Kathmandu, 2&ndash;3 days</strong></div><div class="fact"><span>Back end</span><strong>Trekking or eastern Bhutan</strong></div><div class="fact"><span>Priced</span><strong>Separately</strong></div><div class="fact"><span>Sold</span><strong>Your call</strong></div></div>
+</div></section>
+<section class="days-section"><div class="prose"><p>You already see this with Tanzania safari extensions: guests add on before or after, and the operator who runs the main trip should not be the one improvising the edges.</p><ul><li><strong>Front end:</strong> Kathmandu, two or three days, including the 45-minute Paro flight along the Himalayan wall.</li><li><strong>Back end:</strong> trekking days, cultural days, or a deeper eastern Bhutan loop.</li><li>Priced and operated separately, sold through you or handed to us direct &mdash; whichever you prefer.</li></ul></div></section>
+<section class="days-section"><div class="changes">
+  <p class="eyebrow section-label">The path from here</p>
+  <h2 style="font-family:var(--display);font-weight:400;font-size:1.9rem;margin:0 0 1.2rem;">What a first year actually looks like</h2>
+  <div class="change"><span class="mk"></span><div><h4>Route reconnaissance with Brian, in country &mdash; any time from late 2026</h4><p>He is resident from late October. This is the step that turns this document into an itinerary, and it is the only one that cannot be shortcut.</p></div></div><div class="change"><span class="mk"></span><div><h4>Route agreed and fleet spec agreed &mdash; 2027</h4><p>Once there is a ridden route, the fleet question becomes concrete rather than theoretical, and your e-bike experience decides most of it.</p></div></div><div class="change"><span class="mk"></span><div><h4>Container shipped, fleet staged &mdash; 2028</h4><p>The long-lead item. Worth starting earlier than feels necessary.</p></div></div><div class="change"><span class="mk"></span><div><h4>Two departures &mdash; 2029</h4><p>One mid-to-late May, one late September or early October.</p></div></div><div class="notice"><span class="lbl">Still open from our earlier conversation</span><p>Whether this is paved supported touring or mountain biking. It decides what kind of route we are even looking for, and it is worth settling before Brian rides.</p></div>
+</div></section>
+<footer class="footer"><div class="footer-inner">
+  <div class="footer-mark">Adventure Access</div>
+  <div class="footer-divider"></div>
+  <p>Prepared for Monica Price, ExperiencePlus! Bicycle Tours, following the ATWS26 Marketplace, 16 September 2026.</p><p>A feasibility and logistics document. Not a costed product, and deliberately not a route.</p><p style="margin-top:.8rem;"><a href="./02-monica-price-brief.html" style="color:inherit;">Internal brief and the before-you-send checklist &rarr;</a></p>
+</div></footer>
 </body>
 </html>

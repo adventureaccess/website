@@ -4,355 +4,477 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>03 Patricia Dubé — Leadership travel in the Himalaya — two shapes</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Leadership travel in the Himalaya — for Patricia Dubé, Odyssée Agence</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --display:'Cormorant Garamond',Georgia,serif;
-  --sans:'Jost',ui-sans-serif,system-ui,-apple-system,sans-serif;
-  --accent:#d97a2c; --rust:#9c4a17;
-  --ink:#232c35; --ink-soft:#5a6470; --warm-light:#c2b49c;
-  --cream:#f5f1ea; --paper:#ebe4d6; --white:#fbf9f5;
-  --flag:#8a2f1a; --flag-bg:#f6e8e2;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{
-  margin:0; background:var(--cream); color:var(--ink);
-  font-family:var(--sans); font-weight:400; font-size:17px; line-height:1.68;
-}
-.sheet{max-width:46rem;margin:0 auto;padding:0 16px 6rem}
+      --display:'Cormorant Garamond',Georgia,serif;
+      --sans:'Jost',ui-sans-serif,system-ui,sans-serif;
+      --display-track:-0.01em;
+      --display-lead:1.0;
+      --radius:0px;
+      --accent:#d97a2c;
+      --accent-light:#e5975a;
+      --dark:#1d242c;
+      --charcoal:#2b3540;
+      --warm-mid:#5a6470;
+      --warm-light:#c2b49c;
+      --cream:#f5f1ea;
+      --cream-dark:#ebe4d6;
+      --white:#fbf9f5;
+      --caveat:#9c4a17;
+    }
 
-/* draft bar */
-.draft{
-  background:var(--flag-bg); border-bottom:1px solid #e0c9bf; color:var(--flag);
-  font-size:.78rem; letter-spacing:.09em; text-transform:uppercase; font-weight:500;
-  padding:.7rem 16px; text-align:center;
-}
-.draft b{font-weight:600}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--charcoal);font-family:var(--sans);
+     font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;
+     letter-spacing:var(--display-track);text-wrap:balance;}
+::selection{background:var(--accent);color:var(--white);}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}
+  html{scroll-behavior:auto;}}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
 
-/* back to index */
-.backlink{margin:1.6rem 0 0;font-size:.8rem;letter-spacing:.04em}
-.backlink a{color:var(--ink-soft);text-decoration:none}
-.backlink a:hover{color:var(--rust);text-decoration:underline}
+.wrap{width:100%;max-width:1000px;margin:0 auto;padding-inline:20px;}
+.section-label{font-family:var(--sans);font-size:.65rem;letter-spacing:.28em;
+     text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;display:block;font-weight:500;}
 
-/* masthead */
-header.top{padding:1.6rem 0 0}
-.eyebrow{
-  font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--ink-soft);font-weight:500;margin:0 0 1.1rem
-}
-h1{
-  font-family:var(--display); font-weight:400; font-size:clamp(2rem,5.5vw,2.9rem);
-  line-height:1.08; letter-spacing:-.01em; margin:0 0 1.4rem;
-}
-.meta{
-  border-top:1px solid var(--paper); border-bottom:1px solid var(--paper);
-  padding:1.1rem 0; margin:0 0 2.6rem; font-size:.88rem;
-}
-.meta dl{display:grid;grid-template-columns:8.5rem 1fr;gap:.42rem 1.2rem;margin:0}
-.meta dt{color:var(--ink-soft);font-weight:400}
-.meta dd{margin:0}
-@media(max-width:520px){
-  .meta dl{grid-template-columns:1fr;gap:.1rem .5rem}
-  .meta dt{margin-top:.55rem;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase}
+/* hero */
+.hero{position:relative;min-height:min(680px,88svh);display:flex;flex-direction:column;
+     align-items:center;justify-content:center;text-align:center;overflow:hidden;padding-block:4rem;}
+.hero-bg{position:absolute;inset:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,
+     rgba(20,16,14,.34) 0%,rgba(20,16,14,.52) 60%,rgba(20,16,14,.84) 100%);}
+.hero-content{position:relative;z-index:2;padding-inline:20px;max-width:860px;}
+.hero-eyebrow{font-family:var(--sans);font-weight:500;font-size:.72rem;letter-spacing:.28em;
+     text-transform:uppercase;color:var(--accent-light);margin-bottom:1.6rem;}
+.hero h1{font-weight:300;font-size:clamp(2.8rem,8vw,6.2rem);line-height:var(--display-lead);
+     color:var(--white);margin-bottom:.4rem;}
+.hero h1 em{font-style:italic;color:var(--warm-light);}
+.hero-subtitle{font-family:var(--display);font-size:clamp(1.05rem,2.5vw,1.45rem);
+     color:rgba(253,250,246,.78);font-weight:300;font-style:italic;
+     margin:1.2rem auto 2.4rem;max-width:34ch;}
+.hero-meta{display:flex;justify-content:center;gap:1.6rem 2.5rem;flex-wrap:wrap;}
+.hero-meta-item span{display:block;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+     color:var(--accent-light);margin-bottom:.3rem;}
+.hero-meta-item strong{font-family:var(--display);font-size:1.2rem;font-weight:400;color:var(--white);}
+.hero-divider{width:1px;height:38px;background:rgba(253,250,246,.3);align-self:center;}
+
+/* intro */
+.intro{background:var(--cream);padding:clamp(3.5rem,8vw,5rem) 0;text-align:center;}
+.intro-inner{max-width:700px;margin:0 auto;padding-inline:20px;}
+.intro h2{font-size:clamp(1.9rem,4vw,3rem);line-height:1.2;color:var(--dark);margin-bottom:1.5rem;}
+.intro p{font-size:1.05rem;color:var(--warm-mid);line-height:1.85;}
+
+/* stats */
+.stats{background:var(--dark);display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+.stat{text-align:center;padding:1.8rem 1rem;border-right:1px solid rgba(160,140,110,.22);}
+.stat:last-child{border-right:none;}
+.stat-number{font-family:var(--display);font-size:2.9rem;font-weight:300;color:var(--accent-light);
+     line-height:1;display:block;font-variant-numeric:tabular-nums;}
+.stat-label{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+     color:rgba(200,185,160,.62);margin-top:.5rem;display:block;}
+@media(max-width:640px){.stat{border-right:none;border-bottom:1px solid rgba(160,140,110,.22);}
+  .stat:last-child{border-bottom:none;}}
+
+/* route */
+.route-bar{background:var(--cream-dark);padding:2rem 0;overflow-x:auto;scrollbar-width:none;}
+.route-bar::-webkit-scrollbar{display:none;}
+.route-inner{display:flex;align-items:flex-start;min-width:680px;max-width:1000px;
+     margin:0 auto;padding-inline:20px;}
+.route-stop{display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;
+     text-decoration:none;color:inherit;gap:.45rem;}
+.route-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);}
+.route-stop-name{font-size:.63rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+     color:var(--charcoal);}
+.route-stop-days{font-size:.6rem;color:var(--warm-mid);}
+.route-stop:hover .route-stop-name{color:var(--accent);}
+.route-line{flex:0 1 60px;height:1px;background:linear-gradient(90deg,var(--accent),var(--warm-light));
+     margin-top:.3rem;}
+
+/* photo strip */
+.photo-strip{display:grid;grid-template-columns:repeat(4,1fr);}
+.photo-strip figure{margin:0;aspect-ratio:1/1;overflow:hidden;background:var(--cream-dark);}
+.photo-strip img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease;}
+.photo-strip figure:hover img{transform:scale(1.05);}
+@media(max-width:640px){.photo-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* days */
+.days-section{padding:clamp(3.5rem,8vw,5rem) 0;max-width:1000px;margin:0 auto;padding-inline:20px;}
+.days-header{text-align:center;margin-bottom:3.2rem;}
+.days-header h2{font-size:clamp(1.9rem,4vw,2.8rem);color:var(--dark);}
+.day-group{margin-bottom:3rem;scroll-margin-top:1rem;}
+.day-group-header{display:grid;grid-template-columns:86px 1fr;}
+.day-number-block{background:var(--accent);display:flex;flex-direction:column;align-items:center;
+     justify-content:center;padding:1.2rem .5rem;border-radius:var(--radius) 0 0 0;}
+.day-num{font-family:var(--display);font-size:1.9rem;font-weight:300;color:var(--white);line-height:1;}
+.day-word{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;
+     color:rgba(253,250,246,.72);margin-top:.15rem;}
+.day-header-content{background:var(--dark);padding:1.2rem 1.6rem;border-radius:0 var(--radius) 0 0;
+     display:flex;flex-direction:column;justify-content:center;min-width:0;}
+.day-title{font-family:var(--display);font-size:clamp(1.1rem,2.4vw,1.42rem);font-weight:400;
+     color:var(--white);line-height:1.25;}
+.day-meta-row{display:flex;gap:.4rem 1.4rem;margin-top:.45rem;flex-wrap:wrap;}
+.day-meta-tag{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-light);}
+.day-body{background:var(--cream);border-radius:0 0 var(--radius) var(--radius);
+     padding:1.7rem 1.9rem;border-left:3px solid var(--accent);}
+.day-body p{font-size:.96rem;color:var(--warm-mid);line-height:1.85;margin-bottom:.85rem;}
+.day-body p:last-child{margin-bottom:0;}
+.day-body ul{list-style:none;margin-top:.9rem;}
+.day-body li{font-size:.93rem;color:var(--charcoal);padding:.4rem 0 .4rem 1.4rem;position:relative;
+     line-height:1.65;}
+.day-body li::before{content:'\2192';position:absolute;left:0;color:var(--accent);}
+.day-body strong{font-weight:500;color:var(--charcoal);}
+.day-badge{display:inline-block;background:var(--accent);color:var(--white);font-size:.58rem;
+     letter-spacing:.15em;text-transform:uppercase;padding:.3rem .7rem;border-radius:calc(var(--radius)/2);
+     margin-bottom:1rem;font-weight:500;}
+.overnight-note{display:flex;align-items:baseline;gap:.5rem;margin-top:1.1rem;padding-top:.85rem;
+     border-top:1px solid rgba(160,140,110,.32);font-size:.7rem;font-weight:500;letter-spacing:.1em;
+     text-transform:uppercase;color:var(--warm-mid);}
+.option{background:var(--cream-dark);border-left:3px solid var(--warm-light);margin-top:1.3rem;
+     padding:1.2rem 1.5rem;}
+.option p{font-size:.86rem;color:var(--charcoal);margin:0;line-height:1.75;}
+@media(max-width:560px){.day-group-header{grid-template-columns:62px 1fr;}
+  .day-num{font-size:1.5rem;}.day-body{padding:1.3rem 1.2rem;}}
+
+/* quote */
+.pull-quote{background:var(--accent);padding:clamp(3rem,7vw,4rem) 0;text-align:center;}
+.pull-quote blockquote{font-family:var(--display);font-size:clamp(1.3rem,3vw,2.1rem);font-style:italic;
+     font-weight:300;color:var(--white);max-width:44ch;margin:0 auto;line-height:1.4;padding-inline:20px;}
+
+/* highlights */
+.highlights{background:var(--dark);padding:clamp(3.5rem,8vw,5rem) 0;}
+.highlights-inner{max-width:1000px;margin:0 auto;padding-inline:20px;}
+.highlights-header{text-align:center;margin-bottom:3rem;}
+.highlights-header .section-label{color:var(--accent-light);}
+.highlights-header h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:300;color:var(--white);}
+.highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.4rem;}
+.highlight-card{border:1px solid rgba(160,140,110,.25);padding:1.9rem;border-radius:var(--radius);
+     transition:border-color .3s;}
+.highlight-card:hover{border-color:var(--accent);}
+.highlight-rule{width:32px;height:2px;background:var(--accent);margin-bottom:1.1rem;}
+.highlight-card h3{font-size:1.22rem;font-weight:400;color:var(--warm-light);margin-bottom:.6rem;}
+.highlight-card p{font-size:.88rem;color:rgba(200,185,160,.66);line-height:1.75;}
+
+/* accommodation */
+.accommodation{background:var(--cream-dark);padding:clamp(3.5rem,8vw,5rem) 0;text-align:center;}
+.accommodation-inner{max-width:780px;margin:0 auto;padding-inline:20px;}
+.accommodation h2{font-size:clamp(1.9rem,4vw,2.8rem);color:var(--dark);margin-bottom:1.2rem;}
+.accommodation p{font-size:1rem;color:var(--warm-mid);line-height:1.85;margin-bottom:1.2rem;}
+.accom-types{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap;margin-top:2rem;}
+.accom-tag{border:1px solid var(--accent);color:var(--accent);font-size:.63rem;letter-spacing:.18em;
+     text-transform:uppercase;padding:.6rem 1.1rem;border-radius:calc(var(--radius)/2);font-weight:500;}
+
+/* footer */
+.footer{background:var(--dark);padding:3rem 0;text-align:center;}
+.footer-inner{padding-inline:20px;}
+.footer-mark{font-family:var(--display);font-size:1.5rem;color:var(--warm-light);
+     letter-spacing:.02em;margin-bottom:.4rem;}
+.footer-divider{width:40px;height:1px;background:var(--accent);margin:1.3rem auto;}
+.footer p{font-size:.76rem;color:rgba(200,185,160,.5);letter-spacing:.04em;line-height:1.9;}
+
+
+/* ---- the scheduling problem ---- */
+.problem{background:var(--dark);padding:clamp(3rem,7vw,4.5rem) 0;}
+.problem-inner{max-width:860px;margin:0 auto;padding-inline:20px;}
+.problem .section-label{color:var(--accent-light);}
+.problem h2{font-size:clamp(1.8rem,4vw,2.6rem);color:var(--white);font-weight:300;margin-bottom:1.2rem;}
+.problem p{color:rgba(200,185,160,.78);font-size:1rem;line-height:1.85;margin-bottom:1rem;}
+.problem p strong{color:var(--white);font-weight:400;}
+.windows{margin-top:2rem;border-top:1px solid rgba(160,140,110,.28);}
+.window{display:grid;grid-template-columns:150px 1fr;gap:1.2rem;padding:1.2rem 0;
+        border-bottom:1px solid rgba(160,140,110,.28);}
+.window dt{font-family:var(--display);font-size:1.25rem;color:var(--accent-light);line-height:1.2;}
+.window dt small{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.2em;
+        text-transform:uppercase;color:rgba(200,185,160,.55);margin-top:.3rem;}
+.window dd{margin:0;color:rgba(200,185,160,.78);font-size:.94rem;line-height:1.8;}
+@media(max-width:600px){.window{grid-template-columns:1fr;gap:.4rem;}}
+
+/* ---- itinerary divider ---- */
+.itin-head{background:var(--cream-dark);padding:clamp(2.6rem,6vw,3.6rem) 0;}
+.itin-head-inner{max-width:1000px;margin:0 auto;padding-inline:20px;}
+.itin-head h2{font-size:clamp(1.9rem,4.4vw,3rem);color:var(--dark);line-height:1.1;margin-bottom:.6rem;}
+.itin-head .sub{font-family:var(--display);font-style:italic;font-size:1.1rem;color:var(--warm-mid);
+        margin-bottom:1.4rem;}
+.facts{display:flex;flex-wrap:wrap;gap:.6rem 2rem;padding-top:1.2rem;
+        border-top:1px solid rgba(90,100,112,.22);}
+.fact span{display:block;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;
+        color:var(--accent);margin-bottom:.2rem;font-weight:500;}
+.fact strong{font-family:var(--display);font-size:1.08rem;font-weight:400;color:var(--charcoal);}
+
+/* ---- change list (itinerary B) ---- */
+.changes{max-width:1000px;margin:0 auto;padding-inline:20px;}
+.change{display:grid;grid-template-columns:auto 1fr;gap:1rem;padding:1.15rem 0;
+        border-bottom:1px solid rgba(90,100,112,.16);align-items:start;}
+.change:last-of-type{border-bottom:none;}
+.change .mk{width:7px;height:7px;border-radius:50%;background:var(--accent);margin-top:.62rem;}
+.change h4{font-family:var(--display);font-size:1.12rem;font-weight:400;color:var(--charcoal);
+        margin-bottom:.25rem;}
+.change p{font-size:.94rem;color:var(--warm-mid);line-height:1.8;}
+
+/* ---- honesty notice ---- */
+.notice{background:var(--cream-dark);border-left:3px solid var(--caveat);padding:1.1rem 1.35rem;
+        margin-top:1.2rem;}
+.notice .lbl{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--caveat);
+        font-weight:600;margin-bottom:.4rem;display:block;font-family:var(--sans);}
+.notice p{font-size:.88rem;color:var(--charcoal);line-height:1.78;margin:0;}
+
+/* ---- draft banner ---- */
+.draft{background:var(--caveat);color:#fdf6ee;text-align:center;padding:.7rem 20px;
+       font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+       font-family:var(--sans);}
+
+
+/* multi-paragraph intros: Cate's page had one short centred line; these have several */
+.intro-inner p{text-align:left;margin:0 0 1.1rem;}
+.intro-inner p:last-child{margin-bottom:0;}
+.problem-inner p{text-align:left;}
+/* prose blocks inside a band */
+.prose{max-width:760px;margin:0 auto;padding-inline:20px;}
+.prose h3{font-family:var(--display);font-weight:500;font-size:1.45rem;
+  color:var(--charcoal);margin:2.4rem 0 .7rem;line-height:1.25;}
+.prose p{font-size:1rem;color:var(--warm-mid);line-height:1.85;margin:0 0 1.05rem;}
+.prose strong{color:var(--charcoal);font-weight:600;}
+.prose ul{margin:0 0 1.2rem;padding-left:1.15rem;}
+.prose li{font-size:1rem;color:var(--warm-mid);line-height:1.8;margin:0 0 .5rem;}
+.prose li strong{color:var(--charcoal);}
+
+/* the one-sentence line an advisor can repeat */
+.sentence{border-left:3px solid var(--accent);padding:.2rem 0 .2rem 1.15rem;
+  margin:0 0 1.4rem;}
+.sentence p{font-family:var(--display);font-size:1.32rem;line-height:1.45;
+  color:var(--charcoal);font-style:italic;margin:0;}
+
+/* back link */
+.backbar{max-width:1000px;margin:0 auto;padding:1rem 20px 0;}
+.backbar a{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--warm-mid);text-decoration:none;}
+.backbar a:hover{color:var(--caveat);}
+
+/* photo strips adapt to how many frames we actually hold */
+.photo-strip.ps-2{grid-template-columns:repeat(2,1fr);}
+.photo-strip.ps-3{grid-template-columns:repeat(3,1fr);}
+.photo-strip.ps-4{grid-template-columns:repeat(4,1fr);}
+@media(max-width:760px){
+  .photo-strip.ps-2,.photo-strip.ps-3,.photo-strip.ps-4{grid-template-columns:repeat(2,1fr);}
 }
 
-/* body */
-h2{
-  font-family:var(--display); font-weight:500; font-size:1.7rem; line-height:1.2;
-  margin:3rem 0 1rem; letter-spacing:-.005em;
-}
-h3{
-  font-family:var(--sans); font-weight:500; font-size:.95rem;
-  letter-spacing:.04em; margin:2rem 0 .5rem; color:var(--rust);
-}
-p{margin:0 0 1.1rem}
-strong{font-weight:600;color:#1d242c}
-em{font-style:italic}
-ul,ol{margin:0 0 1.2rem;padding-left:1.15rem}
-li{margin:0 0 .45rem}
-a{color:var(--rust);text-decoration:underline;text-underline-offset:2px}
-hr{border:0;border-top:1px solid var(--paper);margin:2.8rem 0}
-code{
-  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;
-  background:var(--paper);padding:.1em .35em;border-radius:2px
-}
+/* spec list: lodge facts, kit lists, anything label/value and long */
+.specs{max-width:760px;margin:0 auto;padding-inline:20px;}
+.spec{display:grid;grid-template-columns:11rem 1fr;gap:.4rem 1.4rem;
+  padding:.85rem 0;border-bottom:1px solid var(--cream-dark);}
+.spec:last-child{border-bottom:none;}
+.spec dt{font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--accent);padding-top:.22rem;}
+.spec dd{margin:0;font-size:.97rem;color:var(--warm-mid);line-height:1.8;}
+.spec dd strong{color:var(--charcoal);font-weight:600;}
+@media(max-width:620px){.spec{grid-template-columns:1fr;gap:.15rem;}}
 
-/* tables */
-.tw{overflow-x:auto;margin:0 0 1.5rem;-webkit-overflow-scrolling:touch}
-table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:30rem}
-th,td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--paper);vertical-align:top}
-th{
-  font-weight:500;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--ink-soft);border-bottom:1px solid var(--warm-light)
-}
-tbody tr:last-child td{border-bottom:0}
+/* single wide image between sections */
+.plate{margin:0;}
+.plate img{display:block;width:100%;height:clamp(240px,38vw,460px);object-fit:cover;}
+.plate figcaption{max-width:1000px;margin:.6rem auto 0;padding-inline:20px;
+  font-size:.76rem;color:var(--warm-mid);}
 
-/* the Brian-only checklist, and any section that must not be skimmed */
-section.gate{
-  background:var(--white); border:1px solid var(--paper);
-  border-left:3px solid var(--accent);
-  padding:1.6rem 1.7rem .4rem; margin:3rem 0 0;
-}
-section.gate h2{margin-top:0;font-size:1.35rem}
-section.gate ol{padding-left:1.2rem}
-@media(max-width:520px){section.gate{padding:1.3rem 1.1rem .3rem}}
-
-footer.foot{
-  margin-top:4rem;padding-top:1.4rem;border-top:1px solid var(--paper);
-  font-size:.78rem;color:var(--ink-soft);
-}
-footer.foot p{margin:0 0 .4rem}
-
-/* index-only */
-.cards{list-style:none;padding:0;margin:0}
-.cards li{
-  border-bottom:1px solid var(--paper);padding:1.05rem 0;
-  display:grid;grid-template-columns:2.4rem 1fr auto;gap:0 1rem;align-items:baseline
-}
-.cards .n{font-family:var(--display);font-size:1.25rem;color:var(--warm-light)}
-.cards .who{font-weight:500}
-.cards .co{color:var(--ink-soft);font-size:.86rem;display:block;font-weight:300}
-.cards .clock{font-size:.76rem;color:var(--ink-soft);text-align:right;white-space:nowrap}
-.cards .clock.hot{color:var(--flag);font-weight:500}
-@media(max-width:560px){
-  .cards li{grid-template-columns:2rem 1fr}
-  .cards .clock{grid-column:2;text-align:left;margin-top:.25rem}
-}
-
-@media print{
-  body{background:#fff;font-size:11pt}
-  .draft{background:#fff;border-bottom:1pt solid #000;color:#000}
-  section.gate{border:1pt solid #999;break-inside:avoid}
-  .sheet{max-width:none}
-}
 </style>
 </head>
 <body>
-<div class="draft"><b>Draft &mdash; internal.</b> Not cleared to send. Read the checklist at the foot first.</div>
-<div class="sheet">
-<p class="backlink"><a href="./">&larr; All nine deliverables</a></p>
-<header class="top">
-<p class="eyebrow">Deliverable 03 &middot; Patricia Dubé &middot; Odyssée Agence (Québec)</p>
-<h1>Leadership travel in the Himalaya — two shapes</h1>
-</header>
-<div class="meta"><dl><dt>Contact</dt><dd>Patricia Dubé</dd><dt>Company</dt><dd>Odyssée Agence (Québec)</dd><dt>Meeting</dt><dd>2026-09-16 09:45 ET — ATWS26 Marketplace, Table A-305</dd><dt>Deliverable</dt><dd>Two sample itineraries — Ladakh (challenge) and Bhutan (reflection) — plus lodge and facilities information</dd><dt>Promised, verbatim</dt><dd>We will send you some of these sample itineraries as well as information on the resort.&quot; / &quot;We will follow up in the next week or two.</dd><dt>Due</dt><dd>Within one to two weeks of 16 Sep. She is travelling until 4 October and said explicitly she is not in a hurry.</dd><dt>Status</dt><dd>DRAFT — training design is real, operational routing is proposed</dd><dt>Page</dt><dd>adventure-access.com/m/patricia-dube</dd><dt>Token</dt><dd>63vr</dd><dt>Source</dt><dd>Fireflies &quot;Meeting 3.m4a&quot;</dd></dl></div>
-<h2>What she told us</h2>
-<ul>
-<li>She runs <strong>leadership and self-growth travel for professionals and entrepreneurs</strong>. That is the whole business, not a line of it.</li>
-<li>Clients <strong>register as individuals</strong> — business owners, but not with their own teams. A group is a dozen or more owners from unrelated businesses travelling together.</li>
-<li>Content is personal values, leadership, <strong>stress management, communication, slowing down, alignment</strong>. Delivered by her team, or with local partners where she can find them.</li>
-<li><strong>Group size 12 to 25.</strong></li>
-<li><strong>12 to 14 days including travel.</strong> About four of those are travel to and from Asia.</li>
-<li><strong>Planning 2028.</strong> She works roughly a year and a half out, partly so people have time to register.</li>
-<li>She personally runs about <strong>10 trips a year</strong> and has a growing team of leaders bringing their own groups.</li>
-<li><strong>All clients are in Québec.</strong> French is preferable, not a dealbreaker: most understand English, and she translates herself where needed — she does exactly this in Tanzania today.</li>
-<li><strong>The commercial hinge:</strong> when the training comes from someone else, the trip is <strong>100% deductible</strong> for her clients. And her people have heard everything she has to say already — a different voice opens something new.</li>
-<li>The Himalaya is <strong>entirely new to her</strong>. She has been to Japan and Vietnam.</li>
-<li>When asked whether days should offer a harder option and a gentler option: <em>"That's amazing. That's what I would prefer."</em></li>
-</ul>
-<h2>The thing that makes this different from every other meeting</h2>
-<p>Brian is not only the ground operator here. He has done <strong>executive coaching professionally</strong>, served on the <strong>ATTA education team</strong> — including the team that trained the Japan National Tourism Bureau ahead of ATWS there — and has worked with <strong>Columbia University</strong> and the <strong>US State Department's Bureau of Educational and Cultural Affairs</strong>, coaching leaders both in the US and out of the Himalaya.</p>
-<p>That means Adventure Access can deliver <strong>both halves</strong> of her product: the logistics and the training. It also means her clients' trips become deductible. She raised that herself, unprompted, as the reason having both matters.</p>
-<p>If she wants logistics only, that is fine and the itineraries below work unchanged.</p>
-<hr />
-<h2>Itinerary 1 — Ladakh · The challenge format</h2>
-<p><strong>For groups that want to be tested physically as well as intellectually.</strong> 13 days door to door, 10 on the ground.</p>
-<p><strong>Season: June, July or August only.</strong> Spring and autumn are out; winter is impassable. This is the opposite of Bhutan's calendar and it constrains her scheduling more than anything else in this document.</p>
-<h3>The argument</h3>
-<p>Ladakh is extreme, but the extremity comes from <strong>altitude, not from technical difficulty</strong>. Nothing here requires a climber. What it requires is patience, and that is the point — the mountain enforces the slowing down she spends the whole trip teaching.</p>
-<h3>Shape</h3>
-<div class="tw"><table>
-<thead>
-<tr>
-<th>Days</th>
-<th>Where</th>
-<th>Leadership frame</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Delhi arrival, met at the airport, hotel</td>
-<td>—</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Fly Delhi → Leh. Transfer to Nimmu.</td>
-<td>Arrival, contracting, group norms</td>
-</tr>
-<tr>
-<td>3–4</td>
-<td><strong>Acclimatisation at Nimmu</strong>, based in a converted Ladakhi noble homestead</td>
-<td><em>Enforced slowness.</em> Short walks, long sessions. The altitude does the teaching.</td>
-</tr>
-<tr>
-<td>5–8</td>
-<td><strong>Zanskar Valley</strong> — day hikes, one multi-day option, palace ruins, curated homestays</td>
-<td><em>Discomfort with purpose.</em> Sessions after dinner, on the floor, with the host family's household around</td>
-</tr>
-<tr>
-<td>9</td>
-<td>Non-technical summit option <strong>or</strong> valley day</td>
-<td><em>The choice itself is the exercise</em></td>
-</tr>
-<tr>
-<td>10</td>
-<td>Return to Leh</td>
-<td>Integration</td>
-</tr>
-<tr>
-<td>11</td>
-<td>Leh buffer day</td>
-<td>Held for weather</td>
-</tr>
-<tr>
-<td>12–13</td>
-<td>Leh → Delhi → home</td>
-<td>—</td>
-</tr>
-</tbody>
-</table></div>
-<h3>Two options every day</h3>
-<p>Days 5 to 9 each carry a harder and a gentler version, running from the same start point and rejoining at the same overnight. Nobody is left at the hotel and nobody is held back. For a group of owners with a wide fitness spread, this is the design decision that makes the trip work.</p>
-<h3>What Ladakh gives a leadership programme that a conference room cannot</h3>
-<ul>
-<li>Valley floors above 11,000 ft; road passes at 17,500 and up.</li>
-<li>Homestays that are functioning family homes — meals on the floor, with the family, not a trekker circuit.</li>
-<li>A landscape that makes people feel small in the useful sense: small and exactly in the right place.</li>
-</ul>
-<hr />
-<h2>Itinerary 2 — Bhutan · The reflective format</h2>
-<p><strong>For groups that need quiet, solitude and a closed environment.</strong> 13 days door to door, 10 on the ground.</p>
-<p><strong>Season: March–May or September–November.</strong></p>
-<h3>The argument</h3>
-<p>Bhutan has a quietude the other Himalayan countries do not. More to the point for her: <strong>the lodge can be closed to her group entirely.</strong></p>
-<h3>Shape</h3>
-<div class="tw"><table>
-<thead>
-<tr>
-<th>Days</th>
-<th>Where</th>
-<th>Leadership frame</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1–2</td>
-<td>Arrive Paro via Bangkok, Delhi, Singapore or Kathmandu; Paro valley, easy</td>
-<td>Arrival, decompression</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Paro → Thimphu</td>
-<td>The country's own answer to "what is growth for"</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Thimphu → Punakha over Dochu La (10,200 ft)</td>
-<td>—</td>
-</tr>
-<tr>
-<td>5–9</td>
-<td><strong>The lodge, bought out</strong></td>
-<td>The core of the programme</td>
-</tr>
-<tr>
-<td>10</td>
-<td>Phobjikha day</td>
-<td>—</td>
-</tr>
-<tr>
-<td>11</td>
-<td>Return to Paro, buffer</td>
-<td>Integration</td>
-</tr>
-<tr>
-<td>12–13</td>
-<td>Depart</td>
-<td>—</td>
-</tr>
-</tbody>
-</table></div>
-<h3>Why the buyout is the product</h3>
-<p>With 12 to 25 people and enough notice, <strong>we close the property</strong>. Everyone on site is her group, for five days. No other guests, no other programme, no drift.</p>
-<p>Inside that:</p>
-<ul>
-<li><strong>Dedicated programme space</strong> — built in, because most Bhutanese properties have rooms and a restaurant and nowhere to actually run a session.</li>
-<li><strong>A chef's table</strong> with the lead chefs cooking with and for the group. Raised in the room as an example of the kind of experience that becomes a leadership exercise rather than a meal.</li>
-<li><strong>Hot stone baths and active recovery</strong>, so a harder day does not cost the following morning.</li>
-<li>A <strong>15-acre working farm</strong> — the food arrives from the field to the kitchen with nothing in between. For a group spending two weeks on alignment and slowing down, the farm is a teaching object, not scenery.</li>
-<li>Harder and gentler activity options straight off the property.</li>
-</ul>
-<hr />
-<h2>Lodge and facilities — the information she was promised</h2>
-<div class="tw"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Location</td>
-<td>Central Bhutan, roughly an hour from Punakha, about three hours from the capital. Off the main tourist circuit.</td>
-</tr>
-<tr>
-<td>Setting</td>
-<td>15-acre working farm, adjacent to a protected Ramsar wetland</td>
-</tr>
-<tr>
-<td>Capacity</td>
-<td><strong>20 keys</strong> — 16 standard rooms, one two-bedroom villa, two one-bedroom villas</td>
-</tr>
-<tr>
-<td>Programme space</td>
-<td>Dedicated, purpose-built, suitable for retreats, training, yoga, running camps</td>
-</tr>
-<tr>
-<td>Wellness</td>
-<td>Full spa, massage, active recovery, traditional Bhutanese hot stone baths</td>
-</tr>
-<tr>
-<td>Food</td>
-<td>Farm to table from the property's own farm</td>
-</tr>
-<tr>
-<td>Buyout</td>
-<td>Available with sufficient notice — which suits her 18-month planning cycle exactly</td>
-</tr>
-<tr>
-<td>Opening</td>
-<td>Soft opening early spring, fully operational by summer. <strong>Her 2028 timeline is comfortably clear of it.</strong></td>
-</tr>
-<tr>
-<td>Ownership</td>
-<td>A three-partner project — Brian, a long-standing ATTA figure based in Kathmandu, and a Bhutanese partner</td>
-</tr>
-</tbody>
-</table></div>
-<hr />
-<h2>The French question — answer it, do not dodge it</h2>
-<p>Our crews work in English on the ground. She raised this herself and does not consider it a blocker: most of her clients follow English, she translates where needed, and she does precisely this with her Tanzania operator today.</p>
-<p>Two honest options to put to her:</p>
-<ol>
-<li><strong>She brings her own leader</strong>, as she does now, and translates. Proven, and her preference in practice.</li>
-<li><strong>We look for a French-speaking guide in Bhutan.</strong> Worth pursuing — a message went out on this during the summit — but it should be offered as <em>we are looking</em>, never as <em>we have one</em>.</li>
-</ol>
-<section class="gate"><h2>Before this goes out — Brian only</h2>
-<ol>
-<li><strong>Do we deliver the training, or only the logistics?</strong> This changes the commercial shape and her clients' tax position. Decide before sending, because the document reads differently either way.</li>
-<li><strong>A group of 25 in Zanskar homestays</strong> — what is the real ceiling? If it is 12, the Ladakh itinerary needs a different lodging model at the top of her range.</li>
-<li>Confirm the <strong>Delhi → Leh</strong> flight and buffer assumptions for a group that size.</li>
-<li><strong>Buyout terms.</strong> She will ask. No number is in this document deliberately.</li>
-<li>Her research row was thin. Verified since: professional-development travel is real and named — <strong>Odyssée Formations</strong> — but it is one of four lines alongside Aventures, Mieux-être and Signature. Treat it as her strongest line, not her only one.</li>
-<li>Nothing here names the property.</li>
-</ol></section>
-<footer class="foot">
-<p>ATWS26 Marketplace follow-up &middot; Adventure Access &middot; built from the Fireflies recordings of 16 September 2026.</p><p>The strategy and the client's own words come from the recordings. The day-by-day routing is proposed, not confirmed operations.</p>
-</footer>
-</div>
+<div class="draft">Draft &middot; Routing and pacing are proposals, not confirmed operations</div>
+<div class="backbar"><a href="./">&larr; All nine deliverables</a></div>
+<section class="hero">
+  <div class="hero-bg"><img src="https://adventure-access.com/images/2026/07/zanskar-evening-light.jpg" alt="Low sun over the Zanskar river, a curving sand beach in the foreground"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Prepared for Patricia Dub&eacute;, Odyss&eacute;e Agence &middot; September 2026</p>
+    <h1>Leadership travel<br><em>in the Himalaya</em></h1>
+    <p class="hero-subtitle">Two shapes for the same idea &mdash; Ladakh as the challenge, Bhutan as the reflection</p>
+    <div class="hero-meta"><div class="hero-meta-item"><span>Group size</span><strong>12&ndash;25</strong></div><div class="hero-divider"></div><div class="hero-meta-item"><span>Length</span><strong>12&ndash;14 days</strong></div><div class="hero-divider"></div><div class="hero-meta-item"><span>Planning</span><strong>2028</strong></div></div>
+  </div>
+</section>
+<section class="intro"><div class="intro-inner">
+  <span class="section-label">Who this is for</span>
+  <h2>Your clients are owners, and they have already heard everything you have to say</h2>
+  <p>You run leadership and self-growth travel for professionals and entrepreneurs &mdash; that is the whole business, not a line of it. Your groups are a dozen or more business owners who register as individuals, travelling with people from unrelated companies, working on values, communication, stress and alignment.</p><p>You named the commercial hinge yourself, and it is the reason this document is shaped the way it is: <strong>when the training comes from someone other than you, the trip becomes fully deductible for your clients</strong> &mdash; and a different voice opens something yours no longer can, because your people have heard you already.</p><p>The Himalaya is new to you. You have taken groups to Japan and Vietnam. So both itineraries below are written to be legible without having stood in the place.</p>
+</div></section>
+<section class="problem"><div class="problem-inner">
+  <span class="section-label">Why us rather than a ground operator plus a trainer</span>
+  <h2>Brian can deliver both halves, which is unusual and is the point</h2>
+  <p>Adventure Access is the ground operation: permits, transport, guides, lodging, one point of contact. That part any competent DMC claims.</p><p>The part that is not standard: Brian has done <strong>executive coaching professionally</strong>, sat on the <strong>ATTA education team</strong> &mdash; including the team that trained the Japan National Tourism Bureau ahead of ATWS there &mdash; and has worked with <strong>Columbia University</strong> and the <strong>US State Department&rsquo;s Bureau of Educational and Cultural Affairs</strong>, coaching leaders both in the United States and out of the Himalaya.</p><p>That means the logistics and the training can come from the same supplier, and your clients&rsquo; trips become deductible. <strong>If you would rather take the logistics only and bring your own leader, that is entirely fine</strong> &mdash; both itineraries below work unchanged, and it is the arrangement you use in Tanzania today.</p><dl class="windows"><div class="window"><dt>Logistics only<small>What you do now</small></dt><dd>We operate, you lead and translate. Proven, and it needs no decision from you beyond the dates.</dd></div><div class="window"><dt>Logistics and training<small>Why you raised it</small></dt><dd>Brian delivers the programme content. Changes the commercial shape, and changes your clients&rsquo; tax position.</dd></div></dl>
+</div></section>
+<div class="photo-strip ps-4"><figure><img src="https://adventure-access.com/images/2024/03/ladakh06.jpg" alt="A whitewashed Ladakhi village house with carved timber window frames" loading="lazy"></figure><figure><img src="https://adventure-access.com/images/2026/07/zanskar-monastery-balcony.jpg" alt="A monk descending the external staircase of a Zanskar monastery" loading="lazy"></figure><figure><img src="https://adventure-access.com/images/2026/07/khotokha-valley.jpg" alt="The Khotokha valley floor in Bhutan at first light" loading="lazy"></figure><figure><img src="https://adventure-access.com/images/2026/07/khotokha-balcony.jpg" alt="The valley seen from inside, through a traditional Bhutanese window" loading="lazy"></figure></div>
+<section class="itin-head" id="ladakh"><div class="itin-head-inner">
+  <span class="section-label">Itinerary one</span>
+  <h2>Ladakh &mdash; the challenge format</h2>
+  <p class="sub">For groups that want to be tested physically as well as intellectually.</p>
+  <div class="facts"><div class="fact"><span>On the ground</span><strong>10 days</strong></div><div class="fact"><span>Door to door</span><strong>13 days</strong></div><div class="fact"><span>Season</span><strong>June &middot; July &middot; August</strong></div><div class="fact"><span>Valley floor</span><strong>Above 11,000 ft</strong></div><div class="fact"><span>Every day 5&ndash;9</span><strong>Two options</strong></div></div>
+</div></section>
+<section class="days-section"><div class="prose"><p>Ladakh is extreme, but the extremity comes from <strong>altitude, not technical difficulty</strong>. Nothing on this route requires a climber. What it requires is patience &mdash; which is precisely the thing you spend the trip teaching.</p><p><strong>The season constrains you more than anything else in this document.</strong> June, July and August only. Spring and autumn are out, winter is impassable. That is the exact opposite of Bhutan&rsquo;s calendar, so the two itineraries cannot be run in the same window and should be scheduled as opposite halves of a year.</p></div></section>
+<section class="days-section"><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">1</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Delhi &mdash; arrival, met at the aircraft</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Received by our own office</span><span class="day-meta-tag">Hotel</span><span class="day-meta-tag">Nothing scheduled</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>A group of this size arriving into Delhi is where most Himalayan trips quietly go wrong. Our own office receives them, not a subcontractor.</p><div class="overnight-note">1 night &middot; Delhi</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">2</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Fly to Leh, transfer to Nimmu</div>
+      <div class="day-meta-row"><span class="day-meta-tag">11,500 ft</span><span class="day-meta-tag">Arrival</span><span class="day-meta-tag">Contracting</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>The flight in is short and the altitude gain is immediate, which is why nothing is planned for the afternoon. Evening session: arrival, contracting, group norms. The group is at altitude within three hours of breakfast and will feel it &mdash; naming that in the first session is more useful than pretending otherwise.</p><div class="overnight-note">1 night &middot; Nimmu</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">3&ndash;4</span><span class="day-word">Days</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Acclimatisation at Nimmu &mdash; enforced slowness</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Short walks only</span><span class="day-meta-tag">Long sessions</span><span class="day-meta-tag">Converted noble homestead</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>Based in a converted Ladakhi noble homestead. Short walks, long sessions, early nights.</p><p><strong>The leadership frame writes itself here.</strong> You spend your programmes teaching people to slow down; in Ladakh the altitude does it for you and there is no negotiating with it. These are not dead days to be endured before the trip starts. They are the most productive session time on the whole itinerary, because the mountain has already made your argument.</p><div class="overnight-note">2 nights &middot; Nimmu</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">5&ndash;8</span><span class="day-word">Days</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Zanskar Valley &mdash; discomfort with purpose</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Day hikes</span><span class="day-meta-tag">One multi-day option</span><span class="day-meta-tag">Palace ruins</span><span class="day-meta-tag">Curated homestays</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>Day hikes, one multi-day option for those who want it, palace ruins reached on foot, and curated homestays that are functioning family homes rather than a trekking circuit.</p><p>Sessions run after dinner, on the floor, with the host family&rsquo;s household moving around the room. That setting does something a conference room cannot: it removes the props people lead with.</p><div class="overnight-note">4 nights &middot; Zanskar homestays</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">9</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Non-technical summit option, or a valley day</div>
+      <div class="day-meta-row"><span class="day-meta-tag">The choice is the exercise</span><span class="day-meta-tag">Both rejoin at dinner</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>Two versions of the day from the same start point, rejoining at the same overnight. Nobody is left at the hotel and nobody is held back.</p><p><strong>For a group of owners with a wide fitness spread, this is the design decision that makes the trip work</strong> &mdash; and the choosing itself is the exercise. You asked whether days could offer a harder and a gentler option. They can, and days 5 to 9 all do.</p><div class="overnight-note">1 night &middot; Zanskar</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">10</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Return to Leh &mdash; integration</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Road day</span><span class="day-meta-tag">Integration session</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>The long drive back is useful rather than lost: it is the only uninterrupted block on the itinerary, and it lands naturally as integration.</p><div class="overnight-note">1 night &middot; Leh</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">11</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Leh buffer, held deliberately</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Weather</span><span class="day-meta-tag">Not padding</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>Held for weather. Flights out of Leh are the normal failure mode and a buffer day is cheaper than twenty-five missed international connections.</p><div class="overnight-note">1 night &middot; Leh</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">12&ndash;13</span><span class="day-word">Days</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Leh &rarr; Delhi &rarr; home</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Two travel days</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>Leh to Delhi, then the international connection. For a group this size we hold the later Delhi departure rather than the tight one.</p></div>
+</article></section>
+<section class="days-section"><div class="prose"><h3>What Ladakh gives a leadership programme that a room cannot</h3><ul><li>Valley floors above 11,000 ft, with road passes at 17,500 and higher.</li><li>Homestays that are working family homes &mdash; meals on the floor, with the family, not a trekker circuit dressed up as one.</li><li>A landscape that makes people feel small in the useful sense: small, and exactly where they should be.</li></ul><div class="notice"><span class="lbl">Photography</span><p>Our Ladakh library is almost entirely one mountain-biking trip &mdash; riders in full-face helmets on loose scree, none of which belongs anywhere near this itinerary. The frames on this page are the handful that carry no bikes. We hold nothing at all of a homestay interior, a session on the floor, or a group of adults in a Ladakhi kitchen, which are the three images that would actually sell this trip. That is a gap in our photography and not a gap in the programme.</p></div></div></section>
+<div class="photo-strip ps-3"><figure><img src="https://adventure-access.com/images/2024/03/ladakh03.jpg" alt="A Zanskari village of flat-roofed houses stacked up a bare hillside" loading="lazy"></figure><figure><img src="https://adventure-access.com/images/2026/07/zangla-khambir-bread-lesson.jpg" alt="A Ladakhi woman showing a traveller how to shape dough, both sitting on patterned rugs" loading="lazy"></figure><figure><img src="https://adventure-access.com/images/2026/07/zanskar-evening-light.jpg" alt="Low sun over the Zanskar river and a curving sand beach" loading="lazy"></figure></div>
+<section class="itin-head" id="bhutan"><div class="itin-head-inner">
+  <span class="section-label">Itinerary two</span>
+  <h2>Bhutan &mdash; the reflective format</h2>
+  <p class="sub">For groups that need quiet, solitude, and a closed environment.</p>
+  <div class="facts"><div class="fact"><span>On the ground</span><strong>10 days</strong></div><div class="fact"><span>Door to door</span><strong>13 days</strong></div><div class="fact"><span>Season</span><strong>Mar&ndash;May &middot; Sep&ndash;Nov</strong></div><div class="fact"><span>At the lodge</span><strong>5 nights, bought out</strong></div><div class="fact"><span>Highest point</span><strong>10,200 ft, in the vehicle</strong></div></div>
+</div></section>
+<section class="days-section"><div class="prose"><p>Bhutan has a quietude the other Himalayan countries do not, and it is not manufactured for visitors. But the thing that matters most for your programme is simpler than atmosphere: <strong>the lodge can be closed to your group entirely.</strong></p></div></section>
+<section class="days-section"><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">1&ndash;2</span><span class="day-word">Days</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Arrive Paro &mdash; decompression</div>
+      <div class="day-meta-row"><span class="day-meta-tag">7,300 ft</span><span class="day-meta-tag">Easy</span><span class="day-meta-tag">Nothing scheduled</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>In via Bangkok, Delhi, Singapore or Kathmandu. Paro valley, gently, with the first full day deliberately empty.</p><div class="overnight-note">2 nights &middot; Paro</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">3</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Paro to Thimphu</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Road 90 min</span><span class="day-meta-tag">The capital</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>Thimphu at its own pace. Bhutan has a national answer to the question your programmes ask &mdash; what is growth actually for &mdash; and it is worth letting the country make that argument rather than making it for them.</p><div class="overnight-note">1 night &middot; Thimphu</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">4</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Thimphu to Punakha over Dochu La</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Pass 10,200 ft</span><span class="day-meta-tag">In the vehicle</span><span class="day-meta-tag">Down to 4,300 ft</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>The highest point of the route, crossed sitting down. On a clear morning the eastern Himalaya is laid out behind the chortens. Then a long descent into Punakha, which is noticeably warm.</p><div class="overnight-note">1 night &middot; Punakha</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">5&ndash;9</span><span class="day-word">Days</span></div>
+    <div class="day-header-content">
+      <div class="day-title">The lodge, bought out &mdash; the core of the programme</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Exclusive use</span><span class="day-meta-tag">Dedicated programme space</span><span class="day-meta-tag">Harder and gentler options daily</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>Five days with the property closed to everyone but your group. This is the part of the itinerary that does not exist anywhere else in our region, and it is the reason Bhutan is the reflective format rather than the challenging one.</p><div class="overnight-note">5 nights &middot; the lodge</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">10</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Phobjikha</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Flat valley trail</span><span class="day-meta-tag">About 90 min at an unhurried pace</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>The wider valley and Gangtey. The nature trail is flat, runs about ninety minutes unhurried, and has a turn-back point at any stage.</p><div class="overnight-note">1 night &middot; the lodge</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">11</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Return to Paro &mdash; buffer and integration</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Held for weather</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>Buffer day, held deliberately, and the natural place for the closing session.</p><div class="overnight-note">1 night &middot; Paro</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">12&ndash;13</span><span class="day-word">Days</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Depart</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Two travel days</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>Out of Paro via the hub you came in through.</p></div>
+</article></section>
+<section class="days-section"><div class="prose"><h3>Why the buyout is the product, not an upgrade</h3><p>With 12 to 25 people and enough notice we close the property. For five days everyone on site is your group. No other guests, no other programme, no drift, nobody at the next table. For work that depends on people being willing to say uncomfortable things out loud, that is not a luxury &mdash; it is the operating condition.</p><p>Your 18-month planning cycle and a buyout requirement fit each other exactly, which is not true of most properties worth buying out.</p><h3>Inside that</h3><ul><li><strong>Dedicated programme space</strong>, built in. Most Bhutanese properties have rooms and a restaurant and nowhere to actually run a session.</li><li><strong>A chef&rsquo;s table</strong> with the lead chefs cooking with and for the group &mdash; the kind of thing that becomes a leadership exercise rather than a meal.</li><li><strong>Hot stone baths and active recovery</strong>, so a harder day does not cost you the following morning. These are a centuries-old farmers&rsquo; practice here, not a spa invention.</li><li><strong>A 15-acre working farm.</strong> Food arrives from the field to the kitchen with nothing in between. For a group spending two weeks on alignment and slowing down, the farm is a teaching object rather than scenery.</li><li>Harder and gentler activity options straight off the property, chosen that morning.</li></ul></div></section>
+<div class="photo-strip ps-4"><figure><img src="https://adventure-access.com/images/2026/09/bhutan-trongsa-dzong-courtyard.jpg" alt="An empty dzong courtyard with two storeys of carved timber gallery" loading="lazy"></figure><figure><img src="https://adventure-access.com/images/2024/03/farmhouses.jpg" alt="Bhutanese farmhouses on a hillside in autumn" loading="lazy"></figure><figure><img src="https://adventure-access.com/images/2024/03/fired-river-stones.jpg" alt="River stones fired for a traditional hot stone bath" loading="lazy"></figure><figure><img src="https://adventure-access.com/images/2024/03/host.jpg" alt="A traditional hot stone bath house" loading="lazy"></figure></div>
+<section class="itin-head"><div class="itin-head-inner">
+  <span class="section-label">The lodge</span>
+  <h2>The facilities detail you were promised</h2>
+  <p class="sub">Written out rather than described, because you will need to put it in front of a client.</p>
+  <div class="facts"><div class="fact"><span>Keys</span><strong>20</strong></div><div class="fact"><span>Setting</span><strong>15-acre farm</strong></div><div class="fact"><span>Buyout</span><strong>Available with notice</strong></div><div class="fact"><span>Open</span><strong>Spring, then summer</strong></div></div>
+</div></section>
+<section class="days-section"><dl class="specs"><div class="spec"><dt>Location</dt><dd>Central Bhutan, roughly an hour from Punakha and about three hours from the capital. Off the main tourist circuit; we are the only rooms in that valley.</dd></div><div class="spec"><dt>Setting</dt><dd>A 15-acre working farm, adjacent to a protected <strong>Ramsar wetland</strong>.</dd></div><div class="spec"><dt>Capacity</dt><dd><strong>20 keys</strong> &mdash; 16 standard rooms, one two-bedroom villa, two one-bedroom villas.</dd></div><div class="spec"><dt>Programme space</dt><dd>Dedicated and purpose-built. Suitable for retreats, training, yoga and running camps.</dd></div><div class="spec"><dt>Wellness</dt><dd>Full spa, massage, active recovery, and traditional Bhutanese hot stone baths.</dd></div><div class="spec"><dt>Food</dt><dd>Farm to table, from the property&rsquo;s own farm.</dd></div><div class="spec"><dt>Buyout</dt><dd>Available with sufficient notice &mdash; which suits an 18-month planning cycle exactly.</dd></div><div class="spec"><dt>Opening</dt><dd>Soft opening early spring, fully operational by summer. <strong>Your 2028 timeline is comfortably clear of it.</strong></dd></div><div class="spec"><dt>Ownership</dt><dd>A three-partner project &mdash; Brian, a long-standing ATTA figure based in Kathmandu, and a Bhutanese partner.</dd></div><div class="spec"><dt>Name</dt><dd>Not yet decided. Nothing in this document names the property, and nothing should until it is settled.</dd></div></dl></section>
+<section class="days-section"><div class="changes">
+  <p class="eyebrow section-label">The French question</p>
+  <h2 style="font-family:var(--display);font-weight:400;font-size:1.9rem;margin:0 0 1.2rem;">Answer it, do not dodge it</h2>
+  <div class="change"><span class="mk"></span><div><h4>Our crews work in English on the ground</h4><p>You raised this yourself and did not treat it as a blocker: most of your clients follow English, you translate where needed, and you do precisely this with your Tanzania operator today.</p></div></div><div class="change"><span class="mk"></span><div><h4>Option one &mdash; you bring your own leader</h4><p>As you do now, and translate. Proven, and your preference in practice. It costs nothing to arrange and it is available for 2028 with certainty.</p></div></div><div class="change"><span class="mk"></span><div><h4>Option two &mdash; we look for a French-speaking guide in Bhutan</h4><p>Worth pursuing, and a message went out on it during the summit. It should be offered to you as <em>we are looking</em>, never as <em>we have one</em>, and we will tell you honestly what comes back.</p></div></div>
+</div></section>
+<footer class="footer"><div class="footer-inner">
+  <div class="footer-mark">Adventure Access</div>
+  <div class="footer-divider"></div>
+  <p>Prepared for Patricia Dub&eacute;, Odyss&eacute;e Agence, following the ATWS26 Marketplace, 16 September 2026.</p><p>Routing and pacing are proposals, not confirmed operations. The training design is real; the day-by-day is a proposal.</p><p style="margin-top:.8rem;"><a href="./03-patricia-dube-brief.html" style="color:inherit;">Internal brief and the before-you-send checklist &rarr;</a></p>
+</div></footer>
 </body>
 </html>
