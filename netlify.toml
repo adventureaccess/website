@@ -354,3 +354,13 @@
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
     Content-Security-Policy = "frame-ancestors 'none'"
+
+# Approved client proposals. Public by design (the client has no sign-in), so the
+# folder name carries a random token and nothing links here. A page moves in only
+# once it is approved: its internal version is copied, frozen, to
+# public/proposals/<name>-<token>/index.html. Never indexed, never framed.
+[[headers]]
+  for = "/proposals/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Content-Security-Policy = "frame-ancestors 'none'"
