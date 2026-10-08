@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Bhutan, on foot first — for Meagan Coates, Trek Travel</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+      --display:'Cormorant Garamond',Georgia,serif;
+      --sans:'Jost',ui-sans-serif,system-ui,sans-serif;
+      --display-track:-0.01em;
+      --display-lead:1.0;
+      --radius:0px;
+      --accent:#d97a2c;
+      --accent-light:#e5975a;
+      --dark:#1d242c;
+      --charcoal:#2b3540;
+      --warm-mid:#5a6470;
+      --warm-light:#c2b49c;
+      --cream:#f5f1ea;
+      --cream-dark:#ebe4d6;
+      --white:#fbf9f5;
+      --caveat:#9c4a17;
+    }
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--charcoal);font-family:var(--sans);
+     font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;
+     letter-spacing:var(--display-track);text-wrap:balance;}
+::selection{background:var(--accent);color:var(--white);}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}
+  html{scroll-behavior:auto;}}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+
+.wrap{width:100%;max-width:1000px;margin:0 auto;padding-inline:20px;}
+.section-label{font-family:var(--sans);font-size:.65rem;letter-spacing:.28em;
+     text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;display:block;font-weight:500;}
+
+/* hero */
+.hero{position:relative;min-height:min(680px,88svh);display:flex;flex-direction:column;
+     align-items:center;justify-content:center;text-align:center;overflow:hidden;padding-block:4rem;}
+.hero-bg{position:absolute;inset:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,
+     rgba(20,16,14,.34) 0%,rgba(20,16,14,.52) 60%,rgba(20,16,14,.84) 100%);}
+.hero-content{position:relative;z-index:2;padding-inline:20px;max-width:860px;}
+.hero-eyebrow{font-family:var(--sans);font-weight:500;font-size:.72rem;letter-spacing:.28em;
+     text-transform:uppercase;color:var(--accent-light);margin-bottom:1.6rem;}
+.hero h1{font-weight:300;font-size:clamp(2.8rem,8vw,6.2rem);line-height:var(--display-lead);
+     color:var(--white);margin-bottom:.4rem;}
+.hero h1 em{font-style:italic;color:var(--warm-light);}
+.hero-subtitle{font-family:var(--display);font-size:clamp(1.05rem,2.5vw,1.45rem);
+     color:rgba(253,250,246,.78);font-weight:300;font-style:italic;
+     margin:1.2rem auto 2.4rem;max-width:34ch;}
+.hero-meta{display:flex;justify-content:center;gap:1.6rem 2.5rem;flex-wrap:wrap;}
+.hero-meta-item span{display:block;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+     color:var(--accent-light);margin-bottom:.3rem;}
+.hero-meta-item strong{font-family:var(--display);font-size:1.2rem;font-weight:400;color:var(--white);}
+.hero-divider{width:1px;height:38px;background:rgba(253,250,246,.3);align-self:center;}
+
+/* intro */
+.intro{background:var(--cream);padding:clamp(3.5rem,8vw,5rem) 0;text-align:center;}
+.intro-inner{max-width:700px;margin:0 auto;padding-inline:20px;}
+.intro h2{font-size:clamp(1.9rem,4vw,3rem);line-height:1.2;color:var(--dark);margin-bottom:1.5rem;}
+.intro p{font-size:1.05rem;color:var(--warm-mid);line-height:1.85;}
+
+/* stats */
+.stats{background:var(--dark);display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+.stat{text-align:center;padding:1.8rem 1rem;border-right:1px solid rgba(160,140,110,.22);}
+.stat:last-child{border-right:none;}
+.stat-number{font-family:var(--display);font-size:2.9rem;font-weight:300;color:var(--accent-light);
+     line-height:1;display:block;font-variant-numeric:tabular-nums;}
+.stat-label{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+     color:rgba(200,185,160,.62);margin-top:.5rem;display:block;}
+@media(max-width:640px){.stat{border-right:none;border-bottom:1px solid rgba(160,140,110,.22);}
+  .stat:last-child{border-bottom:none;}}
+
+/* route */
+.route-bar{background:var(--cream-dark);padding:2rem 0;overflow-x:auto;scrollbar-width:none;}
+.route-bar::-webkit-scrollbar{display:none;}
+.route-inner{display:flex;align-items:flex-start;min-width:680px;max-width:1000px;
+     margin:0 auto;padding-inline:20px;}
+.route-stop{display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;
+     text-decoration:none;color:inherit;gap:.45rem;}
+.route-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);}
+.route-stop-name{font-size:.63rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+     color:var(--charcoal);}
+.route-stop-days{font-size:.6rem;color:var(--warm-mid);}
+.route-stop:hover .route-stop-name{color:var(--accent);}
+.route-line{flex:0 1 60px;height:1px;background:linear-gradient(90deg,var(--accent),var(--warm-light));
+     margin-top:.3rem;}
+
+/* photo strip */
+.photo-strip{display:grid;grid-template-columns:repeat(4,1fr);}
+.photo-strip figure{margin:0;aspect-ratio:1/1;overflow:hidden;background:var(--cream-dark);}
+.photo-strip img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease;}
+.photo-strip figure:hover img{transform:scale(1.05);}
+@media(max-width:640px){.photo-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* days */
+.days-section{padding:clamp(3.5rem,8vw,5rem) 0;max-width:1000px;margin:0 auto;padding-inline:20px;}
+.days-header{text-align:center;margin-bottom:3.2rem;}
+.days-header h2{font-size:clamp(1.9rem,4vw,2.8rem);color:var(--dark);}
+.day-group{margin-bottom:3rem;scroll-margin-top:1rem;}
+.day-group-header{display:grid;grid-template-columns:86px 1fr;}
+.day-number-block{background:var(--accent);display:flex;flex-direction:column;align-items:center;
+     justify-content:center;padding:1.2rem .5rem;border-radius:var(--radius) 0 0 0;}
+.day-num{font-family:var(--display);font-size:1.9rem;font-weight:300;color:var(--white);line-height:1;}
+.day-word{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;
+     color:rgba(253,250,246,.72);margin-top:.15rem;}
+.day-header-content{background:var(--dark);padding:1.2rem 1.6rem;border-radius:0 var(--radius) 0 0;
+     display:flex;flex-direction:column;justify-content:center;min-width:0;}
+.day-title{font-family:var(--display);font-size:clamp(1.1rem,2.4vw,1.42rem);font-weight:400;
+     color:var(--white);line-height:1.25;}
+.day-meta-row{display:flex;gap:.4rem 1.4rem;margin-top:.45rem;flex-wrap:wrap;}
+.day-meta-tag{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-light);}
+.day-body{background:var(--cream);border-radius:0 0 var(--radius) var(--radius);
+     padding:1.7rem 1.9rem;border-left:3px solid var(--accent);}
+.day-body p{font-size:.96rem;color:var(--warm-mid);line-height:1.85;margin-bottom:.85rem;}
+.day-body p:last-child{margin-bottom:0;}
+.day-body ul{list-style:none;margin-top:.9rem;}
+.day-body li{font-size:.93rem;color:var(--charcoal);padding:.4rem 0 .4rem 1.4rem;position:relative;
+     line-height:1.65;}
+.day-body li::before{content:'\2192';position:absolute;left:0;color:var(--accent);}
+.day-body strong{font-weight:500;color:var(--charcoal);}
+.day-badge{display:inline-block;background:var(--accent);color:var(--white);font-size:.58rem;
+     letter-spacing:.15em;text-transform:uppercase;padding:.3rem .7rem;border-radius:calc(var(--radius)/2);
+     margin-bottom:1rem;font-weight:500;}
+.overnight-note{display:flex;align-items:baseline;gap:.5rem;margin-top:1.1rem;padding-top:.85rem;
+     border-top:1px solid rgba(160,140,110,.32);font-size:.7rem;font-weight:500;letter-spacing:.1em;
+     text-transform:uppercase;color:var(--warm-mid);}
+.option{background:var(--cream-dark);border-left:3px solid var(--warm-light);margin-top:1.3rem;
+     padding:1.2rem 1.5rem;}
+.option p{font-size:.86rem;color:var(--charcoal);margin:0;line-height:1.75;}
+@media(max-width:560px){.day-group-header{grid-template-columns:62px 1fr;}
+  .day-num{font-size:1.5rem;}.day-body{padding:1.3rem 1.2rem;}}
+
+/* quote */
+.pull-quote{background:var(--accent);padding:clamp(3rem,7vw,4rem) 0;text-align:center;}
+.pull-quote blockquote{font-family:var(--display);font-size:clamp(1.3rem,3vw,2.1rem);font-style:italic;
+     font-weight:300;color:var(--white);max-width:44ch;margin:0 auto;line-height:1.4;padding-inline:20px;}
+
+/* highlights */
+.highlights{background:var(--dark);padding:clamp(3.5rem,8vw,5rem) 0;}
+.highlights-inner{max-width:1000px;margin:0 auto;padding-inline:20px;}
+.highlights-header{text-align:center;margin-bottom:3rem;}
+.highlights-header .section-label{color:var(--accent-light);}
+.highlights-header h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:300;color:var(--white);}
+.highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.4rem;}
+.highlight-card{border:1px solid rgba(160,140,110,.25);padding:1.9rem;border-radius:var(--radius);
+     transition:border-color .3s;}
+.highlight-card:hover{border-color:var(--accent);}
+.highlight-rule{width:32px;height:2px;background:var(--accent);margin-bottom:1.1rem;}
+.highlight-card h3{font-size:1.22rem;font-weight:400;color:var(--warm-light);margin-bottom:.6rem;}
+.highlight-card p{font-size:.88rem;color:rgba(200,185,160,.66);line-height:1.75;}
+
+/* accommodation */
+.accommodation{background:var(--cream-dark);padding:clamp(3.5rem,8vw,5rem) 0;text-align:center;}
+.accommodation-inner{max-width:780px;margin:0 auto;padding-inline:20px;}
+.accommodation h2{font-size:clamp(1.9rem,4vw,2.8rem);color:var(--dark);margin-bottom:1.2rem;}
+.accommodation p{font-size:1rem;color:var(--warm-mid);line-height:1.85;margin-bottom:1.2rem;}
+.accom-types{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap;margin-top:2rem;}
+.accom-tag{border:1px solid var(--accent);color:var(--accent);font-size:.63rem;letter-spacing:.18em;
+     text-transform:uppercase;padding:.6rem 1.1rem;border-radius:calc(var(--radius)/2);font-weight:500;}
+
+/* footer */
+.footer{background:var(--dark);padding:3rem 0;text-align:center;}
+.footer-inner{padding-inline:20px;}
+.footer-mark{font-family:var(--display);font-size:1.5rem;color:var(--warm-light);
+     letter-spacing:.02em;margin-bottom:.4rem;}
+.footer-divider{width:40px;height:1px;background:var(--accent);margin:1.3rem auto;}
+.footer p{font-size:.76rem;color:rgba(200,185,160,.5);letter-spacing:.04em;line-height:1.9;}
+
+
+/* ---- the scheduling problem ---- */
+.problem{background:var(--dark);padding:clamp(3rem,7vw,4.5rem) 0;}
+.problem-inner{max-width:860px;margin:0 auto;padding-inline:20px;}
+.problem .section-label{color:var(--accent-light);}
+.problem h2{font-size:clamp(1.8rem,4vw,2.6rem);color:var(--white);font-weight:300;margin-bottom:1.2rem;}
+.problem p{color:rgba(200,185,160,.78);font-size:1rem;line-height:1.85;margin-bottom:1rem;}
+.problem p strong{color:var(--white);font-weight:400;}
+.windows{margin-top:2rem;border-top:1px solid rgba(160,140,110,.28);}
+.window{display:grid;grid-template-columns:150px 1fr;gap:1.2rem;padding:1.2rem 0;
+        border-bottom:1px solid rgba(160,140,110,.28);}
+.window dt{font-family:var(--display);font-size:1.25rem;color:var(--accent-light);line-height:1.2;}
+.window dt small{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.2em;
+        text-transform:uppercase;color:rgba(200,185,160,.55);margin-top:.3rem;}
+.window dd{margin:0;color:rgba(200,185,160,.78);font-size:.94rem;line-height:1.8;}
+@media(max-width:600px){.window{grid-template-columns:1fr;gap:.4rem;}}
+
+/* ---- itinerary divider ---- */
+.itin-head{background:var(--cream-dark);padding:clamp(2.6rem,6vw,3.6rem) 0;}
+.itin-head-inner{max-width:1000px;margin:0 auto;padding-inline:20px;}
+.itin-head h2{font-size:clamp(1.9rem,4.4vw,3rem);color:var(--dark);line-height:1.1;margin-bottom:.6rem;}
+.itin-head .sub{font-family:var(--display);font-style:italic;font-size:1.1rem;color:var(--warm-mid);
+        margin-bottom:1.4rem;}
+.facts{display:flex;flex-wrap:wrap;gap:.6rem 2rem;padding-top:1.2rem;
+        border-top:1px solid rgba(90,100,112,.22);}
+.fact span{display:block;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;
+        color:var(--accent);margin-bottom:.2rem;font-weight:500;}
+.fact strong{font-family:var(--display);font-size:1.08rem;font-weight:400;color:var(--charcoal);}
+
+/* ---- change list (itinerary B) ---- */
+.changes{max-width:1000px;margin:0 auto;padding-inline:20px;}
+.change{display:grid;grid-template-columns:auto 1fr;gap:1rem;padding:1.15rem 0;
+        border-bottom:1px solid rgba(90,100,112,.16);align-items:start;}
+.change:last-of-type{border-bottom:none;}
+.change .mk{width:7px;height:7px;border-radius:50%;background:var(--accent);margin-top:.62rem;}
+.change h4{font-family:var(--display);font-size:1.12rem;font-weight:400;color:var(--charcoal);
+        margin-bottom:.25rem;}
+.change p{font-size:.94rem;color:var(--warm-mid);line-height:1.8;}
+
+/* ---- honesty notice ---- */
+.notice{background:var(--cream-dark);border-left:3px solid var(--caveat);padding:1.1rem 1.35rem;
+        margin-top:1.2rem;}
+.notice .lbl{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--caveat);
+        font-weight:600;margin-bottom:.4rem;display:block;font-family:var(--sans);}
+.notice p{font-size:.88rem;color:var(--charcoal);line-height:1.78;margin:0;}
+
+/* ---- draft banner ---- */
+.draft{background:var(--caveat);color:#fdf6ee;text-align:center;padding:.7rem 20px;
+       font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+       font-family:var(--sans);}
+
+
+/* multi-paragraph intros: Cate's page had one short centred line; these have several */
+.intro-inner p{text-align:left;margin:0 0 1.1rem;}
+.intro-inner p:last-child{margin-bottom:0;}
+.problem-inner p{text-align:left;}
+/* prose blocks inside a band */
+.prose{max-width:760px;margin:0 auto;padding-inline:20px;}
+.prose h3{font-family:var(--display);font-weight:500;font-size:1.45rem;
+  color:var(--charcoal);margin:2.4rem 0 .7rem;line-height:1.25;}
+.prose p{font-size:1rem;color:var(--warm-mid);line-height:1.85;margin:0 0 1.05rem;}
+.prose strong{color:var(--charcoal);font-weight:600;}
+.prose ul{margin:0 0 1.2rem;padding-left:1.15rem;}
+.prose li{font-size:1rem;color:var(--warm-mid);line-height:1.8;margin:0 0 .5rem;}
+.prose li strong{color:var(--charcoal);}
+
+/* the one-sentence line an advisor can repeat */
+.sentence{border-left:3px solid var(--accent);padding:.2rem 0 .2rem 1.15rem;
+  margin:0 0 1.4rem;}
+.sentence p{font-family:var(--display);font-size:1.32rem;line-height:1.45;
+  color:var(--charcoal);font-style:italic;margin:0;}
+
+/* back link */
+.backbar{max-width:1000px;margin:0 auto;padding:1rem 20px 0;}
+.backbar a{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--warm-mid);text-decoration:none;}
+.backbar a:hover{color:var(--caveat);}
+
+/* photo strips adapt to how many frames we actually hold */
+.photo-strip.ps-2{grid-template-columns:repeat(2,1fr);}
+.photo-strip.ps-3{grid-template-columns:repeat(3,1fr);}
+.photo-strip.ps-4{grid-template-columns:repeat(4,1fr);}
+@media(max-width:760px){
+  .photo-strip.ps-2,.photo-strip.ps-3,.photo-strip.ps-4{grid-template-columns:repeat(2,1fr);}
+}
+
+/* spec list: lodge facts, kit lists, anything label/value and long */
+.specs{max-width:760px;margin:0 auto;padding-inline:20px;}
+.spec{display:grid;grid-template-columns:11rem 1fr;gap:.4rem 1.4rem;
+  padding:.85rem 0;border-bottom:1px solid var(--cream-dark);}
+.spec:last-child{border-bottom:none;}
+.spec dt{font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--accent);padding-top:.22rem;}
+.spec dd{margin:0;font-size:.97rem;color:var(--warm-mid);line-height:1.8;}
+.spec dd strong{color:var(--charcoal);font-weight:600;}
+@media(max-width:620px){.spec{grid-template-columns:1fr;gap:.15rem;}}
+
+/* single wide image between sections */
+.plate{margin:0;}
+.plate img{display:block;width:100%;height:clamp(240px,38vw,460px);object-fit:cover;}
+.plate figcaption{max-width:1000px;margin:.6rem auto 0;padding-inline:20px;
+  font-size:.76rem;color:var(--warm-mid);}
+
+</style>
+<style>.photo-strip figure{position:relative;}.photo-strip figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.6rem .8rem .55rem;background:linear-gradient(180deg,rgba(20,16,12,0) 0%,rgba(20,16,12,.62) 100%);color:#fdfaf6;font-family:var(--sans);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;line-height:1.35;pointer-events:none;}.hero-place{position:absolute;right:16px;bottom:12px;z-index:3;color:rgba(253,250,246,.82);font-family:var(--sans);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;}@media(max-width:640px){.photo-strip figcaption{font-size:.58rem;letter-spacing:.12em;padding:1.2rem .6rem .45rem;}}</style></head>
+<body>
+<section class="hero">
+  <div class="hero-bg"><img src="https://adventure-access.com/images/2026/09/bhutan-punakha-dzong-river-daylight.jpg" alt="Punakha Dzong in daylight above the river"></div><span class="hero-place">Punakha Dzong, Bhutan</span>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Prepared for Meagan Coates, Trek Travel &middot; October 2026</p>
+    <h1>Bhutan,<br><em>on foot first</em></h1>
+    <p class="hero-subtitle">A hiking itinerary for your Hiking &amp; Walking line, and a look at the bikes that are on the way</p>
+    <div class="hero-meta"><div class="hero-meta-item"><span>Trip style</span><strong>Hiking &amp; Walking</strong></div><div class="hero-divider"></div><div class="hero-meta-item"><span>On the ground</span><strong>11 days</strong></div><div class="hero-divider"></div><div class="hero-meta-item"><span>Bikes</span><strong>On the way</strong></div></div>
+  </div>
+</section>
+<section class="intro"><div class="intro-inner">
+  <span class="section-label">Why Bhutan, and why on foot</span>
+  <h2>The Himalaya without the expedition</h2>
+  <p>Your Asia-Pacific map today is Japan, New Zealand and Thailand. Bhutan would be the first Himalayan country on it, and it is the easiest one to start with: the trails are on foot, the valleys are green, and the days are long walks between monasteries, farms and villages rather than high-altitude pushes.</p><p>Your activity levels measure distance and climbing. Bhutan adds a third thing to plan for, which is elevation. This trip stays between about 4,300 ft in Punakha and 10,200 ft on Dochu La, a range most active travelers handle comfortably once the first days are paced properly. We would rather map each day to your levels with you than guess at them here.</p><p>Everything below is a proposal. We run no set departures, so the routing, the length and the hiking on each day can be shaped to fit your product.</p>
+</div></section>
+<div class="photo-strip ps-4"><figure><img src="https://adventure-access.com/images/2026/09/bhutan-village-path.jpg" alt="A track across a Bhutanese valley floor" loading="lazy"><figcaption>Rural Bhutan</figcaption></figure><figure><img src="https://adventure-access.com/images/2024/03/bhutan03.jpg" alt="Chortens at Dochu La with the eastern Himalaya behind" loading="lazy"><figcaption>Dochu La, Bhutan</figcaption></figure><figure><img src="https://adventure-access.com/images/2024/03/bhutan02.jpg" alt="Punakha Dzong above the river" loading="lazy"><figcaption>Punakha Dzong, Bhutan</figcaption></figure><figure><img src="https://adventure-access.com/images/2024/03/farmhouses.jpg" alt="Bhutanese farmhouses on a hillside in autumn" loading="lazy"><figcaption>Rural Bhutan</figcaption></figure></div>
+<section class="itin-head" id="itinerary"><div class="itin-head-inner">
+  <span class="section-label">The itinerary</span>
+  <h2>Bhutan on foot &mdash; 14 days</h2>
+  <p class="sub">Eleven days on the ground. A hike every day, always with a longer and a gentler option.</p>
+  <div class="facts"><div class="fact"><span>On the ground</span><strong>11 days</strong></div><div class="fact"><span>Door to door</span><strong>14 days</strong></div><div class="fact"><span>Season</span><strong>Mar&ndash;May &middot; Sep&ndash;Nov</strong></div><div class="fact"><span>Elevation</span><strong>4,300&ndash;10,200 ft</strong></div><div class="fact"><span>At our lodge</span><strong>3 nights</strong></div></div>
+</div></section>
+<section class="days-section"><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">1&ndash;2</span><span class="day-word">Days</span></div>
+    <div class="day-header-content">
+      <div class="day-title">In transit</div>
+      <div class="day-meta-row"><span class="day-meta-tag">US &rarr; Asia</span><span class="day-meta-tag">One hub</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>From the US via one Asian hub into Paro. Travel at the two ends takes about four days of any Asia trip, which is why fourteen days door to door is the honest length here.</p></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">3</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Arrive Paro</div>
+      <div class="day-meta-row"><span class="day-meta-tag">7,300 ft</span><span class="day-meta-tag">Met at the airport</span><span class="day-meta-tag">Nothing scheduled</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>Met at the airport, short transfer, easy afternoon. Nothing is scheduled on arrival day on purpose.</p><div class="overnight-note">1 night &middot; Paro</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">4</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Paro valley &mdash; the first walk</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Kyichu Lhakhang</span><span class="day-meta-tag">Valley trails</span><span class="day-meta-tag">Gentle by design</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>A first walk along the valley floor and up to Kyichu Lhakhang, one of the oldest temples in the country. Kept deliberately easy: the point is to get legs moving after the flights and let everyone settle into the elevation.</p><div class="overnight-note">1 night &middot; Paro</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">5</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Paro to Thimphu, and the first real hike</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Road 90 min</span><span class="day-meta-tag">Trails above the city</span><span class="day-meta-tag">Takin preserve</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>Ninety minutes of road, then an afternoon hike on the trails above Thimphu. The gentler option is the takin preserve, Bhutan&rsquo;s national animal, on flat paths.</p><div class="overnight-note">1 night &middot; Thimphu</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">6</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Over Dochu La to Punakha</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Pass 10,200 ft</span><span class="day-meta-tag">Walk among the chortens</span><span class="day-meta-tag">Down to 4,300 ft</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>A walk among the chortens at Dochu La, with the eastern Himalaya behind them on a clear morning, then the drive down to the warm Punakha valley. Punakha Dzong in the late afternoon light.</p><div class="overnight-note">1 night &middot; Punakha</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">7</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Punakha &mdash; river, bridge and villages</div>
+      <div class="day-meta-row"><span class="day-meta-tag">River valley</span><span class="day-meta-tag">Suspension bridge</span><span class="day-meta-tag">Village walking</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>Along the river, across the long suspension bridge and on through the villages. The longer option climbs to a hillside temple above the valley; the gentler one stays on the valley floor.</p><div class="overnight-note">1 night &middot; Punakha</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">8</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Punakha to our lodge in the Khotokha valley</div>
+      <div class="day-meta-row"><span class="day-meta-tag">About an hour</span><span class="day-meta-tag">Our own property</span><span class="day-meta-tag">Afternoon walk</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>About an hour on the road to our own lodge in the Khotokha valley, off the standard circuit. An easy afternoon walk across the valley floor to settle in.</p><div class="overnight-note">1 night &middot; our lodge, Khotokha</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">9</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Khotokha &mdash; two options from the lodge</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Longer hike</span><span class="day-meta-tag">Or the farm and the village</span><span class="day-meta-tag">Hot stone bath</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>Two options offered at breakfast: a longer hike into the hills around the valley, or the farm, the village and the valley floor. The group splits and rejoins at dinner, and the day ends with a traditional hot stone bath.</p><div class="overnight-note">1 night &middot; our lodge, Khotokha</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">10</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Phobjikha &mdash; the glacial valley</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Gangtey nature trail</span><span class="day-meta-tag">Flat and wide</span><span class="day-meta-tag">Cranes late Oct &ndash; Mar</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>Over to the wide glacial valley of Phobjikha and the Gangtey nature trail, an easy walk across open country, and back to the lodge for the evening. From late October into March this is where the black-necked cranes winter; a departure outside those months will not see them, and it is better to say so than to imply it.</p><div class="overnight-note">1 night &middot; our lodge, Khotokha</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">11</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">The lodge to Paro</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Long road day</span><span class="day-meta-tag">Broken by stops</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>A long day on the road, broken by stops rather than driven straight. Back in the Paro valley for the last three nights.</p><div class="overnight-note">1 night &middot; Paro</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">12</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Tiger&rsquo;s Nest</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Real climb, graded trail</span><span class="day-meta-tag">Three ways to do it</span><span class="day-meta-tag">Saved for last</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>Kept for the end of the trip, when everyone is acclimatized and has a week of walking behind them. It is a real climb on a well-graded trail, and the group splits naturally into three: the full ascent, the halfway teahouse, or the valley below.</p><div class="overnight-note">1 night &middot; Paro</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">13</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Paro &mdash; held in reserve</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Weather</span><span class="day-meta-tag">Not padding</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>A day held for weather before the international flights. If it is not needed, it is a free day in Paro rather than a wasted one.</p><div class="overnight-note">1 night &middot; Paro</div></div>
+</article><article class="day-group">
+  <div class="day-group-header">
+    <div class="day-number-block"><span class="day-num">14</span><span class="day-word">Day</span></div>
+    <div class="day-header-content">
+      <div class="day-title">Depart</div>
+      <div class="day-meta-row"><span class="day-meta-tag">Paro &rarr; hub</span></div>
+    </div>
+  </div>
+  <div class="day-body"><p>Out via the hub you came in through.</p></div>
+</article></section>
+<div class="photo-strip ps-4"><figure><img src="https://adventure-access.com/images/2026/07/khotokha-valley.jpg" alt="The Khotokha valley floor at first light" loading="lazy"><figcaption>Khotokha valley, Bhutan</figcaption></figure><figure><img src="https://adventure-access.com/images/2026/09/bhutan-takin-preserve-herd.jpg" alt="Takin at the preserve in Thimphu" loading="lazy"><figcaption>Motithang Takin Preserve, Thimphu</figcaption></figure><figure><img src="https://adventure-access.com/images/2024/03/fired-river-stones.jpg" alt="River stones fired for a traditional hot stone bath" loading="lazy"><figcaption>Hot stone bath, Bhutan</figcaption></figure><figure><img src="https://adventure-access.com/images/2024/05/Bhutan-Hero-Image.jpg" alt="Taktsang, the Tiger&amp;rsquo;s Nest monastery, on its cliff face" loading="lazy"><figcaption>Taktsang (Tiger&rsquo;s Nest), Paro, Bhutan</figcaption></figure></div>
+<section class="itin-head"><div class="itin-head-inner">
+  <span class="section-label">What sits underneath</span>
+  <h2>How we run it</h2>
+  <p class="sub">The parts that decide whether a supplier is worth building a product on.</p>
+  <div class="facts"><div class="fact"><span>Guides</span><strong>Ours</strong></div><div class="fact"><span>Set departures</span><strong>None</strong></div><div class="fact"><span>Permits</span><strong>Carried by us</strong></div><div class="fact"><span>Base</span><strong>Bhutan</strong></div></div>
+</div></section>
+<section class="days-section"><dl class="specs"><div class="spec"><dt>Ground operation</dt><dd>Our own team in Bhutan handles arrivals, transfers, guides, accommodation and every government permit, with one point of contact for you.</dd></div><div class="spec"><dt>Pace</dt><dd>Two options most days, one longer and one gentler, from the same base, rejoining at dinner. It keeps a mixed group in the trip rather than in their rooms.</dd></div><div class="spec"><dt>Our lodge</dt><dd>Our own property in the Khotokha valley, between Phobjikha and Wangdue and about an hour from Punakha: 20 keys on a working farm, with traditional hot stone baths. Soft opening in early spring, fully operational by summer. It does not have a decided name yet, so nothing here gives it one.</dd></div><div class="spec"><dt>Season</dt><dd>March to May and September to November. The summer monsoon is out.</dd></div></dl></section>
+<section class="itin-head" id="bikes"><div class="itin-head-inner">
+  <span class="section-label">On the way</span>
+  <h2>Trek bikes on the ground in Bhutan</h2>
+  <p class="sub">Not a product yet. Worth knowing about now.</p>
+  <div class="facts"><div class="fact"><span>Status</span><strong>On the way</strong></div><div class="fact"><span>Brian</span><strong>Based in Bhutan</strong></div></div>
+</div></section>
+<section class="days-section"><div class="prose"><p>Trek bikes on the ground in Bhutan are on the way. Brian is based in Bhutan from late October, and the same valleys this itinerary walks, Thimphu, Punakha, Khotokha and the roads between them, are the ones we are riding with that in mind.</p><p>When the bikes are here, a hiking departure and a riding departure could share a route, a lodge and a crew. That is the conversation worth having once they are, and we will tell you when it is ready rather than before.</p></div></section>
+<div class="photo-strip ps-2"><figure><img src="https://adventure-access.com/images/2026/09/bhutan-mtb-rider-above-thimphu.jpg" alt="A mountain biker on a ridge trail above Thimphu" loading="lazy"><figcaption>Above Thimphu, Bhutan</figcaption></figure><figure><img src="https://adventure-access.com/images/2024/03/bhutan08.jpg" alt="Mountain bikers on a trail in Bhutan" loading="lazy"><figcaption>Above Thimphu, Bhutan</figcaption></figure></div>
+<section class="days-section"><div class="changes">
+  <p class="eyebrow section-label">Next</p>
+  <h2 style="font-family:var(--display);font-weight:400;font-size:1.9rem;margin:0 0 1.2rem;">What would move this forward</h2>
+  <div class="change"><span class="mk"></span><div><h4>Tell us where your Hiking &amp; Walking levels sit</h4><p>We will map each day of this itinerary to them, so it reads as one of your trips rather than ours.</p></div></div><div class="change"><span class="mk"></span><div><h4>Pick a season to look at first</h4><p>Spring and autumn both work. Autumn adds the cranes in Phobjikha from late October.</p></div></div><div class="change"><span class="mk"></span><div><h4>Come and see it</h4><p>Brian is based in Bhutan from late October. A recce is the fastest way to decide whether this belongs in your Asia-Pacific line.</p></div></div>
+</div></section>
+<footer class="footer"><div class="footer-inner">
+  <div class="footer-mark">Adventure Access</div>
+  <div class="footer-divider"></div>
+  <p>Prepared for Meagan Coates, Trek Travel, following the ATWS26 Marketplace, 16 September 2026.</p><p>Routing and pacing are proposals, not confirmed operations.</p>
+</div></footer>
+</body>
+</html>
