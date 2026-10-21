@@ -273,5 +273,38 @@ const allSchemas = [orgSchema, ...extraSchemas];
     <Footer />
     {!isInternalPage && <ConsentBanner />}
     <RevealObserver />
+
+    <!-- YouLi trip-click tracking (band-aid until trips move off YouLi).
+         The YouLi embed renders plain <a> links into our own DOM (no iframe),
+         so one delegated listener can log which trip a visitor opened before
+         they leave for youli.io. Fires GA4 event `youli_trip_click`. -->
+    <script is:inline>
+      (function () {
+        function linkType(a) {
+          if (a.classList.contains('card-button')) return 'button';
+          if (a.classList.contains('card-link-itinerary')) return 'itinerary';
+          if (a.closest('h1,h2,h3,h4,h5')) return 'title';
+          if (a.querySelector('img')) return 'image';
+          return 'other';
+        }
+        document.addEventListener('click', function (e) {
+          var link = e.target.closest && e.target.closest('.youli-embed a[href]');
+          if (!link || typeof window.gtag !== 'function') return;
+          var card = link.closest('.trip-card-wrapper');
+          var title = card && card.querySelector('h3, h2, h4');
+          var group = link.closest('[data-youli-tag]');
+          var slug = '';
+          try { slug = new URL(link.href).pathname.split('/').filter(Boolean).pop() || ''; } catch (err) {}
+          window.gtag('event', 'youli_trip_click', {
+            trip_name: ((title && title.textContent) || link.textContent || '').trim().slice(0, 100),
+            trip_slug: slug,
+            youli_tag: group ? group.getAttribute('data-youli-tag') : '',
+            link_type: linkType(link),
+            link_url: link.href,
+            transport_type: 'beacon'
+          });
+        }, true);
+      })();
+    </script>
   </body>
 </html>
