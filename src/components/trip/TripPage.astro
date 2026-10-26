@@ -139,10 +139,15 @@ const money = (n: number) => '$' + n.toLocaleString('en-US');
       <span class="section-label">{t.chapters.label}</span>
       <h2>{t.chapters.heading}</h2>
       {t.chapters.lede && <p>{t.chapters.lede}</p>}
+      <div class="days-toggle">
+        <button type="button" data-days="open">Expand all</button>
+        <span aria-hidden="true">·</span>
+        <button type="button" data-days="close">Collapse all</button>
+      </div>
     </div>
-    {t.chapters.groups.map((g) => (
-      <div class="day-group">
-        <div class="day-group-header">
+    {t.chapters.groups.map((g, i) => (
+      <details class="day-group" open={i === 0}>
+        <summary class="day-group-header">
           <div class="day-number-block">
             <span class={`day-num ${dayRange(g.dayStart, g.dayEnd).length > 4 ? 'day-num-long' : ''}`}>{dayRange(g.dayStart, g.dayEnd)}</span>
             <span class="day-word">{g.dayStart === g.dayEnd ? 'Day' : 'Days'}</span>
@@ -151,7 +156,8 @@ const money = (n: number) => '$' + n.toLocaleString('en-US');
             <div class="day-title">{g.title}</div>
             {g.tags.length > 0 && <div class="day-meta-row">{g.tags.map((tag) => <span class="day-meta-tag">{tag}</span>)}</div>}
           </div>
-        </div>
+          <span class="day-chevron" aria-hidden="true"></span>
+        </summary>
         <div class="day-body">
           {g.badge && <div class="day-badge">{g.badge}</div>}
           {g.prose.map((p) => <p>{p}</p>)}
@@ -168,9 +174,22 @@ const money = (n: number) => '$' + n.toLocaleString('en-US');
           </ul>
           {g.overnight && <div class="overnight-note">{g.overnight}</div>}
         </div>
-      </div>
+      </details>
     ))}
   </section>
+  <script is:inline>
+    // Expand / collapse all chapters, and open every chapter before printing.
+    (function () {
+      var groups = document.querySelectorAll('details.day-group');
+      document.querySelectorAll('[data-days]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var open = b.getAttribute('data-days') === 'open';
+          groups.forEach(function (g) { g.open = open; });
+        });
+      });
+      window.addEventListener('beforeprint', function () { groups.forEach(function (g) { g.open = true; }); });
+    })();
+  </script>
 
   <!-- PULL QUOTE + PHOTO STRIP 2 -->
   {t.pullQuote && <div class="pull-quote"><blockquote>“{t.pullQuote}”</blockquote></div>}
@@ -426,6 +445,23 @@ const money = (n: number) => '$' + n.toLocaleString('en-US');
 
   /* ===== ADDITIONS FOR THE SITE VERSION (not in Brian's framework) ===== */
   .day-num-long { font-size: 1.5rem; }
+  /* Collapsible chapters (details/summary, works without JS) */
+  .day-group > summary { list-style: none; cursor: pointer; }
+  .day-group > summary::-webkit-details-marker { display: none; }
+  .day-group-header { grid-template-columns: 80px 1fr auto; }
+  .day-chevron { background: var(--dark); display: flex; align-items: center; padding: 0 1.4rem; border-radius: 0 4px 0 0; }
+  .day-chevron::before { content: ''; width: 9px; height: 9px; border-right: 1.5px solid var(--orange-light); border-bottom: 1.5px solid var(--orange-light); transform: rotate(45deg); transition: transform 0.2s ease; margin-top: -4px; }
+  .day-group[open] .day-chevron::before { transform: rotate(-135deg); margin-top: 4px; }
+  .day-group .day-header-content { border-radius: 0; }
+  .day-group:not([open]) .day-number-block { border-radius: 4px 0 0 4px; }
+  .day-group:not([open]) .day-chevron { border-radius: 0 4px 4px 0; }
+  .day-group > summary:hover .day-title { color: var(--orange-light); }
+  .day-group > summary:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+  .day-group { margin-bottom: 1.2rem; }
+  .day-group[open] { margin-bottom: 2.5rem; }
+  .days-toggle { margin-top: 1.4rem; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm-light); }
+  .days-toggle button { background: none; border: 0; font: inherit; letter-spacing: inherit; text-transform: inherit; color: var(--orange); cursor: pointer; padding: 0.3rem 0.4rem; }
+  .days-toggle button:hover { text-decoration: underline; }
   .review-bar { position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: 0.55rem 1.2rem; background: #9c4a17; color: #fdf6ee; font-size: 0.72rem; letter-spacing: 0.04em; }
   .review-bar a { color: #fdf6ee; }
   .track { display: block; }
@@ -453,7 +489,8 @@ const money = (n: number) => '$' + n.toLocaleString('en-US');
     .stat { border-right: none; border-bottom: 1px solid rgba(196,168,130,0.2); padding: 1.2rem; }
     .stat:last-child { border-bottom: none; }
     .photo-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); height: 360px; }
-    .day-group-header { grid-template-columns: 64px 1fr; }
+    .day-group-header { grid-template-columns: 64px 1fr auto; }
+    .day-chevron { padding: 0 1rem; }
     .day-num { font-size: 1.45rem; }
     .day-num-long { font-size: 1.1rem; }
     .day-header-content { padding: 1rem 1.1rem; }
@@ -464,7 +501,7 @@ const money = (n: number) => '$' + n.toLocaleString('en-US');
     .hero-divider { display: none; }
   }
   @media print {
-    .review-bar { display: none; }
+    .review-bar, .days-toggle, .day-chevron { display: none; }
     .hero { height: auto; min-height: 0; padding: 6rem 2rem; }
     .scroll-indicator, .brand-tier { display: none; }
     .day-group, .highlight-card { break-inside: avoid; }
