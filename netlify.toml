@@ -3,7 +3,7 @@
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "22"
 
 # Serverless functions (GA4 page-views proxy for the marketing dashboard,
 # plus the Google/GitHub sign-in flow).
