@@ -1,0 +1,56 @@
+---
+/**
+ * /internal/trips/ — the trip library: every trip file, its status, and where
+ * it came from. Behind Google sign-in (gate.js), noindex, not in the sitemap.
+ */
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+
+const trips = (await getCollection('trips')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+const money = (n: number) => '$' + n.toLocaleString('en-US');
+---
+
+<Base title="Trip Library — Adventure Access" description="Internal trip library." noindex={true}>
+  <div class="pt-32 md:pt-40 pb-20 md:pb-28 min-h-[70vh]">
+    <div class="max-w-8xl mx-auto px-5 md:px-14">
+      <div class="eyebrow mb-3">— Internal</div>
+      <h1 class="display text-4xl md:text-6xl mb-4">Trip Library.</h1>
+      <p class="text-lg leading-relaxed text-ink-soft max-w-2xl mb-10">
+        Trips moving off YouLi, rendered from the files in <code>src/content/trips/</code>.
+        Nothing here is public yet.
+      </p>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="border-b border-ink/20 text-ink-soft uppercase tracking-wider text-xs">
+              <th class="py-3 pr-4">Trip</th>
+              <th class="py-3 pr-4">Destination</th>
+              <th class="py-3 pr-4">Days</th>
+              <th class="py-3 pr-4">Starting at</th>
+              <th class="py-3 pr-4">Status</th>
+              <th class="py-3 pr-4">Visibility</th>
+              <th class="py-3 pr-4">Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            {trips.map((t) => {
+              const last = t.data.chapters.groups.at(-1);
+              return (
+                <tr class="border-b border-ink/10">
+                  <td class="py-3 pr-4"><a class="text-saffron-dark underline" href={`/internal/trips/${t.id}/`}>{t.data.title}</a></td>
+                  <td class="py-3 pr-4 capitalize">{t.data.destination}</td>
+                  <td class="py-3 pr-4">{last?.dayEnd}</td>
+                  <td class="py-3 pr-4">{t.data.pricing ? money(t.data.pricing.from) : '—'}</td>
+                  <td class="py-3 pr-4">{t.data.status}</td>
+                  <td class="py-3 pr-4">{t.data.visibility}</td>
+                  <td class="py-3 pr-4">{t.data.source?.youli ? <a class="underline" href={t.data.source.youli} target="_blank" rel="noopener">YouLi</a> : '—'}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</Base>

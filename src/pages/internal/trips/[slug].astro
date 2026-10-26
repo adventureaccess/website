@@ -1,0 +1,24 @@
+---
+/**
+ * /internal/trips/<slug>/ — internal preview of one trip file.
+ *
+ * Behind the same Google sign-in as /internal/dashboard/ (gate.js covers
+ * /internal/*), noindex in the page and in the X-Robots-Tag header
+ * (netlify.toml), and not in sitemap.xml.ts.
+ *
+ * The trip pages contain no private data today, so the edge gate is the only
+ * protection needed. A trip prepared for a named client should stay internal
+ * until the unlisted (token URL) mode exists.
+ */
+import { getCollection } from 'astro:content';
+import TripPage from '../../../components/trip/TripPage.astro';
+
+export async function getStaticPaths() {
+  const trips = await getCollection('trips', (t) => t.data.status !== 'archived');
+  return trips.map((trip) => ({ params: { slug: trip.id }, props: { trip } }));
+}
+
+const { trip } = Astro.props;
+---
+
+<TripPage trip={trip} review={true} />
