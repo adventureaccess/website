@@ -1,0 +1,254 @@
+{
+  "title": "Ladakh Multisport",
+  "status": "review",
+  "visibility": "internal",
+  "destination": "ladakh",
+  "kind": "template",
+  "source": {
+    "youli": "https://youli.io/t/adventure-access/ladakh-multisport",
+    "migratedOn": "2026-10-25",
+    "notes": "Copy and day order from the public YouLi page. Photos are from our own July 2026 Zanskar set, not the YouLi images. Lightly edited for American English and typos; no facts added."
+  },
+  "seo": {
+    "title": "Ladakh Multisport — 12 Days in Zanskar and Leh | Adventure Access",
+    "description": "Twelve days from Delhi to Zanskar and Leh, with a culture track and an adventure track every day. From $8,589, double occupancy."
+  },
+  "hero": {
+    "eyebrow": "Multisport Journey · May to October",
+    "title": "Ladakh",
+    "titleEm": "Multisport",
+    "subtitle": "Twelve days in Zanskar and Leh, with two ways to spend every day and one table to share every evening",
+    "image": "/images/2024/05/Ladakh-hero-image.jpg",
+    "imageAlt": "Mountains above a Ladakhi valley",
+    "meta": [
+      { "label": "Duration", "value": "12 Days · Delhi to Delhi" },
+      { "label": "Season", "value": "May – October" },
+      { "label": "Starting at", "value": "$8,589" }
+    ]
+  },
+  "intro": {
+    "label": "The Journey",
+    "heading": "Two Tracks, One Group",
+    "paragraphs": [
+      "The culture in Zanskar has stayed mostly unchanged for a thousand years. This journey spends much of its time with Ladakhi people and in local homes, a look at Himalayan mountain life as it was hundreds of years ago. Time in Leh, the busy capital of Ladakh, and in New Delhi adds the range that makes India such a colorful country.",
+      "Every day offers two paths: one rooted in cultural immersion, the other in high adventure. Families and friends of different ages and interests travel together, take different adventures by day, and come back together in the evening with stories from the same landscape. Our local specialists handle everything from airport pickup to drop-off."
+    ]
+  },
+  "stats": [
+    { "value": "12", "label": "Days, Delhi to Delhi" },
+    { "value": "2", "label": "Tracks every day" },
+    { "value": "16,000", "label": "Feet, highest altitudes" },
+    { "value": "3%", "label": "Of revenue to Zanskar schools" }
+  ],
+  "route": [
+    { "name": "Delhi", "days": "Arrive Day 1" },
+    { "name": "Nimmu", "days": "Days 1–2" },
+    { "name": "Zangla", "days": "Days 3–5" },
+    { "name": "Nerak", "days": "Day 6" },
+    { "name": "Nimmu", "days": "Day 7" },
+    { "name": "Leh", "days": "Days 8–9" },
+    { "name": "Delhi", "days": "Days 10–12" }
+  ],
+  "photoStrips": [
+    [
+      { "src": "/images/2026/07/zanskar-village-prayer-flags.jpg", "alt": "Riders rolling into a Zanskar village under prayer flags" },
+      { "src": "/images/2026/07/zanskar-monastery-balcony.jpg", "alt": "Monastery balcony with the Zanskar peaks behind" },
+      { "src": "/images/2026/07/zanskar-evening-light.jpg", "alt": "Evening light over the Zanskar valley" },
+      { "src": "/images/2026/07/zanskar-bike-bag-pack-horse.jpg", "alt": "Bike bag loaded onto a pack horse on a Zanskar trail" }
+    ],
+    [
+      { "src": "/images/2026/07/ladakh-shuttle-rig-loaded.jpg", "alt": "The shuttle rig loaded with mountain bikes in Ladakh" },
+      { "src": "/images/2026/07/ladakh-crew-above-valley.jpg", "alt": "The riding crew gathered above a Ladakhi valley" },
+      { "src": "/images/2026/07/zanskar-ridgeline-riding-1.jpg", "alt": "Ridgeline mountain biking under big Zanskar skies" },
+      { "src": "/images/2026/07/zanskar-ridgeline-riding-2.jpg", "alt": "Rider on a Zanskar ridgeline beneath open sky" }
+    ]
+  ],
+  "dayTypes": {
+    "label": "How the Days Work",
+    "heading": "Choose Your Track, Day by Day",
+    "lede": "Before the trip you pick the experiences that suit you. On the road you can change most of them to match your energy and the group. We brief you on the options as we prepare and travel together.",
+    "cards": [
+      { "title": "Cultural Immersion", "tone": "gentle", "body": "Workshops with makers, village walks, monasteries, home kitchens and festivals of the everyday. Quiet mornings and long conversations with the people who live here." },
+      { "title": "High Adventure", "tone": "strong", "body": "Shuttle-supported mountain biking on trails not built for bikes, big hikes over high passes, a river cable crossing and a rafting day on the Zanskar. For experienced riders and strong hikers." },
+      { "title": "Together", "tone": "gentle", "body": "The long drives, the camp at Sheela Phu, shared meals and the evenings. Both tracks reunite every night." }
+    ]
+  },
+  "chapters": {
+    "label": "The Journey in Chapters",
+    "heading": "Twelve Days, Two Ways",
+    "lede": "Each day shows both tracks. You choose before the trip and can switch most days on the road.",
+    "groups": [
+      {
+        "dayStart": 1,
+        "dayEnd": 2,
+        "title": "Nimmu — A Soft Landing in the Sham Valley",
+        "tags": ["Arrival", "Acclimatization", "Pottery", "Lamayuru MTB"],
+        "prose": [
+          "After hours, or even days, of travel, the flight from Delhi to Leh drops you into crisp, clear air. The first days are designed for a soft arrival: settle into the story of a Ladakhi heritage home, stretch your legs, and let your breathing tune to the altitude."
+        ],
+        "days": [
+          { "label": "Day 1", "text": "Fly Delhi to Leh and drive to Nimmu House, one of our closest partner properties. A personal tour through sunlit courtyards, carved rooms and the family's royal history, then a nourishing garden supper." },
+          { "label": "Day 2", "tracks": [
+            { "name": "Culture", "text": "A hands-on pottery class with a Nimmu artisan, a village walk with a local friend along the fields, shrines and water channels, and snack shopping at a family shop for the days in Zanskar." },
+            { "name": "Adventure", "text": "Morning yoga in the loft at Nimmu, then a shuttle to the Lamayuru old road for a playful, mostly downhill ride along the retired cliffside highway, with optional freeride features." }
+          ] }
+        ],
+        "overnight": "2 Nights · Nimmu House"
+      },
+      {
+        "dayStart": 3,
+        "dayEnd": 6,
+        "title": "Into Zanskar — Zangla, Sheela Phu and Nerak",
+        "tags": ["Village Homestays", "Palace", "High Pass", "Freeride MTB"],
+        "badge": "✦ The heart of the journey",
+        "prose": [
+          "A long drive brings everyone together into Zanskar, one of the least touched valleys in the region. Four days of village classrooms, hilltop ruins, a camp where three valleys meet, and yak paths that seem made for riding."
+        ],
+        "days": [
+          { "label": "Day 3", "tracks": [
+            { "name": "Culture", "text": "Tea with the teachers at Chomo Gonpa School, which your trip helps support, then a guided wander through Khar Kongma Palace. When schedules allow, meet the prince who helps care for it." },
+            { "name": "Adventure", "text": "Tea at the school and the palace visit, then repeatable shuttle laps on a short, twisting descent beneath the royal walls." }
+          ] },
+          { "label": "Day 4", "tracks": [
+            { "name": "Culture", "text": "Milk the animals with our Zangla hosts and learn to make khambir bread. A visit near Sheela Falls, a picnic under the trees, then a gentle hike up to camp." },
+            { "name": "Adventure", "text": "The Malai Khartse hike, with river crossings, scree slopes, rock scrambles and some foraging, then on to the Sheela Phu campsite." }
+          ] },
+          { "label": "Day 5", "tracks": [
+            { "name": "Culture", "text": "Murals and quiet rituals at Stongdae Monastery, then a Zangla dance lesson with musicians and neighbors back at the homestay." },
+            { "name": "Adventure", "text": "The biggest hike of the trip, from Sheela Phu over a high pass on a rarely used trail to the village of Kumik. Our team manages pacing, water, snacks and pickup." }
+          ] },
+          { "label": "Day 6", "tracks": [
+            { "name": "Culture", "text": "Drive to Nerak and climb by 4WD to a viewpoint above the village. Forage juniper along the ridgelines, then chai by the village stream and pond." },
+            { "name": "Adventure", "text": "An optional traditional cable crossing of the Zanskar, with modern harnesses, then the Nerak MTB line down freeride slopes and faint yak trails, with shuttle laps if your legs agree." }
+          ] }
+        ],
+        "overnight": "Village homestays · one night camping at Sheela Phu"
+      },
+      {
+        "dayStart": 7,
+        "dayEnd": 7,
+        "title": "Metal and River — Back to Nimmu",
+        "tags": ["Metalwork", "Rafting", "Zanskar Gorge"],
+        "prose": [
+          "Craft and river carry the day. One track works beside hearth and anvil, the other rides the Zanskar River through its deep canyon."
+        ],
+        "days": [
+          { "label": "Day 7", "tracks": [
+            { "name": "Culture", "text": "Family metal workshops in Chilling, where copper and silver become ritual objects and everyday vessels, and you try the process yourself. When roads allow, an optional visit to Sumda Chun Monastery or the abandoned village above Nimmu." },
+            { "name": "Adventure", "text": "Rafting the Zanskar from near Nerak to Nimmu with a professional crew, support boats and a riverbank lunch." }
+          ] }
+        ],
+        "overnight": "1 Night · Nimmu House"
+      },
+      {
+        "dayStart": 8,
+        "dayEnd": 9,
+        "title": "Leh — Threads, Trails and Royal Walls",
+        "tags": ["Textiles", "Disko Valley MTB", "Leh Palace", "Shanti Stupa"],
+        "prose": [
+          "Leh, the capital of Ladakh, feels like an overgrown village with busy markets and great food. After Zanskar it can feel like a metropolis."
+        ],
+        "days": [
+          { "label": "Day 8", "tracks": [
+            { "name": "Culture", "text": "A half-day fiber experience with a master of Ladakh's wool textiles, then rest with tea in the hotel garden and optional evening shopping." },
+            { "name": "Adventure", "text": "Flow and jump lines at the Disko Valley trails with the crew who built them, or the Gyamtsa La hike for a high, wind-washed view of the valley." }
+          ] },
+          { "label": "Day 9", "tracks": [
+            { "name": "Culture", "text": "The Central Asian Museum, an open day for shopping with or without a guide, and an optional sunset walk to Shanti Stupa." },
+            { "name": "Adventure", "text": "Climb to Leh Palace and Tsemo Gonpa by stepped paths and an overhanging walkway, then the optional Shanti Stupa sunset walk." }
+          ] }
+        ],
+        "overnight": "2 Nights · Leh"
+      },
+      {
+        "dayStart": 10,
+        "dayEnd": 12,
+        "title": "Delhi — Spice, Print and a Courtyard Feast",
+        "tags": ["Old Delhi", "Block Printing", "Street Food", "Departure"],
+        "prose": [
+          "A comfortable hotel and a burst of city life to finish. Everyone gathers for dinner in a restored haveli before the last day."
+        ],
+        "days": [
+          { "label": "Day 10", "tracks": [
+            { "name": "Culture", "text": "Fly to Delhi. An optional afternoon at Gurudwara Bangla Sahib, helping in the langar kitchen that feeds thousands." },
+            { "name": "Adventure", "text": "Fly to Delhi. A guided spice market walk through Khari Baoli and up to the rooftops above Old Delhi." }
+          ], "text": "Evening: Dharampura dinner with the whole group." },
+          { "label": "Day 11", "tracks": [
+            { "name": "Culture", "text": "Block printing at the Khushbu studio, where you print your own piece, and an optional visit to Humayun's Tomb." },
+            { "name": "Adventure", "text": "An early-morning bike tour with our Nizamuddin partners, block printing with the group, and a Delhi street food walk in the evening." }
+          ] },
+          { "label": "Day 12", "text": "Fly home, or ask us to build an extension to Udaipur, Agra or elsewhere in Asia." }
+        ],
+        "overnight": "2 Nights · Delhi"
+      }
+    ]
+  },
+  "pullQuote": "Different adventures by day, the same landscape every evening.",
+  "highlights": [
+    { "where": "Zangla", "title": "Khar Kongma Palace", "body": "A palace above the village where our local friends open doors and give context, and the adventure track rides laps beneath the walls.", "image": "/images/2026/07/zangla-palace-scree-corner.jpg", "imageAlt": "Mountain biker cornering on scree below Zangla's royal palace" },
+    { "where": "Zangla", "title": "Life with Our Hosts", "body": "Milking the animals, a khambir bread lesson and a dance lesson with neighbors. Long friendships make these feel like visits, not performances.", "image": "/images/2026/07/zangla-khambir-bread-lesson.jpg", "imageAlt": "Khambir bread lesson with our hosts in Zangla" },
+    { "where": "Nerak", "title": "The Nerak Line", "body": "A seldom-ridden descent through freeride slopes and faint yak trails, reached by 4WD from high above the village.", "image": "/images/2026/07/nerak-high-line-drop-in.jpg", "imageAlt": "Rider dropping into the high line above Nerak village" }
+  ],
+  "goodToKnow": {
+    "label": "Good to Know",
+    "heading": "Before You Go",
+    "lede": "A few things that shape how this trip runs.",
+    "cards": [
+      { "title": "Altitude", "body": "Altitudes push 16,000 feet, so we ease into activity. What can feel like unnecessary slowness is a proven way to keep you from exhausting yourself on day two and missing the rest of the trip." },
+      { "title": "The adventure track", "body": "Riding in Zanskar is on trails that were not built for bikes, or on no trail at all: yak paths, steep descents, scree and rocky technical terrain. It is not for beginners." },
+      { "title": "Water and the land", "body": "Water is life in Ladakh. Instead of hundreds of plastic bottles, we provide a more sustainable way to keep you supplied with clean water, and we take our cues from local partners on where and how we ride." },
+      { "title": "Where your money goes", "body": "We give 3% of general revenue to sponsor local schools in Zanskar, so children there can attend school." },
+      { "title": "Living in India?", "body": "Reach out to info@adventure-access.com for a modified itinerary and pricing for residents." }
+    ]
+  },
+  "stays": {
+    "label": "Where You'll Stay",
+    "heading": "Homes, Hotels and One Night Under the Stars",
+    "paragraphs": [
+      "In Leh we prefer 3–4 star places run by hospitable owners over glossy hotels with poor service. Most villages have no hotels, so you stay in homestays, some rustic and some with more comforts. Nimmu House and The Oberoi in Delhi are the 5-star stays of the journey."
+    ],
+    "tags": ["Nimmu House", "Village Homestays", "Sheela Phu Camp", "Leh Guesthouse", "The Oberoi, Delhi"]
+  },
+  "pricing": {
+    "from": 8589,
+    "currency": "USD",
+    "basis": "Double occupancy (shared room)",
+    "notes": [
+      "The price includes everything listed below. With so many options to choose from, tell us your group's needs and we will reply with a package and price to match.",
+      "Private rooms and other upgrades are available on request."
+    ]
+  },
+  "included": [
+    "Guide services",
+    "Accommodations as described above",
+    "All meals in India",
+    "All ground and air travel within India shown in the itinerary",
+    "Airport pickup and drop-off",
+    "Government permit fees",
+    "Group gear such as tents and cutlery"
+  ],
+  "excluded": [
+    "Flights from your home country to and from Delhi",
+    "Visas",
+    "Travel insurance",
+    "Alcohol (we strongly encourage little or none while acclimatizing)",
+    "Tips for guides (we will explain local tipping customs)",
+    "Personal clothing and equipment (we send a packing list)"
+  ],
+  "nextSteps": {
+    "label": "Next Steps",
+    "heading": "Make It Yours",
+    "lede": "From the moment you express interest, one of our trip specialists guides you through booking, so the trip matches what you want from it.",
+    "steps": [
+      { "title": "Express interest", "body": "Tell us who is traveling and which track appeals. We usually reply within 48 hours." },
+      { "title": "Shape your days", "body": "Pick each day's activities with a specialist, and we send your package and price." },
+      { "title": "Book", "body": "Review our payment terms and cancellation policy before making a payment." }
+    ],
+    "cta": { "label": "Express Interest", "href": "mailto:info@adventure-access.com?subject=Ladakh%20Multisport" },
+    "secondary": { "label": "Payment terms and cancellation policy", "href": "/payment-terms-cancellation-policy/" }
+  },
+  "footerNote": [
+    "Price shown includes everything listed on this page, on a double occupancy basis.",
+    "Activities depend on weather, road and river conditions."
+  ]
+}
