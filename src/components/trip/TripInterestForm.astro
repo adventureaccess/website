@@ -1,0 +1,148 @@
+---
+/**
+ * TripInterestForm — the "Express interest" form on every trip page.
+ *
+ * Same dual-submit pattern as /plan/ and the campaign landing pages:
+ *   1. The form posts to Netlify Forms ("trip-interest"), which stays the
+ *      system of record: notification email + redirect to /thank-you/.
+ *   2. On submit it ALSO posts to the HubSpot Forms API, which creates or
+ *      updates the contact with page attribution and the trip in the message.
+ * Every HubSpot failure is swallowed, so a HubSpot problem can never cost a lead.
+ *
+ * HubSpot form: "Website - Trip Interest" (cloned from Nepal LP01 Interest on
+ * Nov 3, 2026): firstname, lastname, email, message, campaign_source_page.
+ *
+ * campaign_source_page is sent as "trip:<slug>" so trip leads can be filtered in
+ * HubSpot. If the HubSpot form does not have that field, HubSpot rejects the
+ * whole submission, so we retry once without it.
+ */
+interface Props {
+  slug: string;
+  title: string;
+  ctaLabel?: string;
+}
+const { slug, title, ctaLabel = 'Express Interest' } = Astro.props;
+
+const HS_PORTAL = '244183775';
+const HS_FORM = '62dcd801-e6d0-4dbd-a005-976ac1ba843b'; // "Website - Trip Interest"
+---
+
+<form
+  id="trip-interest"
+  class="ti-form"
+  name="trip-interest"
+  method="POST"
+  action="/thank-you/"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  novalidate
+>
+  <input type="hidden" name="form-name" value="trip-interest" />
+  <input type="hidden" name="trip" value={title} />
+  <input type="hidden" name="trip-slug" value={slug} />
+  <p class="ti-hidden"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
+
+  <div class="ti-grid">
+    <label class="ti-field">
+      <span>Your name</span>
+      <input id="ti-name" name="name" type="text" autocomplete="name" required />
+    </label>
+    <label class="ti-field">
+      <span>Email</span>
+      <input id="ti-email" name="email" type="email" autocomplete="email" required />
+    </label>
+    <label class="ti-field">
+      <span>When you'd like to go <em>(optional)</em></span>
+      <input name="when" type="text" placeholder="e.g. September 2027, or flexible" />
+    </label>
+    <label class="ti-field">
+      <span>How many travelers <em>(optional)</em></span>
+      <input name="group-size" type="text" inputmode="numeric" placeholder="e.g. 4" />
+    </label>
+  </div>
+  <label class="ti-field ti-wide">
+    <span>Anything you want us to know <em>(optional)</em></span>
+    <textarea name="message" rows="3" placeholder="Who's coming, what you want out of it, questions."></textarea>
+  </label>
+
+  <p id="ti-error" class="ti-error" role="alert" hidden></p>
+  <button type="submit" class="btn">{ctaLabel}</button>
+  <p class="ti-note">No payment at this point. This just tells us you'd like to explore the trip.</p>
+</form>
+
+<script is:inline define:vars={{ HS_PORTAL, HS_FORM, slug, title }}>
+  (() => {
+    const form = document.getElementById('trip-interest');
+    if (!form) return;
+    const errorEl = document.getElementById('ti-error');
+    const val = (n) => { const el = form.querySelector(`[name="${n}"]`); return el && el.value ? el.value.trim() : ''; };
+    const fail = (msg) => { errorEl.textContent = msg; errorEl.hidden = false; };
+
+    const ENDPOINTS = [
+      `https://api-na2.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${HS_FORM}`,
+      `https://api.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${HS_FORM}`,
+    ];
+    const hutk = () => { const m = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/); return m ? m[1] : undefined; };
+
+    function payload(withSource) {
+      const full = val('name'); const i = full.indexOf(' ');
+      const firstname = i > 0 ? full.slice(0, i) : full;
+      const lastname = i > 0 ? full.slice(i + 1) : '';
+      const message = [
+        `Trip interest: ${title}`,
+        val('when') && `When: ${val('when')}`,
+        val('group-size') && `Travelers: ${val('group-size')}`,
+        val('message') && `Message: ${val('message')}`,
+      ].filter(Boolean).join('\n');
+      const fields = [
+        { objectTypeId: '0-1', name: 'email', value: val('email') },
+        { objectTypeId: '0-1', name: 'firstname', value: firstname },
+        { objectTypeId: '0-1', name: 'message', value: message },
+      ];
+      if (lastname) fields.push({ objectTypeId: '0-1', name: 'lastname', value: lastname });
+      if (withSource) fields.push({ objectTypeId: '0-1', name: 'campaign_source_page', value: `trip:${slug}` });
+      const h = hutk();
+      return JSON.stringify({ fields, context: { ...(h ? { hutk: h } : {}), pageUri: window.location.href, pageName: document.title } });
+    }
+    const post = (url, body) => fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body, keepalive: true });
+
+    async function toHubSpot() {
+      let res = null;
+      try { res = await post(ENDPOINTS[0], payload(true)); }
+      catch (_) { try { res = await post(ENDPOINTS[1], payload(true)); } catch (_) { return; } }
+      if (res && !res.ok) { try { await post(ENDPOINTS[0], payload(false)); } catch (_) {} }
+    }
+
+    let submitting = false;
+    form.addEventListener('submit', async (e) => {
+      if (submitting) return;
+      e.preventDefault();
+      errorEl.hidden = true;
+      const email = form.querySelector('#ti-email');
+      if (!val('name') || !val('email') || !email.checkValidity()) { fail('We need a name and a working email to reply.'); return; }
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true; btn.textContent = 'Sending…';
+      try { await Promise.race([toHubSpot(), new Promise((r) => setTimeout(r, 2500))]); } catch (_) {}
+      submitting = true;
+      form.submit(); // posts to Netlify Forms and redirects to /thank-you/
+    });
+  })();
+</script>
+
+<style is:global>
+  .ti-form { max-width: 760px; margin: 0 auto; text-align: left; }
+  .ti-hidden { display: none; }
+  .ti-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem 2rem; margin-bottom: 1.4rem; }
+  .ti-field { display: block; }
+  .ti-field span { display: block; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(196,168,130,0.75); margin-bottom: 0.4rem; font-weight: 500; }
+  .ti-field em { font-style: normal; text-transform: none; letter-spacing: 0; color: rgba(196,168,130,0.5); }
+  .ti-field input, .ti-field textarea { width: 100%; background: transparent; border: 0; border-bottom: 1px solid rgba(196,168,130,0.35); padding: 0.5rem 0; color: var(--white); font: inherit; font-size: 0.95rem; resize: none; }
+  .ti-field input::placeholder, .ti-field textarea::placeholder { color: rgba(196,168,130,0.4); }
+  .ti-field input:focus, .ti-field textarea:focus { outline: none; border-bottom-color: var(--orange); }
+  .ti-wide { margin-bottom: 2rem; }
+  .cta .ti-error { color: var(--orange-light); font-size: 0.85rem; margin: 0 0 1rem; max-width: none; }
+  .ti-form .btn { border: 0; cursor: pointer; font-family: var(--sans); }
+  .ti-form .btn:disabled { opacity: 0.6; cursor: wait; }
+  .cta .ti-note { font-size: 0.78rem; margin: 1rem 0 0 !important; color: rgba(196,168,130,0.55); }
+  @media (max-width: 640px) { .ti-grid { grid-template-columns: 1fr; } }
+</style>
