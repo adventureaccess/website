@@ -12,6 +12,7 @@
  * two-track day lines, the price block, and the included / not included lists.
  */
 import type { CollectionEntry } from 'astro:content';
+import TripInterestForm from './TripInterestForm.astro';
 
 interface Props {
   trip: CollectionEntry<'trips'>;
@@ -284,8 +285,11 @@ const money = (n: number) => '$' + n.toLocaleString('en-US');
         <div class="step"><div class="step-n">{String(i + 1).padStart(2, '0')}</div><h3>{s.title}</h3><p>{s.body}</p></div>
       ))}
     </div>
-    <a class="btn" href={t.nextSteps.cta.href}>{t.nextSteps.cta.label}</a>
-    {t.nextSteps.secondary && <p class="cta-secondary"><a href={t.nextSteps.secondary.href}>{t.nextSteps.secondary.label}</a></p>}
+    <TripInterestForm slug={trip.id} title={t.title} ctaLabel={t.nextSteps.cta.label} />
+    <p class="cta-secondary">
+      Prefer to write? <a href={t.nextSteps.cta.href}>info@adventure-access.com</a>
+      {t.nextSteps.secondary && <> · <a href={t.nextSteps.secondary.href}>{t.nextSteps.secondary.label}</a></>}
+    </p>
   </section>
 
   <!-- FOOTER -->
