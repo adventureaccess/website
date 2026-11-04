@@ -4,6 +4,7 @@
   "visibility": "internal",
   "destination": "ladakh",
   "kind": "template",
+  "editorial": "rewritten",
   "source": {
     "youli": "https://youli.io/t/adventure-access/ladakh-multisport",
     "migratedOn": "2026-10-25",
