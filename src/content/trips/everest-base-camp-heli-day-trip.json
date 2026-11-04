@@ -1,0 +1,138 @@
+{
+  "title": "Everest Base Camp Heli Tour: Day Trip",
+  "status": "review",
+  "visibility": "internal",
+  "destination": "nepal",
+  "kind": "template",
+  "source": {
+    "youli": "https://youli.io/t/adventure-access/everest-base-heli-day-tour",
+    "migratedOn": "2026-11-03",
+    "notes": "Mechanical copy of the public YouLi page: one chapter per YouLi day, YouLi photos. Needs an editorial pass into Brian's chapter format."
+  },
+  "seo": {
+    "title": "Everest Base Camp Heli Tour: Day Trip | Adventure Access",
+    "description": "Not everyone has the option of trekking to Everest Base Camp."
+  },
+  "hero": {
+    "eyebrow": "Kathmandu, Nepal · March–May and September–November",
+    "title": "Everest Base Camp Heli Tour: Day Trip",
+    "subtitle": "Not everyone has the option of trekking to Everest Base Camp.",
+    "image": "/images/2026/11/trips/everest-base-camp-heli-day-trip-hero.jpg",
+    "imageAlt": "Everest Base Camp Heli Tour: Day Trip, Nepal",
+    "meta": [
+      {
+        "label": "Duration",
+        "value": "1 Day"
+      },
+      {
+        "label": "Season",
+        "value": "March–May and September–November"
+      },
+      {
+        "label": "Price",
+        "value": "$6,250 per tour"
+      }
+    ]
+  },
+  "intro": {
+    "label": "The Journey",
+    "heading": "Overview",
+    "paragraphs": [
+      "Not everyone has the option of trekking to Everest Base Camp. Take a tour by helicopter. Our guide services begin at your hotel in Kathmandu and cover every detail of your day trip. The average duration of this Kathmandu-Everest-Kathmandu excursion is 5-6 hours, including KalaPathar, a panoramic breakfast, and lunch with your guide in Boudha."
+    ]
+  },
+  "route": [],
+  "chapters": {
+    "label": "The Journey in Chapters",
+    "heading": "Day by Day",
+    "groups": [
+      {
+        "dayStart": 1,
+        "dayEnd": 1,
+        "title": "Everest Base Camp Heli Tour: Day Trip",
+        "tags": [],
+        "prose": [],
+        "days": [
+          {
+            "label": "Day 1",
+            "text": "Not everyone has the option of trekking to Everest Base Camp. Take a tour by helicopter. Our guide services begin at your hotel in Kathmandu and cover every detail of your day trip. The average duration of this Kathmandu-Everest-Kathmandu excursion is 5-6 hours, including KalaPathar, a panoramic breakfast, and lunch with your guide in Boudha."
+          }
+        ]
+      }
+    ]
+  },
+  "highlights": [
+    {
+      "where": "Nepal",
+      "title": "Everest Views from KalaPathar",
+      "body": "The approach to the region soars over the Khumbu Valley, landing atop KalaPathar. From within the region, the best views of Mount Everest are from KalaPathar, a slightly higher vantage point that Everest Base Camp. Our guides are attentive to your health and safety and will lead you on an experiential visit to the region based upon your comfort level at high altitudes. Kala Pathar is 18,519 ft above sea level.",
+      "image": "/images/2026/11/trips/everest-base-camp-heli-day-trip-everest-views-from-kalapathar.jpg",
+      "imageAlt": "Everest Views from KalaPathar"
+    },
+    {
+      "where": "Nepal",
+      "title": "Soar through the Himalayas",
+      "body": "Experiencing the himalayas as you soar through valleys and around mountains between Kathmandu and Everest Base Camp is unique to the heli tour between the city and the Khumbu Valley.",
+      "image": "/images/2026/11/trips/everest-base-camp-heli-day-trip-soar-through-the-himalayas.jpg",
+      "imageAlt": "Soar through the Himalayas"
+    },
+    {
+      "where": "Nepal",
+      "title": "Breakfast with Panoramic Views of Everest and Ama Dablam",
+      "body": "After seeing Everest and the Khumbu Valley, the group will land above Namche Bazaar for breakfast with panoramic views of Ama Dablam and Everest in the distance. This is a great way to celebrate the experience and slow down for a few moments before heading back to Kathmandu.",
+      "image": "/images/2026/11/trips/everest-base-camp-heli-day-trip-breakfast-with-panoramic-views-of-everest-and-ama-.jpg",
+      "imageAlt": "Breakfast with Panoramic Views of Everest and Ama Dablam"
+    }
+  ],
+  "included": [
+    "Guide Services",
+    "Hotel pick-up and drop-off within Kathmandu",
+    "Helicopter Services",
+    "Accommodations: As a day trip, there are no accommodations included in this activity.",
+    "Meals: Breakfast/Tea/Coffee and Lunch are included in this day trip activity",
+    "National Park entry fees",
+    "Government permit fees"
+  ],
+  "excluded": [
+    "International Flights to/from Kathmandu",
+    "Visas",
+    "Insurance",
+    "Alcohol: We strongly encourage minimizing or eliminating alcohol while acclimatizing. Should you choose to drink alcohol when appropriate, you may do so but must pay your alcohol tab at the close of the meal.",
+    "Tips: It is customary to tip all senior guides, junior guides, and porters. We will provide information about the tipping culture in Nepal so you can make informed decisions regarding when to tip and how much to tip.",
+    "Clothing and Equipment: We do not provide your gear but do have a packing list to help you prepare. We are happy to answer any questions you have and make recommendations if you need assistance."
+  ],
+  "nextSteps": {
+    "label": "Next Steps",
+    "heading": "Make It Yours",
+    "lede": "From the moment you express interest, one of our trip specialists guides you through booking, so the trip matches what you want from it.",
+    "steps": [
+      {
+        "title": "Express interest",
+        "body": "Tell us who is traveling and when. We usually reply within 48 hours."
+      },
+      {
+        "title": "Talk with a specialist",
+        "body": "We help match the trip to your expectations and goals."
+      },
+      {
+        "title": "Book",
+        "body": "Review our payment terms and cancellation policy before making a payment."
+      }
+    ],
+    "cta": {
+      "label": "Express Interest",
+      "href": "mailto:info@adventure-access.com?subject=Everest%20Base%20Camp%20Heli%20Tour%20Day%20Trip"
+    },
+    "secondary": {
+      "label": "Payment terms and cancellation policy",
+      "href": "/payment-terms-cancellation-policy/"
+    }
+  },
+  "footerNote": [],
+  "pricing": {
+    "from": 6250,
+    "currency": "USD",
+    "basis": "Per tour, for 2–4 people",
+    "notes": []
+  }
+}

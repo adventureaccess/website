@@ -1,0 +1,434 @@
+{
+  "title": "Red Lake Trek",
+  "status": "review",
+  "visibility": "internal",
+  "destination": "ladakh",
+  "kind": "template",
+  "source": {
+    "youli": "https://youli.io/t/adventure-access/red-lake",
+    "migratedOn": "2026-11-03",
+    "notes": "Mechanical copy of the public YouLi page: one chapter per YouLi day, YouLi photos. Needs an editorial pass into Brian's chapter format."
+  },
+  "seo": {
+    "title": "Red Lake Trek | Adventure Access",
+    "description": "A trek in Zanskar can take you from rugged ridgelines to sparkling blue pools and cozy homestays all in a few hours time."
+  },
+  "hero": {
+    "eyebrow": "Zanskar · Leh · May–October",
+    "title": "Red Lake Trek",
+    "subtitle": "A trek in Zanskar can take you from rugged ridgelines to sparkling blue pools and cozy homestays all in a few hours time.",
+    "image": "/images/2026/11/trips/red-lake-trek-hero.jpg",
+    "imageAlt": "Red Lake Trek, India",
+    "meta": [
+      {
+        "label": "Duration",
+        "value": "12 Days · Start and end in Delhi"
+      },
+      {
+        "label": "Season",
+        "value": "May–October"
+      },
+      {
+        "label": "Starting at",
+        "value": "$4,289"
+      }
+    ]
+  },
+  "intro": {
+    "label": "The Journey",
+    "heading": "Overview",
+    "paragraphs": [
+      "A trek in Zanskar can take you from rugged ridgelines to sparkling blue pools and cozy homestays all in a few hours time. This rich, unspoiled region holds a spectacular landscape that has been traversed by travelers on foot for decades. These trails are not easy. With varied terrain and high altitudes, Zanskari hikes are for those who want to push their abilities and experience a grand challenge along some of the highest trails in the world.",
+      "The culture in Zanskar has remained mostly unchanged for a thousand years, so our journey will include a great deal of interaction with Ladakhi people and time in local homes, giving a peek into Himalayan mountain life as it was hundreds of years ago. This experience alongside our time in Leh, the bustling capital of Ladakh and our visit to Delhi, the diverse capital of India, will give you a taste of the rich diversity that makes India such a colorful nation.",
+      "Our local specialists will take care of your every need from airport pickup to drop-off so you can focus on soaking up your adventure experience. Trekking in the biggest landscapes you've seen alongside rich cultural immersion will provide a grand tour that will give you a new perspective on adventure travel."
+    ]
+  },
+  "route": [
+    {
+      "name": "Nimmu House Ladakh",
+      "days": "Day 2"
+    },
+    {
+      "name": "Sirsir La",
+      "days": "Day 3"
+    },
+    {
+      "name": "Zangla",
+      "days": "Day 4"
+    },
+    {
+      "name": "Yulchung",
+      "days": "Day 5"
+    },
+    {
+      "name": "Photoksar",
+      "days": "Days 6–7"
+    },
+    {
+      "name": "Leh",
+      "days": "Days 8–9"
+    },
+    {
+      "name": "New Delhi",
+      "days": "Days 11–12"
+    }
+  ],
+  "chapters": {
+    "label": "The Journey in Chapters",
+    "heading": "Day by Day",
+    "groups": [
+      {
+        "dayStart": 1,
+        "dayEnd": 1,
+        "title": "Arrive in India, Transfer to Nimmu",
+        "tags": [],
+        "prose": [
+          "Depart from your country of origin and transit through New Delhi for flights to Leh, Ladakh. From your arrival in Leh we bring you directly to Nimmu village, where a beautiful local homestay awaits you. This traditional Ladakhi house has been converted to a small hotel with excellent dining. The courtyards, traditional features, luxury tents, and comfortable rooms of this still functioning village home are an inroad to the history and culture of the region. Take a tour with the owner and enjoy the excellent Asian fusion cuisine!"
+        ],
+        "days": [
+          {
+            "label": "Day 1",
+            "text": "Arrive in India, Transfer to Nimmu"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-1.jpg",
+          "alt": "Arrive in India, Transfer to Nimmu"
+        }
+      },
+      {
+        "dayStart": 2,
+        "dayEnd": 2,
+        "title": "Nimmu Full Day Experience",
+        "tags": [
+          "Nimmu House Ladakh"
+        ],
+        "prose": [
+          "The objective for the day is to help you acclimatize to the extreme altitude of this region while enjoying the beautiful local culture and hospitality. After enjoying breakfast at Nimmu House, you can then experience the local traditions and explore village life with the help of the local guides from the homestay. A refreshing dinner and campfire in the evening will wrap up your first full day in the Himalayas."
+        ],
+        "days": [
+          {
+            "label": "Day 2",
+            "text": "Nimmu House Ladakh, Nimmoo"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-2.jpg",
+          "alt": "Nimmu Full Day Experience"
+        }
+      },
+      {
+        "dayStart": 3,
+        "dayEnd": 3,
+        "title": "Nimmu to Zangla",
+        "tags": [
+          "Sirsir La"
+        ],
+        "prose": [
+          "Driving the roads and passes of Zanskar is an adventure in itself. In our 10 hour epic journey you will cross stunning landscapes and some of the highest roads you can imagine. Halfway through the day we will reach SirSir La, stop for lunch just below the pass, then continue to the highest pass in the region, Singe La, resting above 16,500 feet. You can see needle-point peaks and twisting geology as we descend to the Zanskar river, finally arriving at a beautiful homestay tucked into the palace town of Zangla. Zanskari hospitality and traditional rooms are a well-earned reward after the longest overland journey of your trip."
+        ],
+        "days": [
+          {
+            "label": "Day 3",
+            "text": "Sirsir La"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-3.jpg",
+          "alt": "Nimmu to Zangla"
+        }
+      },
+      {
+        "dayStart": 4,
+        "dayEnd": 4,
+        "title": "Ancient Palace Hike",
+        "tags": [
+          "Zangla"
+        ],
+        "prose": [
+          "Welcome to the heart of Zanskar! Zangla is the ancient royal capital of the region and is one of our favorite villages in Zanskar. It boasts a thousand year old palace perched atop a peak above the village. Today we venture into our first hike, a short but challenging jaunt into the mountains behind Zangla village. We will explore 800 year old buddhist paintings, ancient royal stronghold ruins, and walk the halls of the king of Zangla. Today’s hike may have water crossings and rocky climbs, so come ready for adventure.",
+          "Ancient Palace Trek",
+          "Distance\nTotal Ascent\nMin Altitude\nMax Altitude",
+          "5.2 mi\n1857 ft\n11,526 ft\n11,962 ft"
+        ],
+        "days": [
+          {
+            "label": "Day 4",
+            "text": "Zangla"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-4.jpg",
+          "alt": "Ancient Palace Hike"
+        }
+      },
+      {
+        "dayStart": 5,
+        "dayEnd": 5,
+        "title": "Drive Zangla to Yulchung, Hike Kyupa Ridge",
+        "tags": [
+          "Yulchung"
+        ],
+        "prose": [
+          "With our bodies acclimatized and minds full of Zanskari history, we head back up the road to the village Yulchung and hike the awe-inspiring Kyupa ridge. You can see hundreds of peaks and valleys from this incredible viewpoint, standing high above our homestay below. After exploring the exposed ridgeline we return to the village for an evening walk among the shepherds and farmers, finally settling into our local rustic homestay for a night beneath the stars and peaks of Yulchung. Rest well tonight, as tomorrow begins our biggest challenge, the trek to Red Lake.",
+          "Kyupa Ridge",
+          "Distance\nTotal Ascent\nMin Altitude\nMax Altitude",
+          "2 mi\n1053 ft\n14,531 ft\n15,112 ft"
+        ],
+        "days": [
+          {
+            "label": "Day 5",
+            "text": "Yulchung"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-5.jpg",
+          "alt": "Drive Zangla to Yulchung, Hike Kyupa Ridge"
+        }
+      },
+      {
+        "dayStart": 6,
+        "dayEnd": 6,
+        "title": "Red Lake Trek: Day One",
+        "tags": [
+          "Photoksar"
+        ],
+        "prose": [
+          "Today’s the big day, the start of the Red Lake trek. We begin the journey with an early morning drive to the trailhead, where we fill up on a hearty breakfast, strap on our packs, and head up the valley towards camp. This hike is covered with wonderful sights like stunning blue pools, sparkling streams, waterfalls, glaciers, and fascinating rocks that reflect the diverse geology of Zanskar. After hours of hiking and much altitude gained, we will settle into our base camp in the valley, our home for the next two nights.",
+          "Red Lake Day 1",
+          "Distance\nTotal Ascent\nMin Altitude\nMax Altitude",
+          "4.95 mi\n1883 ft\n13,829 ft\n15,614 ft"
+        ],
+        "days": [
+          {
+            "label": "Day 6",
+            "text": "Photoksar"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-6.jpg",
+          "alt": "Red Lake Trek: Day One"
+        }
+      },
+      {
+        "dayStart": 7,
+        "dayEnd": 7,
+        "title": "Red Lake Trek: Day Two",
+        "tags": [
+          "Photoksar"
+        ],
+        "prose": [
+          "We rise early once again for the great ascent to red lake. A breathtaking (in more ways than one) ascent to a ridge above the lake unlocks views which few ever see over the Zanskar range. As we descend to the lake, the mountain creeks begin to turn a deep color of red, feeding the colored runoff into the lake below. Take time here to catch your breath and enjoy the contrasting colors of the milky glaciers, dark peaks, vibrant stones, and rust laden lake. From here we return back to camp, having completed the most challenging and stunning hike of our journey together.",
+          "Red Lake Day 2",
+          "Distance\nTotal Ascent\nMin Altitude\nMax Altitude",
+          "2 mi\n2228 ft\n15,614 ft\n17,224 ft"
+        ],
+        "days": [
+          {
+            "label": "Day 7",
+            "text": "Photoksar"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-7.jpg",
+          "alt": "Red Lake Trek: Day Two"
+        }
+      },
+      {
+        "dayStart": 8,
+        "dayEnd": 8,
+        "title": "Red Lake Trek: Day Three & Transfer to Leh",
+        "tags": [
+          "Leh"
+        ],
+        "prose": [
+          "Today marks the beginning of our journey home, but nowhere near the end of our adventure. We make the long trek back to the trailhead and after lunch jump back into our vehicles for the final drive back to Leh. The views on this return leg are beautiful with sunlit peaks and mountains in the shape of weathered faces marking our way back to the main highway. Upon returning to Leh, a long overdue shower and delicious meal offer refreshment after several days in the backcountry.",
+          "Red Lake Day 3",
+          "Distance\nTotal Ascent\nMin Altitude\nMax Altitude",
+          "4.95 mi\n100 ft\n13,829 ft\n15,614 ft"
+        ],
+        "days": [
+          {
+            "label": "Day 8",
+            "text": "Leh"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-8.jpg",
+          "alt": "Red Lake Trek: Day Three & Transfer to Leh"
+        }
+      },
+      {
+        "dayStart": 9,
+        "dayEnd": 9,
+        "title": "Day in Leh",
+        "tags": [
+          "Leh"
+        ],
+        "prose": [
+          "We will conclude our time in Ladakh with a day in Leh, the capital. You can explore the old market streets, buy some local goods, visit the Central Asian museum, or tackle many other local activities. Want more adventure? Hike to Shanti Stupa or the Leh Palace for amazing hilltop views of the old town. We will conclude with a celebratory dinner at a local venue and share our best stories from the week."
+        ],
+        "days": [
+          {
+            "label": "Day 9",
+            "text": "Leh"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-9.jpg",
+          "alt": "Day in Leh"
+        }
+      },
+      {
+        "dayStart": 10,
+        "dayEnd": 10,
+        "title": "Transfer to Delhi",
+        "tags": [],
+        "prose": [
+          "We will fly out of Leh early in the morning to allow for an afternoon and evening of touring New Delhi. You will get to experience the colorful and wild culture of Delhi, giving contrast to the rugged environment of Ladakh and a glimpse into the incredible diversity of this country. We will dine at an excellent local restaurant for dinner and stay in comfort at a 5 star hotel in the city."
+        ],
+        "days": [
+          {
+            "label": "Day 10",
+            "text": "Transfer to Delhi"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-10.jpg",
+          "alt": "Transfer to Delhi"
+        }
+      },
+      {
+        "dayStart": 11,
+        "dayEnd": 11,
+        "title": "A Day in Delhi",
+        "tags": [
+          "New Delhi"
+        ],
+        "prose": [
+          "To complete your experience in India we have a full day planned of delhi experiences. Tasting food from all over the subcontinent, touring the famed markets of this silk road city, and walking among colorful people from a hundred different cultures are all on the menu today with our expert guides leading the way. Dinner at our favorite persian restaurant will wrap up the day before an early morning departure to the airport for your international flight back to your home country.",
+          "Our tour wraps up after dinner, and includes your hotel night, as well as your return shuttle to the airport when you are ready. Just let us know if you would like any help to extend your time in India with more time in Delhi, a trip to the Taj Mahal, or travel to another destination in the country."
+        ],
+        "days": [
+          {
+            "label": "Day 11",
+            "text": "New Delhi, Delhi, India"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-11.jpg",
+          "alt": "A Day in Delhi"
+        }
+      },
+      {
+        "dayStart": 12,
+        "dayEnd": 12,
+        "title": "Day of Departure",
+        "tags": [
+          "New Delhi"
+        ],
+        "prose": [
+          "Fly back to your country of origin or hit another destination along the way. It's up to you!",
+          "If you plan to stay additional days in New Delhi and would like assistance in booking additional nights at the same hotel, or would like recommendations on things to do, just send us a message!"
+        ],
+        "days": [
+          {
+            "label": "Day 12",
+            "text": "New Delhi, Delhi, India"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/bhutan-culture-adventure-kathmandu-day-10.jpg",
+          "alt": "Day of Departure"
+        }
+      }
+    ]
+  },
+  "highlights": [
+    {
+      "where": "Ladakh",
+      "title": "Leh",
+      "body": "Leh is the capital of Ladakh and will serve as your first introduction to Ladakh as well as a place of closure for your time here. In many ways it feels like an overgrown village. The bustling streets and marketplace alleyways provide a vibrancy to the small city that is contagious. Shopping is abundant but finding something unique takes a bit of extra effort. The food is great. The guesthouse here feels like an oasis whether you are experiencing it as the first stop after hours of air travel or again on the back end, where what once felt like the most remote place you can imagine suddenly feels like home in a bustling metropolis.",
+      "image": "/images/2026/11/trips/red-lake-trek-leh.jpg",
+      "imageAlt": "Leh"
+    },
+    {
+      "where": "Ladakh",
+      "title": "Hiking in the Western Himalaya",
+      "body": "Ladakh is where the Himalaya run all the way up to the Karakoram. Zanskar is one of the least touched valleys of the region, creating incredible opportunity for pure adventure. We have a few things that we keep in focus at all times. One is your safety and with altitudes pushing 16,000 feet above sea level, we pay close attention to the acclimatization process. We ease our way into activity! What may seem as unnecessary slowness is a proven method to make sure you don't flame out on day 2 and miss out on the rest of the trip while you recover in a hotel, or even worse...a hospital. Scroll down as we talk about culture and environment.",
+      "image": "/images/2026/11/trips/red-lake-trek-hiking-in-the-western-himalaya.jpg",
+      "imageAlt": "Hiking in the Western Himalaya"
+    },
+    {
+      "where": "Ladakh",
+      "title": "Local Culture and Customs",
+      "body": "Ladakhi culture is very hospitable. You will enjoy your time here. Our guides are not just there to guide you on the trail, but they invite you into their own relationships and sometimes their own family. This is what makes an experience with Adventure Access so meaningful. Are there things you need to be aware of? Absolutely! Will you be well taken care of and informed along the way by your guide? You bet! We encourage you to learn as you go and leave better than when you came.",
+      "image": "/images/2026/11/trips/red-lake-trek-local-culture-and-customs.jpg",
+      "imageAlt": "Local Culture and Customs"
+    },
+    {
+      "where": "Ladakh",
+      "title": "The Environment",
+      "body": "Water is life and this is becomes clear once you spend some time in the region, especially while exerting yourself on a bike. But the last thing we want to do is pollute this amazing place with hundreds of plastic bottles. We take care by providing you a more sustainable solution while we travel, while ensuring the purest water to keep you healthy and strong. Not just anything goes! We work closely with local partners and take our cues from them as well as our own knowledge base for what is good for long-term sustainable travel in the region. We are careful about where and how we ride. We welcome you into this mentality and aim to do what is best for you and for the environment.",
+      "image": "/images/2026/11/trips/red-lake-trek-the-environment.jpg",
+      "imageAlt": "The Environment"
+    },
+    {
+      "where": "Ladakh",
+      "title": "Education is an Amazing Adventure",
+      "body": "Adventure Access is committed to doing good things in the places you travel. Through our partnerships with local business leaders and others in the community around Zanskar, we give 3% of general revenue to sponsoring local children. This allows Zanskari children to attend school and embark on an amazing adventure through learning.",
+      "image": "/images/2026/11/trips/red-lake-trek-education-is-an-amazing-adventure.jpg",
+      "imageAlt": "Education is an Amazing Adventure"
+    }
+  ],
+  "included": [
+    "Guide Services",
+    "Accommodations: Our preferred packages include 3-4 star locations in Leh, with a focus on more hospitable lodge owners over gloss hotels with poor front desk service. Homestays in villages will vary from location to location. Some are rustic while others have more amenities. Most village destinations do not have hotels, allowing for the rich and traditional experience of a village stay. Nimmu House is a 5 star experience to start off our itinerary.",
+    "Meals: All meals in India are provided in the tour package.",
+    "Domestic transportation: All ground and air travel within India as indicated in the itinerary",
+    "Airport Pickup and Dropoff",
+    "Government permit fees"
+  ],
+  "excluded": [
+    "Flights to/from Delhi",
+    "Visas",
+    "Insurance",
+    "Alcohol: We strongly encourage minimizing or eliminating alcohol while acclimatizing. Should you choose to drink alcohol when appropriate, you may do so but must pay your alcohol tab at the close of the meal.",
+    "Tips: It is customary to tip all guides. We will provide information about the tipping culture in India so you can make informed decisions regarding when to tip and how much to tip.",
+    "Clothing and Equipment: We do not provide your gear but do have a packing list to help you prepare. We are happy to answer any questions you have and make recommendations if you need assistance."
+  ],
+  "nextSteps": {
+    "label": "Next Steps",
+    "heading": "Make It Yours",
+    "lede": "From the moment you express interest, one of our trip specialists guides you through booking, so the trip matches what you want from it.",
+    "steps": [
+      {
+        "title": "Express interest",
+        "body": "Tell us who is traveling and when. We usually reply within 48 hours."
+      },
+      {
+        "title": "Talk with a specialist",
+        "body": "We help match the trip to your expectations and goals."
+      },
+      {
+        "title": "Book",
+        "body": "Review our payment terms and cancellation policy before making a payment."
+      }
+    ],
+    "cta": {
+      "label": "Express Interest",
+      "href": "mailto:info@adventure-access.com?subject=Red%20Lake%20Trek"
+    },
+    "secondary": {
+      "label": "Payment terms and cancellation policy",
+      "href": "/payment-terms-cancellation-policy/"
+    }
+  },
+  "footerNote": [],
+  "pricing": {
+    "from": 4289,
+    "currency": "USD",
+    "basis": "Double occupancy (shared room)",
+    "notes": []
+  }
+}
