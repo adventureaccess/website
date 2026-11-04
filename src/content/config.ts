@@ -60,6 +60,14 @@ const trips = defineCollection({
     /** template = the reusable trip; instance = a version for a named client or departure */
     kind: z.enum(['template', 'instance']).default('template'),
     preparedFor: z.string().optional(),
+    /** Open questions for the reviewer. Shown only in the internal review bar, never on a public page. */
+    reviewNotes: z.array(z.string()).default([]),
+    /**
+     * How far the copy has been worked:
+     *   youli-copy → straight copy of the YouLi page, one chapter per YouLi day
+     *   rewritten  → reworked into Brian's chapter format (grouped days, how the days work, good to know)
+     */
+    editorial: z.enum(['youli-copy', 'rewritten']).default('youli-copy'),
     source: z
       .object({
         youli: z.string().url().optional(),

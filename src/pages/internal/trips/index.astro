@@ -1,13 +1,33 @@
 ---
 /**
- * /internal/trips/ — the trip library: every trip file, its status, and where
- * it came from. Behind Google sign-in (gate.js), noindex, not in the sitemap.
+ * /internal/trips/ — the trip library: every trip file, how far its copy has
+ * been worked, its status, and where it came from. Behind Google sign-in
+ * (gate.js), noindex, not in the sitemap.
+ *
+ * Rewritten trips (Brian's chapter format) are listed first; straight YouLi
+ * copies follow, so it is clear which pages are ready for review.
  */
 import { getCollection } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 
-const trips = (await getCollection('trips')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+const all = (await getCollection('trips')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+const rewritten = all.filter((t) => t.data.editorial === 'rewritten');
+const copies = all.filter((t) => t.data.editorial !== 'rewritten');
 const money = (n: number) => '$' + n.toLocaleString('en-US');
+const groups = [
+  {
+    key: 'rewritten',
+    heading: 'Rewritten',
+    note: "Reworked into Brian's format: days grouped into chapters, How the days work, Good to know. Ready for review.",
+    trips: rewritten,
+  },
+  {
+    key: 'copy',
+    heading: 'YouLi copies',
+    note: 'Straight copies of the YouLi pages, one chapter per YouLi day. Not yet edited.',
+    trips: copies,
+  },
+];
 ---
 
 <Base title="Trip Library — Adventure Access" description="Internal trip library." noindex={true}>
@@ -15,42 +35,59 @@ const money = (n: number) => '$' + n.toLocaleString('en-US');
     <div class="max-w-8xl mx-auto px-5 md:px-14">
       <div class="eyebrow mb-3">— Internal</div>
       <h1 class="display text-4xl md:text-6xl mb-4">Trip Library.</h1>
-      <p class="text-lg leading-relaxed text-ink-soft max-w-2xl mb-10">
+      <p class="text-lg leading-relaxed text-ink-soft max-w-2xl mb-6">
         Trips moving off YouLi, rendered from the files in <code>src/content/trips/</code>.
         Nothing here is public yet.
       </p>
+      <p class="text-sm text-ink-soft mb-12">
+        <span class="inline-block rounded-full bg-saffron text-white px-3 py-1 mr-2">{rewritten.length} rewritten</span>
+        <span class="inline-block rounded-full bg-paper text-ink px-3 py-1">{copies.length} YouLi copies</span>
+      </p>
 
-      <div class="overflow-x-auto">
-        <table class="w-full text-left text-sm">
-          <thead>
-            <tr class="border-b border-ink/20 text-ink-soft uppercase tracking-wider text-xs">
-              <th class="py-3 pr-4">Trip</th>
-              <th class="py-3 pr-4">Destination</th>
-              <th class="py-3 pr-4">Days</th>
-              <th class="py-3 pr-4">Starting at</th>
-              <th class="py-3 pr-4">Status</th>
-              <th class="py-3 pr-4">Visibility</th>
-              <th class="py-3 pr-4">Source</th>
-            </tr>
-          </thead>
-          <tbody>
-            {trips.map((t) => {
-              const last = t.data.chapters.groups.at(-1);
-              return (
-                <tr class="border-b border-ink/10">
-                  <td class="py-3 pr-4"><a class="text-saffron-dark underline" href={`/internal/trips/${t.id}/`}>{t.data.title}</a></td>
-                  <td class="py-3 pr-4 capitalize">{t.data.destination}</td>
-                  <td class="py-3 pr-4">{last?.dayEnd}</td>
-                  <td class="py-3 pr-4">{t.data.pricing ? money(t.data.pricing.from) : '—'}</td>
-                  <td class="py-3 pr-4">{t.data.status}</td>
-                  <td class="py-3 pr-4">{t.data.visibility}</td>
-                  <td class="py-3 pr-4">{t.data.source?.youli ? <a class="underline" href={t.data.source.youli} target="_blank" rel="noopener">YouLi</a> : '—'}</td>
+      {groups.map((g) => g.trips.length > 0 && (
+        <section class="mb-14">
+          <h2 class="display text-2xl md:text-3xl mb-2">{g.heading} <span class="text-ink-soft">({g.trips.length})</span></h2>
+          <p class="text-ink-soft mb-5 max-w-2xl">{g.note}</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <thead>
+                <tr class="border-b border-ink/20 text-ink-soft uppercase tracking-wider text-xs">
+                  <th class="py-3 pr-4">Trip</th>
+                  <th class="py-3 pr-4">Version</th>
+                  <th class="py-3 pr-4">Destination</th>
+                  <th class="py-3 pr-4">Days</th>
+                  <th class="py-3 pr-4">Starting at</th>
+                  <th class="py-3 pr-4">Open questions</th>
+                  <th class="py-3 pr-4">Status</th>
+                  <th class="py-3 pr-4">Source</th>
                 </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
+              </thead>
+              <tbody>
+                {g.trips.map((t) => {
+                  const last = t.data.chapters.groups.at(-1);
+                  const isNew = t.data.editorial === 'rewritten';
+                  return (
+                    <tr class={`border-b border-ink/10 ${isNew ? 'bg-saffron/5' : ''}`}>
+                      <td class="py-3 pr-4"><a class="text-saffron-dark underline" href={`/internal/trips/${t.id}/`}>{t.data.title}</a></td>
+                      <td class="py-3 pr-4">
+                        {isNew
+                          ? <span class="inline-block rounded-full bg-saffron text-white text-xs px-2 py-0.5">Rewritten</span>
+                          : <span class="inline-block rounded-full bg-paper text-ink-soft text-xs px-2 py-0.5">YouLi copy</span>}
+                      </td>
+                      <td class="py-3 pr-4 capitalize">{t.data.destination}</td>
+                      <td class="py-3 pr-4">{last?.dayEnd}</td>
+                      <td class="py-3 pr-4">{t.data.pricing ? money(t.data.pricing.from) : '—'}</td>
+                      <td class="py-3 pr-4">{t.data.reviewNotes.length || '—'}</td>
+                      <td class="py-3 pr-4">{t.data.status}</td>
+                      <td class="py-3 pr-4">{t.data.source?.youli ? <a class="underline" href={t.data.source.youli} target="_blank" rel="noopener">YouLi</a> : '—'}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      ))}
     </div>
   </div>
 </Base>
