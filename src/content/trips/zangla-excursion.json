@@ -1,0 +1,260 @@
+{
+  "title": "Zangla Excursion",
+  "status": "review",
+  "visibility": "internal",
+  "destination": "ladakh",
+  "kind": "template",
+  "source": {
+    "youli": "https://youli.io/t/adventure-access/zangla-excursion",
+    "migratedOn": "2026-11-03",
+    "notes": "Mechanical copy of the public YouLi page: one chapter per YouLi day, YouLi photos. Needs an editorial pass into Brian's chapter format."
+  },
+  "seo": {
+    "title": "Zangla Excursion | Adventure Access",
+    "description": "A trek in Zanskar can take you from rugged ridgelines to sparkling blue pools and cozy homestays all in a few hours time."
+  },
+  "hero": {
+    "eyebrow": "Zangla · Nimmu · May–October",
+    "title": "Zangla Excursion",
+    "subtitle": "A trek in Zanskar can take you from rugged ridgelines to sparkling blue pools and cozy homestays all in a few hours time.",
+    "image": "/images/2026/11/trips/zangla-excursion-hero.jpg",
+    "imageAlt": "Zangla Excursion, India",
+    "meta": [
+      {
+        "label": "Duration",
+        "value": "4½ Days · Start and end in Leh"
+      },
+      {
+        "label": "Season",
+        "value": "May–October"
+      },
+      {
+        "label": "Starting at",
+        "value": "$1,889"
+      }
+    ]
+  },
+  "intro": {
+    "label": "The Journey",
+    "heading": "Overview",
+    "paragraphs": [
+      "A trek in Zanskar can take you from rugged ridgelines to sparkling blue pools and cozy homestays all in a few hours time. This rich and unspoilt region holds a spectacular landscape that has been traversed by trekkers for decades. These trails are not easy. Although this itinerary is shorter and slightly easier than our other tours, these hikes at this altitude will likely still push your abilities and give you a meaningful challenge along some of the highest trails in the world.",
+      "The culture in Zanskar has remained mostly unchanged for a thousand years, so our journey will include a great deal of interaction with Ladakhi people and time in local homes, giving a peek into Himalayan mountain life as it was hundreds of years ago. This experience alongside our time in Leh, the bustling capital of Ladakh and our visit to Delhi, the diverse capital of India, will give you a taste of the rich diversity that makes India such a colorful nation.",
+      "Our local specialists will take care of your every need from airport pickup to drop-off so you can focus on soaking up your adventure experience. Trekking in the biggest landscapes you've seen alongside rich cultural immersion will provide a grand tour that will give you a new perspective on adventure travel."
+    ]
+  },
+  "route": [
+    {
+      "name": "Sirsir La",
+      "days": "Day 2"
+    },
+    {
+      "name": "Zangla",
+      "days": "Day 3"
+    },
+    {
+      "name": "Leh",
+      "days": "Day 5"
+    }
+  ],
+  "chapters": {
+    "label": "The Journey in Chapters",
+    "heading": "Day by Day",
+    "groups": [
+      {
+        "dayStart": 1,
+        "dayEnd": 1,
+        "title": "Fly to Leh, Rest in Nimmu",
+        "tags": [],
+        "prose": [
+          "Your journey begins as we pick you up in Leh, Ladakh, and from there bringing you directly to Nimmu village where a beautiful local home awaits you. This traditional Ladakhi house has been converted to a small hotel with excellent dining. The courtyards, traditional features, luxury tents, and comfortable rooms of this still functioning village home are an inroad to the history and culture of the region. After some time of rest and tasty food, we will take a guided tour of the old village, getting a peek into Ladakhi life as it has been for a thousand years."
+        ],
+        "days": [
+          {
+            "label": "Day 1",
+            "text": "Fly to Leh, Rest in Nimmu"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/zangla-excursion-day-1.jpg",
+          "alt": "Fly to Leh, Rest in Nimmu"
+        }
+      },
+      {
+        "dayStart": 2,
+        "dayEnd": 2,
+        "title": "Transfer to Zangla, Palace Exploration",
+        "tags": [
+          "Sirsir La"
+        ],
+        "prose": [
+          "Driving the roads and passes of Zanskar is an adventure in itself. After a refreshing breakfast in Nimmu House, we head deep into the mountains along the Zanskar River. we will pass many tiny villages and wildly twisting geology, finally arriving at a beautiful homestay tucked into the palace town of Zangla. Zanskari hospitality and traditional rooms are a well-earned reward after the grand overland journey. After some tea and lunch, we will head up to the Zangla Palace. This ancient seat of power was the home of the king of Zanskar until recently, and it stands as a beautiful glimpse into the history of the region which we can freely explore. An evening of food and local stories will wrap up our eventful day."
+        ],
+        "days": [
+          {
+            "label": "Day 2",
+            "text": "Sirsir La"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-3.jpg",
+          "alt": "Transfer to Zangla, Palace Exploration"
+        }
+      },
+      {
+        "dayStart": 3,
+        "dayEnd": 3,
+        "title": "Ancient Palace Hike + Hanamur",
+        "tags": [
+          "Zangla"
+        ],
+        "prose": [
+          "After a homestay breakfast we will head into a challenging hike to an ancient royal stronghold in the mountains behind Zangla. This incredible hike includes steep terrain and water crossings, all designed to protect this high mountain palace. After the palace adventure and a lunch with our host family, we pack up our hiking gear and drive to the trailhead of our evening hike, the riverside trek from Pidmo to Hanamur. After a few hours of stunning trails you will reach the remote and beautiful village and enjoy an evening under the stars with our homestay family.",
+          "Ancient Palace Trek",
+          "Distance\nTotal Ascent\nMin Altitude\nMax Altitude",
+          "5.2 mi\n1857 ft\n11,526 ft\n11,962 ft",
+          "Pidmo to Hanamur",
+          "Distance\nTotal Ascent\nMin Altitude\nMax Altitude",
+          "3.8 mi\n456 ft\n11,100 ft\n11,286 ft"
+        ],
+        "days": [
+          {
+            "label": "Day 3",
+            "text": "Zangla"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-4.jpg",
+          "alt": "Ancient Palace Hike + Hanamur"
+        }
+      },
+      {
+        "dayStart": 4,
+        "dayEnd": 4,
+        "title": "Overland Journey, Evening in Leh",
+        "tags": [],
+        "prose": [
+          "We will hike back from Hanamur in the morning, then load up and make the 5 hour drive back to Leh, the capital of Ladakh. You can spend your evening exploring the old market streets, buy some local goods, visit the Central Asian museum, or tackle many other local activities. Want more adventure? Hike to Shanti Stupa for amazing hilltop views of the town. We will conclude with a celebratory dinner at a local venue and share our best stories from the weekend."
+        ],
+        "days": [
+          {
+            "label": "Day 4",
+            "text": "Overland Journey, Evening in Leh"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/zangla-excursion-day-4.jpg",
+          "alt": "Overland Journey, Evening in Leh"
+        }
+      },
+      {
+        "dayStart": 5,
+        "dayEnd": 5,
+        "title": "Transfer to Delhi",
+        "tags": [
+          "Leh"
+        ],
+        "prose": [
+          "Take one of our Taxis to Leh airport in the morning to allow you to re-enter life in Delhi by the afternoon. We hope happy memories and photos from this adventure stay with you for years to come!",
+          "We would be happy to arrange further activities in Ladakh or Delhi to extend your adventure, just let us know how we can serve you. [email protected]"
+        ],
+        "days": [
+          {
+            "label": "Day 5",
+            "text": "Leh"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/zangla-excursion-day-5.jpg",
+          "alt": "Transfer to Delhi"
+        }
+      }
+    ]
+  },
+  "highlights": [
+    {
+      "where": "Ladakh",
+      "title": "Leh",
+      "body": "Leh is the capital of Ladakh and will serve as your first introduction to Ladakh as well as a place of closure for your time here. In many ways it feels like an overgrown village. The bustling streets and marketplace alleyways provide a vibrancy to the small city that is contagious. Shopping is abundant but finding something unique takes a bit of extra effort. The food is great. The guesthouse here feels like an oasis whether you are experiencing it as the first stop after hours of air travel or again on the back end, where what once felt like the most remote place you can imagine suddenly feels like home in a bustling metropolis.",
+      "image": "/images/2026/11/trips/red-lake-trek-leh.jpg",
+      "imageAlt": "Leh"
+    },
+    {
+      "where": "Ladakh",
+      "title": "Hiking in the Western Himalaya",
+      "body": "Ladakh is where the Himalaya run all the way up to the Karakoram. Zanskar is one of the least touched valleys of the region, creating incredible opportunity for pure adventure. We have a few things that we keep in focus at all times. One is your safety and with altitudes pushing 16,000 feet above sea level, we pay close attention to the acclimatization process. We ease our way into activity! What may seem as unnecessary slowness is a proven method to make sure you don't flame out on day 2 and miss out on the rest of the trip while you recover in a hotel, or even worse...a hospital. Scroll down as we talk about culture and environment.",
+      "image": "/images/2026/11/trips/zangla-excursion-hiking-in-the-western-himalaya.jpg",
+      "imageAlt": "Hiking in the Western Himalaya"
+    },
+    {
+      "where": "Ladakh",
+      "title": "Local Culture and Customs",
+      "body": "Ladakhi culture is very hospitable. You will enjoy your time here. Our guides are not just there to guide you on the trail, but they invite you into their own relationships and sometimes their own family. This is what makes an experience with Adventure Access so meaningful. Are there things you need to be aware of? Absolutely! Will you be well taken care of and informed along the way by your guide? You bet! We encourage you to learn as you go and leave better than when you came.",
+      "image": "/images/2026/11/trips/red-lake-trek-local-culture-and-customs.jpg",
+      "imageAlt": "Local Culture and Customs"
+    },
+    {
+      "where": "Ladakh",
+      "title": "The Environment",
+      "body": "Water is life and this is becomes clear once you spend some time in the region, especially while exerting yourself on a bike. But the last thing we want to do is pollute this amazing place with hundreds of plastic bottles. We take care by providing you a more sustainable solution while we travel, while ensuring the purest water to keep you healthy and strong. Not just anything goes! We work closely with local partners and take our cues from them as well as our own knowledge base for what is good for long-term sustainable travel in the region. We are careful about where and how we ride. We welcome you into this mentality and aim to do what is best for you and for the environment.",
+      "image": "/images/2026/11/trips/red-lake-trek-the-environment.jpg",
+      "imageAlt": "The Environment"
+    },
+    {
+      "where": "Ladakh",
+      "title": "Education is an Amazing Adventure",
+      "body": "Adventure Access is committed to doing good things in the places you travel. Through our partnerships with local business leaders and others in the community around Zanskar, we give 3% of general revenue to sponsoring local children. This allows Zanskari children to attend school and embark on an amazing adventure through learning.",
+      "image": "/images/2026/11/trips/red-lake-trek-education-is-an-amazing-adventure.jpg",
+      "imageAlt": "Education is an Amazing Adventure"
+    }
+  ],
+  "included": [
+    "Guide Services",
+    "Accommodations: Our preferred packages include 3-4 star locations in Leh, with a focus on more hospitable lodge owners over gloss hotels with poor front desk service. Homestays in villages will vary from location to location. Some are rustic while others have more amenities. Most village destinations do not have hotels, providing a traditional and rich experience. Omasila is a comfortable hotel in the heart of Leh featuring a beautiful garden for unwinding and sipping tea.",
+    "Meals: All meals in India are provided in the tour package.",
+    "Domestic transportation: All ground travel within Ladakh as indicated in the itinerary",
+    "Airport Pickup and Dropoff",
+    "Government permit fees"
+  ],
+  "excluded": [
+    "Visas",
+    "Insurance: We require guests to be properly insured for the activities in the itinerary. We recommend World Nomads travel insurance. For more info, click here.",
+    "Alcohol: We strongly encourage minimizing or eliminating alcohol while acclimatizing. Should you choose to drink alcohol when appropriate, you may do so but must pay your alcohol tab at the close of the meal.",
+    "Tips: It is customary to tip all guides. We will provide information about the tipping culture in India so you can make informed decisions regarding when to tip and how much to tip.",
+    "Clothing and Equipment: We do not provide your gear but do have a packing list to help you prepare. We are happy to answer any questions you have and make recommendations if you need assistance."
+  ],
+  "nextSteps": {
+    "label": "Next Steps",
+    "heading": "Make It Yours",
+    "lede": "From the moment you express interest, one of our trip specialists guides you through booking, so the trip matches what you want from it.",
+    "steps": [
+      {
+        "title": "Express interest",
+        "body": "Tell us who is traveling and when. We usually reply within 48 hours."
+      },
+      {
+        "title": "Talk with a specialist",
+        "body": "We help match the trip to your expectations and goals."
+      },
+      {
+        "title": "Book",
+        "body": "Review our payment terms and cancellation policy before making a payment."
+      }
+    ],
+    "cta": {
+      "label": "Express Interest",
+      "href": "mailto:info@adventure-access.com?subject=Zangla%20Excursion"
+    },
+    "secondary": {
+      "label": "Payment terms and cancellation policy",
+      "href": "/payment-terms-cancellation-policy/"
+    }
+  },
+  "footerNote": [],
+  "pricing": {
+    "from": 1889,
+    "currency": "USD",
+    "basis": "Double occupancy (shared room)",
+    "notes": []
+  }
+}

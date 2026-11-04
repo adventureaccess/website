@@ -159,6 +159,7 @@ const money = (n: number) => '$' + n.toLocaleString('en-US');
           <span class="day-chevron" aria-hidden="true"></span>
         </summary>
         <div class="day-body">
+          {g.image && <img class="day-photo" src={g.image.src} alt={g.image.alt} loading="lazy" />}
           {g.badge && <div class="day-badge">{g.badge}</div>}
           {g.prose.map((p) => <p>{p}</p>)}
           <ul class="day-lines">
@@ -445,6 +446,7 @@ const money = (n: number) => '$' + n.toLocaleString('en-US');
 
   /* ===== ADDITIONS FOR THE SITE VERSION (not in Brian's framework) ===== */
   .day-num-long { font-size: 1.5rem; }
+  .day-photo { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 2px; margin-bottom: 1.2rem; }
   /* Collapsible chapters (details/summary, works without JS) */
   .day-group > summary { list-style: none; cursor: pointer; }
   .day-group > summary::-webkit-details-marker { display: none; }

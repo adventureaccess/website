@@ -101,6 +101,8 @@ const trips = defineCollection({
             title: z.string(),
             tags: z.array(z.string()).default([]),
             badge: z.string().optional(),
+            /** Optional photo shown at the top of the chapter body. */
+            image: photo.optional(),
             prose: z.array(z.string()).default([]),
             days: z.array(day).min(1),
             overnight: z.string().optional(),

@@ -1,0 +1,382 @@
+{
+  "title": "Zanskar Mountain Biking",
+  "status": "review",
+  "visibility": "internal",
+  "destination": "ladakh",
+  "kind": "template",
+  "source": {
+    "youli": "https://youli.io/t/adventure-access/zanskar-mountain-biking",
+    "migratedOn": "2026-11-03",
+    "notes": "Mechanical copy of the public YouLi page: one chapter per YouLi day, YouLi photos. Needs an editorial pass into Brian's chapter format."
+  },
+  "seo": {
+    "title": "Zanskar Mountain Biking | Adventure Access",
+    "description": "Riding in Ladakh, and more specifically in Zanskar, is beginning to make headlines but has been mostly reserved for those who are sponsored with big budgets t"
+  },
+  "hero": {
+    "eyebrow": "Zanskar · Leh · May–October",
+    "title": "Zanskar Mountain Biking",
+    "subtitle": "Riding in Ladakh, and more specifically in Zanskar, is beginning to make headlines but has been mostly reserved for those who are sponsored with big budgets to ride in extreme locations.",
+    "image": "/images/2026/11/trips/zanskar-mountain-biking-hero.jpg",
+    "imageAlt": "Zanskar Mountain Biking, India",
+    "meta": [
+      {
+        "label": "Duration",
+        "value": "10 Days · Start and end in Delhi"
+      },
+      {
+        "label": "Season",
+        "value": "May–October"
+      },
+      {
+        "label": "Starting at",
+        "value": "$4,989"
+      }
+    ]
+  },
+  "intro": {
+    "label": "The Journey",
+    "heading": "Overview",
+    "paragraphs": [
+      "Riding in Ladakh, and more specifically in Zanskar, is beginning to make headlines but has been mostly reserved for those who are sponsored with big budgets to ride in extreme locations. It takes insider knowledge to find more than just a 300 meter line with a cool backdrop for Outside Magazine. Riding the Western Himalaya is unparalleled.",
+      "The trails here are raw. They are not exclusive MTB trails, but trails used by locals to move between villages or move their herds of yak or flocks of goats up and down the mountain. There are historical and cultural elements to these trails.",
+      "Above and beyond the trails are scree slopes that have never been touched by a bike. Free riding is abundant in the region and with our local guides you can be sure to to drop in and finish up in the right spot, allowing for minimal interruptions to riding in such an untouched place.",
+      "From airport pickup to dropoff, our guides and local specialists will take care of your every need so you can focus on the adventure at hand. Mountain biking combined with cultural immersion and the biggest landscapes you've ever encountered will bring you a new perspective on sport and travel."
+    ]
+  },
+  "route": [
+    {
+      "name": "The Lamayuru Monastery",
+      "days": "Day 2"
+    },
+    {
+      "name": "Sirsir La",
+      "days": "Day 3"
+    },
+    {
+      "name": "Zangla",
+      "days": "Day 4"
+    },
+    {
+      "name": "Lingshed",
+      "days": "Day 5"
+    },
+    {
+      "name": "Nimmu House Ladakh",
+      "days": "Day 7"
+    },
+    {
+      "name": "Leh",
+      "days": "Day 8"
+    },
+    {
+      "name": "New Delhi",
+      "days": "Day 9"
+    }
+  ],
+  "chapters": {
+    "label": "The Journey in Chapters",
+    "heading": "Day by Day",
+    "groups": [
+      {
+        "dayStart": 1,
+        "dayEnd": 1,
+        "title": "Travel to India and Transfer to Leh",
+        "tags": [],
+        "prose": [
+          "Depart from your country of origin and transit through New Delhi for flights to Leh, Ladakh. Once in Leh, we are going to take it easy, allowing you to adjust to the new time zone as well as the altitude of the region. This time is thoughtfully planned to facilitate acclimatization and allow for some trip briefing and preparation for the days to come."
+        ],
+        "days": [
+          {
+            "label": "Day 1",
+            "text": "Travel to India and Transfer to Leh"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-1.jpg",
+          "alt": "Travel to India and Transfer to Leh"
+        }
+      },
+      {
+        "dayStart": 2,
+        "dayEnd": 2,
+        "title": "Khaltse and riding above the Moonlands",
+        "tags": [
+          "The Lamayuru Monastery"
+        ],
+        "prose": [
+          "Acclimatization is still the name of the game at this point. Khaltse is slightly lower in elevation compared to Leh so this allows your body to continue adjusting while adding physical activity to the itinerary for the day. The afternoon will be spent riding in Lamayuru, a picturesque region known for its monastery scenes which provide stark contrast against a barren landscape as well as the nearby Moonlands which is a dry landscape that looks otherworldly, hence the name. The riding will be relatively easy, allowing for adjustments to the 14,000+ foot elevation as well as the opportunity to make any bike adjustments following the re-assembly from international travel. Don't be fooled though. This is not the family loop at your local trail system. The views are stunning and you can pick your lines, allowing for an easier adjustment or a more aggressive approach to riding in Ladakh."
+        ],
+        "days": [
+          {
+            "label": "Day 2",
+            "text": "The Lamayuru Monastery, Leh"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/zanskar-mountain-biking-day-2.jpg",
+          "alt": "Khaltse and riding above the Moonlands"
+        }
+      },
+      {
+        "dayStart": 3,
+        "dayEnd": 3,
+        "title": "Transfer to Zangla, Ride SirSir La and Zangla Palace",
+        "tags": [
+          "Sirsir La"
+        ],
+        "prose": [
+          "The roads and passes of Zanskar are an adventure in themselves. We will cross some of the most rugged landscapes and highest roads you can imagine. SirSirLa is a pass where the road crosses 15,700 feet above sea level. With an incredible Freeride line snaking down the valley from the high pass as well as a fast gravel line available, we will loop this route a few times before our lunch at the tea shop below.",
+          "To finish the day, we will drive over another pass to Zangla, our home for two nights. This beautiful village is the ancient royal capital of Zanskar, with a short but incredibly scenic line from the old palace down to the village center. We can loop this line to your hearts content, collecting some great photos along the way."
+        ],
+        "days": [
+          {
+            "label": "Day 3",
+            "text": "Sirsir La"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/zanskar-mountain-biking-day-3.jpg",
+          "alt": "Transfer to Zangla, Ride SirSir La and Zangla Palace"
+        }
+      },
+      {
+        "dayStart": 4,
+        "dayEnd": 4,
+        "title": "Riding in the Padum Valley",
+        "tags": [
+          "Zangla"
+        ],
+        "prose": [
+          "Welcome to the heart of Zanskar! Zangla is one of the best villages in Zanskar with one of the oldest palace locations in the region just above the village. We will tour the ruins of the palace, hit a huge and flowy freeride line in the Padum valley, and maybe visit a monastery along the way. Wonderful local hospitality and a hearty Ladakhi meal await us back at our homestay in Zangla."
+        ],
+        "days": [
+          {
+            "label": "Day 4",
+            "text": "Zangla"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/zanskar-mountain-biking-day-4.jpg",
+          "alt": "Riding in the Padum Valley"
+        }
+      },
+      {
+        "dayStart": 5,
+        "dayEnd": 5,
+        "title": "Lingshed and Technical trails",
+        "tags": [
+          "Lingshed"
+        ],
+        "prose": [
+          "We will transfer to the pass above Lingshed for one of the Adventure Access staff favorites in the region. We will ride what is known as Hello Hill down to a rocky, technical trail that drops in above Lingshed Monastery. Lingshed is one of the highlighted destinations for many visitors to Zanskar."
+        ],
+        "days": [
+          {
+            "label": "Day 5",
+            "text": "Lingshed"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/zanskar-mountain-biking-day-5.jpg",
+          "alt": "Lingshed and Technical trails"
+        }
+      },
+      {
+        "dayStart": 6,
+        "dayEnd": 6,
+        "title": "Kyupa La and Nerak",
+        "tags": [],
+        "prose": [
+          "From Lingshed we will go back to Kyupa La and once again leave the confines of the vehicle to set our spirits free with some excellent free riding down to the village of Yulchung. We will shuttle back to the top and hit the same line again or you can try something new. We will transfer to the nearby village of Nerak for the evening with another technical downhill trail available to us from the top of the village to the river below as well as some much needed rest and relaxation."
+        ],
+        "days": [
+          {
+            "label": "Day 6",
+            "text": "Kyupa La and Nerak"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/zanskar-mountain-biking-day-6.jpg",
+          "alt": "Kyupa La and Nerak"
+        }
+      },
+      {
+        "dayStart": 7,
+        "dayEnd": 7,
+        "title": "Nimmu House",
+        "tags": [
+          "Nimmu House Ladakh"
+        ],
+        "prose": [
+          "While it is sad to say the mountain biking is over, the Nimmu House experience is an incredible highlight to finish our time in the mountains of Ladakh. This historic home has been converted to a small hotel with excellent dining. The courtyards, traditional features, and rooms of this still functioning village home are an inroad to the history and culture of the region. Take a tour with the owner and enjoy the excellent Asian fusion cuisine!"
+        ],
+        "days": [
+          {
+            "label": "Day 7",
+            "text": "Nimmu House Ladakh, Nimmoo"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/zanskar-mountain-biking-day-7.jpg",
+          "alt": "Nimmu House"
+        }
+      },
+      {
+        "dayStart": 8,
+        "dayEnd": 8,
+        "title": "Leh",
+        "tags": [
+          "Leh"
+        ],
+        "prose": [
+          "We will conclude our time in Ladakh with a day in Leh, the capital. Now that we are acclimatized to the altitude here, many options await us for adventure. There is a bike park north of Town for those who want to explore some jumps and berms. Or you can delve into the city culture with a tour of the old market streets or visit the Central Asian History museum. Want a short hiking adventure? Hike to Shanti Stupa for amazing hilltop views of the old town or up to the palace for more history of Ladakh. We will conclude with a celebratory dinner at a local venue and share our best stories from the week."
+        ],
+        "days": [
+          {
+            "label": "Day 8",
+            "text": "Leh"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-8.jpg",
+          "alt": "Leh"
+        }
+      },
+      {
+        "dayStart": 9,
+        "dayEnd": 9,
+        "title": "Delhi",
+        "tags": [
+          "New Delhi"
+        ],
+        "prose": [
+          "We will fly out of Leh early in the morning to allow for an afternoon and evening of touring New Delhi. Stay in comfort at a local 5 star hotel before an early morning departure to the airport for your international flight back to your home country."
+        ],
+        "days": [
+          {
+            "label": "Day 9",
+            "text": "New Delhi, Delhi, India"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-10.jpg",
+          "alt": "Delhi"
+        }
+      },
+      {
+        "dayStart": 10,
+        "dayEnd": 10,
+        "title": "Day of Departure",
+        "tags": [],
+        "prose": [
+          "Fly back to your country of origin or hit another destination along the way. It's up to you!"
+        ],
+        "days": [
+          {
+            "label": "Day 10",
+            "text": "Day of Departure"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/zanskar-mountain-biking-day-10.jpg",
+          "alt": "Day of Departure"
+        }
+      }
+    ]
+  },
+  "highlights": [
+    {
+      "where": "Ladakh",
+      "title": "Leh",
+      "body": "Leh is the capital of Ladakh and will serve as your first introduction to Ladakh as well as a place of closure for your time here. In many ways it feels like an overgrown village. The bustling streets and marketplace alleyways provide a vibrancy to the small city that is contagious. Shopping is abundant but finding something unique takes a bit of extra effort. The food is great. The guesthouse here feels like an oasis whether you are experiencing it as the first stop after hours of air travel or again on the back end, where what once felt like the most remote place you can imagine suddenly feels like home in a bustling metropolis.",
+      "image": "/images/2026/11/trips/red-lake-trek-leh.jpg",
+      "imageAlt": "Leh"
+    },
+    {
+      "where": "Ladakh",
+      "title": "Mountain Biking in the Western Himalaya",
+      "body": "Ladakh is where the Himalaya run all the way up to the Karakoram. Zanskar is one of the least touched valleys of the region, creating incredible opportunity for pure adventure. We have a few things that we keep in focus at all times. One is your safety and with altitudes pushing 16,000 feet above sea level, we pay close attention to the acclimatization process. We ease our way into activity! What may seem as unnecessary slowness is a proven method to make sure you don't flame out on day 2 and miss out on the rest of the trip while you recover in a hotel, or even worse...a hospital. Scroll down as we talk about culture and environment.",
+      "image": "/images/2026/11/trips/zanskar-mountain-biking-mountain-biking-in-the-western-himalaya.jpg",
+      "imageAlt": "Mountain Biking in the Western Himalaya"
+    },
+    {
+      "where": "Ladakh",
+      "title": "Local Culture and Customs",
+      "body": "Ladakhi culture is very hospitable. You will enjoy your time here. Our guides are not just there to guide you on the trail, but they invite you into their own relationships and sometimes their own family. This is what makes an experience with Adventure Access so meaningful. Are there things you need to be aware of? Absolutely! Will you be well taken care of and informed along the way by your guide? You bet! We encourage you to learn as you go and leave better than when you came.",
+      "image": "/images/2026/11/trips/red-lake-trek-local-culture-and-customs.jpg",
+      "imageAlt": "Local Culture and Customs"
+    },
+    {
+      "where": "Ladakh",
+      "title": "The Environment",
+      "body": "Water is life and this is becomes clear once you spend some time in the region, especially while exerting yourself on a bike. But the last thing we want to do is pollute this amazing place with hundreds of plastic bottles. We take care by providing you a more sustainable solution while we travel, while ensuring the purest water to keep you healthy and strong. Not just anything goes! We work closely with local partners and take our cues from them as well as our own knowledge base for what is good for long-term sustainable travel in the region. We are careful about where and how we ride. We welcome you into this mentality and aim to do what is best for you and for the environment.",
+      "image": "/images/2026/11/trips/zanskar-mountain-biking-the-environment.jpg",
+      "imageAlt": "The Environment"
+    },
+    {
+      "where": "Ladakh",
+      "title": "Downhill, Freeriding, and Technical Trails",
+      "body": "Riding in Ladakh is generally diverse! This is especially true of Zanskar where we are riding on trails that were not developed as MTB trails or where there is no trail at all. We aim to hit various types of terrain but most all trails are for experienced riders. This is not for beginners. Steep descents, scree filled slopes, and rocky technical terrain will be the experience of the week. Backdrops to all our rides will be towering peaks, deep valleys, and cultural monuments that date back hundreds of years. It is a setting that inspires epic riding.",
+      "image": "/images/2026/11/trips/zanskar-mountain-biking-downhill-freeriding-and-technical-trails.jpg",
+      "imageAlt": "Downhill, Freeriding, and Technical Trails"
+    },
+    {
+      "where": "Ladakh",
+      "title": "Education is an Amazing Adventure",
+      "body": "Adventure Access is committed to doing good things in the places you travel. Through our partnerships with local business leaders and others in the community around Zanskar, we give 3% of general revenue to sponsoring local children. This allows Zanskari children to attend school and embark on an amazing adventure through learning.",
+      "image": "/images/2026/11/trips/red-lake-trek-education-is-an-amazing-adventure.jpg",
+      "imageAlt": "Education is an Amazing Adventure"
+    }
+  ],
+  "included": [
+    "Guide Services",
+    "Accommodations: Our preferred packages include 3–4 star locations in Leh, with a focus on more hospitable lodge owners over gloss hotels with poor front desk service. Homestays in villages will vary from location to location. Some are rustic while others have more amenities. Most village destinations do not have hotels. But that is part of why we go there. Nimmu House is a 5 star experience on the back end of the itinerary.",
+    "Meals: All meals in India are provided in the tour package.",
+    "Domestic transportation: All ground and air travel within India as indicated in the itinerary",
+    "Airport Pickup and Dropoff",
+    "Government permit fees"
+  ],
+  "excluded": [
+    "Flights to/from Delhi",
+    "Visas",
+    "Insurance",
+    "Alcohol: We strongly encourage minimizing or eliminating alcohol while acclimatizing. Should you choose to drink alcohol when appropriate, you may do so but must pay your alcohol tab at the close of the meal.",
+    "Tips: It is customary to tip all guides. We will provide information about the tipping culture in India so you can make informed decisions regarding when to tip and how much to tip.",
+    "Clothing and Equipment: We do not provide your gear but do have a packing list to help you prepare. We are happy to answer any questions you have and make recommendations if you need assistance."
+  ],
+  "nextSteps": {
+    "label": "Next Steps",
+    "heading": "Make It Yours",
+    "lede": "From the moment you express interest, one of our trip specialists guides you through booking, so the trip matches what you want from it.",
+    "steps": [
+      {
+        "title": "Express interest",
+        "body": "Tell us who is traveling and when. We usually reply within 48 hours."
+      },
+      {
+        "title": "Talk with a specialist",
+        "body": "We help match the trip to your expectations and goals."
+      },
+      {
+        "title": "Book",
+        "body": "Review our payment terms and cancellation policy before making a payment."
+      }
+    ],
+    "cta": {
+      "label": "Express Interest",
+      "href": "mailto:info@adventure-access.com?subject=Zanskar%20Mountain%20Biking"
+    },
+    "secondary": {
+      "label": "Payment terms and cancellation policy",
+      "href": "/payment-terms-cancellation-policy/"
+    }
+  },
+  "footerNote": [],
+  "pricing": {
+    "from": 4989,
+    "currency": "USD",
+    "basis": "Double occupancy (shared room)",
+    "notes": []
+  }
+}

@@ -1,0 +1,460 @@
+{
+  "title": "Everest: Gokyo Ri, Chola Pass and Base Camp",
+  "status": "review",
+  "visibility": "internal",
+  "destination": "nepal",
+  "kind": "template",
+  "source": {
+    "youli": "https://youli.io/t/adventure-access/everest-gokyo-ri-chola-pass--ebc",
+    "migratedOn": "2026-11-03",
+    "notes": "Mechanical copy of the public YouLi page: one chapter per YouLi day, YouLi photos. Needs an editorial pass into Brian's chapter format."
+  },
+  "seo": {
+    "title": "Everest: Gokyo Ri, Chola Pass and Base Camp | Adventure Access",
+    "description": "More than just reaching Everest Base Camp, this trek offers amazing experiences from start to finish."
+  },
+  "hero": {
+    "eyebrow": "Kathmandu, Nepal · March–May and September–November",
+    "title": "Everest: Gokyo Ri, Chola Pass and Base Camp",
+    "subtitle": "More than just reaching Everest Base Camp, this trek offers amazing experiences from start to finish.",
+    "image": "/images/2026/11/trips/everest-gokyo-ri-chola-pass-ebc-hero.jpg",
+    "imageAlt": "Everest: Gokyo Ri, Chola Pass and Base Camp, Nepal",
+    "meta": [
+      {
+        "label": "Duration",
+        "value": "17 Days"
+      },
+      {
+        "label": "Season",
+        "value": "March–May and September–November"
+      },
+      {
+        "label": "Starting at",
+        "value": "$3,900"
+      }
+    ]
+  },
+  "intro": {
+    "label": "The Journey",
+    "heading": "Overview",
+    "paragraphs": [
+      "More than just reaching Everest Base Camp, this trek offers amazing experiences from start to finish. It is also one of the most classic routes in Nepal. This itinerary is designed around a trekking route from Lukla to Everest Base Camp via Gokyo Ri and Chola Pass. After Basecamp, from Pheriche, we arrange a heli-tour back to Kathmandu to minimize some of the toil in hiking down from Pheriche to Lukla and expedite the return to the city. This shortens the overall itinerary by 2-3 days."
+    ]
+  },
+  "route": [],
+  "chapters": {
+    "label": "The Journey in Chapters",
+    "heading": "Day by Day",
+    "groups": [
+      {
+        "dayStart": 1,
+        "dayEnd": 1,
+        "title": "Arrive in Kathmandu, meet your guide, and transfer to hotel",
+        "tags": [],
+        "prose": [],
+        "days": [
+          {
+            "label": "Day 1",
+            "text": "Arrive in Kathmandu, meet your guide, and transfer to hotel"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/annapurna-trekking-day-1.jpg",
+          "alt": "Arrive in Kathmandu, meet your guide, and transfer to hotel"
+        }
+      },
+      {
+        "dayStart": 2,
+        "dayEnd": 2,
+        "title": "Cultural tour in Boudha, trip orientation, and dinner with your guide and group",
+        "tags": [],
+        "prose": [],
+        "days": [
+          {
+            "label": "Day 2",
+            "text": "Cultural tour in Boudha, trip orientation, and dinner with your guide and group"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/annapurna-trekking-day-2.jpg",
+          "alt": "Cultural tour in Boudha, trip orientation, and dinner with your guide and group"
+        }
+      },
+      {
+        "dayStart": 3,
+        "dayEnd": 3,
+        "title": "Fly to Lukla and trek to Phakding",
+        "tags": [],
+        "prose": [
+          "This starter trek is 3-4 Hrs at 2640m/ 8659ft. We'll provide food. Make sure to pack water, sunscreen, and all other equipment."
+        ],
+        "days": [
+          {
+            "label": "Day 3",
+            "text": "Fly to Lukla and trek to Phakding"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/everest-gokyo-ri-chola-pass-ebc-day-3.jpg",
+          "alt": "Fly to Lukla and trek to Phakding"
+        }
+      },
+      {
+        "dayStart": 4,
+        "dayEnd": 4,
+        "title": "Trek to Namche Bazaar",
+        "tags": [],
+        "prose": [
+          "This trek is approximately 6-7 hours and our sleeping altitude in Namche Bazaar is approximately 3450m or 11,316ft."
+        ],
+        "days": [
+          {
+            "label": "Day 4",
+            "text": "Trek to Namche Bazaar"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/everest-gokyo-ri-chola-pass-ebc-day-4.jpg",
+          "alt": "Trek to Namche Bazaar"
+        }
+      },
+      {
+        "dayStart": 5,
+        "dayEnd": 5,
+        "title": "Acclimatization Day Hike",
+        "tags": [
+          "Namche Bazar"
+        ],
+        "prose": [
+          "On clear days, catch the first views of Aba Dablam and Mount Everest while we embark on our first acclimatization hike of the itineary. This hike will proceed to Khumjung Village and return to Namche Bazaar."
+        ],
+        "days": [
+          {
+            "label": "Day 5",
+            "text": "Namche Bazar, Namche, Nepal"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/everest-gokyo-ri-chola-pass-ebc-day-5.jpg",
+          "alt": "Acclimatization Day Hike"
+        }
+      },
+      {
+        "dayStart": 6,
+        "dayEnd": 6,
+        "title": "Trek to Dhole",
+        "tags": [],
+        "prose": [
+          "This trek is approximately 7 hours and our sleeping altitude in Dhole is approximately 4210m or 13,812ft."
+        ],
+        "days": [
+          {
+            "label": "Day 6",
+            "text": "Trek to Dhole"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/everest-gokyo-ri-chola-pass-ebc-day-6.jpg",
+          "alt": "Trek to Dhole"
+        }
+      },
+      {
+        "dayStart": 7,
+        "dayEnd": 7,
+        "title": "Trek to Machherma",
+        "tags": [],
+        "prose": [
+          "This trek is approximately 3-4 hours and our sleeping altitude in Machherma is approximately 4460m or 14632ft."
+        ],
+        "days": [
+          {
+            "label": "Day 7",
+            "text": "Trek to Machherma"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/everest-gokyo-ri-chola-pass-ebc-day-7.jpg",
+          "alt": "Trek to Machherma"
+        }
+      },
+      {
+        "dayStart": 8,
+        "dayEnd": 8,
+        "title": "Acclimatization Day",
+        "tags": [],
+        "prose": [
+          "Today will be a day of rest."
+        ],
+        "days": [
+          {
+            "label": "Day 8",
+            "text": "Acclimatization Day"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/everest-gokyo-ri-chola-pass-ebc-day-8.jpg",
+          "alt": "Acclimatization Day"
+        }
+      },
+      {
+        "dayStart": 9,
+        "dayEnd": 9,
+        "title": "Trek to Gokyo Lake",
+        "tags": [],
+        "prose": [
+          "This trek is approximately 5 hours and our sleeping altitude at Gokyo Lake is approximately 4730m or 15518ft."
+        ],
+        "days": [
+          {
+            "label": "Day 9",
+            "text": "Trek to Gokyo Lake"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/everest-gokyo-ri-chola-pass-ebc-day-9.jpg",
+          "alt": "Trek to Gokyo Lake"
+        }
+      },
+      {
+        "dayStart": 10,
+        "dayEnd": 10,
+        "title": "Gokyo Ri and Trek to Dragnag",
+        "tags": [],
+        "prose": [
+          "Gokyo Ri is 5410m (17,750ft) and it will be a 2.5km hike to reach the summit. Afterward, we will trek approximately 3-4 hours and our sleeping altitude in Dragnag is approximately 4700m or 15,420ft."
+        ],
+        "days": [
+          {
+            "label": "Day 10",
+            "text": "Gokyo Ri and Trek to Dragnag"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/everest-gokyo-ri-chola-pass-ebc-day-10.jpg",
+          "alt": "Gokyo Ri and Trek to Dragnag"
+        }
+      },
+      {
+        "dayStart": 11,
+        "dayEnd": 11,
+        "title": "Chola Pass to Dzhonglha",
+        "tags": [],
+        "prose": [
+          "This trek is approximately 7-8 hours and our sleeping altitude in Dzonglha is approximately 4840m or 15,879ft. The max altitude at the Chola Pass is 5350m or 17,552ft."
+        ],
+        "days": [
+          {
+            "label": "Day 11",
+            "text": "Chola Pass to Dzhonglha"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/annapurna-trekking-day-11.jpg",
+          "alt": "Chola Pass to Dzhonglha"
+        }
+      },
+      {
+        "dayStart": 12,
+        "dayEnd": 12,
+        "title": "Trek to Lobuche",
+        "tags": [],
+        "prose": [
+          "This trek is approximately 4-5 hours and our sleeping altitude in Lobuche is approximately 4910m or 16,109ft."
+        ],
+        "days": [
+          {
+            "label": "Day 12",
+            "text": "Trek to Lobuche"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/everest-gokyo-ri-chola-pass-ebc-day-12.jpg",
+          "alt": "Trek to Lobuche"
+        }
+      },
+      {
+        "dayStart": 13,
+        "dayEnd": 13,
+        "title": "Trek to Basecamp and Overnight in Gorakshep",
+        "tags": [],
+        "prose": [
+          "This trek is approximately 7-8 hours and our sleeping altitude in Gorakshep is approximately 5180m or 16,995ft."
+        ],
+        "days": [
+          {
+            "label": "Day 13",
+            "text": "Trek to Basecamp and Overnight in Gorakshep"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/annapurna-trekking-day-13.jpg",
+          "alt": "Trek to Basecamp and Overnight in Gorakshep"
+        }
+      },
+      {
+        "dayStart": 14,
+        "dayEnd": 14,
+        "title": "Climb Kalapathar and Trek to Pheriche",
+        "tags": [],
+        "prose": [
+          "This trek is approximately 8-9 hours and our sleeping altitude in Pheriche is approximately 4210m or 13,812ft. Kalapathar is 5623m (18,448ft) at the summit."
+        ],
+        "days": [
+          {
+            "label": "Day 14",
+            "text": "Climb Kalapathar and Trek to Pheriche"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/everest-gokyo-ri-chola-pass-ebc-day-14.jpg",
+          "alt": "Climb Kalapathar and Trek to Pheriche"
+        }
+      },
+      {
+        "dayStart": 15,
+        "dayEnd": 15,
+        "title": "Heli from Pheriche to Kathmandu",
+        "tags": [],
+        "prose": [
+          "Fly by chopper from Pheriche to Kathmandu to enjoy aeriel views of the Himalayas and expedite the journey back to Kathmandu."
+        ],
+        "days": [
+          {
+            "label": "Day 15",
+            "text": "Heli from Pheriche to Kathmandu"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/everest-gokyo-ri-chola-pass-ebc-day-15.jpg",
+          "alt": "Heli from Pheriche to Kathmandu"
+        }
+      },
+      {
+        "dayStart": 16,
+        "dayEnd": 16,
+        "title": "Free Day in Kathmandu",
+        "tags": [],
+        "prose": [
+          "Take a rest, revisit some of your favorite places in Kathmandu from the beginning of the journey, and repack for your onward journey. Use the day as you wish."
+        ],
+        "days": [
+          {
+            "label": "Day 16",
+            "text": "Free Day in Kathmandu"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/annapurna-trekking-day-16.jpg",
+          "alt": "Free Day in Kathmandu"
+        }
+      },
+      {
+        "dayStart": 17,
+        "dayEnd": 17,
+        "title": "Day of Departure",
+        "tags": [],
+        "prose": [
+          "At the appropriate departure time, your guide will pick you up at the hotel and transfer you to the airport for your departure."
+        ],
+        "days": [
+          {
+            "label": "Day 17",
+            "text": "Day of Departure"
+          }
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/annapurna-trekking-day-17.jpg",
+          "alt": "Day of Departure"
+        }
+      }
+    ]
+  },
+  "highlights": [
+    {
+      "where": "Nepal",
+      "title": "Lukla - The Flight of a Lifetime",
+      "body": "Lukla is one of the most thrilling airport locations in the world. The whole experience is unlike anything else. Situated on a mountainside, right in the midst of stunning Himalayan peaks, this airport serves the entire region as there are no roads that reach Lukla. One must fly or walk to get there. Yak caravans come all the way to the door to load gear and supplies headed toward Namche Bazaar and beyond. Once we've landed, we will gather our bags, stop for a quick tea, and begin trekking down the valley toward our first evening destination, Phakding.",
+      "image": "/images/2026/11/trips/everest-gokyo-ri-chola-pass-ebc-lukla-the-flight-of-a-lifetime.jpg",
+      "imageAlt": "Lukla - The Flight of a Lifetime"
+    },
+    {
+      "where": "Nepal",
+      "title": "Working Our Way Up",
+      "body": "Slowly, slowly. This is the mantra for trekking up the Khumbu Valley. There will be several steep switchbacks throughout the valley and the first one is encountered on the way up to Namche Bazaar. Slow and steady is the name of the game. Our itineraries are designed around and average of 4-6 hours of trekking each day. We move at a calculated pace so we do not burn you out too early or rush the acclimatization process. This is by design. As we move from village to village, we leave each morning after breakfast, stop for lunch along the way, and arrive mid afternoon to rest for the next day.",
+      "image": "/images/2026/11/trips/everest-gokyo-ri-chola-pass-ebc-working-our-way-up.jpg",
+      "imageAlt": "Working Our Way Up"
+    },
+    {
+      "where": "Nepal",
+      "title": "Acclimatization Days",
+      "body": "Climb high, sleep low. On multiple occasions throughout the itinerary, we schedule acclimatization hikes to help facilitate our adjustment to the high altitudes encountered throughout the trek. On these days, we will depart the village, climb to higher destinations (often viewpoints to see peaks like Everest, Ama Dablam, etc...), possibly visit other villages, and then return to the same place we began for a second night of sleep at the same resting altitude. This helps the body adjust and reduces the risk of altitude sickness as we keep moving up the valley.",
+      "image": "/images/2026/11/trips/annapurna-trekking-acclimatization-days.jpg",
+      "imageAlt": "Acclimatization Days"
+    },
+    {
+      "where": "Nepal",
+      "title": "Quit Yakking, Start Packing",
+      "body": "Once we depart Namche Bazaar, the serious work begins and we will travel through Dhole, Machherma, and Gokyo. Don't think of this as busy work. Each of these stops and the trail segments between them are valuable experiences and they delight the senses. Along the way we move beyond forests to being well above the tree line and your surroundings will start to match what you've imagined the Himalayas look like. It's like being in another world!",
+      "image": "/images/2026/11/trips/everest-gokyo-ri-chola-pass-ebc-quit-yakking-start-packing.jpg",
+      "imageAlt": "Quit Yakking, Start Packing"
+    }
+  ],
+  "included": [],
+  "excluded": [],
+  "nextSteps": {
+    "label": "Next Steps",
+    "heading": "Make It Yours",
+    "lede": "From the moment you express interest, one of our trip specialists guides you through booking, so the trip matches what you want from it.",
+    "steps": [
+      {
+        "title": "Express interest",
+        "body": "Tell us who is traveling and when. We usually reply within 48 hours."
+      },
+      {
+        "title": "Talk with a specialist",
+        "body": "We help match the trip to your expectations and goals."
+      },
+      {
+        "title": "Book",
+        "body": "Review our payment terms and cancellation policy before making a payment."
+      }
+    ],
+    "cta": {
+      "label": "Express Interest",
+      "href": "mailto:info@adventure-access.com?subject=Everest%20Gokyo%20Ri%20Chola%20Pass%20and%20Base%20Camp"
+    },
+    "secondary": {
+      "label": "Payment terms and cancellation policy",
+      "href": "/payment-terms-cancellation-policy/"
+    }
+  },
+  "footerNote": [],
+  "goodToKnow": {
+    "label": "Good to Know",
+    "heading": "More About This Journey",
+    "cards": [
+      {
+        "title": "What to expect in Kathmandu",
+        "body": "You may have started this journey with an interest in the mountains of Nepal but no trip is complete without a good experience in Kathmandu. From the moment you meet your guide at the airport in Kathmandu, you are in good hands. There is no need to navigate the airport scene or figure out how to find your hotel in the back alleys of Boudha or Thamel. Don't worry, there is ample opportunity to get out and explore. You will be able to immerse yourself in the bustling network of alleys, streets, and buildings as you take in the city. Our guides, however, take care of the details so you can take in the surroundings. Your time in Kathmandu will also include good food, getting to know your guide, and an orientation for the trek. By the time we depart the city, everyone will be prepared for the mountains and your cultural curiosity will have been stoked."
+      },
+      {
+        "title": "Gokyo Ri",
+        "body": "Gokyo Ri is a 5,357m (17,575 ft) high peak. It provides panoramic views of the Everest region that cannot be gained when visiting Basecamp. Basecamp's proximity to Mount Everest does not afford much of a view of the mountain. The advantage of Gokyo is the ability to see things from a distance in a way that is unparalleled for most trekking points in the region."
+      },
+      {
+        "title": "Everest Base Camp",
+        "body": "Once in the Base Camp region, we include two days in this itinerary to maximize your experience. We will trek from Lobuche to to Base Camp. The Base Camp visit will put you on the Khumbu Glacier and provide you time to explore a portion of the site before we head back down the valley to spend a night at Gorak Shep."
+      },
+      {
+        "title": "Soar through the Himalayas",
+        "body": "After one night in Pheriche, you will return to Kathmandu via helicopter. This shortens the trekking itinerary by two full days, allows for a more reliable departure from the region, and on clear days it provides stunning views of the mountains on the way back to Kathmandu."
+      }
+    ]
+  },
+  "pricing": {
+    "from": 3900,
+    "currency": "USD",
+    "basis": "Starting price",
+    "notes": []
+  }
+}
