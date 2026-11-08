@@ -4,29 +4,37 @@
   "visibility": "internal",
   "destination": "nepal",
   "kind": "template",
+  "editorial": "rewritten",
   "source": {
     "youli": "https://youli.io/t/adventure-access/annapurna-trekking",
     "migratedOn": "2026-11-03",
-    "notes": "Mechanical copy of the public YouLi page: one chapter per YouLi day, YouLi photos. Needs an editorial pass into Brian's chapter format."
+    "notes": "Rewritten into Brian's chapter format from the YouLi copy. No facts added; open questions are in reviewNotes."
   },
+  "reviewNotes": [
+    "Day numbering: YouLi says 15 days but lists Days 1–13, then Day 16 (free day) and Day 17 (departure). I have shown those as Days 14 and 15. Confirm.",
+    "Jomsom, Day 11: YouLi gives a sleeping altitude of 3,760 m / 12,332 ft, the same as Muktinath the night before. Is that right?",
+    "What is in the $3,100? YouLi has no included or not-included list (trek lodging, meals, permits, the two domestic flights?), and no price basis (double occupancy?).",
+    "Lodging: YouLi names no hotels in Kathmandu or Pokhara and does not say what kind of lodging is used on the trek. I have listed overnights by place only."
+  ],
   "seo": {
-    "title": "Annapurna Trekking | Adventure Access",
-    "description": "The Annapurna Circuit is one of the greatest treks in Nepal."
+    "title": "Annapurna Circuit Trek — 15 Days in Nepal | Adventure Access",
+    "description": "Fifteen days from Kathmandu around the Annapurna Circuit: Manang, Thorong La at 17,769 feet, Jomsom and Pokhara. From $3,100."
   },
   "hero": {
-    "eyebrow": "Kathmandu, Nepal · March–May and September–November",
-    "title": "Annapurna Trekking",
-    "subtitle": "The Annapurna Circuit is one of the greatest treks in Nepal.",
+    "eyebrow": "Trekking Journey · March–May and September–November",
+    "title": "Annapurna",
+    "titleEm": "Trekking",
+    "subtitle": "The classic circuit: deep gorges, Tibetan villages and a pass at 17,769 feet",
     "image": "/images/2026/11/trips/annapurna-trekking-hero.jpg",
-    "imageAlt": "Annapurna Trekking, Nepal",
+    "imageAlt": "A trekker on a grassy trail below snow peaks",
     "meta": [
       {
         "label": "Duration",
-        "value": "15 Days"
+        "value": "15 Days · Kathmandu to Kathmandu"
       },
       {
         "label": "Season",
-        "value": "March–May and September–November"
+        "value": "Mar–May · Sep–Nov"
       },
       {
         "label": "Starting at",
@@ -36,317 +44,352 @@
   },
   "intro": {
     "label": "The Journey",
-    "heading": "Overview",
+    "heading": "One of Nepal's Great Treks",
     "paragraphs": [
-      "The Annapurna Circuit is one of the greatest treks in Nepal. This classic circuit trek is an incredibly varied and extraordinarily beautiful journey. Dramatic deep gorges, high mountain passes, Buddhist temples, ethnic Tibetan peoples, picturesque farming villages and all the major mountains of the Annapurna Massif."
+      "The Annapurna Circuit is one of the greatest treks in Nepal, and one of the most varied. Deep gorges, high mountain passes, Buddhist temples, ethnic Tibetan peoples, farming villages and all the major mountains of the Annapurna Massif.",
+      "The trip starts and ends in Kathmandu, where our guides meet you at the airport and handle the details. From there it is a jeep ride to Besisahar and Chame, a week on foot up the Marshyangdi valley and over Thorong La, and two short mountain flights back by way of Pokhara."
     ]
   },
-  "route": [],
+  "stats": [
+    {
+      "value": "15",
+      "label": "Days, Kathmandu to Kathmandu"
+    },
+    {
+      "value": "17,769",
+      "label": "Feet, Thorong La pass"
+    },
+    {
+      "value": "2",
+      "label": "Mountain flights"
+    },
+    {
+      "value": "3",
+      "label": "Of the world's ten highest peaks within 35 miles of Pokhara"
+    }
+  ],
+  "route": [
+    {
+      "name": "Kathmandu",
+      "days": "Days 1–2"
+    },
+    {
+      "name": "Besisahar",
+      "days": "Day 3"
+    },
+    {
+      "name": "Chame",
+      "days": "Day 4"
+    },
+    {
+      "name": "Pisang & Manang",
+      "days": "Days 5–7"
+    },
+    {
+      "name": "Thorong La",
+      "days": "Days 8–10"
+    },
+    {
+      "name": "Jomsom",
+      "days": "Day 11"
+    },
+    {
+      "name": "Pokhara",
+      "days": "Day 12"
+    },
+    {
+      "name": "Kathmandu",
+      "days": "Days 13–15"
+    }
+  ],
+  "photoStrips": [
+    [
+      {
+        "src": "/images/2026/11/trips/annapurna-trekking-day-3.jpg",
+        "alt": "A road winding through green hillside terraces"
+      },
+      {
+        "src": "/images/2026/11/trips/annapurna-trekking-day-5.jpg",
+        "alt": "A trekker in a red hat looking out over the hills"
+      },
+      {
+        "src": "/images/2026/11/trips/annapurna-trekking-day-7.jpg",
+        "alt": "A snow-covered peak above a dry hillside"
+      },
+      {
+        "src": "/images/2026/11/trips/annapurna-trekking-day-8.jpg",
+        "alt": "Villagers working in fields below the Annapurna range"
+      }
+    ]
+  ],
+  "dayTypes": {
+    "label": "How the Days Work",
+    "heading": "Drive In, Walk Over, Fly Out",
+    "lede": "The trek climbs steadily from Chame to the pass, with a rest day in Manang to help your body adjust before the hardest day of the trip.",
+    "cards": [
+      {
+        "title": "City days",
+        "tone": "gentle",
+        "body": "Days 1–2 and 13–15 in Kathmandu: a cultural tour in Boudha, a trek orientation, a celebration dinner in Thamel and a free day."
+      },
+      {
+        "title": "Trekking days",
+        "tone": "strong",
+        "body": "Days 5–11: four to nine hours on foot each day, with a rest day in Manang on Day 7 and the crossing of Thorong La on Day 10."
+      },
+      {
+        "title": "Travel days",
+        "tone": "gentle",
+        "body": "Days 3–4 are 6–7 hour jeep drives to Besisahar and Chame. Days 12–13 are short flights from Jomsom to Pokhara and on to Kathmandu."
+      }
+    ]
+  },
   "chapters": {
     "label": "The Journey in Chapters",
-    "heading": "Day by Day",
+    "heading": "Around the Annapurna Massif",
+    "lede": "Altitudes are where you sleep each night unless noted.",
     "groups": [
       {
         "dayStart": 1,
-        "dayEnd": 1,
-        "title": "Arrive in Kathmandu, meet your guide, and transfer to hotel",
-        "tags": [],
-        "prose": [],
-        "days": [
-          {
-            "label": "Day 1",
-            "text": "Arrive in Kathmandu, meet your guide, and transfer to hotel"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/annapurna-trekking-day-1.jpg",
-          "alt": "Arrive in Kathmandu, meet your guide, and transfer to hotel"
-        }
-      },
-      {
-        "dayStart": 2,
         "dayEnd": 2,
-        "title": "Cultural tour in Boudha, trip orientation, and dinner with your guide and group",
-        "tags": [],
-        "prose": [],
-        "days": [
-          {
-            "label": "Day 2",
-            "text": "Cultural tour in Boudha, trip orientation, and dinner with your guide and group"
-          }
+        "title": "Kathmandu — Arrival and Orientation",
+        "tags": [
+          "Arrival",
+          "Boudha",
+          "Trek Orientation"
         ],
         "image": {
           "src": "/images/2026/11/trips/annapurna-trekking-day-2.jpg",
-          "alt": "Cultural tour in Boudha, trip orientation, and dinner with your guide and group"
-        }
+          "alt": "The eyes of Boudhanath stupa under prayer flags"
+        },
+        "prose": [
+          "Your guide meets you at the airport, so there is no need to find your hotel in the back alleys of Boudha or Thamel on your own. There is still plenty of time to explore the city, eat well and get to know your guide before the mountains."
+        ],
+        "days": [
+          {
+            "label": "Day 1",
+            "text": "Arrive in Kathmandu, meet your guide and transfer to your hotel."
+          },
+          {
+            "label": "Day 2",
+            "text": "A cultural tour in Boudha, the trip orientation, and dinner with your guide and group."
+          }
+        ],
+        "overnight": "2 Nights · Kathmandu hotel"
       },
       {
         "dayStart": 3,
-        "dayEnd": 3,
-        "title": "Drive to Besisahar by reserve jeep",
-        "tags": [],
+        "dayEnd": 4,
+        "title": "Besisahar and Chame — Up the Marshyangdi",
+        "tags": [
+          "Jeep Transfer",
+          "Besisahar 2,490 ft",
+          "Chame 8,692 ft"
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/annapurna-trekking-day-4.jpg",
+          "alt": "Jeeps and vans on a road below green hills"
+        },
         "prose": [
-          "This is a 6-7 hour drive with a sleeping altitude in Besisahar of 760m or 2,490ft."
+          "Two days by jeep take you out of the city. Besisahar is the headquarters of Lamjung District, and Chame, reached along the Marshyangdi River, is the headquarters of Manang District and the start of the trek."
         ],
         "days": [
           {
             "label": "Day 3",
-            "text": "Drive to Besisahar by reserve jeep"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/annapurna-trekking-day-3.jpg",
-          "alt": "Drive to Besisahar by reserve jeep"
-        }
-      },
-      {
-        "dayStart": 4,
-        "dayEnd": 4,
-        "title": "Drive to Chame by jeep",
-        "tags": [],
-        "prose": [
-          "This is a 6-7 hour drive with a sleeping altitude in Chame of 2650m or 8,692ft."
-        ],
-        "days": [
+            "text": "A 6–7 hour drive by reserved jeep to Besisahar. Sleeping altitude 2,490 ft."
+          },
           {
             "label": "Day 4",
-            "text": "Drive to Chame by jeep"
+            "text": "A 6–7 hour drive by jeep to Chame. Sleeping altitude 8,692 ft."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/annapurna-trekking-day-4.jpg",
-          "alt": "Drive to Chame by jeep"
-        }
+        "overnight": "Besisahar, then Chame"
       },
       {
         "dayStart": 5,
-        "dayEnd": 5,
-        "title": "Trek to Pisang",
+        "dayEnd": 7,
+        "title": "Pisang and Manang — Into the Gorge",
         "tags": [
-          "Namche Bazar"
+          "Suspension Bridges",
+          "Manang 11,545 ft",
+          "Rest Day"
         ],
+        "image": {
+          "src": "/images/2026/11/trips/annapurna-trekking-day-6.jpg",
+          "alt": "Trekkers crossing a long suspension bridge through the forest"
+        },
         "prose": [
-          "This is a 5-6 hour trek with a sleeping altitude in Pisang of 3250m or 10,660ft."
+          "The trail crosses and recrosses the gorge carved by the Marshyangdi River on suspension bridges before it reaches Manang, the largest village on the route. A full day there lets your body adjust before the climb to the pass."
         ],
         "days": [
           {
             "label": "Day 5",
-            "text": "Namche Bazar, Namche, Nepal"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/annapurna-trekking-day-5.jpg",
-          "alt": "Trek to Pisang"
-        }
-      },
-      {
-        "dayStart": 6,
-        "dayEnd": 6,
-        "title": "Trek to Manang",
-        "tags": [],
-        "prose": [
-          "The trek proper begins here, crossing and recrossing the gorge carved by the Marshyangdi River on suspension bridges before you reach Manang, the largest village on the route. This is a 5-6 hour trek with a sleeping altitude in Manang of 3520m or 11,545ft."
-        ],
-        "days": [
+            "text": "Trek to Pisang, about 5–6 hours. Sleeping altitude 10,660 ft."
+          },
           {
             "label": "Day 6",
-            "text": "Trek to Manang"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/annapurna-trekking-day-6.jpg",
-          "alt": "Trek to Manang"
-        }
-      },
-      {
-        "dayStart": 7,
-        "dayEnd": 7,
-        "title": "Acclimatization Day: exploring Manang",
-        "tags": [],
-        "prose": [
-          "This a rest day. You can explore Manang and enjoy a slow paced day, allowing the body to acclimatize to the altitude."
-        ],
-        "days": [
+            "text": "Trek to Manang, about 5–6 hours. Sleeping altitude 11,545 ft."
+          },
           {
             "label": "Day 7",
-            "text": "Acclimatization Day: exploring Manang"
+            "text": "A rest day. Take it easy, walk around Manang and go to bed early to prepare for the ascent to Thorong La."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/annapurna-trekking-day-7.jpg",
-          "alt": "Acclimatization Day: exploring Manang"
-        }
+        "overnight": "Pisang, then 2 Nights · Manang"
       },
       {
         "dayStart": 8,
-        "dayEnd": 8,
-        "title": "Trek to Ladar",
-        "tags": [],
+        "dayEnd": 10,
+        "title": "Thorong La — The True Test",
+        "tags": [
+          "Ladar 13,776 ft",
+          "High Camp 16,137 ft",
+          "Thorong La 17,769 ft"
+        ],
+        "badge": "✦ The high point of the circuit",
+        "image": {
+          "src": "/images/2026/11/trips/annapurna-trekking-day-10.jpg",
+          "alt": "Prayer flags covering the sign at the top of Thorong La pass"
+        },
         "prose": [
-          "This is a 4-5 hour trek with a sleeping altitude in Ladar of 4200m or 13,776ft."
+          "Thorong High Camp and the pass itself, at 5,416 m or 17,769 ft, are the true physical test of this itinerary. The crossing is the longest day of the trek, ending in Muktinath."
         ],
         "days": [
           {
             "label": "Day 8",
-            "text": "Trek to Ladar"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/annapurna-trekking-day-8.jpg",
-          "alt": "Trek to Ladar"
-        }
-      },
-      {
-        "dayStart": 9,
-        "dayEnd": 9,
-        "title": "Trek to Thorong high Camp",
-        "tags": [],
-        "prose": [
-          "This trek is approximately 4-5 hours and our sleeping altitude at Thorong is approximately 4920m or 16,137ft."
-        ],
-        "days": [
+            "text": "Trek to Ladar, about 4–5 hours. Sleeping altitude 13,776 ft."
+          },
           {
             "label": "Day 9",
-            "text": "Trek to Thorong high Camp"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/annapurna-trekking-day-9.jpg",
-          "alt": "Trek to Thorong high Camp"
-        }
-      },
-      {
-        "dayStart": 10,
-        "dayEnd": 10,
-        "title": "Trek to Muktinath via Thorong La pass 5416m",
-        "tags": [],
-        "prose": [
-          "This is an 8-9 hour trek and our sleeping altitude will be 3760m or 12,332ft. Thorong La pass is 5416m or 17,769ft above sea level."
-        ],
-        "days": [
+            "text": "Trek to Thorong High Camp, about 4–5 hours. Sleeping altitude about 16,137 ft."
+          },
           {
             "label": "Day 10",
-            "text": "Trek to Muktinath via Thorong La pass 5416m"
+            "text": "Over Thorong La at 17,769 ft and down to Muktinath, an 8–9 hour day. Sleeping altitude 12,332 ft."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/annapurna-trekking-day-10.jpg",
-          "alt": "Trek to Muktinath via Thorong La pass 5416m"
-        }
+        "overnight": "Ladar, Thorong High Camp, then Muktinath"
       },
       {
         "dayStart": 11,
-        "dayEnd": 11,
-        "title": "Trek to Jomsom",
-        "tags": [],
+        "dayEnd": 12,
+        "title": "Jomsom and Pokhara — Down to the Lake",
+        "tags": [
+          "Jomsom",
+          "Mountain Flight",
+          "Phewa Lake"
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/annapurna-trekking-day-12.jpg",
+          "alt": "Wooden boats on Phewa Lake in Pokhara"
+        },
         "prose": [
-          "This trek is approximately 4-5 hours and our sleeping altitude in Jomsom is approximately 3760m or 12,332ft."
+          "From the pass the trail descends, with plenty of up and down, to Jomsom. A short flight then takes you to Pokhara on the shore of Phewa Lake, a laid-back city very different from Kathmandu."
         ],
         "days": [
           {
             "label": "Day 11",
-            "text": "Trek to Jomsom"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/annapurna-trekking-day-11.jpg",
-          "alt": "Trek to Jomsom"
-        }
-      },
-      {
-        "dayStart": 12,
-        "dayEnd": 12,
-        "title": "Fly to Pokhara",
-        "tags": [],
-        "prose": [
-          "This short flight is approximately 19 minutes. Enjoy beautiful, laid back Pokhara for an evening."
-        ],
-        "days": [
+            "text": "Trek to Jomsom, about 4–5 hours."
+          },
           {
             "label": "Day 12",
-            "text": "Fly to Pokhara"
+            "text": "A flight of about 19 minutes to Pokhara, and an evening to enjoy the town."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/annapurna-trekking-day-12.jpg",
-          "alt": "Fly to Pokhara"
-        }
+        "overnight": "Jomsom, then Pokhara"
       },
       {
         "dayStart": 13,
-        "dayEnd": 13,
-        "title": "Fly to Kathmandu + Group Celebration Dinner",
-        "tags": [],
+        "dayEnd": 15,
+        "title": "Kathmandu — Celebration and Home",
+        "tags": [
+          "Mountain Flight",
+          "Thamel",
+          "Free Day",
+          "Departure"
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/annapurna-trekking-day-13.jpg",
+          "alt": "Snow peaks above a glacier under a blue sky"
+        },
         "prose": [
-          "The flight to Kathmandu is approximately 30 minutes. Join together with your guides for a celebration dinner in Thamel."
+          "Back in the capital for a dinner with your guides and a day to yourself before the flight home."
         ],
         "days": [
           {
             "label": "Day 13",
-            "text": "Fly to Kathmandu + Group Celebration Dinner"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/annapurna-trekking-day-13.jpg",
-          "alt": "Fly to Kathmandu + Group Celebration Dinner"
-        }
-      },
-      {
-        "dayStart": 16,
-        "dayEnd": 16,
-        "title": "Free Day in Kathmandu",
-        "tags": [],
-        "prose": [
-          "Take a rest, revisit some of your favorite places in Kathmandu from the beginning of the journey, and repack for your onward journey. Use the day as you wish."
-        ],
-        "days": [
+            "text": "A flight of about 30 minutes to Kathmandu, then a celebration dinner with your guides in Thamel."
+          },
           {
-            "label": "Day 16",
-            "text": "Free Day in Kathmandu"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/annapurna-trekking-day-16.jpg",
-          "alt": "Free Day in Kathmandu"
-        }
-      },
-      {
-        "dayStart": 17,
-        "dayEnd": 17,
-        "title": "Day of Departure",
-        "tags": [],
-        "prose": [
-          "At the appropriate departure time, your guide will pick you up at the hotel and transfer you to the airport for your departure."
-        ],
-        "days": [
+            "label": "Day 14",
+            "text": "A free day. Rest, revisit your favorite places from the start of the trip, and repack for the journey home."
+          },
           {
-            "label": "Day 17",
-            "text": "Day of Departure"
+            "label": "Day 15",
+            "text": "Your guide picks you up at the hotel and takes you to the airport for your flight."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/annapurna-trekking-day-17.jpg",
-          "alt": "Day of Departure"
-        }
+        "overnight": "Kathmandu hotel"
       }
     ]
   },
+  "pullQuote": "An incredibly varied and extraordinarily beautiful journey.",
   "highlights": [
     {
-      "where": "Nepal",
-      "title": "Acclimatization Days",
-      "body": "On this itinerary, we schedule an acclimatization day of rest to help facilitate our adjustment to the high altitudes encountered throughout the trek. On this day, we will take it easy, go for a walk to explore Manang, and go to bed early to prepare for the challenging ascent up Thorong pass.",
-      "image": "/images/2026/11/trips/annapurna-trekking-acclimatization-days.jpg",
-      "imageAlt": "Acclimatization Days"
+      "where": "Manang to Muktinath",
+      "title": "Thorong La",
+      "body": "The pass at 17,769 feet, reached from a high camp at about 16,137 feet. The hardest and longest day of the trip.",
+      "image": "/images/2026/11/trips/annapurna-trekking-day-9.jpg",
+      "imageAlt": "A trekker sitting on a ridge between dark mountains"
     },
     {
-      "where": "Nepal",
+      "where": "Manang",
+      "title": "A Day to Adjust",
+      "body": "A rest day in the largest village on the route, with time to walk and explore before the climb to the pass.",
+      "image": "/images/2026/11/trips/annapurna-trekking-acclimatization-days.jpg",
+      "imageAlt": "Trekkers at a prayer-flag cairn pointing toward snow peaks"
+    },
+    {
+      "where": "Jomsom to Kathmandu",
       "title": "Mountain Flights",
-      "body": "There are two short mountain flights on this itinerary. The first takes you from Jomson to Pokhara and the second from Pohkara to Kathmandu. These small flights are a quintessential element to travel within Nepal.",
+      "body": "Two short flights, Jomsom to Pokhara and Pokhara to Kathmandu. Small planes like these are a classic part of travel in Nepal.",
       "image": "/images/2026/11/trips/annapurna-trekking-mountain-flights.jpg",
-      "imageAlt": "Mountain Flights"
+      "imageAlt": "Passengers boarding a small mountain plane on the runway"
     }
   ],
+  "goodToKnow": {
+    "label": "Good to Know",
+    "heading": "Before You Go",
+    "lede": "A few things that shape how this trip runs.",
+    "cards": [
+      {
+        "title": "Kathmandu",
+        "body": "Your guide meets you at the airport and takes care of the details. Your time in the city includes good food, getting to know your guide and an orientation for the trek."
+      },
+      {
+        "title": "Acclimatization",
+        "body": "A rest day in Manang on Day 7 helps your body adjust to the high altitudes on the trek. Expect an easy walk and an early night."
+      },
+      {
+        "title": "Thorong La",
+        "body": "Thorong High Camp and the pass at 17,769 feet are the true physical test of this trip. The crossing day is 8–9 hours on foot."
+      },
+      {
+        "title": "Mountain flights",
+        "body": "Two short flights close the trek: Jomsom to Pokhara and Pokhara to Kathmandu."
+      },
+      {
+        "title": "Pokhara",
+        "body": "Nepal's second most populous city sits on the shore of Phewa Lake at only 2,696 feet. Dhaulagiri, Annapurna I and Manaslu are all within 35 miles of the valley."
+      }
+    ]
+  },
+  "pricing": {
+    "from": 3100,
+    "currency": "USD",
+    "basis": "Starting price",
+    "notes": []
+  },
   "included": [],
   "excluded": [],
   "nextSteps": {
@@ -360,7 +403,7 @@
       },
       {
         "title": "Talk with a specialist",
-        "body": "We help match the trip to your expectations and goals."
+        "body": "We help match the trip to your fitness and goals, and send your package and price."
       },
       {
         "title": "Book",
@@ -376,33 +419,8 @@
       "href": "/payment-terms-cancellation-policy/"
     }
   },
-  "footerNote": [],
-  "goodToKnow": {
-    "label": "Good to Know",
-    "heading": "More About This Journey",
-    "cards": [
-      {
-        "title": "What to expect in Kathmandu",
-        "body": "You may have started this journey with an interest in the mountains of Nepal but no trip is complete without a good experience in Kathmandu. From the moment you meet your guide at the airport in Kathmandu, you are in good hands. There is no need to navigate the airport scene or figure out how to find your hotel in the back alleys of Boudha or Thamel. Don't worry, there is ample opportunity to get out and explore. You will be able to immerse yourself in the bustling network of alleys, streets, and buildings as you take in the city. Our guides, however, take care of the details so you can take in the surroundings. Your time in Kathmandu will also include good food, getting to know your guide, and an orientation for the trek. By the time we depart the city, everyone will be prepared for the mountains and your cultural curiosity will have been stoked."
-      },
-      {
-        "title": "Besisahar and Chame",
-        "body": "This trek begins with an overland drive to Besisahar by jeep. Besisahar is district headquarter of Lamjung District in Gandaki province Nepal. We also drive to Chame which is the headquarters of Manang district through the Marshysngdi river. The trek proper begins here, crossing and recrossing the gorge carved by the Marshyangdi River on suspension bridges before you reach Manang, the largest village on the route."
-      },
-      {
-        "title": "Thorong Pass",
-        "body": "Thorong high camp and the pass itself (5416m or 17,769ft) is the true physical test of this itinerary. From there you descend progressively with plenty of up and down along the way until you reach Jomsom."
-      },
-      {
-        "title": "Pokhara",
-        "body": "Pokhara is the second most populous city in Nepal but it is very different when compared to Kathmandu. It is located on the shore of Phewa Lake. Three of the world's ten highest mountains (Dhaulagiri, Annapurna I and Manaslu) are within 35 miles of the valley, though Pokhara is only 822m or 2696ft above sea level."
-      }
-    ]
-  },
-  "pricing": {
-    "from": 3100,
-    "currency": "USD",
-    "basis": "Starting price",
-    "notes": []
-  }
+  "footerNote": [
+    "Starting price shown.",
+    "Trekking, driving and flight times are approximate."
+  ]
 }

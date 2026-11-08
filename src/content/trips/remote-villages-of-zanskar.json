@@ -4,29 +4,38 @@
   "visibility": "internal",
   "destination": "ladakh",
   "kind": "template",
+  "editorial": "rewritten",
   "source": {
     "youli": "https://youli.io/t/adventure-access/zanskar-village-hiking",
     "migratedOn": "2026-11-03",
-    "notes": "Mechanical copy of the public YouLi page: one chapter per YouLi day, YouLi photos. Needs an editorial pass into Brian's chapter format."
+    "notes": "Rewritten into Brian's chapter format from the YouLi copy. No facts added; open questions are in reviewNotes."
   },
+  "reviewNotes": [
+    "Day 7 overnight in Nerak: YouLi only says \"a night under the stars fueled by Zanskari hospitality\". Homestay or camping?",
+    "Dipling trek camping (days 5–6): are tents and camp gear provided by us? The included list does not mention them.",
+    "YouLi location tags don't match the text: Day 4 says Hanamur and Day 5 says Rangdum. Which trailhead does the Dipling trek start from?",
+    "Day 7 walk-out is 0–5 miles \"based on road construction status\". Is there a current figure for 2027?",
+    "Delhi hotel: YouLi says a 5-star hotel. Name it, or keep it general?"
+  ],
   "seo": {
-    "title": "Remote Villages of Zanskar | Adventure Access",
-    "description": "A tour through the villages and high passes of Zanskar is a rich and immersive experience."
+    "title": "Remote Villages of Zanskar — 12 Days in Zanskar and Leh | Adventure Access",
+    "description": "Twelve days from Delhi into Zanskar: Zangla's palace, a two-day trek over a 16,500-foot pass to Dipling, and village homestays. From $4,889, double occupancy."
   },
   "hero": {
-    "eyebrow": "Zanskar · Leh · May–October",
-    "title": "Remote Villages of Zanskar",
-    "subtitle": "A tour through the villages and high passes of Zanskar is a rich and immersive experience.",
+    "eyebrow": "Trekking Journey · May to October",
+    "title": "Remote Villages",
+    "titleEm": "of Zanskar",
+    "subtitle": "Village homes, a royal palace town and a two-day trek over a high pass to one of Ladakh's most traditional villages",
     "image": "/images/2026/11/trips/remote-villages-of-zanskar-hero.jpg",
-    "imageAlt": "Remote Villages of Zanskar, India",
+    "imageAlt": "Green fields across a wide Zanskar valley below the mountains",
     "meta": [
       {
         "label": "Duration",
-        "value": "12 Days · Start and end in Delhi"
+        "value": "12 Days · Delhi to Delhi"
       },
       {
         "label": "Season",
-        "value": "May–October"
+        "value": "May – October"
       },
       {
         "label": "Starting at",
@@ -36,33 +45,46 @@
   },
   "intro": {
     "label": "The Journey",
-    "heading": "Overview",
+    "heading": "Villages, Passes and New Friends",
     "paragraphs": [
-      "A tour through the villages and high passes of Zanskar is a rich and immersive experience. This trip combines cultural experiences that we have developed over years of local relationships along with hiking adventures in some of Zanskar's most remote valleys. It is a rewarding and beautiful experience that will leave you changed by new friendships and challenged by mountain passes. Although accessible to anyone with a desire to prepare and exert themselves, these hikes are still for those who want to push their abilities, delve into culture, and experience a grand challenge along some of the highest trails in the world.",
-      "The culture in Zanskar has remained mostly unchanged for a thousand years, so our journey will include a great deal of interaction with Ladakhi people and time in local homes, giving a peek into Himalayan mountain life as it was hundreds of years ago. This experience alongside our time in Leh, the bustling capital of Ladakh and our visit to Delhi, the diverse capital of India, will give you a taste of the rich diversity that makes India such a colorful nation.",
-      "Our local specialists will take care of your every need from airport pickup to drop-off so you can focus on soaking up your adventure experience. Trekking in the biggest landscapes you've seen alongside rich cultural immersion will provide a grand tour that will give you a new perspective on adventure travel."
+      "This trip pairs cultural experiences we have built over years of local relationships with hiking in some of Zanskar's most remote valleys. Anyone willing to prepare and work hard can do it, but these are still hikes for people who want to push themselves on some of the highest trails in the world.",
+      "Zanskar's culture has stayed mostly unchanged for a thousand years, so much of this journey is spent with Ladakhi people and in their homes. Time in Leh, the busy capital of Ladakh, and in Delhi rounds out the picture. Our local specialists handle everything from airport pickup to drop-off, so you can focus on the trip."
     ]
   },
+  "stats": [
+    {
+      "value": "12",
+      "label": "Days, Delhi to Delhi"
+    },
+    {
+      "value": "16,500",
+      "label": "Feet, high point of the Dipling trek"
+    },
+    {
+      "value": "2",
+      "label": "Days on foot to reach Dipling"
+    },
+    {
+      "value": "3%",
+      "label": "Of revenue to Zanskar schools"
+    }
+  ],
   "route": [
     {
-      "name": "Nimmu House Ladakh",
-      "days": "Day 2"
+      "name": "Delhi",
+      "days": "Arrive Day 1"
     },
     {
-      "name": "Sirsir La",
-      "days": "Day 3"
+      "name": "Nimmu",
+      "days": "Days 1–2"
     },
     {
-      "name": "Hanamur",
-      "days": "Day 4"
-    },
-    {
-      "name": "Rangdum",
-      "days": "Day 5"
+      "name": "Zangla",
+      "days": "Days 3–4"
     },
     {
       "name": "Dipling",
-      "days": "Day 6"
+      "days": "Days 5–6"
     },
     {
       "name": "Nerak",
@@ -73,326 +95,322 @@
       "days": "Days 8–9"
     },
     {
-      "name": "New Delhi",
-      "days": "Days 11–12"
+      "name": "Delhi",
+      "days": "Days 10–12"
     }
   ],
+  "photoStrips": [
+    [
+      {
+        "src": "/images/2026/11/trips/red-lake-trek-day-1.jpg",
+        "alt": "A jet on the tarmac at Leh airport, seen from a plane window, with mountains behind"
+      },
+      {
+        "src": "/images/2026/11/trips/red-lake-trek-day-3.jpg",
+        "alt": "A white 4x4 on a gravel mountain road"
+      },
+      {
+        "src": "/images/2026/11/trips/remote-villages-of-zanskar-day-5.jpg",
+        "alt": "Two hikers smiling on a rocky trail in a canyon"
+      },
+      {
+        "src": "/images/2026/11/trips/red-lake-trek-day-8.jpg",
+        "alt": "Evening light on the peaks above Leh"
+      }
+    ]
+  ],
+  "dayTypes": {
+    "label": "How the Days Work",
+    "heading": "Ease In, Then Go High",
+    "lede": "With altitudes pushing 16,000 feet, we pace the first days on purpose. What can feel like unnecessary slowness is a proven way to keep you from burning out on day two and missing the rest of the trip.",
+    "cards": [
+      {
+        "title": "Acclimatization days",
+        "tone": "gentle",
+        "body": "Days 1–3: a soft start at Nimmu House, village life with local guides, then the long drive over the passes into Zanskar."
+      },
+      {
+        "title": "Hiking days",
+        "tone": "strong",
+        "body": "Days 4–7: a palace hike in Zangla, then two days on foot over a pass to Dipling, with water crossings and steep climbs at altitude."
+      },
+      {
+        "title": "City days",
+        "tone": "gentle",
+        "body": "Days 8–12: back to Leh for markets and a celebration dinner, then a final day of food and markets in Delhi before you fly home."
+      }
+    ]
+  },
   "chapters": {
     "label": "The Journey in Chapters",
-    "heading": "Day by Day",
+    "heading": "Twelve Days, Village to Village",
+    "lede": "Hike figures are distance, total ascent and highest point.",
     "groups": [
       {
         "dayStart": 1,
-        "dayEnd": 1,
-        "title": "Arrive in India, Transfer to Nimmu",
-        "tags": [],
+        "dayEnd": 2,
+        "title": "Nimmu — A Soft Start at a Village Home",
+        "tags": [
+          "Arrival",
+          "Acclimatization",
+          "Village Life"
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/remote-villages-of-zanskar-day-2.jpg",
+          "alt": "A woman carrying fresh-cut greens through the fields near Nimmu"
+        },
         "prose": [
-          "Depart from your country of origin and transit through New Delhi for flights to Leh, Ladakh. From your arrival in Leh we bring you directly to Nimmu village, where a beautiful local homestay awaits you. This traditional ladakhi house has been converted to a small hotel with excellent dining. The courtyards, traditional features, luxury tents, and comfortable rooms of this still functioning village home are an inroad to the history and culture of the region. Take a tour with the owner and enjoy the excellent Asian fusion cuisine!",
-          "If you plan to arrive early to New Delhi and would like help booking an excellent hotel or for recommendations on things to do, just send us a message at [email protected] and we would be happy to assist you."
+          "Nimmu House is a traditional Ladakhi home, still lived in, that has been turned into a small hotel with excellent food. Its courtyards, luxury tents and comfortable rooms are a first way into the history and culture of the region, and a gentle place to let your body adjust."
         ],
         "days": [
           {
             "label": "Day 1",
-            "text": "Arrive in India, Transfer to Nimmu"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/red-lake-trek-day-1.jpg",
-          "alt": "Arrive in India, Transfer to Nimmu"
-        }
-      },
-      {
-        "dayStart": 2,
-        "dayEnd": 2,
-        "title": "Experience Nimmu Village",
-        "tags": [
-          "Nimmu House Ladakh"
-        ],
-        "prose": [
-          "The objective for the day is to help you acclimatize to the extreme altitude of this region while enjoying the beautiful local culture and hospitality. After enjoying a stellar breakfast by Nimmu House, you can then experience the local traditions and explore village life with the help of the local guides from the homestay. A refreshing dinner and campfire in the evening will wrap up your first full day in the Himalayas."
-        ],
-        "days": [
+            "text": "Fly through New Delhi to Leh and drive straight to Nimmu. A tour of the house with the owner, then Asian fusion dinner."
+          },
           {
             "label": "Day 2",
-            "text": "Nimmu House Ladakh, Nimmoo"
+            "text": "Breakfast at Nimmu House, then village life and local traditions with the homestay's own guides. Dinner and a campfire to close your first full day in the Himalaya."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/remote-villages-of-zanskar-day-2.jpg",
-          "alt": "Experience Nimmu Village"
-        }
+        "overnight": "2 Nights · Nimmu House"
       },
       {
         "dayStart": 3,
-        "dayEnd": 3,
-        "title": "Journey into Zanskar",
+        "dayEnd": 4,
+        "title": "Zangla — Into Zanskar's Royal Capital",
         "tags": [
-          "Sirsir La"
+          "Sirsir La",
+          "Singe La 16,500 ft",
+          "Malai Khartse",
+          "Zangla Palace"
         ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-4.jpg",
+          "alt": "Hikers on the trail toward the chortens below Zangla palace"
+        },
         "prose": [
-          "Driving the roads and passes of Zanskar is an adventure in itself. In our 10 hour epic journey you will cross some of the most stunningly rugged landscapes and highest roads you can imagine. Halfway through the day we will reach SirSir La, stop for lunch just below the pass, then continue to the highest pass in the region, Singe La, resting above 16,500 feet. You can see needle-point peaks and twisting geology as we descend to the Zanskar river, finally arriving at a beautiful homestay tucked into the palace town of Zangla. Zanskari hospitality and traditional rooms are a well-earned reward after the longest overland journey of your trip."
+          "The longest drive of the trip crosses two high passes to reach Zangla, the ancient royal capital of Zanskar and one of our favorite villages. A thousand-year-old palace sits above the village, and a hidden royal stronghold waits in the hills behind it."
         ],
         "days": [
           {
             "label": "Day 3",
-            "text": "Sirsir La"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/red-lake-trek-day-3.jpg",
-          "alt": "Journey into Zanskar"
-        }
-      },
-      {
-        "dayStart": 4,
-        "dayEnd": 4,
-        "title": "Ancient Palace Exploration",
-        "tags": [
-          "Hanamur"
-        ],
-        "prose": [
-          "Welcome to the heart of Zanskar! Zangla is the ancient royal capital of the region and is one of our favorite villages in the region. It boasts a thousand year old palace perched above the village. After a homestay breakfast we will head out for an adventurous short hike to Malai Khartse, an ancient stronghold used by the Zanskari kings during raids and attacks. This hike is a great challenge of water crossings and steep scrambles to the well protected palace above. After a refreshing lunch in our homestay, we will return to the main palace to expand our knowledge of the royal history. The view from this thousand year old structure is amazing and the free exploration through its many corridors will make you feel like a Ladakhi Indiana Jones. An optional village exploration and time of rest in the evening will round out our day, getting some needed relaxation before our big hike tomorrow."
-        ],
-        "days": [
+            "text": "About ten hours on the road, with lunch just below Sirsir La and a crossing of Singe La, the highest pass in the region, above 16,500 feet. Down to the Zanskar River and a homestay in Zangla."
+          },
           {
             "label": "Day 4",
-            "text": "Hanamur"
+            "text": "A short, hard hike to Malai Khartse, the stronghold the Zanskari kings used during raids, with water crossings and steep scrambles. Lunch at the homestay, free exploration of the main palace, then an optional village walk and an easy evening before the big hike."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/red-lake-trek-day-4.jpg",
-          "alt": "Ancient Palace Exploration"
-        }
+        "overnight": "2 Nights · Homestay in Zangla"
       },
       {
         "dayStart": 5,
-        "dayEnd": 5,
-        "title": "Dipling Trek Day 1",
+        "dayEnd": 6,
+        "title": "Dipling — Over the Pass to a Thousand-Year-Old Village",
         "tags": [
-          "Rangdum"
+          "Yak Paths",
+          "Camp Under the Stars",
+          "16,500 ft"
         ],
+        "badge": "✦ The heart of the journey",
+        "image": {
+          "src": "/images/2026/11/trips/remote-villages-of-zanskar-day-6.jpg",
+          "alt": "A narrow trail along a rocky hillside"
+        },
         "prose": [
-          "Following our night of rest in Zangla, we will start early this morning to begin the grand hike to the remote village of Dipling. This is a two day expedition with a breathtaking pass in the middle. Today we drive to our trailhead and begin the hike, traversing miles of ancient yak paths, finally reaching our campsite at the base of one of the passes that separate Dipling from the rest of the region. A camp under the stars and delicious dinner made by our local guides will refresh and strengthen you for the climb awaiting you in the morning.",
-          "Dipling Hike Day 1",
-          "Distance\nTotal Ascent\nMin Altitude\nMax Altitude",
-          "9 mi\n2300 ft\n13,200 ft\n15,000 ft"
+          "Dipling has kept the old Ladakhi way of life for a thousand years and is one of the few villages left that still does. Reaching it takes two days on foot, with a camp at the base of the pass and the hardest climb of the trip on the second morning."
         ],
         "days": [
           {
             "label": "Day 5",
-            "text": "Rangdum"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/remote-villages-of-zanskar-day-5.jpg",
-          "alt": "Dipling Trek Day 1"
-        }
-      },
-      {
-        "dayStart": 6,
-        "dayEnd": 6,
-        "title": "Dipling Trek Day 2",
-        "tags": [
-          "Dipling"
-        ],
-        "prose": [
-          "A hot breakfast with chai and coffee invites you into the morning in the Ladakhi wilderness. With a water crossing and a pass before us, today is the most challenging day of the tour. We take the hike slowly and thoughtfully, taking careful breaks and working our way up the pass to our high altitude perch above the village. We can celebrate at the top that there are no more climbs for the rest of the trip, and begin our descent into Dipling village below. This remote settlement has stood as a bastion of ladakhi tradition for a thousand years, and is one of the few villages remaining that represent the ancient ladakh way of life. Enjoy a walk through the village, connect with some local farmers and schoolchildren, and soak in the remote beauty of this isolated community. A homestay dinner and night of camping surrounded by peaks reward our long two days of effort to reach this incredible place.",
-          "Dipling Hike Day 2",
-          "Distance\nTotal Ascent\nMin Altitude\nMax Altitude",
-          "12 mi\n2000 ft\n12,700 ft\n16,500 ft"
-        ],
-        "days": [
+            "text": "An early start from Zangla, a drive to the trailhead, then miles of ancient yak paths to a camp at the base of one of the passes that separate Dipling from the rest of the region. Dinner cooked by your local guides. 9 mi · 2,300 ft up · high point 15,000 ft."
+          },
           {
             "label": "Day 6",
-            "text": "Dipling"
+            "text": "Hot breakfast with chai and coffee, then a water crossing and a slow, steady climb to the top of the pass. No more climbs after this. Down into Dipling to walk the village and meet farmers and schoolchildren, then a homestay dinner. 12 mi · 2,000 ft up · high point 16,500 ft."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/remote-villages-of-zanskar-day-6.jpg",
-          "alt": "Dipling Trek Day 2"
-        }
+        "overnight": "2 Nights · Camp below the pass, then camping in Dipling"
       },
       {
         "dayStart": 7,
         "dayEnd": 7,
-        "title": "Three Villages and High Roads",
+        "title": "Lingshed and Nerak — Three Villages and High Roads",
         "tags": [
+          "Walk Out",
+          "Lingshed",
           "Nerak"
         ],
+        "image": {
+          "src": "/images/2026/11/trips/remote-villages-of-zanskar-day-7.jpg",
+          "alt": "Hikers on a ridge trail above the valley"
+        },
         "prose": [
-          "With our minds full of Zanskari life, remote cultures, and local friendships, we pack our bags and make the short onward trek back to our vehicles. As the road has nearly reached this village from the east side, our vehicles will be waiting for us just beyond the village. Once there, we drive to Lingshed, make a stop for photos and snacks, and migrate to Nerak village, a spectacular hillside community about halfway between Zanskar and Leh. You will have more opportunities this evening to explore this village along its winding paths up and down the hillside it rests on, forage for aromatic leaves, and enjoy a night under the stars fueled by Zanskari hospitality.",
-          "Hike Data: Varies based on road construction status, 0-5 miles hiking, slightly downhill from village."
+          "The road has nearly reached Dipling from the east, so the vehicles wait just beyond the village. From there it is a day of high roads and one more village to explore."
         ],
         "days": [
           {
             "label": "Day 7",
-            "text": "Nerak"
+            "text": "A short walk out to the vehicles, then a stop in Lingshed for photos and snacks and on to Nerak, a hillside village about halfway between Zanskar and Leh. Explore its winding paths and forage for aromatic leaves. 0–5 mi, slightly downhill, depending on road construction."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/remote-villages-of-zanskar-day-7.jpg",
-          "alt": "Three Villages and High Roads"
-        }
+        "overnight": "1 Night · Nerak"
       },
       {
         "dayStart": 8,
-        "dayEnd": 8,
-        "title": "Canyon Driving back to Leh",
+        "dayEnd": 9,
+        "title": "Leh — Canyon Roads and Old Markets",
         "tags": [
-          "Leh"
+          "Photoksar",
+          "Old Market",
+          "Central Asian Museum",
+          "Shanti Stupa"
         ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-9.jpg",
+          "alt": "Leh Palace behind the stupas of the old town"
+        },
         "prose": [
-          "Today marks the beginning of our journey home, but nowhere near the end of our adventure. The views on this return leg are beautiful with sunlit peaks and mountains in the shape of weathered faces marking our way back to the main highway. After a quick lunch in Photoksar, we complete our journey on the refreshingly smooth roads of the Leh highway. Upon returning to Leh, a long overdue shower and delicious meal offer refreshment after many days in the backcountry."
+          "Leh feels like an overgrown village with busy markets and great food. After Zanskar it can feel like a metropolis."
         ],
         "days": [
           {
             "label": "Day 8",
-            "text": "Leh"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/red-lake-trek-day-8.jpg",
-          "alt": "Canyon Driving back to Leh"
-        }
-      },
-      {
-        "dayStart": 9,
-        "dayEnd": 9,
-        "title": "Leh Markets and Culture",
-        "tags": [
-          "Leh"
-        ],
-        "prose": [
-          "We will conclude our time in Ladakh with a day in Leh, the capital. You can explore the old market streets, buy some local goods, visit the Central Asian museum, or tackle many other local activities. Want more adventure? Hike to Shanti Stupa or the Leh Palace for amazing hilltop views of the old town. We will conclude with a celebratory dinner at a local venue and share our best stories from the week."
-        ],
-        "days": [
+            "text": "Sunlit peaks and mountains shaped like weathered faces on the drive out to the main highway, lunch in Photoksar, then the smooth Leh highway. A long-overdue shower and a good meal in Leh."
+          },
           {
             "label": "Day 9",
-            "text": "Leh"
+            "text": "Explore the old market streets and the Central Asian Museum, or hike to Shanti Stupa or Leh Palace for views over the old town. A celebration dinner to share the week's best stories."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/red-lake-trek-day-9.jpg",
-          "alt": "Leh Markets and Culture"
-        }
+        "overnight": "2 Nights · Leh"
       },
       {
         "dayStart": 10,
-        "dayEnd": 10,
-        "title": "From the Mountains to the City",
-        "tags": [],
+        "dayEnd": 12,
+        "title": "Delhi — Markets, Food and Home",
+        "tags": [
+          "New Delhi",
+          "Street Food",
+          "Departure"
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/red-lake-trek-day-11.jpg",
+          "alt": "An Old Delhi street at sunset"
+        },
         "prose": [
-          "We will fly out of Leh early in the morning to allow for an afternoon and evening of touring New Delhi. You will get to experience the colorful and wild culture of Delhi, giving contrast to the rugged environment of Ladakh and a glimpse into the incredible diversity of this country. We will dine at an excellent local restaurant for dinner and stay in comfort at a 5 star hotel in the city."
+          "A last contrast: from the rugged quiet of Ladakh to the color and noise of India's capital."
         ],
         "days": [
           {
             "label": "Day 10",
-            "text": "From the Mountains to the City"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/red-lake-trek-day-10.jpg",
-          "alt": "From the Mountains to the City"
-        }
-      },
-      {
-        "dayStart": 11,
-        "dayEnd": 11,
-        "title": "A Day in Delhi",
-        "tags": [
-          "New Delhi"
-        ],
-        "prose": [
-          "To complete your experience in India we have a full day planned of delhi experiences. Tasting food from all over the subcontinent, touring the famed markets of this silk road city, and walking among colorful people from a hundred different cultures are all on the menu today with our expert guides leading the way. Dinner at our favorite persian restaurant will wrap up the day before an early morning departure to the airport for your international flight back to your home country.",
-          "Our tour wraps up after dinner, and includes your hotel night, as well as your return shuttle to the airport when you are ready. Just let us know if you would like any help to extend your time in India with more time in Delhi, a trip to the Taj Mahal, or travel to another destination in the country."
-        ],
-        "days": [
+            "text": "An early flight from Leh, an afternoon and evening touring New Delhi, and dinner at an excellent local restaurant."
+          },
           {
             "label": "Day 11",
-            "text": "New Delhi, Delhi, India"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/red-lake-trek-day-11.jpg",
-          "alt": "A Day in Delhi"
-        }
-      },
-      {
-        "dayStart": 12,
-        "dayEnd": 12,
-        "title": "Day of Departure",
-        "tags": [
-          "New Delhi"
-        ],
-        "prose": [
-          "Fly back to your country of origin or hit another destination along the way. It's up to you!",
-          "If you plan to stay additional days in New Delhi and would like assistance in booking additional nights at the same hotel, or would like recommendations on things to do, just send us a message!"
-        ],
-        "days": [
+            "text": "A full day with our Delhi guides: food from across the subcontinent and the markets of this old Silk Road city, then dinner at our favorite Persian restaurant."
+          },
           {
             "label": "Day 12",
-            "text": "New Delhi, Delhi, India"
+            "text": "Fly home, or ask us to extend your time with more of Delhi, the Taj Mahal or elsewhere in India."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/bhutan-culture-adventure-kathmandu-day-10.jpg",
-          "alt": "Day of Departure"
-        }
+        "overnight": "2 Nights · 5-star hotel, Delhi"
       }
     ]
   },
+  "pullQuote": "One of the few villages remaining that represent the ancient Ladakhi way of life.",
   "highlights": [
     {
-      "where": "Ladakh",
-      "title": "Leh",
-      "body": "Leh is the capital of Ladakh and will serve as your first introduction to Ladakh as well as a place of closure for your time here. In many ways it feels like an overgrown village. The bustling streets and marketplace alleyways provide a vibrancy to the small city that is contagious. Shopping is abundant but finding something unique takes a bit of extra effort. The food is great. The guesthouse here feels like an oasis whether you are experiencing it as the first stop after hours of air travel or again on the back end, where what once felt like the most remote place you can imagine suddenly feels like home in a bustling metropolis.",
-      "image": "/images/2026/11/trips/red-lake-trek-leh.jpg",
-      "imageAlt": "Leh"
+      "where": "Dipling",
+      "title": "Two Days to a Hidden Village",
+      "body": "Ancient yak paths, a night at camp, then a climb to 16,500 feet and down into a village that has kept its traditions for a thousand years.",
+      "image": "/images/2026/11/trips/remote-villages-of-zanskar-day-6.jpg",
+      "imageAlt": "A narrow trail along a rocky hillside"
+    },
+    {
+      "where": "Zangla",
+      "title": "The King's Palace and Stronghold",
+      "body": "A thousand-year-old palace above Zanskar's ancient royal capital, and a hike up to the stronghold its kings used during raids.",
+      "image": "/images/2026/11/trips/red-lake-trek-day-4.jpg",
+      "imageAlt": "Hikers on the trail toward the chortens below Zangla palace"
     },
     {
       "where": "Ladakh",
-      "title": "Hiking in the Western Himalaya",
-      "body": "Ladakh is where the Himalaya run all the way up to the Karakoram. Zanskar is one of the least touched valleys of the region, creating incredible opportunity for pure adventure. We have a few things that we keep in focus at all times. One is your safety and with altitudes pushing 16,000 feet above sea level, we pay close attention to the acclimatization process. We ease our way into activity! What may seem as unnecessary slowness is a proven method to make sure you don't flame out on day 2 and miss out on the rest of the trip while you recover in a hotel, or even worse...a hospital. Scroll down as we talk about culture and environment.",
-      "image": "/images/2026/11/trips/remote-villages-of-zanskar-hiking-in-the-western-himalaya.jpg",
-      "imageAlt": "Hiking in the Western Himalaya"
-    },
-    {
-      "where": "Ladakh",
-      "title": "Local Culture and Customs",
-      "body": "Ladakhi culture is very hospitable. You will enjoy your time here. Our guides are not just there to guide you on the trail, but they invite you into their own relationships and sometimes their own family. This is what makes an experience with Adventure Access so meaningful. Are there things you need to be aware of? Absolutely! Will you be well taken care of and informed along the way by your guide? You bet! We encourage you to learn as you go and leave better than when you came.",
+      "title": "Time in Local Homes",
+      "body": "Our guides invite you into their own relationships and sometimes their own families. That is what makes these trips feel personal.",
       "image": "/images/2026/11/trips/red-lake-trek-local-culture-and-customs.jpg",
-      "imageAlt": "Local Culture and Customs"
-    },
-    {
-      "where": "Ladakh",
-      "title": "The Environment",
-      "body": "Water is life and this is becomes clear once you spend some time in the region, especially while exerting yourself on a bike. But the last thing we want to do is pollute this amazing place with hundreds of plastic bottles. We take care by providing you a more sustainable solution while we travel, while ensuring the purest water to keep you healthy and strong. Not just anything goes! We work closely with local partners and take our cues from them as well as our own knowledge base for what is good for long-term sustainable travel in the region. We are careful about where and how we ride. We welcome you into this mentality and aim to do what is best for you and for the environment.",
-      "image": "/images/2026/11/trips/red-lake-trek-the-environment.jpg",
-      "imageAlt": "The Environment"
-    },
-    {
-      "where": "Ladakh",
-      "title": "Education is an Amazing Adventure",
-      "body": "Adventure Access is committed to doing good things in the places you travel. Through our partnerships with local business leaders and others in the community around Zanskar, we give 3% of general revenue to sponsoring local children. This allows Zanskari children to attend school and embark on an amazing adventure through learning.",
-      "image": "/images/2026/11/trips/red-lake-trek-education-is-an-amazing-adventure.jpg",
-      "imageAlt": "Education is an Amazing Adventure"
+      "imageAlt": "Two elderly Ladakhi women sitting outside a mud-brick wall"
     }
   ],
+  "goodToKnow": {
+    "label": "Good to Know",
+    "heading": "Before You Go",
+    "lede": "A few things that shape how this trip runs.",
+    "cards": [
+      {
+        "title": "Fitness",
+        "body": "The trip is open to anyone willing to prepare, but the hikes are hard: water crossings, steep scrambles and a pass at 16,500 feet. Come ready to push yourself."
+      },
+      {
+        "title": "Altitude",
+        "body": "Altitudes push 16,000 feet and above. We build up slowly over the first days, and your guides pay close attention to acclimatization the whole way."
+      },
+      {
+        "title": "Local culture",
+        "body": "Ladakhi culture is very hospitable. Your guide will keep you informed on local customs as you go. Learn as you travel, and leave better than you came."
+      },
+      {
+        "title": "Water and the land",
+        "body": "Instead of hundreds of plastic bottles, we provide a more sustainable way to keep you supplied with clean water, and we take our cues from local partners on how to travel well here."
+      },
+      {
+        "title": "Where your money goes",
+        "body": "We give 3% of general revenue to sponsor children in Zanskar, so they can go to school."
+      },
+      {
+        "title": "Living in India?",
+        "body": "Reach out to info@adventure-access.com for a modified itinerary and pricing for residents."
+      }
+    ]
+  },
+  "stays": {
+    "label": "Where You'll Stay",
+    "heading": "Village Homes, a Camp and a City Hotel",
+    "paragraphs": [
+      "Nimmu House, a 5-star village home, starts the trip. Most villages in Zanskar have no hotels, so you stay in homestays, some rustic and some with more comforts, and camp on the way to Dipling. In Leh we prefer 3–4 star places with hospitable owners over glossy hotels with poor service, and in Delhi a 5-star hotel."
+    ],
+    "tags": [
+      "Nimmu House",
+      "Village Homestays",
+      "Dipling Trek Camp",
+      "Leh Guesthouse",
+      "Delhi 5-Star"
+    ]
+  },
+  "pricing": {
+    "from": 4889,
+    "currency": "USD",
+    "basis": "Double occupancy (shared room)",
+    "notes": [
+      "The price includes everything listed below. Private rooms and other upgrades are available on request."
+    ]
+  },
   "included": [
-    "Guide Services",
-    "Accommodations: Our preferred packages include 3-4 star locations in Leh, with a focus on more hospitable lodge owners over gloss hotels with poor front desk service. Homestays in villages will vary from location to location. Some are rustic while others have more amenities. Most village destinations do not have hotels, allowing for the rich and traditional experience of a village stay. Nimmu House is a 5 star experience to begin our itinerary.",
-    "Meals: All meals in India are provided in the tour package.",
-    "Domestic transportation: All ground and air travel within India as indicated in the itinerary",
-    "Airport Pickup and Dropoff",
+    "Guide services",
+    "Accommodations as described above",
+    "All meals in India",
+    "All ground and air travel within India shown in the itinerary",
+    "Airport pickup and drop-off",
     "Government permit fees"
   ],
   "excluded": [
-    "Flights to/from Delhi",
+    "Flights to and from Delhi",
     "Visas",
-    "Insurance",
-    "Alcohol: We strongly encourage minimizing or eliminating alcohol while acclimatizing. Should you choose to drink alcohol when appropriate, you may do so but must pay your alcohol tab at the close of the meal.",
-    "Tips: It is customary to tip all guides. We will provide information about the tipping culture in India so you can make informed decisions regarding when to tip and how much to tip.",
-    "Clothing and Equipment: We do not provide your gear but do have a packing list to help you prepare. We are happy to answer any questions you have and make recommendations if you need assistance."
+    "Travel insurance",
+    "Alcohol (we strongly encourage little or none while acclimatizing)",
+    "Tips for guides (we will explain local tipping customs)",
+    "Personal clothing and equipment (we send a packing list)"
   ],
   "nextSteps": {
     "label": "Next Steps",
@@ -405,7 +423,7 @@
       },
       {
         "title": "Talk with a specialist",
-        "body": "We help match the trip to your expectations and goals."
+        "body": "We help match the trip to your fitness and goals, and send your package and price."
       },
       {
         "title": "Book",
@@ -421,11 +439,8 @@
       "href": "/payment-terms-cancellation-policy/"
     }
   },
-  "footerNote": [],
-  "pricing": {
-    "from": 4889,
-    "currency": "USD",
-    "basis": "Double occupancy (shared room)",
-    "notes": []
-  }
+  "footerNote": [
+    "Price shown includes everything listed on this page, on a double occupancy basis.",
+    "Hike figures are approximate. The day 7 walk depends on road construction."
+  ]
 }

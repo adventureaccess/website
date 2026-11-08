@@ -4,29 +4,37 @@
   "visibility": "internal",
   "destination": "nepal",
   "kind": "template",
+  "editorial": "rewritten",
   "source": {
     "youli": "https://youli.io/t/adventure-access/manaslu-circuit-trek",
     "migratedOn": "2026-11-03",
-    "notes": "Mechanical copy of the public YouLi page: one chapter per YouLi day, YouLi photos. Needs an editorial pass into Brian's chapter format."
+    "notes": "Rewritten into Brian's chapter format from the YouLi copy. No facts added; open questions are in reviewNotes."
   },
+  "reviewNotes": [
+    "What is in the $3,180? YouLi has no included or not-included list (guesthouses, meals, Manaslu permits, the jeep transfers?), and no price basis (double occupancy?).",
+    "Lodging: YouLi mentions \"the guest house\" once (Day 11) and names no Kathmandu hotel. Confirm guesthouses every night on the trek, and name the hotel or keep it general.",
+    "Lho, Day 7: YouLi gives 3,180 m and 10,230 ft, which do not match. Which is right? I have used the feet figure.",
+    "Day 5 image is the Everest Gokyo trip's Day 5 photo (YouLi also tags Day 5 with a Namche Bazar location). Replace with a Deng or Budhi Gandaki photo? I have not used it."
+  ],
   "seo": {
-    "title": "Manaslu Circuit Trek | Adventure Access",
-    "description": "Embark on the Manaslu Circuit Trek, a breathtaking journey around the world’s eighth highest peak."
+    "title": "Manaslu Circuit Trek — 16 Days in Nepal | Adventure Access",
+    "description": "Sixteen days around the world's eighth-highest peak: remote villages, monasteries and Larkya La at 16,929 feet. From $3,180."
   },
   "hero": {
-    "eyebrow": "Kathmandu, Nepal · March–May and September–November",
-    "title": "Manaslu Circuit Trek",
-    "subtitle": "Embark on the Manaslu Circuit Trek, a breathtaking journey around the world’s eighth highest peak.",
+    "eyebrow": "Trekking Journey · March–May and September–November",
+    "title": "Manaslu",
+    "titleEm": "Circuit Trek",
+    "subtitle": "Around the world's eighth-highest peak and over Larkya La at 16,929 feet",
     "image": "/images/2026/11/trips/manaslu-circuit-trek-hero.jpg",
-    "imageAlt": "Manaslu Circuit Trek, Nepal",
+    "imageAlt": "Manaslu's snowy summit above a dark ridge",
     "meta": [
       {
         "label": "Duration",
-        "value": "16 Days"
+        "value": "16 Days · Kathmandu to Kathmandu"
       },
       {
         "label": "Season",
-        "value": "March–May and September–November"
+        "value": "Mar–May · Sep–Nov"
       },
       {
         "label": "Starting at",
@@ -36,378 +44,337 @@
   },
   "intro": {
     "label": "The Journey",
-    "heading": "Overview",
+    "heading": "Away from the Crowds",
     "paragraphs": [
-      "Embark on the Manaslu Circuit Trek, a breathtaking journey around the world’s eighth highest peak. Different from the crowded regions of Everest and Annapurna, this trek offers a perfect blend of natural beauty, rich culture, and Himalayan wilderness.",
-      "Experience remote mountain villages, ancient monasteries, and dramatic landscapes. Cross the iconic Larky La Pass at 5160 m or 16,929 ft above sea level. Though challenging, the Manaslu Circuit Trek is one of Nepal’s most rewarding treks."
+      "The Manaslu Circuit goes all the way around the world's eighth-highest peak. Unlike the crowded Everest and Annapurna regions, it pairs natural beauty and rich culture with real Himalayan wilderness.",
+      "Expect remote mountain villages, ancient monasteries and dramatic landscapes, and a crossing of Larkya La at 16,929 feet. It is challenging, and one of Nepal's most rewarding treks."
     ]
   },
-  "route": [],
+  "stats": [
+    {
+      "value": "16",
+      "label": "Days, Kathmandu to Kathmandu"
+    },
+    {
+      "value": "16,929",
+      "label": "Feet, Larkya La"
+    },
+    {
+      "value": "8th",
+      "label": "Highest peak in the world, Manaslu"
+    },
+    {
+      "value": "5–7",
+      "label": "Hours on an average trek day"
+    }
+  ],
+  "route": [
+    {
+      "name": "Kathmandu",
+      "days": "Days 1–2"
+    },
+    {
+      "name": "Machha Khola",
+      "days": "Day 3"
+    },
+    {
+      "name": "Jagat & Deng",
+      "days": "Days 4–5"
+    },
+    {
+      "name": "Namrung & Lho",
+      "days": "Days 6–7"
+    },
+    {
+      "name": "Samagaon",
+      "days": "Days 8–9"
+    },
+    {
+      "name": "Larkya La",
+      "days": "Days 10–12"
+    },
+    {
+      "name": "Tilje & Besisahar",
+      "days": "Days 13–14"
+    },
+    {
+      "name": "Kathmandu",
+      "days": "Days 15–16"
+    }
+  ],
+  "photoStrips": [
+    [
+      {
+        "src": "/images/2026/11/trips/manaslu-circuit-trek-day-3.jpg",
+        "alt": "A steel bridge over a rocky river"
+      },
+      {
+        "src": "/images/2026/11/trips/manaslu-circuit-trek-day-6.jpg",
+        "alt": "A green valley below a snow peak"
+      },
+      {
+        "src": "/images/2026/11/trips/manaslu-circuit-trek-day-10.jpg",
+        "alt": "Trail signs for Dharmashala and Samagaun beside a stone lodge"
+      },
+      {
+        "src": "/images/2026/11/trips/manaslu-circuit-trek-day-14.jpg",
+        "alt": "A river running through a forested gorge"
+      }
+    ]
+  ],
+  "dayTypes": {
+    "label": "How the Days Work",
+    "heading": "Slowly, Slowly",
+    "lede": "Slow and steady is the mantra for trekking in Nepal. We move at a calculated pace so we do not burn you out early or rush the acclimatization process.",
+    "cards": [
+      {
+        "title": "Trekking days",
+        "tone": "strong",
+        "body": "Days 4–14: about 5–7 hours a day. Leave after breakfast, stop for lunch on the trail, and arrive mid-afternoon to rest."
+      },
+      {
+        "title": "Acclimatization day",
+        "tone": "gentle",
+        "body": "Day 9: climb high, sleep low. A hike to the base of Manaslu and Birendra Lake, then a second night in Samagaon."
+      },
+      {
+        "title": "Kathmandu and road days",
+        "tone": "gentle",
+        "body": "Days 1–2 and 15–16 in Kathmandu, with long drives on Days 3, 14 and 15 to reach and leave the trail."
+      }
+    ]
+  },
   "chapters": {
     "label": "The Journey in Chapters",
-    "heading": "Day by Day",
+    "heading": "Around the Eighth-Highest Peak",
+    "lede": "Altitudes are for where you stop each night unless noted.",
     "groups": [
       {
         "dayStart": 1,
-        "dayEnd": 1,
-        "title": "Arrive in Kathmandu, meet your guide, and transfer to hotel",
-        "tags": [],
-        "prose": [],
-        "days": [
-          {
-            "label": "Day 1",
-            "text": "Arrive in Kathmandu, meet your guide, and transfer to hotel"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/annapurna-trekking-day-1.jpg",
-          "alt": "Arrive in Kathmandu, meet your guide, and transfer to hotel"
-        }
-      },
-      {
-        "dayStart": 2,
         "dayEnd": 2,
-        "title": "Cultural tour in Boudha, trip orientation, and dinner with your guide and group",
-        "tags": [],
-        "prose": [],
-        "days": [
-          {
-            "label": "Day 2",
-            "text": "Cultural tour in Boudha, trip orientation, and dinner with your guide and group"
-          }
+        "title": "Kathmandu — Arrival and Orientation",
+        "tags": [
+          "Arrival",
+          "Boudha",
+          "Trek Orientation"
         ],
         "image": {
           "src": "/images/2026/11/trips/annapurna-trekking-day-2.jpg",
-          "alt": "Cultural tour in Boudha, trip orientation, and dinner with your guide and group"
-        }
+          "alt": "The eyes of Boudhanath stupa under prayer flags"
+        },
+        "prose": [
+          "Your guide meets you at the airport, so there is no need to find your hotel in the back alleys of Boudha or Thamel on your own. There is still plenty of time to explore the city, eat well and get to know your guide before the mountains."
+        ],
+        "days": [
+          {
+            "label": "Day 1",
+            "text": "Arrive in Kathmandu, meet your guide and transfer to your hotel."
+          },
+          {
+            "label": "Day 2",
+            "text": "A cultural tour in Boudha, the trip orientation, and dinner with your guide and group."
+          }
+        ],
+        "overnight": "2 Nights · Kathmandu hotel"
       },
       {
         "dayStart": 3,
-        "dayEnd": 3,
-        "title": "Drive from Kathmandu to Machha Khola",
-        "tags": [],
+        "dayEnd": 5,
+        "title": "Budhi Gandaki — Into the Manaslu Region",
+        "tags": [
+          "Machha Khola 2,952 ft",
+          "Suspension Bridges",
+          "Jagat Checkpoint"
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/manaslu-circuit-trek-day-4.jpg",
+          "alt": "A suspension bridge across a dry hillside"
+        },
         "prose": [
-          "We embark on a scenic drive from Kathmandu to the starting point for our trek, Machhakhola. This 8-9 hour route covers approximately 160km along the Budhi Gandaki River. Machhakhola is known as the entry point for the Manaslu region with a mix of ethnicities, giving a glimpse of rural life in Nepal. We will stay the evening to rest and prepare for the next day’s hike.",
-          "Machakhola elevation: 900m/2,952 ft"
+          "A long drive along the Budhi Gandaki River brings you to Machha Khola, the entry point to the Manaslu region and a glimpse of rural life in Nepal. From there the valley narrows as its walls begin to tower overhead."
         ],
         "days": [
           {
             "label": "Day 3",
-            "text": "Drive from Kathmandu to Machha Khola"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/manaslu-circuit-trek-day-3.jpg",
-          "alt": "Drive from Kathmandu to Machha Khola"
-        }
-      },
-      {
-        "dayStart": 4,
-        "dayEnd": 4,
-        "title": "Trek to Jagat",
-        "tags": [],
-        "prose": [
-          "Walk along a narrow trail, crossing your first of Nepal’s many famous suspension bridges, to arrive in Jagat. We will overnight at Jagat, the check point for the Manaslu conservation area.",
-          "Jagat Altitude: 1410m/4,625ft",
-          "Trekking duration: 5-6 hours",
-          "Trekking distance: 22km"
-        ],
-        "days": [
+            "text": "An 8–9 hour drive, about 160 km, from Kathmandu to Machha Khola. Altitude 2,952 ft."
+          },
           {
             "label": "Day 4",
-            "text": "Trek to Jagat"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/manaslu-circuit-trek-day-4.jpg",
-          "alt": "Trek to Jagat"
-        }
-      },
-      {
-        "dayStart": 5,
-        "dayEnd": 5,
-        "title": "Trek to Deng",
-        "tags": [
-          "Namche Bazar"
-        ],
-        "prose": [
-          "Pass through Chisapani and Eklebjatti, which boast diverse flora and fauna and a narrowing valley as the walls begin to tower over the Budhi Gandaki valley.",
-          "Deng altitude: 1804m/5915 ft",
-          "Trekking duration: 7-8 hours",
-          "Trekking distance: 20km"
-        ],
-        "days": [
+            "text": "A narrow trail and your first suspension bridge, to Jagat, the checkpoint for the Manaslu Conservation Area. 5–6 hours · 22 km · 4,625 ft."
+          },
           {
             "label": "Day 5",
-            "text": "Namche Bazar, Namche, Nepal"
+            "text": "Through Chisapani and Eklebjatti, with diverse plants and wildlife, to Deng. 7–8 hours · 20 km · 5,915 ft."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/everest-gokyo-ri-chola-pass-ebc-day-5.jpg",
-          "alt": "Trek to Deng"
-        }
+        "overnight": "Machha Khola, Jagat, then Deng"
       },
       {
         "dayStart": 6,
-        "dayEnd": 6,
-        "title": "Trek to Namrung",
-        "tags": [],
+        "dayEnd": 9,
+        "title": "Nubri — Monasteries and the North Face",
+        "tags": [
+          "Tibetan Influence",
+          "Pungyen Monastery",
+          "Samagaon 11,578 ft",
+          "Birendra Lake"
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/manaslu-circuit-trek-day-8.jpg",
+          "alt": "Trekkers with packs walking toward snowy mountains"
+        },
         "prose": [
-          "As the circuit enters the Nubri region, Tibetan influence becomes more noticeable. Once in Namrung, visitors are able to get their first glimpse of the Manaslu range.",
-          "Namrung altitude: 2630m/8,626ft",
-          "Trekking duration: 6-7 hours",
-          "Trekking distance: 19km/~12 miles"
+          "As the circuit enters the Nubri region, Tibetan influence grows stronger. The first views of the Manaslu range come at Namrung, and a local Tibetan monastery at Lho and Pungyen Monastery beyond it add to the culture of the route."
         ],
         "days": [
           {
             "label": "Day 6",
-            "text": "Trek to Namrung"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/manaslu-circuit-trek-day-6.jpg",
-          "alt": "Trek to Namrung"
-        }
-      },
-      {
-        "dayStart": 7,
-        "dayEnd": 7,
-        "title": "Trek to Lho",
-        "tags": [],
-        "prose": [
-          "Views of Manaslu and Ganesh Himal continue to feed your senses along this route, and a local Tibetan Monastery adds to the cultural aspects of this route.",
-          "Lho altitude: 3180m/10230ft",
-          "Trekking duration: 4-5 hours",
-          "Trekking distance: 16km/~10 miles",
-          "~"
-        ],
-        "days": [
+            "text": "Trek to Namrung and a first look at the Manaslu range. 6–7 hours · 19 km (about 12 mi) · 8,626 ft."
+          },
           {
             "label": "Day 7",
-            "text": "Trek to Lho"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/manaslu-circuit-trek-day-7.jpg",
-          "alt": "Trek to Lho"
-        }
-      },
-      {
-        "dayStart": 8,
-        "dayEnd": 8,
-        "title": "Trek to Samagoan via Pungyen Monastery",
-        "tags": [],
-        "prose": [
-          "After a rewarding and tranquil experience in Lho, the journey continues on via Pungyen Monastery and includes panoramic views of Manaslu’s North Face.",
-          "Samagoan altitude: 3530m/11,578 ft",
-          "Trekking duration: 5-6 hours",
-          "Trekking distance: 16km/~10 miles"
-        ],
-        "days": [
+            "text": "Trek to Lho, with views of Manaslu and Ganesh Himal. 4–5 hours · 16 km (about 10 mi) · 10,230 ft."
+          },
           {
             "label": "Day 8",
-            "text": "Trek to Samagoan via Pungyen Monastery"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/manaslu-circuit-trek-day-8.jpg",
-          "alt": "Trek to Samagoan via Pungyen Monastery"
-        }
-      },
-      {
-        "dayStart": 9,
-        "dayEnd": 9,
-        "title": "Acclimatization Day",
-        "tags": [],
-        "prose": [
-          "Before proceeding to higher elevations, we will spend this day hiking to the base of Manaslu and Birendra Lake with a return to Samagoan for the night."
-        ],
-        "days": [
+            "text": "Trek to Samagaon via Pungyen Monastery, with views of Manaslu's North Face. 5–6 hours · 16 km (about 10 mi) · 11,578 ft."
+          },
           {
             "label": "Day 9",
-            "text": "Acclimatization Day"
+            "text": "Acclimatization day: hike to the base of Manaslu and Birendra Lake, then back to Samagaon for the night."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/manaslu-circuit-trek-day-9.jpg",
-          "alt": "Acclimatization Day"
-        }
+        "overnight": "Namrung, Lho, then 2 Nights · Samagaon"
       },
       {
         "dayStart": 10,
-        "dayEnd": 10,
-        "title": "Trek to Samdo",
-        "tags": [],
+        "dayEnd": 12,
+        "title": "Larkya La — Over the Top",
+        "tags": [
+          "Samdo 12,661 ft",
+          "Dharmashala 14,628 ft",
+          "Larkya La 16,929 ft"
+        ],
+        "badge": "✦ The high point of the circuit",
+        "image": {
+          "src": "/images/2026/11/trips/manaslu-circuit-trek-day-12.jpg",
+          "alt": "Prayer flags at the Larkya La pass sign"
+        },
         "prose": [
-          "Trek alongside the Budhi Gandaki river before gradually increasing along the terrain to reach Samdo.",
-          "Samdo altitude: 3860m/12,661 ft",
-          "Trekking duration: 3-4 hours",
-          "Trekking distance: 10km/~6 miles"
+          "Above the tree line, your surroundings start to match what you have imagined the Himalaya look like. Two shorter days take you up past Larkya Bazaar to Dharmashala, then the longest day of the trek crosses Larkya La."
         ],
         "days": [
           {
             "label": "Day 10",
-            "text": "Trek to Samdo"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/manaslu-circuit-trek-day-10.jpg",
-          "alt": "Trek to Samdo"
-        }
-      },
-      {
-        "dayStart": 11,
-        "dayEnd": 11,
-        "title": "Trek to Dharmashala",
-        "tags": [],
-        "prose": [
-          "After departing the guest house, this routes passes a seasonal Tibetan market called Larkya Bazaar before descending to the river, crossing a wooden bridge, and climbing upward with views of the Larkya glacier.",
-          "Dharmashala altitude: 4460m/14,628ft",
-          "Trekking duration: 4-5 hours",
-          "Trekking distance: 11km/~7 miles"
-        ],
-        "days": [
+            "text": "Along the Budhi Gandaki, then gradually up to Samdo. 3–4 hours · 10 km (about 6 mi) · 12,661 ft."
+          },
           {
             "label": "Day 11",
-            "text": "Trek to Dharmashala"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/manaslu-circuit-trek-day-11.jpg",
-          "alt": "Trek to Dharmashala"
-        }
-      },
-      {
-        "dayStart": 12,
-        "dayEnd": 12,
-        "title": "Trek to Bhimthang",
-        "tags": [],
-        "prose": [
-          "This is the longest day of hiking on the itinerary. We will start early to enjoy the day which includes Larkya Pass and views of Mount Himlung Himal, Kangaru peak, and Annapurna II.",
-          "Larkya Pass altitude: 5160m/16,929 ft",
-          "Bhimthang altitude: 3720m/12,202 ft",
-          "Trekking duration: 8-9 hours",
-          "Trekking distance: 24km/~15 miles"
-        ],
-        "days": [
+            "text": "Past Larkya Bazaar, a seasonal Tibetan market, down to the river and over a wooden bridge, then up with views of the Larkya glacier. 4–5 hours · 11 km (about 7 mi) · 14,628 ft."
+          },
           {
             "label": "Day 12",
-            "text": "Trek to Bhimthang"
+            "text": "An early start over Larkya La at 16,929 ft, with views of Himlung Himal, Kangaru peak and Annapurna II, then down to Bhimthang. 8–9 hours · 24 km (about 15 mi) · 12,202 ft."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/manaslu-circuit-trek-day-12.jpg",
-          "alt": "Trek to Bhimthang"
-        }
+        "overnight": "Samdo, Dharmashala, then Bhimthang"
       },
       {
         "dayStart": 13,
-        "dayEnd": 13,
-        "title": "Trek to Tilje",
-        "tags": [],
+        "dayEnd": 16,
+        "title": "Tilje to Kathmandu — The Way Down",
+        "tags": [
+          "Rhododendron Forest",
+          "Annapurna Circuit",
+          "Prithvi Highway",
+          "Departure"
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/manaslu-circuit-trek-day-13.jpg",
+          "alt": "Rhododendrons in bloom below misty peaks"
+        },
         "prose": [
-          "Descend through Rhododendron forest and continue soaking in the Mountain View’s along the route to Tilje.",
-          "Tilje altitude: 2300m/7,544 ft",
-          "Trekking duration: 5-6 hours",
-          "Trekking distance: 16km/~10 miles"
+          "The trail drops through rhododendron forest to join the Annapurna Circuit at Dharapani. From there it is two days by road back to Kathmandu."
         ],
         "days": [
           {
             "label": "Day 13",
-            "text": "Trek to Tilje"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/manaslu-circuit-trek-day-13.jpg",
-          "alt": "Trek to Tilje"
-        }
-      },
-      {
-        "dayStart": 14,
-        "dayEnd": 14,
-        "title": "Trek to Dharapani and Drive to Beisishahar",
-        "tags": [],
-        "prose": [
-          "The circuit descends four hours down to Dharapani to link up with the famous Annapurna circuit trail. After lunch we will drive to Beisihahar for the evening.",
-          "Trekking duration: 4 hours",
-          "Driving duration: 6 hours"
-        ],
-        "days": [
+            "text": "Descend through rhododendron forest to Tilje, with mountain views along the way. 5–6 hours · 16 km (about 10 mi) · 7,544 ft."
+          },
           {
             "label": "Day 14",
-            "text": "Trek to Dharapani and Drive to Beisishahar"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/manaslu-circuit-trek-day-14.jpg",
-          "alt": "Trek to Dharapani and Drive to Beisishahar"
-        }
-      },
-      {
-        "dayStart": 15,
-        "dayEnd": 15,
-        "title": "Drive to Kathmandu",
-        "tags": [],
-        "prose": [
-          "Transfer back to Kathmandu by private jeep along the Prithivi Highway.",
-          "Drive duration: 6-7 hours",
-          "Drive distance: 180km"
-        ],
-        "days": [
+            "text": "Four hours down to Dharapani on the Annapurna Circuit trail, lunch, then a 6-hour drive to Besisahar for the evening."
+          },
           {
             "label": "Day 15",
-            "text": "Drive to Kathmandu"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/manaslu-circuit-trek-day-15.jpg",
-          "alt": "Drive to Kathmandu"
-        }
-      },
-      {
-        "dayStart": 16,
-        "dayEnd": 16,
-        "title": "Day of Departure",
-        "tags": [],
-        "prose": [
-          "At the appropriate departure time, your guide will pick you up at the hotel and transfer you to the airport for your departure."
-        ],
-        "days": [
+            "text": "Back to Kathmandu by private jeep on the Prithvi Highway. 6–7 hours · 180 km."
+          },
           {
             "label": "Day 16",
-            "text": "Day of Departure"
+            "text": "Your guide picks you up at the hotel and takes you to the airport for your flight."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/annapurna-trekking-day-17.jpg",
-          "alt": "Day of Departure"
-        }
+        "overnight": "Tilje, Besisahar, then Kathmandu hotel"
       }
     ]
   },
+  "pullQuote": "Slowly, slowly. This is the mantra for trekking in Nepal.",
   "highlights": [
     {
-      "where": "Nepal",
-      "title": "Working Our Way Up",
-      "body": "Slowly, slowly. This is the mantra for trekking in Nepal. Slow and steady is the name of the game. Our itineraries are designed around and average of 5-7 hours of trekking each day. We move at a calculated pace so we do not burn you out too early or rush the acclimatization process. This is by design. As we move from village to village, we leave each morning after breakfast, stop for lunch along the way, and arrive mid afternoon to rest for the next day.",
-      "image": "/images/2026/11/trips/everest-gokyo-ri-chola-pass-ebc-working-our-way-up.jpg",
-      "imageAlt": "Working Our Way Up"
+      "where": "Dharmashala to Bhimthang",
+      "title": "Larkya La",
+      "body": "The longest day of the trek crosses the pass at 16,929 feet, with views of the Larkya glacier on the way up.",
+      "image": "/images/2026/11/trips/manaslu-circuit-trek-day-11.jpg",
+      "imageAlt": "Two trekkers walking a gravel trail toward the mountains"
     },
     {
-      "where": "Nepal",
-      "title": "Acclimatization Days",
-      "body": "Climb high, sleep low. During this itinerary, we schedule one acclimatization hike to help facilitate our adjustment to the high altitudes encountered throughout the trek. On these days, we will depart the village, climb to higher destinations, possibly visit other villages or points of interest, and then return to the same place we began for a second night of sleep at the same resting altitude. This helps the body adjust and reduces the risk of altitude sickness as we keep moving up the valley.",
-      "image": "/images/2026/11/trips/annapurna-trekking-acclimatization-days.jpg",
-      "imageAlt": "Acclimatization Days"
+      "where": "Samagaon",
+      "title": "Base of Manaslu and Birendra Lake",
+      "body": "The acclimatization hike on Day 9 climbs to the foot of the world's eighth-highest peak before a second night in Samagaon.",
+      "image": "/images/2026/11/trips/manaslu-circuit-trek-day-9.jpg",
+      "imageAlt": "A watch showing the altitude on a trekker's wrist"
     },
     {
-      "where": "Nepal",
-      "title": "Quit Yakking, Start Packing",
-      "body": "As we move through higher altitudes, don't think of this as busy work. Each of these stops and the trail segments between them are valuable experiences and they delight the senses. Along the way we move beyond forests to being well above the tree line and your surroundings will start to match what you've imagined the Himalayas look like. It's like being in another world!",
-      "image": "/images/2026/11/trips/everest-gokyo-ri-chola-pass-ebc-quit-yakking-start-packing.jpg",
-      "imageAlt": "Quit Yakking, Start Packing"
+      "where": "Nubri",
+      "title": "Tibetan Villages and Monasteries",
+      "body": "Tibetan influence grows as the circuit enters Nubri, with a local monastery at Lho and Pungyen Monastery on the way to Samagaon.",
+      "image": "/images/2026/11/trips/manaslu-circuit-trek-day-7.jpg",
+      "imageAlt": "Snow peaks lit by the sun above the clouds"
     }
   ],
+  "goodToKnow": {
+    "label": "Good to Know",
+    "heading": "Before You Go",
+    "lede": "A few things that shape how this trip runs.",
+    "cards": [
+      {
+        "title": "Kathmandu",
+        "body": "Your guide meets you at the airport and takes care of the details. Your time in the city includes good food, getting to know your guide and an orientation for the trek."
+      },
+      {
+        "title": "Pace",
+        "body": "Trek days average 5–7 hours. We leave each village after breakfast, stop for lunch along the way and arrive mid-afternoon to rest for the next day."
+      },
+      {
+        "title": "Acclimatization",
+        "body": "Climb high, sleep low. On Day 9 we hike higher from Samagaon and return for a second night at the same altitude, which helps the body adjust and reduces the risk of altitude sickness."
+      },
+      {
+        "title": "Larkya La",
+        "body": "Day 12 is the longest day of hiking, 8–9 hours over the pass at 16,929 feet, so we start early. The trek is challenging; come ready for it."
+      },
+      {
+        "title": "Long drives",
+        "body": "Reaching and leaving the trail takes time: 8–9 hours to Machha Khola at the start, and 6 hours then 6–7 hours by road at the end."
+      }
+    ]
+  },
+  "pricing": {
+    "from": 3180,
+    "currency": "USD",
+    "basis": "Starting price",
+    "notes": []
+  },
   "included": [],
   "excluded": [],
   "nextSteps": {
@@ -421,7 +388,7 @@
       },
       {
         "title": "Talk with a specialist",
-        "body": "We help match the trip to your expectations and goals."
+        "body": "We help match the trip to your fitness and goals, and send your package and price."
       },
       {
         "title": "Book",
@@ -437,21 +404,8 @@
       "href": "/payment-terms-cancellation-policy/"
     }
   },
-  "footerNote": [],
-  "goodToKnow": {
-    "label": "Good to Know",
-    "heading": "More About This Journey",
-    "cards": [
-      {
-        "title": "What to expect in Kathmandu",
-        "body": "You may have started this journey with an interest in the mountains of Nepal but no trip is complete without a good experience in Kathmandu. From the moment you meet your guide at the airport in Kathmandu, you are in good hands. There is no need to navigate the airport scene or figure out how to find your hotel in the back alleys of Boudha or Thamel. Don't worry, there is ample opportunity to get out and explore. You will be able to immerse yourself in the bustling network of alleys, streets, and buildings as you take in the city. Our guides, however, take care of the details so you can take in the surroundings. Your time in Kathmandu will also include good food, getting to know your guide, and an orientation for the trek. By the time we depart the city, everyone will be prepared for the mountains and your cultural curiosity will have been stoked."
-      }
-    ]
-  },
-  "pricing": {
-    "from": 3180,
-    "currency": "USD",
-    "basis": "Starting price",
-    "notes": []
-  }
+  "footerNote": [
+    "Starting price shown.",
+    "Trekking and driving times and distances are approximate."
+  ]
 }

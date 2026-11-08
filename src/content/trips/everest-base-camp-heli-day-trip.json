@@ -1,110 +1,239 @@
 {
-  "title": "Everest Base Camp Heli Tour: Day Trip",
+  "title": "Everest Base Camp Heli Tour — Day Trip",
   "status": "review",
   "visibility": "internal",
   "destination": "nepal",
   "kind": "template",
+  "editorial": "rewritten",
   "source": {
     "youli": "https://youli.io/t/adventure-access/everest-base-heli-day-tour",
     "migratedOn": "2026-11-03",
-    "notes": "Mechanical copy of the public YouLi page: one chapter per YouLi day, YouLi photos. Needs an editorial pass into Brian's chapter format."
+    "notes": "Rewritten into Brian's chapter format from the YouLi copy. No facts added; open questions are in reviewNotes."
   },
+  "reviewNotes": [
+    "Kala Pathar height: YouLi says 18,519 ft here, but the trek pages say 18,433 ft and 18,448 ft. Which should we use across all three?",
+    "Pricing: $6,250 is per tour for 2–4 people. Do we offer it for one person, or more than four? What happens if weather grounds the flight?",
+    "Time on Kala Pathar and any health or age limits at that altitude: YouLi only says the visit is based on your comfort level.",
+    "YouLi has no day list, so the two chapters are built from the section text. The order (Kala Pathar, breakfast above Namche, lunch in Boudha) follows the overview."
+  ],
   "seo": {
-    "title": "Everest Base Camp Heli Tour: Day Trip | Adventure Access",
-    "description": "Not everyone has the option of trekking to Everest Base Camp."
+    "title": "Everest Base Camp Heli Tour — Day Trip | Adventure Access",
+    "description": "A 5–6 hour helicopter day trip from Kathmandu to Kala Pathar, with breakfast above Namche Bazaar and lunch in Boudha. $6,250 per tour for 2–4 people."
   },
   "hero": {
-    "eyebrow": "Kathmandu, Nepal · March–May and September–November",
-    "title": "Everest Base Camp Heli Tour: Day Trip",
-    "subtitle": "Not everyone has the option of trekking to Everest Base Camp.",
+    "eyebrow": "Helicopter Journey · March–May and September–November",
+    "title": "Everest Heli Tour",
+    "titleEm": "Day Trip",
+    "subtitle": "Kathmandu to Kala Pathar and back in 5–6 hours, with breakfast above Namche Bazaar",
     "image": "/images/2026/11/trips/everest-base-camp-heli-day-trip-hero.jpg",
-    "imageAlt": "Everest Base Camp Heli Tour: Day Trip, Nepal",
+    "imageAlt": "An orange helicopter on a snowy landing spot",
     "meta": [
       {
         "label": "Duration",
-        "value": "1 Day"
+        "value": "1 Day · Kathmandu to Kathmandu"
       },
       {
         "label": "Season",
-        "value": "March–May and September–November"
+        "value": "Mar–May · Sep–Nov"
       },
       {
         "label": "Price",
-        "value": "$6,250 per tour"
+        "value": "$6,250 per tour, 2–4 people"
       }
     ]
   },
   "intro": {
     "label": "The Journey",
-    "heading": "Overview",
+    "heading": "Everest Without the Trek",
     "paragraphs": [
-      "Not everyone has the option of trekking to Everest Base Camp. Take a tour by helicopter. Our guide services begin at your hotel in Kathmandu and cover every detail of your day trip. The average duration of this Kathmandu-Everest-Kathmandu excursion is 5-6 hours, including KalaPathar, a panoramic breakfast, and lunch with your guide in Boudha."
+      "Not everyone has the option of trekking to Everest Base Camp. This tour goes by helicopter. Our guide services begin at your hotel in Kathmandu and cover every detail of the day.",
+      "The Kathmandu–Everest–Kathmandu excursion takes 5–6 hours on average. It includes a landing on Kala Pathar, a breakfast with panoramic views, and lunch with your guide in Boudha. Flying through the valleys and around the mountains between the city and the Khumbu is part of the experience."
     ]
   },
-  "route": [],
+  "stats": [
+    {
+      "value": "5–6",
+      "label": "Hours, Kathmandu to Kathmandu"
+    },
+    {
+      "value": "18,519",
+      "label": "Feet, Kala Pathar"
+    },
+    {
+      "value": "2–4",
+      "label": "People per tour"
+    }
+  ],
+  "route": [
+    {
+      "name": "Kathmandu hotel",
+      "days": "Pickup"
+    },
+    {
+      "name": "Kala Pathar",
+      "days": "Landing"
+    },
+    {
+      "name": "Above Namche Bazaar",
+      "days": "Breakfast"
+    },
+    {
+      "name": "Boudha, Kathmandu",
+      "days": "Lunch"
+    }
+  ],
+  "dayTypes": {
+    "label": "How the Day Works",
+    "heading": "Up, Out and Back",
+    "lede": "One day, three parts. Your guide is with you from hotel pickup to drop-off.",
+    "cards": [
+      {
+        "title": "The flight",
+        "tone": "gentle",
+        "body": "From Kathmandu through the valleys and around the mountains to the Khumbu, a view of the Himalaya unique to the heli tour."
+      },
+      {
+        "title": "Kala Pathar",
+        "tone": "strong",
+        "body": "A landing at 18,519 feet, the best vantage point for Everest in the region. Your guides set the visit by your comfort at high altitude."
+      },
+      {
+        "title": "Breakfast and lunch",
+        "tone": "gentle",
+        "body": "Breakfast above Namche Bazaar with views of Ama Dablam and Everest, then lunch with your guide in Boudha."
+      }
+    ]
+  },
   "chapters": {
-    "label": "The Journey in Chapters",
-    "heading": "Day by Day",
+    "label": "The Day in Chapters",
+    "heading": "Kathmandu to Everest and Back",
+    "lede": "The average duration is 5–6 hours.",
     "groups": [
       {
         "dayStart": 1,
         "dayEnd": 1,
-        "title": "Everest Base Camp Heli Tour: Day Trip",
-        "tags": [],
-        "prose": [],
+        "title": "Kala Pathar — Everest Up Close",
+        "tags": [
+          "Hotel Pickup",
+          "Khumbu Valley",
+          "Kala Pathar 18,519 ft"
+        ],
+        "badge": "✦ The heart of the journey",
+        "image": {
+          "src": "/images/2026/11/trips/everest-base-camp-heli-day-trip-everest-views-from-kalapathar.jpg",
+          "alt": "Everest and its neighbors under the sun from Kala Pathar"
+        },
+        "prose": [
+          "The approach flies over the Khumbu Valley and lands on top of Kala Pathar. Within the region, this is where the best views of Everest are, from a vantage point slightly higher than Everest Base Camp. Our guides watch your health and safety and lead the visit based on how you feel at altitude."
+        ],
         "days": [
           {
             "label": "Day 1",
-            "text": "Not everyone has the option of trekking to Everest Base Camp. Take a tour by helicopter. Our guide services begin at your hotel in Kathmandu and cover every detail of your day trip. The average duration of this Kathmandu-Everest-Kathmandu excursion is 5-6 hours, including KalaPathar, a panoramic breakfast, and lunch with your guide in Boudha."
+            "text": "Pickup at your Kathmandu hotel, the flight to the Khumbu, and a landing on Kala Pathar at 18,519 ft."
+          }
+        ]
+      },
+      {
+        "dayStart": 1,
+        "dayEnd": 1,
+        "title": "Namche Bazaar and Boudha — Breakfast and Back",
+        "tags": [
+          "Ama Dablam Views",
+          "Breakfast",
+          "Lunch in Boudha"
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/everest-base-camp-heli-day-trip-breakfast-with-panoramic-views-of-everest-and-ama-.jpg",
+          "alt": "A group at a breakfast table with Ama Dablam behind"
+        },
+        "prose": [
+          "After Everest and the Khumbu, the group lands above Namche Bazaar for breakfast, with panoramic views of Ama Dablam and Everest in the distance. It is a good way to celebrate and slow down for a few moments before the flight back to Kathmandu."
+        ],
+        "days": [
+          {
+            "label": "Day 1",
+            "text": "Breakfast above Namche Bazaar, the flight back to Kathmandu, and lunch with your guide in Boudha before drop-off at your hotel."
           }
         ]
       }
     ]
   },
+  "pullQuote": "From within the region, the best views of Mount Everest are from Kala Pathar.",
   "highlights": [
     {
-      "where": "Nepal",
-      "title": "Everest Views from KalaPathar",
-      "body": "The approach to the region soars over the Khumbu Valley, landing atop KalaPathar. From within the region, the best views of Mount Everest are from KalaPathar, a slightly higher vantage point that Everest Base Camp. Our guides are attentive to your health and safety and will lead you on an experiential visit to the region based upon your comfort level at high altitudes. Kala Pathar is 18,519 ft above sea level.",
+      "where": "Khumbu",
+      "title": "Kala Pathar",
+      "body": "A landing at 18,519 feet for the best views of Everest in the region.",
       "image": "/images/2026/11/trips/everest-base-camp-heli-day-trip-everest-views-from-kalapathar.jpg",
-      "imageAlt": "Everest Views from KalaPathar"
+      "imageAlt": "Everest and its neighbors under the sun from Kala Pathar"
     },
     {
-      "where": "Nepal",
-      "title": "Soar through the Himalayas",
-      "body": "Experiencing the himalayas as you soar through valleys and around mountains between Kathmandu and Everest Base Camp is unique to the heli tour between the city and the Khumbu Valley.",
+      "where": "Kathmandu to the Khumbu",
+      "title": "The Flight",
+      "body": "Through the valleys and around the mountains between the city and the Khumbu Valley.",
       "image": "/images/2026/11/trips/everest-base-camp-heli-day-trip-soar-through-the-himalayas.jpg",
-      "imageAlt": "Soar through the Himalayas"
+      "imageAlt": "A smiling passenger in a helicopter cockpit above glaciers"
     },
     {
-      "where": "Nepal",
-      "title": "Breakfast with Panoramic Views of Everest and Ama Dablam",
-      "body": "After seeing Everest and the Khumbu Valley, the group will land above Namche Bazaar for breakfast with panoramic views of Ama Dablam and Everest in the distance. This is a great way to celebrate the experience and slow down for a few moments before heading back to Kathmandu.",
+      "where": "Namche Bazaar",
+      "title": "Breakfast with a View",
+      "body": "Panoramic views of Ama Dablam, with Everest in the distance.",
       "image": "/images/2026/11/trips/everest-base-camp-heli-day-trip-breakfast-with-panoramic-views-of-everest-and-ama-.jpg",
-      "imageAlt": "Breakfast with Panoramic Views of Everest and Ama Dablam"
+      "imageAlt": "A group at a breakfast table with Ama Dablam behind"
     }
   ],
+  "goodToKnow": {
+    "label": "Good to Know",
+    "heading": "Before You Go",
+    "lede": "A few things that shape how this day runs.",
+    "cards": [
+      {
+        "title": "Altitude",
+        "body": "Kala Pathar is 18,519 feet above sea level. Our guides are attentive to your health and safety and shape the visit around your comfort at high altitude."
+      },
+      {
+        "title": "Group size",
+        "body": "The price is per tour, for 2–4 people."
+      },
+      {
+        "title": "No overnight",
+        "body": "This is a day trip, so no accommodation is included. Pickup and drop-off are at your hotel in Kathmandu."
+      },
+      {
+        "title": "Meals",
+        "body": "Breakfast, tea, coffee and lunch are included."
+      }
+    ]
+  },
+  "pricing": {
+    "from": 6250,
+    "currency": "USD",
+    "basis": "Per tour, for 2–4 people",
+    "notes": [
+      "The price is for the whole tour, not per person."
+    ]
+  },
   "included": [
-    "Guide Services",
-    "Hotel pick-up and drop-off within Kathmandu",
-    "Helicopter Services",
-    "Accommodations: As a day trip, there are no accommodations included in this activity.",
-    "Meals: Breakfast/Tea/Coffee and Lunch are included in this day trip activity",
-    "National Park entry fees",
+    "Guide services",
+    "Hotel pickup and drop-off within Kathmandu",
+    "Helicopter services",
+    "Breakfast, tea, coffee and lunch",
+    "National park entry fees",
     "Government permit fees"
   ],
   "excluded": [
-    "International Flights to/from Kathmandu",
+    "International flights to and from Kathmandu",
+    "Accommodations (this is a day trip)",
     "Visas",
-    "Insurance",
-    "Alcohol: We strongly encourage minimizing or eliminating alcohol while acclimatizing. Should you choose to drink alcohol when appropriate, you may do so but must pay your alcohol tab at the close of the meal.",
-    "Tips: It is customary to tip all senior guides, junior guides, and porters. We will provide information about the tipping culture in Nepal so you can make informed decisions regarding when to tip and how much to tip.",
-    "Clothing and Equipment: We do not provide your gear but do have a packing list to help you prepare. We are happy to answer any questions you have and make recommendations if you need assistance."
+    "Travel insurance",
+    "Alcohol (we strongly encourage little or none while acclimatizing)",
+    "Tips for guides (we will explain local tipping customs)",
+    "Personal clothing and equipment (we send a packing list)"
   ],
   "nextSteps": {
     "label": "Next Steps",
     "heading": "Make It Yours",
-    "lede": "From the moment you express interest, one of our trip specialists guides you through booking, so the trip matches what you want from it.",
+    "lede": "From the moment you express interest, one of our trip specialists guides you through booking, so the tour matches what you want from it.",
     "steps": [
       {
         "title": "Express interest",
@@ -112,7 +241,7 @@
       },
       {
         "title": "Talk with a specialist",
-        "body": "We help match the trip to your expectations and goals."
+        "body": "We help match the tour to your group and goals, and send your package and price."
       },
       {
         "title": "Book",
@@ -121,18 +250,15 @@
     ],
     "cta": {
       "label": "Express Interest",
-      "href": "mailto:info@adventure-access.com?subject=Everest%20Base%20Camp%20Heli%20Tour%20Day%20Trip"
+      "href": "mailto:info@adventure-access.com?subject=Everest%20Base%20Camp%20Heli%20Tour%20%E2%80%94%20Day%20Trip"
     },
     "secondary": {
       "label": "Payment terms and cancellation policy",
       "href": "/payment-terms-cancellation-policy/"
     }
   },
-  "footerNote": [],
-  "pricing": {
-    "from": 6250,
-    "currency": "USD",
-    "basis": "Per tour, for 2–4 people",
-    "notes": []
-  }
+  "footerNote": [
+    "Price shown is per tour, for 2–4 people.",
+    "The average duration is 5–6 hours, Kathmandu to Kathmandu."
+  ]
 }

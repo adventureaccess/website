@@ -1,32 +1,40 @@
 {
-  "title": "Kathmandu, Pokhara and the Ghorepani Poon Hill Trek",
+  "title": "Poon Hill Trek",
   "status": "review",
   "visibility": "internal",
   "destination": "nepal",
   "kind": "template",
+  "editorial": "rewritten",
   "source": {
     "youli": "https://youli.io/t/adventure-access/poon-hill-trek",
     "migratedOn": "2026-11-03",
-    "notes": "Mechanical copy of the public YouLi page: one chapter per YouLi day, YouLi photos. Needs an editorial pass into Brian's chapter format."
+    "notes": "Rewritten into Brian's chapter format from the YouLi copy. No facts added; open questions are in reviewNotes."
   },
+  "reviewNotes": [
+    "YouLi lists Days 4–7 as one block with four trek legs. I have shown one leg per day. Confirm, and say which morning is the Poon Hill sunrise.",
+    "Last trek leg: YouLi gives \"Altitude 2690 feet\" for Ghandruk and the drive to Pokhara. Is that Ghandruk or Pokhara (given as 2,696 ft elsewhere)?",
+    "What is in the $1,880? YouLi has no included or not-included list (guesthouses, meals, permits, the two flights?), and no price basis (double occupancy?).",
+    "Hotels in Kathmandu and Pokhara are not named on YouLi. Name them, or keep it general?"
+  ],
   "seo": {
-    "title": "Kathmandu, Pokhara and the Ghorepani Poon Hill Trek | Adventure Access",
-    "description": "Ghorepani Poon Hill is a popular short trekking destination in the Annapurna region of Nepal."
+    "title": "Poon Hill Trek — 9 Days in Kathmandu and Pokhara | Adventure Access",
+    "description": "Nine days in Nepal: Kathmandu, Pokhara's Lakeside and a four-day trek to Poon Hill at 10,532 feet for sunrise over the Annapurnas. From $1,880."
   },
   "hero": {
-    "eyebrow": "Kathmandu, Nepal · March–May and September–December",
-    "title": "Kathmandu, Pokhara and the Ghorepani Poon Hill Trek",
-    "subtitle": "Ghorepani Poon Hill is a popular short trekking destination in the Annapurna region of Nepal.",
+    "eyebrow": "Trekking Journey · March–May and September–December",
+    "title": "Poon Hill",
+    "titleEm": "Trek",
+    "subtitle": "Kathmandu, Pokhara and a short trek to sunrise views over the Annapurna and Dhaulagiri ranges",
     "image": "/images/2026/11/trips/poon-hill-trek-hero.jpg",
-    "imageAlt": "Kathmandu, Pokhara and the Ghorepani Poon Hill Trek, Nepal",
+    "imageAlt": "Sunset light on the Annapurna range above the trees",
     "meta": [
       {
         "label": "Duration",
-        "value": "9 Days"
+        "value": "9 Days · Kathmandu to Kathmandu"
       },
       {
         "label": "Season",
-        "value": "March–May and September–December"
+        "value": "Mar–May · Sep–Dec"
       },
       {
         "label": "Starting at",
@@ -36,151 +44,295 @@
   },
   "intro": {
     "label": "The Journey",
-    "heading": "Overview",
+    "heading": "Big Mountains, Short Trek",
     "paragraphs": [
-      "Ghorepani Poon Hill is a popular short trekking destination in the Annapurna region of Nepal. Known for its stunning sunrise views over the Annapurna and Dhaulagiri Mountain range, Poon Hill sits at an elevation 10,532 feet."
+      "Ghodepani Poon Hill is a popular short trekking destination in the Annapurna region of Nepal. At 10,532 feet, it is known for its sunrise views over the Annapurna and Dhaulagiri ranges.",
+      "This classic trekking area is good for beginners, families and groups who want time among big mountains without spending weeks reaching the base camp regions. The trek sits between time in Kathmandu and Pokhara, with our guides handling the details from the moment you land."
     ]
   },
-  "route": [],
+  "stats": [
+    {
+      "value": "9",
+      "label": "Days, Kathmandu to Kathmandu"
+    },
+    {
+      "value": "10,532",
+      "label": "Feet, Poon Hill"
+    },
+    {
+      "value": "3–6",
+      "label": "Hours on an average trek day"
+    },
+    {
+      "value": "2",
+      "label": "Mountain flights"
+    }
+  ],
+  "route": [
+    {
+      "name": "Kathmandu",
+      "days": "Days 1–2"
+    },
+    {
+      "name": "Pokhara",
+      "days": "Day 3"
+    },
+    {
+      "name": "Ulleri",
+      "days": "Day 4"
+    },
+    {
+      "name": "Ghodepani",
+      "days": "Day 5"
+    },
+    {
+      "name": "Tada Pani",
+      "days": "Day 6"
+    },
+    {
+      "name": "Ghandruk & Pokhara",
+      "days": "Day 7"
+    },
+    {
+      "name": "Kathmandu",
+      "days": "Days 8–9"
+    }
+  ],
+  "photoStrips": [
+    [
+      {
+        "src": "/images/2026/11/trips/annapurna-trekking-day-1.jpg",
+        "alt": "A jet parked at the airport gate"
+      },
+      {
+        "src": "/images/2026/11/trips/annapurna-trekking-acclimatization-days.jpg",
+        "alt": "Trekkers at a prayer-flag cairn pointing toward snow peaks"
+      },
+      {
+        "src": "/images/2026/11/trips/annapurna-trekking-mountain-flights.jpg",
+        "alt": "Passengers boarding a small mountain plane on the runway"
+      },
+      {
+        "src": "/images/2026/11/trips/annapurna-trekking-day-17.jpg",
+        "alt": "A plane taking off in front of snowy mountains"
+      }
+    ]
+  ],
+  "dayTypes": {
+    "label": "How the Days Work",
+    "heading": "City, Lake, Trail",
+    "lede": "A short trip with a gentle shape: a few days to settle in, four days on the trail, and an easy finish.",
+    "cards": [
+      {
+        "title": "City days",
+        "tone": "gentle",
+        "body": "Days 1–2 in Kathmandu with a cultural tour in Boudha and your trek orientation, then Day 3 in Pokhara's Lakeside."
+      },
+      {
+        "title": "Trekking days",
+        "tone": "strong",
+        "body": "Days 4–7: three to seven hours on the trail each day, with Ghodepani at 9,383 feet and Poon Hill at 10,532 feet."
+      },
+      {
+        "title": "Flight days",
+        "tone": "gentle",
+        "body": "Two short mountain flights, Kathmandu to Pokhara and back, with a celebration dinner in Thamel on Day 8."
+      }
+    ]
+  },
   "chapters": {
     "label": "The Journey in Chapters",
-    "heading": "Day by Day",
+    "heading": "Nine Days in the Annapurna Region",
     "groups": [
       {
         "dayStart": 1,
-        "dayEnd": 1,
-        "title": "Arrive in Kathmandu, meet your guide, and transfer to hotel",
-        "tags": [],
-        "prose": [],
-        "days": [
-          {
-            "label": "Day 1",
-            "text": "Arrive in Kathmandu, meet your guide, and transfer to hotel"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/annapurna-trekking-day-1.jpg",
-          "alt": "Arrive in Kathmandu, meet your guide, and transfer to hotel"
-        }
-      },
-      {
-        "dayStart": 2,
         "dayEnd": 2,
-        "title": "Cultural tour in Boudha, trip orientation, and dinner with your guide and group",
-        "tags": [],
-        "prose": [],
-        "days": [
-          {
-            "label": "Day 2",
-            "text": "Cultural tour in Boudha, trip orientation, and dinner with your guide and group"
-          }
+        "title": "Kathmandu — Arrival and Orientation",
+        "tags": [
+          "Arrival",
+          "Boudha",
+          "Trek Orientation"
         ],
         "image": {
           "src": "/images/2026/11/trips/annapurna-trekking-day-2.jpg",
-          "alt": "Cultural tour in Boudha, trip orientation, and dinner with your guide and group"
-        }
+          "alt": "The eyes of Boudhanath stupa under prayer flags"
+        },
+        "prose": [
+          "Your guide meets you at the airport, so there is no need to find your hotel in the back alleys of Boudha or Thamel on your own. There is still plenty of time to explore the city, eat well and get to know your guide before the mountains."
+        ],
+        "days": [
+          {
+            "label": "Day 1",
+            "text": "Arrive in Kathmandu, meet your guide and transfer to your hotel."
+          },
+          {
+            "label": "Day 2",
+            "text": "A cultural tour in Boudha, the trip orientation, and dinner with your guide and group."
+          }
+        ],
+        "overnight": "2 Nights · Kathmandu hotel"
       },
       {
         "dayStart": 3,
         "dayEnd": 3,
-        "title": "Fly to Pokhara",
+        "title": "Pokhara — An Evening in Lakeside",
         "tags": [
-          "Pokhara"
+          "Mountain Flight",
+          "Phewa Lake",
+          "Lakeside"
         ],
+        "image": {
+          "src": "/images/2026/11/trips/poon-hill-trek-day-3.jpg",
+          "alt": "Machhapuchhre's pointed summit above forested slopes"
+        },
         "prose": [
-          "Fly from Kathmandu to Pokhara and stay the evening in Lakeside to enjoy the laid back community with local restaurants, shops, and guesthouses."
+          "Pokhara is Nepal's second most populous city, but it feels very different from Kathmandu. It sits on the shore of Phewa Lake at 2,696 feet, with Dhaulagiri, Annapurna I and Manaslu all within 35 miles of the valley."
         ],
         "days": [
           {
             "label": "Day 3",
-            "text": "Pokhara, Nepal"
+            "text": "Fly from Kathmandu to Pokhara and spend the evening in Lakeside, a laid-back neighborhood of local restaurants, shops and guesthouses."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/poon-hill-trek-day-3.jpg",
-          "alt": "Fly to Pokhara"
-        }
+        "overnight": "1 Night · Lakeside, Pokhara"
       },
       {
         "dayStart": 4,
         "dayEnd": 7,
-        "title": "Poon Hill Trek",
-        "tags": [],
+        "title": "Poon Hill — Sunrise over the Annapurnas",
+        "tags": [
+          "Ulleri 6,430 ft",
+          "Ghodepani 9,383 ft",
+          "Poon Hill 10,532 ft",
+          "Tada Pani 8,629 ft"
+        ],
+        "badge": "✦ The heart of the journey",
+        "image": {
+          "src": "/images/2026/11/trips/poon-hill-trek-day-4.jpg",
+          "alt": "A stone path through the forest"
+        },
         "prose": [
-          "This classic trekking area is good for beginners, families, and groups who are looking for immersion into big mountains without the time to spend multiple weeks getting into or around base camp regions in Nepal.",
-          "Trekking Itinerary",
-          "Drive to Hile and trek to Ulleri: Approximately 3 hours / Altitude: 6430 feet",
-          "Trek to Ghode Pani: Approximately 6 hours / Altitude: 9383 feet",
-          "Trek to Tada Pani: Approximately 7 hours / Altitude: 8629 feet",
-          "Trek to Ghandruk and Drive to Pokhara: Approximately 3 hours / Altitude 2690 feet"
+          "Four days on foot through the Annapurna region, with nights in local village guesthouses. Ghodepani Poon Hill, at 10,532 feet, is known for its sunrise views over the Annapurna and Dhaulagiri ranges."
         ],
         "days": [
           {
-            "label": "Days 4–7",
-            "text": "Poon Hill Trek"
+            "label": "Day 4",
+            "text": "Drive to Hile and trek to Ulleri, about 3 hours. Altitude 6,430 ft."
+          },
+          {
+            "label": "Day 5",
+            "text": "Trek to Ghodepani, about 6 hours. Altitude 9,383 ft."
+          },
+          {
+            "label": "Day 6",
+            "text": "Trek to Tada Pani, about 7 hours. Altitude 8,629 ft."
+          },
+          {
+            "label": "Day 7",
+            "text": "Trek to Ghandruk, about 3 hours, then drive back to Pokhara."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/poon-hill-trek-day-4.jpg",
-          "alt": "Poon Hill Trek"
-        }
+        "overnight": "Village guesthouses, then Pokhara"
       },
       {
         "dayStart": 8,
-        "dayEnd": 8,
-        "title": "Fly to Kathmandu + Group Celebration Dinner",
-        "tags": [],
+        "dayEnd": 9,
+        "title": "Kathmandu — Celebration and Home",
+        "tags": [
+          "Mountain Flight",
+          "Thamel",
+          "Departure"
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/poon-hill-trek-day-8.jpg",
+          "alt": "The rooftops of Kathmandu"
+        },
         "prose": [
-          "The flight to Kathmandu is approximately 30 minutes. Join together with your guides for a celebration dinner in Thamel."
+          "A short flight back to the capital and a last dinner with your guides."
         ],
         "days": [
           {
             "label": "Day 8",
-            "text": "Fly to Kathmandu + Group Celebration Dinner"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/poon-hill-trek-day-8.jpg",
-          "alt": "Fly to Kathmandu + Group Celebration Dinner"
-        }
-      },
-      {
-        "dayStart": 9,
-        "dayEnd": 9,
-        "title": "Day of Departure",
-        "tags": [],
-        "prose": [
-          "At the appropriate departure time, your guide will pick you up at the hotel and transfer you to the airport for your departure."
-        ],
-        "days": [
+            "text": "A flight of about 30 minutes to Kathmandu, then a celebration dinner with your guides in Thamel."
+          },
           {
             "label": "Day 9",
-            "text": "Day of Departure"
+            "text": "Your guide picks you up at the hotel and takes you to the airport for your flight."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/annapurna-trekking-day-17.jpg",
-          "alt": "Day of Departure"
-        }
+        "overnight": "1 Night · Kathmandu hotel"
       }
     ]
   },
+  "pullQuote": "Immersion in big mountains, without weeks on the trail.",
   "highlights": [
     {
-      "where": "Nepal",
-      "title": "Acclimatization",
-      "body": "Though 10,000 feet is high for most people coming from the US or Europe, it is relatively low or average for Nepal. Still, our guides are tuned in to how each of our guests are feeling and will take care to help you acclimatize in an appropriate way.",
-      "image": "/images/2026/11/trips/annapurna-trekking-acclimatization-days.jpg",
-      "imageAlt": "Acclimatization"
+      "where": "Ghodepani",
+      "title": "Poon Hill at Sunrise",
+      "body": "At 10,532 feet, Poon Hill is known for its sunrise views over the Annapurna and Dhaulagiri ranges.",
+      "image": "/images/2026/11/trips/poon-hill-trek-day-4.jpg",
+      "imageAlt": "A stone path through the forest"
     },
     {
-      "where": "Nepal",
-      "title": "Mountain Flights",
-      "body": "There are two short mountain flights on this itinerary. The first takes you from Kathmandu to Pokhara and the second from Pohkara to Kathmandu. These small flights are a quintessential element to travel within Nepal.",
-      "image": "/images/2026/11/trips/annapurna-trekking-mountain-flights.jpg",
-      "imageAlt": "Mountain Flights"
+      "where": "Pokhara",
+      "title": "Lakeside",
+      "body": "A laid-back community of local restaurants, shops and guesthouses on the shore of Phewa Lake.",
+      "image": "/images/2026/11/trips/poon-hill-trek-day-3.jpg",
+      "imageAlt": "Machhapuchhre's pointed summit above forested slopes"
+    },
+    {
+      "where": "Kathmandu",
+      "title": "Boudha",
+      "body": "A cultural tour on Day 2, before your trek orientation and a first dinner with your guide and group.",
+      "image": "/images/2026/11/trips/annapurna-trekking-day-2.jpg",
+      "imageAlt": "The eyes of Boudhanath stupa under prayer flags"
     }
   ],
+  "goodToKnow": {
+    "label": "Good to Know",
+    "heading": "Before You Go",
+    "lede": "A few things that shape how this trip runs.",
+    "cards": [
+      {
+        "title": "Who it suits",
+        "body": "This classic trekking area is good for beginners, families and groups who want big mountains without multiple weeks on the trail."
+      },
+      {
+        "title": "Altitude",
+        "body": "10,000 feet is high for most people coming from the US or Europe, but relatively low for Nepal. Our guides watch how each guest is feeling and help you acclimatize the right way."
+      },
+      {
+        "title": "Trek days",
+        "body": "The average trek day is 3–6 hours, with plenty of time to get from point to point. Evenings are spent in local village guesthouses, and your guides handle the details so you can focus on the trail."
+      },
+      {
+        "title": "Kathmandu",
+        "body": "Your guide meets you at the airport and takes care of the details. Your time in the city includes good food, getting to know your guide and an orientation for the trek."
+      },
+      {
+        "title": "Mountain flights",
+        "body": "Two short flights, Kathmandu to Pokhara and Pokhara to Kathmandu. Small planes like these are a classic part of travel in Nepal."
+      }
+    ]
+  },
+  "stays": {
+    "label": "Where You'll Stay",
+    "heading": "A City Hotel, Lakeside and the Trail",
+    "paragraphs": [
+      "A hotel in Kathmandu at the start and end of the trip, an evening in Pokhara's Lakeside, and local village guesthouses on the trek."
+    ],
+    "tags": [
+      "Kathmandu Hotel",
+      "Pokhara Lakeside",
+      "Village Guesthouses"
+    ]
+  },
+  "pricing": {
+    "from": 1880,
+    "currency": "USD",
+    "basis": "Starting price",
+    "notes": []
+  },
   "included": [],
   "excluded": [],
   "nextSteps": {
@@ -194,7 +346,7 @@
       },
       {
         "title": "Talk with a specialist",
-        "body": "We help match the trip to your expectations and goals."
+        "body": "We help match the trip to your fitness and goals, and send your package and price."
       },
       {
         "title": "Book",
@@ -203,36 +355,15 @@
     ],
     "cta": {
       "label": "Express Interest",
-      "href": "mailto:info@adventure-access.com?subject=Kathmandu%20Pokhara%20and%20the%20Ghorepani%20Poon%20Hill%20Trek"
+      "href": "mailto:info@adventure-access.com?subject=Poon%20Hill%20Trek"
     },
     "secondary": {
       "label": "Payment terms and cancellation policy",
       "href": "/payment-terms-cancellation-policy/"
     }
   },
-  "footerNote": [],
-  "goodToKnow": {
-    "label": "Good to Know",
-    "heading": "More About This Journey",
-    "cards": [
-      {
-        "title": "What to expect in Kathmandu",
-        "body": "You may have started this journey with an interest in the mountains of Nepal but no trip is complete without a good experience in Kathmandu. From the moment you meet your guide at the airport in Kathmandu, you are in good hands. There is no need to navigate the airport scene or figure out how to find your hotel in the back alleys of Boudha or Thamel. Don't worry, there is ample opportunity to get out and explore. You will be able to immerse yourself in the bustling network of alleys, streets, and buildings as you take in the city. Our guides, however, take care of the details so you can take in the surroundings. Your time in Kathmandu will also include good food, getting to know your guide, and an orientation for the trek. By the time we depart the city, everyone will be prepared for the mountains and your cultural curiosity will have been stoked."
-      },
-      {
-        "title": "Trekking in the Annapurna Region",
-        "body": "The average day's trek for this journey is 3-6 hours, allowing ample time to get from point to point each day. Evenings are spent in local village guest houses and guides will help with each detail of the day allowing you to focus on the trail."
-      },
-      {
-        "title": "Pokhara",
-        "body": "Pokhara is the second most populous city in Nepal but it is very different when compared to Kathmandu. It is located on the shore of Phewa Lake. Three of the world's ten highest mountains (Dhaulagiri, Annapurna I and Manaslu) are within 35 miles of the valley, though Pokhara is only 822m or 2696 ft above sea level."
-      }
-    ]
-  },
-  "pricing": {
-    "from": 1880,
-    "currency": "USD",
-    "basis": "Starting price",
-    "notes": []
-  }
+  "footerNote": [
+    "Starting price shown.",
+    "Trekking and flight times are approximate."
+  ]
 }

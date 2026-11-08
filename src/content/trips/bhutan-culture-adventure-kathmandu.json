@@ -4,29 +4,38 @@
   "visibility": "internal",
   "destination": "bhutan",
   "kind": "template",
+  "editorial": "rewritten",
   "source": {
     "youli": "https://youli.io/t/adventure-access/bhutan-nepal-culture-doa",
     "migratedOn": "2026-11-03",
-    "notes": "Mechanical copy of the public YouLi page: one chapter per YouLi day, YouLi photos. Needs an editorial pass into Brian's chapter format."
+    "notes": "Rewritten into Brian's chapter format from the YouLi copy. No facts added; open questions are in reviewNotes."
   },
+  "reviewNotes": [
+    "Days 2–3 in Kathmandu: YouLi only describes arrival day. What is planned for the other two days?",
+    "Overnights not stated for Day 5 (Thimphu?) and Day 6 (Punakha?). Kathmandu hotel names on days 1–3 and 9 are also not given.",
+    "Punakha: YouLi offers a choice of activities and says the trip may be extended there. Which activity is in the $3,500 price?",
+    "Accommodation: this Invoice says 3–5 star in Bhutan; the other Bhutan trips say 3–4 star. Which is right?",
+    "YouLi's tipping line refers to India; I made it generic. Is \"Government tax\" the full Sustainable Development Fee?"
+  ],
   "seo": {
     "title": "Bhutan Culture and Adventure Tour + Kathmandu | Adventure Access",
-    "description": "Bhutan is a place of virgin forests, crystal rivers, snow capped peaks, and tropical environs."
+    "description": "Ten days through Kathmandu and Bhutan: Boudha, Thimphu, Punakha Dzong, a Paro farmhouse and the Tiger's Nest hike. From $3,500."
   },
   "hero": {
-    "eyebrow": "Paro, Bhutan · March–May and September–November",
-    "title": "Bhutan Culture and Adventure Tour + Kathmandu",
-    "subtitle": "Bhutan is a place of virgin forests, crystal rivers, snow capped peaks, and tropical environs.",
+    "eyebrow": "Culture Journey · March–May and September–November",
+    "title": "Bhutan Culture and Adventure",
+    "titleEm": "+ Kathmandu",
+    "subtitle": "Kathmandu's Tibetan quarter, then Bhutan's capital, Punakha and the Tiger's Nest",
     "image": "/images/2026/11/trips/bhutan-culture-adventure-kathmandu-hero.jpg",
-    "imageAlt": "Bhutan Culture and Adventure Tour + Kathmandu, Bhutan",
+    "imageAlt": "Punakha Dzong across the river below forested hills",
     "meta": [
       {
         "label": "Duration",
-        "value": "10 Days"
+        "value": "10 Days · Kathmandu to Kathmandu"
       },
       {
         "label": "Season",
-        "value": "March–May and September–November"
+        "value": "Mar–May · Sep–Nov"
       },
       {
         "label": "Starting at",
@@ -36,12 +45,35 @@
   },
   "intro": {
     "label": "The Journey",
-    "heading": "Overview",
+    "heading": "Through Kathmandu, Into Bhutan",
     "paragraphs": [
-      "Bhutan is a place of virgin forests, crystal rivers, snow capped peaks, and tropical environs. This Buddhist Monarchy is one of the least traveled destinations in the world, yet it hosts some of the best opportunities for hiking, biking, rafting, and cultural immersion in the Himalayas. This base-length itinerary combines aspects of Bhutanese history, culture and food paired with activities tailored to fit your thirst for adventure. Bhutan is often best accessed through Kathmandu, so this itinerary includes an intentional use of time in Kathmandu to bring greater depth to an immersive experience in the Tibetan world nestled in on the south side of the Himalayas."
+      "Bhutan is a place of old forests, clear rivers, snow-capped peaks and warm, tropical valleys. This Buddhist kingdom is one of the least visited countries in the world, yet it has some of the best hiking, biking, rafting and cultural immersion in the Himalaya.",
+      "Bhutan is often best reached through Kathmandu, so this trip uses that time on purpose. Days in Kathmandu's Tibetan quarter add depth to a journey through the Tibetan world on the south side of the Himalaya, before and after Bhutan's history, culture, food and adventure."
     ]
   },
+  "stats": [
+    {
+      "value": "10",
+      "label": "Days, Kathmandu to Kathmandu"
+    },
+    {
+      "value": "7,656",
+      "label": "Feet, Thimphu"
+    },
+    {
+      "value": "1637",
+      "label": "Punakha Dzong built"
+    }
+  ],
   "route": [
+    {
+      "name": "Kathmandu",
+      "days": "Days 1–3"
+    },
+    {
+      "name": "Paro",
+      "days": "Arrive Day 4"
+    },
     {
       "name": "Thimphu",
       "days": "Days 4–5"
@@ -55,197 +87,253 @@
       "days": "Days 7–8"
     },
     {
-      "name": "Paro International Airport",
-      "days": "Day 9"
+      "name": "Kathmandu",
+      "days": "Days 9–10"
     }
   ],
+  "dayTypes": {
+    "label": "How the Days Work",
+    "heading": "Two Capitals and a Kingdom",
+    "lede": "Kathmandu frames the trip on both ends. In Bhutan, the first days are paced for the altitude, and Punakha is where you can add the adventure you want.",
+    "cards": [
+      {
+        "title": "Kathmandu days",
+        "tone": "gentle",
+        "body": "Days 1–3 and 9–10: the Boudha district and its stupa, a meal with your local host, and Thamel's cafes and shops before you fly home."
+      },
+      {
+        "title": "Culture days",
+        "tone": "gentle",
+        "body": "Days 4–6: a dzong on the way to Thimphu, a walking day in the capital, then Punakha Dzong over Dochu La."
+      },
+      {
+        "title": "Paro and the Tiger's Nest",
+        "tone": "strong",
+        "body": "Days 7–8: a farmhouse stay with hot stone baths, and the hike to the Tiger's Nest, reachable only on foot."
+      }
+    ]
+  },
   "chapters": {
     "label": "The Journey in Chapters",
-    "heading": "Day by Day",
+    "heading": "From Boudha to the Tiger's Nest",
     "groups": [
       {
         "dayStart": 1,
         "dayEnd": 3,
-        "title": "Travel to Kathmandu",
-        "tags": [],
+        "title": "Kathmandu — The Boudha District",
+        "tags": [
+          "Arrival",
+          "Boudhanath Stupa",
+          "Local Host"
+        ],
+        "image": {
+          "src": "/images/2026/11/trips/bhutan-culture-adventure-kathmandu-day-1.jpg",
+          "alt": "Boudhanath stupa in Kathmandu strung with prayer flags"
+        },
         "prose": [
-          "Depart from your country of origin and make your way to Kathmandu, Nepal. Upon arrival, you will be welcomed by one of our local guides who will serve as your host for the time in Kathmandu. A private transfer will take you to your hotel in the Boudha district, home to many Tibetans in Kathmandu. It is a neighborhood with more signs of Buddhism than Hinduism, with Boudhanath Stupa being the cultural center of this area. Check-in, grab a meal and explore the nearby streets on your own before gathering with your host for an evening meal together to hear their story of growing up in Nepal and what daily life in Kathmandu is like."
+          "Boudha is home to many of Kathmandu's Tibetans, a neighborhood with more signs of Buddhism than Hinduism. Boudhanath Stupa is its cultural center."
         ],
         "days": [
           {
             "label": "Days 1–3",
-            "text": "Travel to Kathmandu"
+            "text": "Arrive in Kathmandu, where a local guide meets you and hosts you for your time in the city. A private transfer to your hotel in Boudha, time to eat and explore the nearby streets, then an evening meal with your host, who shares what growing up in Nepal and daily life in Kathmandu are like."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/bhutan-culture-adventure-kathmandu-day-1.jpg",
-          "alt": "Travel to Kathmandu"
-        }
+        "overnight": "Hotel in the Boudha district, Kathmandu"
       },
       {
         "dayStart": 4,
-        "dayEnd": 4,
-        "title": "Enter the Dragon Kingdom",
+        "dayEnd": 5,
+        "title": "Thimphu — Into the Dragon Kingdom (7,656 ft)",
         "tags": [
-          "Thimphu"
+          "Paro 7,200 ft",
+          "Dzong",
+          "Cultural Museum",
+          "Takin Preserve"
         ],
+        "image": {
+          "src": "/images/2026/11/trips/bhutan-adventure-central-day-2.jpg",
+          "alt": "Prayer flags above the Thimphu valley"
+        },
         "prose": [
-          "Approaching Bhutan is like nothing else. The Himalayas fill the horizon. You encounter your first Bhutanese hosts on the plane because their national airlines are the only ones who fly in and out of the country. The snow-capped peaks disappear as you descend into the Paro Valley and arrive at the only international airport in the nation. Paro is 7,200 feet (2200m) above sea level and is home to Paro Airport, several famous Dzongs, the national museum, and the famous Tiger's Nest but it only serves as the port of entry and a brief stop for a quick meal before we head to Thimphu, the nation's capital. Don't worry! You will experience the best of Paro on the back end of this journey.",
-          "Between Paro and Thimphu your guide will take you to visit one of Bhutan's Dzongs as a way of introducing Bhutan's culture and national identity. After the Dzong, we will proceed to check in at your hotel. We will allow a bit of time to get some rest and take it easy to acclimatize to the capital's elevation of 7,656 feet (2320m). Bhutan has some of the most unique cuisine in the Himalayas so join the group for an evening meal together along with an in depth orientation from your guides."
+          "Approaching Bhutan is like nothing else. The Himalaya fill the horizon, and your first Bhutanese hosts are on the plane, since only the national airlines fly in and out. Paro is just the port of entry for now; you will see the best of it at the end."
         ],
         "days": [
           {
             "label": "Day 4",
-            "text": "Thimphu, Bhutan"
-          }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/bhutan-adventure-central-day-1.jpg",
-          "alt": "Enter the Dragon Kingdom"
-        }
-      },
-      {
-        "dayStart": 5,
-        "dayEnd": 5,
-        "title": "A Day in the Capital",
-        "tags": [
-          "Thimphu"
-        ],
-        "prose": [
-          "As the civic and cultural heart of Bhutan, a day in the capital allows for an introduction to many important aspects of Bhutan's national identity. We will visit one of the temple complexes, a cultural museum, and the Takin Preserve. These three places allow the guide to foster an understanding of Bhutan's Buddhist culture, rich history, and extensive biodiversity. It will be an active day of walking but at a pace that still allows for acclimatization."
-        ],
-        "days": [
+            "text": "Fly to Paro (7,200 ft) and stop for a quick meal. On the way to Thimphu, visit a dzong as a first look at Bhutan's culture and national identity. Check in, rest, then dinner with the group and a full orientation from your guides."
+          },
           {
             "label": "Day 5",
-            "text": "Thimphu, Bhutan"
+            "text": "A walking day in the capital at an acclimatizing pace: a temple complex, a cultural museum and the Takin Preserve, for a first look at Bhutan's Buddhist culture, history and wildlife."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/bhutan-adventure-central-day-2.jpg",
-          "alt": "A Day in the Capital"
-        }
+        "overnight": "Hotel · Thimphu"
       },
       {
         "dayStart": 6,
         "dayEnd": 6,
-        "title": "Punakha via Dochula Pass",
+        "title": "Punakha — Over Dochu La to the Dzong",
         "tags": [
-          "Punakha"
+          "Dochu La",
+          "Punakha Dzong",
+          "Choose Your Adventure"
         ],
+        "image": {
+          "src": "/images/2026/11/trips/bhutan-adventure-central-day-3.jpg",
+          "alt": "Punakha Dzong beside the river"
+        },
         "prose": [
-          "Punakha is an adventurer's dream: hiking, biking, rafting, fishing, and fortresses to be explored or myths to be entertained. Reaching Punakha via the Dochula pass is a treasured experience in itself, with views of Bhutan's great peaks from the top of the pass. With options to choose from, this is one place where your itinerary may be extended to accommodate for a tailored adventure selection. Choose from multiple activities or go further with more time on one selection.",
-          "Punakha's riverside temple and government complex is one of the most impressive in the country. Built in 1637, it was host to the coronation of the current monarchy's first king in 1907 and served as the capital until 1955. Take a wanderers approach to this architectural marvel and learn from your guide as he explains the multifunctional importance of Punakha Dzong."
+          "Punakha is an adventurer's dream: hiking, biking, rafting, fishing, fortresses and old myths. Its riverside dzong was built in 1637, saw the coronation of the first king in 1907, and was the capital until 1955."
         ],
         "days": [
           {
             "label": "Day 6",
-            "text": "Punakha, Bhutan"
+            "text": "Over Dochu La, with views of Bhutan's great peaks from the top, then down to Punakha. Wander the dzong while your guide explains its many roles. This is the place to extend the trip if you want more time on an activity."
           }
-        ],
-        "image": {
-          "src": "/images/2026/11/trips/bhutan-adventure-central-day-3.jpg",
-          "alt": "Punakha via Dochula Pass"
-        }
+        ]
       },
       {
         "dayStart": 7,
         "dayEnd": 8,
-        "title": "Paro and the Tiger's Nest",
+        "title": "Paro — Farmhouse and the Tiger's Nest",
         "tags": [
-          "Paro"
+          "Tiger's Nest Hike",
+          "Farmhouse Stay",
+          "Hot Stone Bath"
         ],
+        "badge": "✦ The finale in Bhutan",
+        "image": {
+          "src": "/images/2026/11/trips/bhutan-adventure-central-day-10.jpg",
+          "alt": "The Tiger's Nest monastery on its cliff"
+        },
         "prose": [
-          "We will make our way back to where it began, Paro. On arrival, stretch your legs on the streets of Paro, try a local coffee shop to experience Bhutan's home grown coffee, and shop for that special item to serve as a connection to your memories in Bhutan.",
-          "Local farmhouses in the region can date back 7 or more generations and one of these will be our residence for our time in Paro. The homegrown ingredients will fill your plates and the hospitality of the family will entice you to return. Additionally, the Bhutanese hot stone baths that are common in these homesteads are a highlight for any trip to Bhutan.",
-          "The Tiger's Nest is one of the most iconic destinations in Bhutan and the only way to get there is on foot. A day hike to the Tiger's Nest is the best way to conclude any trip to Bhutan. It combines activity, culture, and the nature of Bhutan's mountainside environment. And did we mention the hot stone baths? Reward yourself after the hike with another one of those!"
+          "Back to where it began. A family farmhouse, some dating back seven or more generations, is home in Paro, with homegrown food and a hot stone bath. The Tiger's Nest can only be reached on foot, and the hike is the best way to end any trip to Bhutan."
         ],
         "days": [
           {
             "label": "Days 7–8",
-            "text": "Paro, Bhutan"
+            "text": "Walk Paro's streets, try Bhutan's homegrown coffee and shop for something to remember the trip by. Hike to the Tiger's Nest, then reward yourself with another hot stone bath."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/bhutan-adventure-central-day-10.jpg",
-          "alt": "Paro and the Tiger's Nest"
-        }
+        "overnight": "Farmhouse stay · Paro"
       },
       {
         "dayStart": 9,
-        "dayEnd": 9,
-        "title": "Bhutan back to Kathmandu",
+        "dayEnd": 10,
+        "title": "Kathmandu — Thamel and Home",
         "tags": [
-          "Paro International Airport"
-        ],
-        "prose": [
-          "Depart Bhutan on a morning flight back to Kathmandu. Upon arrival the group will transfer to Thamel to explore the hive of activity popular to Nepal's many adventurers. Cafes, restaurants, and shops abound in this fascinating district. Grab some lunch together with your local host before heading to your hotel to re-pack and rest for your homebound journey. One final meal together will be hosted by your guide in Kathmandu."
-        ],
-        "days": [
-          {
-            "label": "Day 9",
-            "text": "Paro International Airport, Paro, Bhutan"
-          }
+          "Flight to Kathmandu",
+          "Thamel",
+          "Departure"
         ],
         "image": {
           "src": "/images/2026/11/trips/bhutan-adventure-central-day-11.jpg",
-          "alt": "Bhutan back to Kathmandu"
-        }
-      },
-      {
-        "dayStart": 10,
-        "dayEnd": 10,
-        "title": "Depart Kathmandu",
-        "tags": [],
-        "prose": [
-          "Enjoy a private transfer to the Kathmandu airport. Check-in and board your flight to your next destination."
-        ],
+          "alt": "A snow peak rising above the clouds"
+        },
+        "prose": [],
         "days": [
           {
+            "label": "Day 9",
+            "text": "A morning flight back to Kathmandu and on to Thamel, a busy district of cafes, restaurants and shops popular with Nepal's adventurers. Lunch with your local host, time to repack at the hotel, and a final meal together."
+          },
+          {
             "label": "Day 10",
-            "text": "Depart Kathmandu"
+            "text": "A private transfer to Kathmandu airport for your onward flight."
           }
         ],
-        "image": {
-          "src": "/images/2026/11/trips/bhutan-culture-adventure-kathmandu-day-10.jpg",
-          "alt": "Depart Kathmandu"
-        }
+        "overnight": "Hotel · Kathmandu"
       }
     ]
   },
+  "pullQuote": "Approaching Bhutan is like nothing else.",
   "highlights": [
     {
-      "where": "Thimphu, Bhutan",
-      "title": "Enter the Dragon Kingdom",
-      "body": "DAY 4\nLocation: Thimphu, Bhutan Approaching Bhutan is like nothing else. The Himalayas fill the horizon. You encounter your first Bhutanese hosts on the plane because their national airlines are the only ones who fly in and out of the country. The snow-capped peaks disappear as you descend into the Paro Valley and arrive at the only international airport in the nation. Paro is 7,200 feet (2200m) above sea level and is home to Paro Airport, several famous Dzongs, the national museum, and the famous Tiger's Nest but it only serves as the port of entry and a brief stop for a quick meal before we head to Thimphu, the nation's capital. Don't worry! You will experience the best of Paro on the back end of this journey. Between Paro and Thimphu your guide will take you to visit one of Bhutan's Dzongs as a way of introducing Bhutan's culture and national identity. After the Dzong, we will proceed to check in at your hotel. We will allow a bit of time to get some rest and take it easy to acclimatize to the capital's elevation of 7,656 feet (2320m). Bhutan has some of the most unique cuisine in the Himalayas so join the group for an evening meal together along with an in depth orientation from your guides.",
-      "image": "/images/2026/11/trips/bhutan-adventure-central-day-1.jpg",
-      "imageAlt": "Enter the Dragon Kingdom"
+      "where": "Paro",
+      "title": "The Tiger's Nest",
+      "body": "One of Bhutan's most iconic places, reachable only on foot. The hike combines activity, culture and mountainside forest in one day.",
+      "image": "/images/2026/11/trips/bhutan-adventure-central-day-10.jpg",
+      "imageAlt": "The Tiger's Nest monastery on its cliff"
     },
     {
-      "where": "Paro, Bhutan",
-      "title": "Paro and the Tiger's Nest",
-      "body": "DAY 7 - 8 Location: Paro, Bhutan We will make our way back to where it began, Paro. On arrival, stretch your legs on the streets of Paro, try a local coffee shop to experience Bhutan's home grown coffee, and shop for that special item to serve as a connection to your memories in Bhutan. Local farmhouses in the region can date back 7 or more generations and one of these will be our residence for our time in Paro. The homegrown ingredients will fill your plates and the hospitality of the family will entice you to return. Additionally, the Bhutanese hot stone baths that are common in these homesteads are a highlight for any trip to Bhutan. The Tiger's Nest is one of the most iconic destinations in Bhutan and the only way to get there is on foot. A day hike to the Tiger's Nest is the best way to conclude any trip to Bhutan. It combines activity, culture, and the nature of Bhutan's mountainside environment. And did we mention the hot stone baths? Reward yourself after the hike with another one of those!",
-      "image": "/images/2026/11/trips/bhutan-adventure-central-day-10.jpg",
-      "imageAlt": "Paro and the Tiger's Nest"
+      "where": "Punakha",
+      "title": "Punakha Dzong",
+      "body": "Built in 1637, site of the first king's coronation in 1907 and Bhutan's capital until 1955.",
+      "image": "/images/2026/11/trips/bhutan-adventure-central-day-3.jpg",
+      "imageAlt": "Punakha Dzong beside the river"
+    },
+    {
+      "where": "Kathmandu",
+      "title": "Boudha and Your Local Host",
+      "body": "The Tibetan heart of Kathmandu around Boudhanath Stupa, and an evening hearing your host's story of growing up in Nepal.",
+      "image": "/images/2026/11/trips/bhutan-culture-adventure-kathmandu-day-1.jpg",
+      "imageAlt": "Boudhanath stupa in Kathmandu strung with prayer flags"
     }
   ],
+  "goodToKnow": {
+    "label": "Good to Know",
+    "heading": "Before You Go",
+    "lede": "A few things that shape how this trip runs.",
+    "cards": [
+      {
+        "title": "Getting there",
+        "body": "The trip starts and ends in Kathmandu. Flights between Kathmandu and Paro are included; flights to and from Kathmandu are not."
+      },
+      {
+        "title": "Visas",
+        "body": "Your Bhutan visa is included. Nepal visas are not, and are paid on arrival."
+      },
+      {
+        "title": "Altitude",
+        "body": "Paro sits at 7,200 feet and Thimphu at 7,656 feet. The first days in Bhutan are paced to help you adjust."
+      },
+      {
+        "title": "Your guides",
+        "body": "Professional English-speaking guides travel with you, with English-speaking guides for each activity, and a local host in Kathmandu."
+      },
+      {
+        "title": "Hot stone baths",
+        "body": "A Bhutanese tradition common in Paro's farmhouses, and a highlight for any trip to Bhutan."
+      }
+    ]
+  },
+  "stays": {
+    "label": "Where You'll Stay",
+    "heading": "City Hotels and a Farmhouse",
+    "paragraphs": [
+      "In Kathmandu you stay in the Boudha district. Our preferred packages in Bhutan use 3–5 star hotels, and in Paro a family farmhouse. Farmhouses are not rated like hotels, but every guest names them as a highlight."
+    ],
+    "tags": [
+      "Boudha, Kathmandu",
+      "Thimphu Hotel",
+      "Paro Farmhouse",
+      "Hot Stone Bath"
+    ]
+  },
+  "pricing": {
+    "from": 3500,
+    "currency": "USD",
+    "basis": "Starting price",
+    "notes": []
+  },
   "included": [
-    "Guide Services - professional, English speaking guides as well as English speaking activity guides",
-    "Activities as listed in your itinerary.",
-    "Regional Flights between Kathmandu and Paro",
-    "Bhutan Visas",
-    "Accommodations: Our preferred packages include 3-5 star locations in Bhutan. Farmhouse stays are not rated in the same way as hotels, but are highlighted experiences by all our guests.",
-    "Meals: All meals in Kathmandu and Bhutan are provided in the tour package.",
-    "Domestic transportation: All ground transportation is provided by private vehicle.",
-    "Airport Pickup and Dropoff",
+    "Professional English-speaking guides and activity guides",
+    "Activities as listed in your itinerary",
+    "Regional flights between Kathmandu and Paro",
+    "Bhutan visas",
+    "Accommodations: 3–5 star hotels in Bhutan and a farmhouse stay",
+    "All meals in Kathmandu and Bhutan",
+    "All ground transportation by private vehicle",
+    "Airport pickup and drop-off",
     "Government tax"
   ],
   "excluded": [
-    "Flights to/from Kathmandu",
-    "Insurance",
-    "Nepal Visas (Please pay on arrival)",
-    "Alcohol: We strongly encourage minimizing or eliminating alcohol while acclimatizing. Should you choose to drink alcohol when appropriate, you may do so but must pay your alcohol tab at the close of the meal.",
-    "Tips: It is customary to tip all guides. We will provide information about the tipping culture in Bhutan so you can make informed decisions regarding when to tip and how much to tip.",
-    "Clothing and Equipment: We do not provide your gear but do have a packing list to help you prepare. We are happy to answer any questions you have and make recommendations if you need assistance."
+    "Flights to and from Kathmandu",
+    "Travel insurance",
+    "Nepal visas (paid on arrival)",
+    "Alcohol (we strongly encourage little or none while acclimatizing)",
+    "Tips for guides (we will explain local tipping customs)",
+    "Personal clothing and equipment (we send a packing list)"
   ],
   "nextSteps": {
     "label": "Next Steps",
@@ -258,7 +346,7 @@
       },
       {
         "title": "Talk with a specialist",
-        "body": "We help match the trip to your expectations and goals."
+        "body": "We help shape your time in Punakha, and send your package and price."
       },
       {
         "title": "Book",
@@ -267,36 +355,15 @@
     ],
     "cta": {
       "label": "Express Interest",
-      "href": "mailto:info@adventure-access.com?subject=Bhutan%20Culture%20and%20Adventure%20Tour%20Kathmandu"
+      "href": "mailto:info@adventure-access.com?subject=Bhutan%20Culture%20and%20Adventure%20Tour%20%2B%20Kathmandu"
     },
     "secondary": {
       "label": "Payment terms and cancellation policy",
       "href": "/payment-terms-cancellation-policy/"
     }
   },
-  "footerNote": [],
-  "goodToKnow": {
-    "label": "Good to Know",
-    "heading": "More About This Journey",
-    "cards": [
-      {
-        "title": "Travel to Kathmandu",
-        "body": "DAY 1 - 3 Depart from your country of origin and make your way to Kathmandu, Nepal. Upon arrival, you will be welcomed by one of our local guides who will serve as your host for the time in Kathmandu. A private transfer will take you to your hotel in the Boudha district, home to many Tibetans in Kathmandu. It is a neighborhood with more signs of Buddhism than Hinduism, with Boudhanath Stupa being the cultural center of this area. Check-in, grab a meal and explore the nearby streets on your own before gathering with your host for an evening meal together to hear their story of growing up in Nepal and what daily life in Kathmandu is like."
-      },
-      {
-        "title": "A Day in the Capital",
-        "body": "DAY 5 Location: Thimphu, Bhutan As the civic and cultural heart of Bhutan, a day in the capital allows for an introduction to many important aspects of Bhutan's national identity. We will visit one of the temple complexes, a cultural museum, and the Takin Preserve. These three places allow the guide to foster an understanding of Bhutan's Buddhist culture, rich history, and extensive biodiversity. It will be an active day of walking but at a pace that still allows for acclimatization."
-      },
-      {
-        "title": "Punakha via Dochula Pass",
-        "body": "DAY 6\nLocation: Punakha, Bhutan Punakha is an adventurer's dream: hiking, biking, rafting, fishing, and fortresses to be explored or myths to be entertained. Reaching Punakha via the Dochula pass is a treasured experience in itself, with views of Bhutan's great peaks from the top of the pass. With options to choose from, this is one place where your itinerary may be extended to accommodate for a tailored adventure selection. Choose from multiple activities or go further with more time on one selection. Punakha's riverside temple and government complex is one of the most impressive in the country. Built in 1637, it was host to the coronation of the current monarchy's first king in 1907 and served as the capital until 1955. Take a wanderers approach to this architectural marvel and learn from your guide as he explains the multifunctional importance of Punakha Dzong."
-      }
-    ]
-  },
-  "pricing": {
-    "from": 3500,
-    "currency": "USD",
-    "basis": "Starting price",
-    "notes": []
-  }
+  "footerNote": [
+    "Starting price shown.",
+    "Ask us about extending your time in Punakha."
+  ]
 }
